@@ -33,3 +33,6 @@ jobs:
       with:
         name: public
         path: public/
+
+    - name: Push artifacts back to the original repository
+      uses: stefanzweifel/git-auto-commit-action@v5
