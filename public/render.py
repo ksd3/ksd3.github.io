@@ -2,7 +2,7 @@
 
 import json
 import yaml
-from jinja2 import Environment, FileSystemLoader, BaseLoader, DebugUndefined
+from jinja2 import Environment, FileSystemLoader, DebugUndefined
 from jinja2_markdown import MarkdownExtension
 from pathlib import Path
 import datetime
@@ -12,7 +12,7 @@ from tqdm import tqdm
 # Create an empty dictionary to store template variables to be passed
 data = dict()
 
-# Add today's date, properly formatted, to the datadict to display at the bottom
+# Add today's date, properly formatted, to the data dict to display at the bottom
 # of the page
 data['today'] = datetime.date.today().strftime('%Y-%m-%d')
 
@@ -39,13 +39,13 @@ for sectionfile in tqdm(sorted(sectionfiles, key=comparator),
                         desc='Processing sections'):
     sectionfile = Path(sectionfile)
     fname = sectionfile.stem
-    sectionenv = Environment(loader=BaseLoader, 
+    sectionenv = Environment(loader=FileSystemLoader('sections'), 
                              extensions=['jinja2_markdown.MarkdownExtension'],
                              undefined=DebugUndefined)
-    sectiontempl = sectionenv.from_string(sectionfile.read_text())
+    sectiontempl = sectionenv.get_template(sectionfile.name)
     data['sections'] += [dict(name=fname, content=sectiontempl.render(**data))]
 
-# Create a jinja2 environment instance
+# Create a Jinja2 environment instance
 jinja_env = Environment(loader=FileSystemLoader('templates'), 
                         extensions=['jinja2_markdown.MarkdownExtension'],
                         undefined=DebugUndefined)
