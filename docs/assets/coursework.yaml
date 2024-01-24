@@ -1,13 +1,18 @@
 - name: Fall 2022
   courses:
     - name: EC516 Digital Signal Processing
-      desc: 'This was the first real signal processing course I\'d ta'
-    - name: Math 101 Calculus 1
-      desc: '(in progress)'
-    - name: Anth 33 Techniques in Excavation and Archaeological Discovery
-      desc: '(in progress)'
-    - name: Chin 102 Introductory Chinese
-      desc: '(in progress)'
-    - name: Mus 28 Class Piano
-      desc: '(in progress)'
+      desc: "This was the first real signal processing course I\'d taken and it was taught by the great Hamid Nawab, who contributed a great deal to Oppenheim's Signals and Systems, the primary signal processing textbook used worldwide. The course mostly covered Fourier transforms for discrete signals and was largely mathematical, with very few practical applications. Professor Nawab is a great instructor and is lenient while grading, but the main appeal of this course is that he knows how to teach, and more importantly, how to solve problems. As far as I know, teaching duties for EC516 and EC520 are swapped every few years between Professors Nawab and Konrad."
+    - name: EC504 Advanced Data Structures
+      desc: "This course is taught by Richard Brower, who has a (fairly unfounded) poor rating on RateMyProfessor. In contrast to many others, I believe this class is one of the best in the ECE department. The content is fairly standard for an algorithms course: arrays, linked lists, trees, graphs, and then a few classical problems such as the knapsack problem. Be prepared to practice."
 
+- name: Spring 2023
+  courses:
+    - name: EC503 Learning from Data
+      desc: "This is a basic introduction to machine learning and is taught by different instructors every semester. I took it with Francesco Orabona, who is now at KAUST. As an expert in optimization theory, Professor Orabona starts with PAC learning and devotes the latter two-thirds of his course to algorithms and their implementation. If taught by Ishwar, I believe the content is reversed - he starts with regression, nearest neighbors, and then moves to optimization algorithms and the underlying theory. Quite homework-heavy."
+      name: AS708 Cosmic Plasma Physics
+      desc: "Trial by fire if you haven't taken AS703 Introduction to Space Physics like I hadn't. Professor Oppenheim is approachable but the course content is as hard as it gets for linear plasma theory, and solving homework is a team effort. Very homework heavy and requires a background in physics and reading papers just to understand some problems."
+
+- name: Fall 2023
+  courses:
+  - name: EC574 Physics of Semiconductor Materials
+    desc: "t"
