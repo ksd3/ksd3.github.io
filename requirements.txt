@@ -1,0 +1,4 @@
+Jinja2>=2.8
+jinja2_markdown>=0.0.3
+tqdm>=4.19.4
+PyYAML>=5.1.2
