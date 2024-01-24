@@ -56,5 +56,8 @@ template = jinja_env.get_template('landing.html')
 output_path = Path('output')  # Change this path as needed
 output_path.mkdir(exist_ok=True)
 
-with output_path.joinpath('index.html').open('w') as out:
+output_file_path = output_path.joinpath('index.html')
+with output_file_path.open('w') as out:
     out.write(template.render(**data))
+
+print(f"index.html saved at: {output_file_path}")
