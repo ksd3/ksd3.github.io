@@ -1,7 +1,7 @@
-- name: Fall 2011
+- name: Fall 2022
   courses:
-    - name: CS 1 Introduction to programming with FORTRAN
-      desc: '(in progress)'
+    - name: EC516 Digital Signal Processing
+      desc: 'This was the first real signal processing course I\'d ta'
     - name: Math 101 Calculus 1
       desc: '(in progress)'
     - name: Anth 33 Techniques in Excavation and Archaeological Discovery
