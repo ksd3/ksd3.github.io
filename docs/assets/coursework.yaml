@@ -15,4 +15,9 @@
 - name: Fall 2023
   courses:
   - name: EC574 Physics of Semiconductor Materials
-    desc: 't'
+    desc: 'Introductory quantum mechanics and solid state physics. Professor Bellotti has a great sense of humor and is a good instructor, but his teaching methods are definitely old-school. The latter third of the course is hard because the introduction to solid state physics does not draw from Brandsen and Joachin.'
+    name: PY536 Quantum Computing
+    desc: 'I was fairly disappointed with this course as it assumed the student had a background in graduate-level quantum mechanics, but was advertised as an algorithms course. The homework was obscure and confusing and relied on being able to peruse the literature and completely imbibe it. There is no hand-holding here.'
+    name: EC533 Advanced Discrete Mathematics
+    desc: 'I will fully admit that I smurfed in this course. The subject matter was something I had done since the age of 13 and Professor Levitin is great. I wish I had taken his other course, EC534 Discrete Stochastic Models, but I couldn''t afford to.'
+    
