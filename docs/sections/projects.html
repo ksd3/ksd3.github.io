@@ -2,16 +2,16 @@ Some of the current and past projects and research I've been involved with
 (click to reveal).
 
 
-{% for group in groups %}
-    <div class="group">
-        <span class="groupName">
-          <div style="font-weight: bold;">{{group.name}}</div> 
-          <div>{{group.start}}&mdash;{{group.end}}</div>
+{% for lab in labs %}
+    <div class="lab">
+        <span class="labName">
+          <div style="font-weight: bold;">{{lab.name}}</div> 
+          <div>{{group.start}}&mdash;{{lab.end}}</div>
         </span>
         <div>{{group.location}}</div>
 
         <ul>
-        {% for project in group.projects %}
+        {% for project in lab.projects %}
         <li>
             <div class="project">
                 <span class=projectName>{{project.title}}</span>
