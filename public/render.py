@@ -6,6 +6,7 @@ from jinja2 import Environment, FileSystemLoader, BaseLoader, DebugUndefined
 from jinja2_markdown import MarkdownExtension
 from pathlib import Path
 import datetime
+from glob import glob  # Add this line for importing glob
 from tqdm import tqdm
 
 # Create an empty dictionary to store template variables to be passed
