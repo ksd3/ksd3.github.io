@@ -1,9 +1,9 @@
 name: Build and Deploy
 
-#on:
-#  push:
-#    branches:
-#      - main  # Change to your main branch name
+on:
+  push:
+    branches:
+      - main  # Change to your main branch name
 
 jobs:
   deploy:
