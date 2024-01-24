@@ -6,9 +6,9 @@ Some of the current and past projects and research I've been involved with
     <div class="lab">
         <span class="labName">
           <div style="font-weight: bold;">{{lab.name}}</div> 
-          <div>{{group.start}}&mdash;{{lab.end}}</div>
+          <div>{{lab.start}}&mdash;{{lab.end}}</div>
         </span>
-        <div>{{group.location}}</div>
+        <div>{{lab.location}}</div>
 
         <ul>
         {% for project in lab.projects %}
@@ -73,12 +73,12 @@ Some of the current and past projects and research I've been involved with
         margin-bottom: 2pt;
     }
 
-    div.group {
+    div.lab {
         margin-top: 20pt;
         margin-bottom: 8pt;
     }
     
-    div.group > div {
+    div.lab > div {
         margin-top: 4pt;
         margin-bottom: 12pt;
     }
@@ -98,7 +98,7 @@ Some of the current and past projects and research I've been involved with
         margin-bottom: 10pt;
     }
 
-    span.groupName {
+    span.labName {
         display: flex;
         justify-content: space-between;
     }
