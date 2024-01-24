@@ -53,5 +53,8 @@ jinja_env = Environment(loader=FileSystemLoader('templates'),
 template = jinja_env.get_template('landing.html')
 
 # Render template and output it to index.html, the default page to show
-with Path('index.html').open('w') as out:
+output_path = Path('output')  # Change this path as needed
+output_path.mkdir(exist_ok=True)
+
+with output_path.joinpath('index.html').open('w') as out:
     out.write(template.render(**data))
