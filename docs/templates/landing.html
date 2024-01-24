@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>YOURNAME's homepage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="src/script.js"></script>
+</head>
+<body>
+    <h2 id="header">USERNAME (under construction)</h2>
+    <div id="navbar">
+        {% for section in sections %}
+        <div class="navbutton" data-trigger-content="{{section.name}}">{{section.name}}</div>
+        {% endfor %}
+    </div>
+    <hr>
+    <div id="content">
+        {% for section in sections %}
+            {% if section.name != 'about' %}
+                {% set classattr = 'hiddenItem' %}
+            {% else %}
+                {% set classattr = '' %}
+            {% endif %}
+            <div class="contentItem {{classattr}}" id="{{section.name}}">
+
+                {{section.content}}
+
+            </div>
+            {% endfor %}
+    </div>
+
+    <div id="footer">
+        <div>last updated {{today}}</div>
+        <div>
+            {% for symbol in symbols %}
+                <a href={{symbol.target}} target="_blank">
+                  <img class="symbol" src="{{symbol.url}}" alt="{{symbol.alt}}">
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    <link href="src/css.css" rel="stylesheet">
+
+    <script>
+        var links = document.getElementsByTagName('a');
+        for (var i=0, len=links.length; i < len; i ++) {
+              links[i].target = '_blank';
+        }
+    </script>
+
+</body></html>
