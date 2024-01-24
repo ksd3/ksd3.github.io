@@ -15,6 +15,7 @@ labs:
           - title: Navigation and Infrastructure Thrust
             desc: "This is part of a research proposal for one of NASA's Mars Mission initiatives that is being worked on at BU. Specifically, I design software to conduct RF propagation experiments through the Martian ionosphere, focusing on the Mars Climate Model database."
             link: Expected June 2024
+    - name: 
 
 personalprojects:
     - title: Hello World
