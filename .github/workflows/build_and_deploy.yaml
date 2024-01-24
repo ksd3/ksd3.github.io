@@ -24,15 +24,15 @@ jobs:
 
     - name: Build and Deploy
       run: |
-        cd public/
+        cd docs/
         python render.py
         cd ..
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: public
-        path: public/
+        name: docs
+        path: docs/
 
     - name: Push artifacts back to the original repository
       uses: stefanzweifel/git-auto-commit-action@v5
