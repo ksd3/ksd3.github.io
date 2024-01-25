@@ -9,15 +9,15 @@
   courses:
     - name: EC503 Learning from Data
       desc: 'This is a basic introduction to machine learning and is taught by different instructors every semester. I took it with Francesco Orabona, who is now at KAUST. As an expert in optimization theory, Professor Orabona starts with PAC learning and devotes the latter two-thirds of his course to algorithms and their implementation. If taught by Ishwar, I believe the content is reversed - he starts with regression, nearest neighbors, and then moves to optimization algorithms and the underlying theory. Quite homework-heavy.'
-      name: AS708 Cosmic Plasma Physics
+    - name: AS708 Cosmic Plasma Physics
       desc: 'Trial by fire if you haven''t taken AS703 Introduction to Space Physics like I hadn''t. Professor Oppenheim is approachable but the course content is as hard as it gets for linear plasma theory, and solving homework is a team effort. Very homework heavy and requires a background in physics and reading papers just to understand some problems.'
 
 - name: Fall 2023
   courses:
   - name: EC574 Physics of Semiconductor Materials
     desc: 'Introductory quantum mechanics and solid state physics. Professor Bellotti has a great sense of humor and is a good instructor, but his teaching methods are definitely old-school. The latter third of the course is hard because the introduction to solid state physics does not draw from Brandsen and Joachin.'
-    name: PY536 Quantum Computing
+  - name: PY536 Quantum Computing
     desc: 'I was fairly disappointed with this course as it assumed the student had a background in graduate-level quantum mechanics, but was advertised as an algorithms course. The homework was obscure and confusing and relied on being able to peruse the literature and completely imbibe it. There is no hand-holding here.'
-    name: EC533 Advanced Discrete Mathematics
+  - name: EC533 Advanced Discrete Mathematics
     desc: 'I will fully admit that I smurfed in this course. The subject matter was something I had done since the age of 13 and Professor Levitin is great. I wish I had taken his other course, EC534 Discrete Stochastic Models, but I couldn''t afford to.'
     
