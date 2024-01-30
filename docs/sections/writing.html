@@ -1,25 +1,24 @@
-Miscellaneous writings about whatever topic I want to write about that day
+Miscellaneous writings about whatever topic I want to write about that day (click to reveal)
 
-
-{% for writing in writings %}
+{% for writing in writingss %}
     <div class="writing">
         <span class="writingName">
-          <div style="font-weight: bold;">{{writing.name}}</div> 
-          <div>{{writing.start}}&mdash;{{writing.end}}</div>
+          <div style="font-weight: bold;">{{lab.name}}</div> 
+          <div>{{lab.start}}&mdash;{{lab.end}}</div>
         </span>
-        <div>{{writing.location}}</div>
+        <div>{{lab.location}}</div>
 
         <ul>
-        {% for project in Writings.projects %}
+        {% for work in writing.works %}
         <li>
-            <div class="project">
-                <span class=projectName>{{project.title}}</span>
+            <div class="work">
+                <span class=workName>{{work.title}}</span>
                 <div class="hiddenItem">
-                    {{project.desc}}
+                    {{work.desc}}
                     <br>
-                    {% if 'link' in project %}
-                    <div class="link"><a href="{{project.link}}" target="_blank">
-                            ({{project.link}})
+                    {% if 'link' in work %}
+                    <div class="link"><a href="{{work.link}}" target="_blank">
+                            ({{work.link}})
                     </a></div>
                     {% endif %}
                 </div>
