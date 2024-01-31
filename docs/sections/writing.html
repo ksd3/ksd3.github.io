@@ -1,59 +1,69 @@
-A list of the courses I've taken, along with some thoughts or specialities
-about them (click to reveal).
-
-{% for topic in coursework %}
-    <div class="topic">
-    {% markdown %}
-       #### {{topic}}
-    {% endmarkdown %}
-    {% for course in topic.courses %}
-        <div class="title">
-            <span class="titleName">{{course.name}}</span>
-            <div class="hiddenItem">{{course.desc}}</div>
-        </div>
-    {% endfor %}
-    </div>
-{% endfor %}
-
-<script>
-    for (var elem of document.getElementsByClassName('topicName')) {
-            elem.addEventListener('click', toggleDescription);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Blog Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-</script>
 
-<style>
-    #coursework ul {
-        margin-bottom: 8pt;
-        margin-top: 4pt;
-    }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
 
-    #coursework ul > li {
-        margin-bottom: 2pt;
-    }
+        article {
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
 
-    div.topic {
-        margin-bottom: 8pt;
-    }
+    <!-- Blog 1 -->
+    <header id="blogTitle1">
+        <h1 style="text-decoration: underline;">Blog Title 1</h1>
+    </header>
 
-    div.topic > div {
-        margin-top: 4pt;
-        margin-bottom: 12pt;
-    }
+    <article id="blogContent1">
+        <p>Content for Blog 1 goes here.</p>
+    </article>
 
-    span.topicName {
-        text-decoration: underline;
-    }
+    <script>
+        document.getElementById('blogTitle1').addEventListener('click', function () {
+            var blogContent = document.getElementById('blogContent1');
+            blogContent.style.display = (blogContent.style.display === 'none' || blogContent.style.display === '') ? 'block' : 'none';
+        });
+    </script>
 
-    span.topicName:hover {
-        cursor: pointer;
-    }
+    <!-- Blog 2 -->
+    <header id="blogTitle2">
+        <h1 style="text-decoration: underline;">Blog Title 2</h1>
+    </header>
 
-    span.topicName:active {
-        color: #000000;
-    }
+    <article id="blogContent2">
+        <p>Content for Blog 2 goes here.</p>
+    </article>
 
-    div.semester {
-        margin-bottom: 24pt;
-    }
-</style>
+    <script>
+        document.getElementById('blogTitle2').addEventListener('click', function () {
+            var blogContent = document.getElementById('blogContent2');
+            blogContent.style.display = (blogContent.style.display === 'none' || blogContent.style.display === '') ? 'block' : 'none';
+        });
+    </script>
 
+    <!-- Add more blogs as needed -->
+
+</body>
+</html>
