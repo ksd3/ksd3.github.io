@@ -1,32 +1,59 @@
-Miscellaneous writings about many topics (click to reveal)
+A list of the courses I've taken, along with some thoughts or specialities
+about them (click to reveal).
 
-{% for writing in writings %}
-    <div class="writing">
-        <span class="writingName">
-          <div style="font-weight: bold;">{{writing.name}}</div> 
-          <div>{{writing.start}}&mdash;{{writing.end}}</div>
-        </span>
-        <div>{{writing.location}}</div>
-
-        <ul>
-        {% for work in writing.works %}
-        <li>
-            <div class="work">
-                <span class=workName>{{work.title}}</span>
-                <div class="hiddenItem">
-                    {{work.desc}}
-                    <br>
-                    {% if 'link' in work %}
-                    <div class="link"><a href="{{work.link}}" target="_blank">
-                            ({{work.link}})
-                    </a></div>
-                    {% endif %}
-                </div>
-                
-            </div>
-        </li>
-        {% endfor %}
-        </ul>
-    
+{% for topic in coursework %}
+    <div class="topic">
+    {% markdown %}
+       #### {{topic}}
+    {% endmarkdown %}
+    {% for course in topic.courses %}
+        <div class="title">
+            <span class="titleName">{{course.name}}</span>
+            <div class="hiddenItem">{{course.desc}}</div>
+        </div>
+    {% endfor %}
     </div>
 {% endfor %}
+
+<script>
+    for (var elem of document.getElementsByClassName('subjectName')) {
+            elem.addEventListener('click', toggleDescription);
+        }
+</script>
+
+<style>
+    #coursework ul {
+        margin-bottom: 8pt;
+        margin-top: 4pt;
+    }
+
+    #coursework ul > li {
+        margin-bottom: 2pt;
+    }
+
+    div.subject {
+        margin-bottom: 8pt;
+    }
+
+    div.subject > div {
+        margin-top: 4pt;
+        margin-bottom: 12pt;
+    }
+
+    span.subjectName {
+        text-decoration: underline;
+    }
+
+    span.subjectName:hover {
+        cursor: pointer;
+    }
+
+    span.subjectName:active {
+        color: #000000;
+    }
+
+    div.semester {
+        margin-bottom: 24pt;
+    }
+</style>
+
