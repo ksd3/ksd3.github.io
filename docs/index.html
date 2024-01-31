@@ -498,7 +498,7 @@ about them (click to reveal).
 
 
 <script>
-    for (var elem of document.getElementsByClassName('subjectName')) {
+    for (var elem of document.getElementsByClassName('topicName')) {
             elem.addEventListener('click', toggleDescription);
         }
 </script>
@@ -513,24 +513,24 @@ about them (click to reveal).
         margin-bottom: 2pt;
     }
 
-    div.subject {
+    div.topic {
         margin-bottom: 8pt;
     }
 
-    div.subject > div {
+    div.topic > div {
         margin-top: 4pt;
         margin-bottom: 12pt;
     }
 
-    span.subjectName {
+    span.topicName {
         text-decoration: underline;
     }
 
-    span.subjectName:hover {
+    span.topicName:hover {
         cursor: pointer;
     }
 
-    span.subjectName:active {
+    span.topicName:active {
         color: #000000;
     }
 
