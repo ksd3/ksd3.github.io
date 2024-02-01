@@ -2,3 +2,8 @@
   courses:
     - name: What is STEVE?
       desc: Strong Thermal Emission Velocity Enhancement is an optical phenomenon that occurs at the equatorward boundaries of diffuse aurora and seems to be heavily correlated to extreme SAID arcs that occur during substorms.
+
+- name: Anticipation
+  courses:
+    - name: Practice
+      desc: Practice, practice, practice.
