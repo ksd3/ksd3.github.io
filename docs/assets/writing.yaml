@@ -1,7 +1,7 @@
 - name: STEVE
   courses:
     - name: What is STEVE?
-      desc: Strong Thermal Emission Velocity Enhancement is an optical phenomenon that occurs at the equatorward boundaries of diffuse aurora and seems to be heavily correlated to extreme SAID arcs that occur during substorms.
+      desc: "Strong Thermal Emission Velocity Enhancement(STEVE) is an optical phenomenon that occurs at the equatorward boundaries of diffuse aurora. It appears as a mauve streak in the sky, strentching for potentially thousands of kilometers in the east-west direction, yet only about 50 kilometers (corresping to about half a degree of magnetic latitude) in the north-south direction. Observations from satellites and ground-based receivers seem to indicate that STEVE is some sort of emission caused by the interaction of fast-moving plasma (in this case, around 10 km/s) with elements and compounds in the lower ionosphere, but the exact emission mechanism is still unknown. Reports from the past 150 years seem to indicate that STEVE is not a new phenomenon, and modern research has shown that it can be linked to extremely active substorms that occur after solar storms (caused by the solar wind) hit the Earth's ionosphere."
 
 - name: Anticipation
   courses:
