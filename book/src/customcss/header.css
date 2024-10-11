@@ -1,0 +1,56 @@
+/* Universal Header Style */
+h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 0.1em; /* Closer to the header text */
+    margin-bottom: 0.3em;  /* Reduced margin for closer spacing */
+    border-bottom: 2px solid transparent; /* Base style, invisible by default */
+}
+
+/* Rust Theme */
+html.rust h1, 
+html.rust h2,
+html.rust h3, 
+html.rust h4, 
+html.rust h5, 
+html.rust h6 {
+    border-bottom-color: #D75F00; /* Rust orange line */
+}
+
+/* Light Theme */
+html.light h1, 
+html.light h2,
+html.light h3, 
+html.light h4, 
+html.light h5, 
+html.light h6 {
+    border-bottom-color: #444; /* Darker line for better contrast */
+}
+
+/* Coal Theme */
+html.coal h1, 
+html.coal h2,
+html.coal h3, 
+html.coal h4, 
+html.coal h5, 
+html.coal h6 {
+    border-bottom-color: #CCCCCC; /* Light gray line */
+}
+
+/* Navy Theme */
+html.navy h1, 
+html.navy h2,
+html.navy h3, 
+html.navy h4, 
+html.navy h5, 
+html.navy h6 {
+    border-bottom-color: #FFFFFF; /* White line */
+}
+
+/* Ayu Theme */
+html.ayu h1, 
+html.ayu h2,
+html.ayu h3, 
+html.ayu h4, 
+html.ayu h5, 
+html.ayu h6 {
+    border-bottom-color: #F3F4F5; /* Light gray line */
+}

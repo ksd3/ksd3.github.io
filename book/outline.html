@@ -1,0 +1,1120 @@
+<<<<<<< HEAD
+<!DOCTYPE HTML>
+<html lang="en" class="rust" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Time Series</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="src/customcss/header.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "rust" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Miscellaenous</li><li class="chapter-item expanded "><a href="courses.html"><strong aria-hidden="true">1.</strong> Courses I've taken at BU</a></li><li class="chapter-item expanded "><a href="writing.html"><strong aria-hidden="true">2.</strong> Writing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="test.html"><strong aria-hidden="true">2.1.</strong> Test</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="test.html"><strong aria-hidden="true">2.1.1.</strong> Test2</a></li><li class="chapter-item expanded "><a href="test.html"><strong aria-hidden="true">2.1.2.</strong> Test3</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="test.html"><strong aria-hidden="true">2.1.2.1.</strong> Test4</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Semeter Lab</li><li class="chapter-item expanded "><a href="outline.html" class="active"><strong aria-hidden="true">3.</strong> Time Series</a></li><li class="chapter-item expanded affix "><a href="test.html">End</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+=======
+<!DOCTYPE HTML>
+<html lang="en" class="rust" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Time Series</title>
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="src/customcss/header.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "rust" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Miscellaenous</li><li class="chapter-item expanded "><a href="courses.html"><strong aria-hidden="true">1.</strong> Courses I've taken at BU</a></li><li class="chapter-item expanded "><a href="writing.html"><strong aria-hidden="true">2.</strong> Writing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="test.html"><strong aria-hidden="true">2.1.</strong> Test</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="test2.html"><strong aria-hidden="true">2.1.1.</strong> Test</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Semeter Lab</li><li class="chapter-item expanded "><a href="outline.html" class="active"><strong aria-hidden="true">3.</strong> Time Series</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+>>>>>>> 67fa202 (new access token)
+                        <h1 id="overview" class="unnumbered"><a class="header" href="#overview">Overview</a></h1>
+<ol>
+<li><a href="#tec">What is TEC?</a>
+<ul>
+<li><a href="#our-goal">Our goal</a></li>
+<li><a href="#current-operational-setup">Current Operational Setup</a></li>
+<li><a href="#current-system">System Design</a></li>
+</ul>
+</li>
+<li><a href="#algorithms">Algorithms</a>
+<ul>
+<li><a href="#data-processing">Data Processing</a>
+<ul>
+<li><a href="#1-ionospheric-assumption-validation">Ionospheric Assumption Validation</a></li>
+<li><a href="#2-main-ionospheric-trough-identification">Main Ionospheric Trough Identification</a></li>
+<li><a href="#3-rinex-conversion">RINEX conversion</a></li>
+<li><a href="#4-analysis">Analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="tec"><a class="header" href="#tec">TEC</a></h2>
+<p>The <strong>T</strong>otal <strong>E</strong>lectron <strong>C</strong>ontent is the columnar number density of electrons between a satellite and a GNSS receiver.</p>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/Slant-total-electron-content-STEC-illustration.png" alt="TEC Figure" width="500" height="300">
+</div>
+<p>where $$f_1=1575.42<em>10^6 Hz$$ (The L1 frequency) and $$f_2=1227.60</em>10^6 Hz$$ (The L2 frequency).</p>
+<p>The TEC is given by
+$$TEC=\frac{f_1^2 f_2^2}{f_1^2 - f_2^2} * 10^{-16} * \frac{1}{40.309} (\phi_1-\phi_2+\epsilon)$$
+where $$10^{-16}$$ is a multiplicative constant to denote it in (TECU), and $$\phi_1,\phi_2$$ are the <strong>carrier phases/pseudoranges</strong> and $$\epsilon$$ is the <strong>error</strong>. The assumption is that the ionosphere is a <strong>cold</strong>, <strong>collisionless</strong>, <strong>magnetized</strong> plasma.</p>
+<p>We record the raw pseudoranges, carrier phases, signal strength, etc in GNSS receivers at certain times (every 15 seconds, 30 seconds, 1 second (high freq), etc)  along with some environmental conditions (wind speed, temperature, humidity, etc) and internal operating parameters (SNR, PDOP, VDOP, HDOP, number of satellites in contact with, uptime hours, downtime, correction latency) at roughly the same frequencies, but can be changed.</p>
+<p>We produce <strong>TEC maps</strong>, for example, like this Wikipedia one:</p>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/201311242115_US_TEC_plot.png" alt="TEC Figure" width="500" height="400">
+</div>
+<p>The <span style="color: red;">red dots</span> show GNSS receiver stations in some locations in the US, and their observations are spatially interpolated.</p>
+<h3 id="our-goal"><a class="header" href="#our-goal">Our Goal</a></h3>
+<p>The primary objective of the BU Space Physics Lab is to enhance  geospatial infrastructure by deploying a network of low-cost GNSS stations utilizing consumer mobile devices (at the moment, Google Pixel phones) integrated with advanced environmental monitoring systems. Our specific goals are as follows:</p>
+<ol>
+<li>
+<p><strong>Expand GNSS Coverage and Accuracy</strong>: Increase the spatial density and distribution of GNSS stations across Canada, particularly in remote and sparsely monitored regions, to improve the precision, accuracy, and reliability of geospatial positioning data.</p>
+</li>
+<li>
+<p><strong>Optimize Cost-Efficiency through Consumer Technology</strong>: Leverage the widespread availability and technological advancements of consumer-grade mobile devices to create a cost-effective, scalable network of GNSS stations, reducing reliance on traditional, high-cost geodetic equipment.</p>
+</li>
+<li>
+<p><strong>Integrate Multidimensional Environmental Monitoring</strong>: Combine GNSS data with environmental sensors to capture a comprehensive set of parameters, including atmospheric conditions, temperature, and humidity, enabling more robust analysis of environmental and geospatial phenomena.</p>
+</li>
+<li>
+<p><strong>Advance Scientific Research and Applications</strong>: Provide high-resolution geospatial and environmental datasets to support a broad range of scientific research, including studies on climate change, natural hazard monitoring, and precision agriculture, as well as applications in engineering and urban development.</p>
+</li>
+</ol>
+<h3 id="current-operational-setup"><a class="header" href="#current-operational-setup">Current Operational Setup</a></h3>
+<p><img src="images/timeseriesanalysis/currentoperating.png" alt="" /></p>
+<h3 id="current-system"><a class="header" href="#current-system">Current System</a></h3>
+<ol>
+<li>
+<p><strong>Hardware Components</strong> ✅</p>
+<ul>
+<li><strong>Consumer Mobile Devices (Google Pixels):</strong>
+<ul>
+<li>GNSS chips for geospatial data collection.</li>
+<li><strong>Price:</strong> ~$550.00 per device</li>
+</ul>
+</li>
+<li><strong>Environmental Sensors:</strong>
+<ul>
+<li><strong>Air Quality Sensor:</strong> Honeywell HPMA115S0-XXX Particle Sensor.
+<ul>
+<li><strong>Price:</strong> ~$55.00 per unit</li>
+</ul>
+</li>
+<li><strong>Temperature Sensor:</strong> Bosch BME280 Environmental Sensor.
+<ul>
+<li><strong>Price:</strong> ~$10.89 per unit</li>
+</ul>
+</li>
+<li><strong>Humidity Sensor:</strong> Bosch BME280 Environmental Sensor.
+<ul>
+<li><strong>Price:</strong> ~$10.89 per unit</li>
+</ul>
+</li>
+<li><strong>Barometric Pressure Sensor:</strong> Bosch BMP388 Barometric Pressure Sensor.
+<ul>
+<li><strong>Price:</strong> ~$15.49 per unit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Power Supply:</strong> ✅
+<ul>
+<li><strong>Solar Panels:</strong> Renogy 100W 12V Monocrystalline Solar Panel.
+<ul>
+<li><strong>Price:</strong> ~$125.00 per unit</li>
+</ul>
+</li>
+<li><strong>Battery Packs:</strong> Anker Powerhouse 200 Portable Rechargeable Battery.
+<ul>
+<li><strong>Price:</strong> ~$300.00 per unit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Communication Modules:</strong> ✅
+<ul>
+<li><strong>Cellular Connectivity:</strong> Quectel EC25-AF 4G LTE Module.
+<ul>
+<li><strong>Price:</strong> ~$35.00 per unit</li>
+</ul>
+</li>
+<li><strong>Wi-Fi and Bluetooth:</strong> Espressif ESP32 Module.
+<ul>
+<li><strong>Price:</strong> ~$8.50 per unit</li>
+</ul>
+</li>
+<li><strong>LoRaWAN:</strong> The Things Network (TTN) LoRaWAN Gateway.
+<ul>
+<li><strong>Price:</strong> ~$150.00 per unit</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Total Hardware Cost per Unit:</strong> ~$1,260.77 (including tax)</p>
+</li>
+<li>
+<p><strong>Data Collection Framework</strong></p>
+<ul>
+<li><strong>GNSS Logger (GNSS &amp; Environmental Monitoring App):</strong> ✅
+<ul>
+<li>Platform: Android</li>
+<li>Real-time GNSS data logging.</li>
+<li>Sensor data logging</li>
+<li>Data encryption and offline storage.</li>
+</ul>
+</li>
+<li><strong>Edge Computing Device:</strong> ✅
+<ul>
+<li><strong>Model:</strong> Raspberry Pi 4 Model B.
+<ul>
+<li><strong>Price:</strong> ~$59.00 per unit</li>
+</ul>
+</li>
+<li>Local processing and data filtering.</li>
+<li>Python scripts for data handling.</li>
+<li>Local data storage on <strong>SanDisk Extreme PRO 128GB microSDXC</strong> card.
+<ul>
+<li><strong>Price:</strong> ~$38.00 per unit</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Total Data Collection Framework Cost per Unit:</strong> ~$106.70 (including 10% tax)</p>
+</li>
+<li>
+<p><strong>Data Transmission and Communication</strong></p>
+<ul>
+<li><strong>MQTT Broker:</strong> ✅
+<ul>
+<li>Tool: Eclipse Mosquitto.
+<ul>
+<li><strong>Price:</strong> Free (Open-source)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>HTTP/HTTPS API:</strong> ✅
+<ul>
+<li>Tool: Flask
+<ul>
+<li><strong>Price:</strong> Free (Open-source, but development costs included above)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Total Data Transmission and Communication Cost per Unit:</strong> ~$0 (Development cost included above)</p>
+</li>
+<li>
+<p><strong>Cloud Infrastructure</strong></p>
+<ul>
+<li><strong>Cloud Storage:</strong> ✅
+<ul>
+<li>Tool: Amazon S3
+<ul>
+<li><strong>Price:</strong> ~$0.025 per GB per month</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Cloud Computing:</strong> ✅
+<ul>
+<li>Tool: AWS Lambda
+<ul>
+<li><strong>Price:</strong> ~$0.20 per 1 million requests</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Database:</strong> ❌
+<ul>
+<li>Tool: PostgreSQL with PostGIS extension.
+<ul>
+<li><strong>Price:</strong> <del>!</del>$0.27 per hour (RDS micro instance)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Estimated Operating Cost - Cloud, Data, Software Services:</strong> ~$108.13 per unit per month (including tax)</p>
+</li>
+<li>
+<p><strong>Data Engineering Pipeline</strong></p>
+<ul>
+<li><strong>Data Ingestion:</strong> ✅
+<ul>
+<li>Tool: Apache Kafka
+<ul>
+<li><strong>Price:</strong> ~$0.13 per GB (managed service)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Data Processing:</strong> ✅
+<ul>
+<li>Tool: Apache Spark
+<ul>
+<li><strong>Price:</strong> ~$0.12 per vCPU-hour (managed service)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Data Quality Assurance:</strong> ✅
+<ul>
+<li>Tool: Python</li>
+</ul>
+</li>
+</ul>
+<p><strong>Total Data Engineering Pipeline Cost per Unit:</strong> Included in cloud costs</p>
+</li>
+<li>
+<p><strong>Data Visualization and Analytics</strong></p>
+<ul>
+<li><strong>Geospatial Visualization:</strong> ✅ (somewhat - Cartopy+Georinex+h5py)
+<ul>
+<li>Tool: Python+ArcGIS
+<ul>
+<li><strong>Price:</strong> ~$1,650.00 per ArcGIS license per year (BU license)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Dashboarding:</strong> ❌
+<ul>
+<li>Tool: Grafana
+<ul>
+<li><strong>Price:</strong> Free (Open-source)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Advanced Analytics:</strong> ✅
+<ul>
+<li>Tool: SageMaker
+<ul>
+<li><strong>Price:</strong> ~$0.14 per hour (training) + ~$0.06 per hour (inference, including tax)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Total Visualization and Analytics Cost per Unit:</strong> ~$224.00 per unit per year (including tax)</p>
+</li>
+<li>
+<p><strong>Data Distribution and Sharing</strong></p>
+<ul>
+<li><strong>Data API:</strong> ❌
+<ul>
+<li>Tool: RESTful API.</li>
+</ul>
+</li>
+<li><strong>Data Catalog and Access Control:</strong> ❌
+<ul>
+<li>Tool: AWS Glue Data Catalog
+<ul>
+<li><strong>Price:</strong> $1.10 per 100,000 objects/month (including tax)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Total Distribution and Sharing Cost per Unit:</strong> Included in cloud costs</p>
+</li>
+<li>
+<p><strong>Maintenance and Monitoring</strong></p>
+<ul>
+<li><strong>System Monitoring:</strong> ❌
+<ul>
+<li>Tool: Grafana</li>
+</ul>
+</li>
+<li><strong>Remote Management:</strong> ✅
+<ul>
+<li>Tool: AWS System Manager
+<ul>
+<li><strong>Price:</strong> $0.11 per managed instance per hour (including tax)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Total Maintenance and Monitoring Cost per Unit:</strong> ~$76.45 per unit per year (including tax)</p>
+</li>
+</ol>
+<hr />
+<h4 id="summary"><a class="header" href="#summary">Summary</a></h4>
+<ul>
+<li>
+<p><strong>Total Price per Full Device and Monitoring Setup:</strong> ~$1,367.47 (including tax)</p>
+</li>
+<li>
+<p><strong>Number of Full Setups Ready:</strong> 13</p>
+</li>
+<li>
+<p><strong>Total Price Until Now:</strong> ~$17,777.11 (including tax)</p>
+</li>
+<li>
+<p><strong>Estimated Operating Cost - Per Unit:</strong> ~$192.80 per unit per year (including tax)</p>
+</li>
+<li>
+<p><strong>Estimated Operating Cost - Cloud, Data, Software Services:</strong> ~$108.13 per unit per month (including tax)</p>
+</li>
+</ul>
+<h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
+<h2 id="data-processing"><a class="header" href="#data-processing">Data Processing</a></h2>
+<h3 id="1-ionospheric-assumption-validation"><a class="header" href="#1-ionospheric-assumption-validation">1. Ionospheric Assumption Validation</a></h3>
+<p>For speed of computation, we use <strong>fast 2d and 3d natural neighbors interpolation</strong> (thick large-scale structures) and <strong>VISTA</strong> (thick medium-scale structures) (Video Imputation with SoftImpute, Temporal smoothing and Auxiliary data) to validate the ionospheric assumption. The VISTA algorithm is shown below</p>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/vista.webp" alt="VISTA" width="600" height="300">
+</div>
+<p>The assumption is (somewhat) invalid during solar storms, geophysical storms, magnetic reconnection with solar winds, coronal mass ejections, and so on.</p>
+<h3 id="2-main-ionospheric-trough-identification"><a class="header" href="#2-main-ionospheric-trough-identification">2. Main Ionospheric Trough Identification</a></h3>
+<p>The Main Ionospheric Trough (MIT)</p>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/trough-1.jpg" alt="Trough-2" width="600" height="300">
+</div>
+<h4 id="characteristics-of-the-mit"><a class="header" href="#characteristics-of-the-mit">Characteristics of the MIT:</a></h4>
+<ol>
+<li>Low density arc-shaped trough whose formation is unknown.</li>
+<li>Forms at night due to depletion in the F-region, but it is unknown why.</li>
+<li>To identify it, we use global TEC data from the Madrigal database and use computer vision to identify it in spatiotemporal maps.</li>
+</ol>
+<h4 id="technique-to-identify-the-trough"><a class="header" href="#technique-to-identify-the-trough">Technique to identify the trough:</a></h4>
+<ol>
+<li>Grid TEC observations (1° x 1°) and smooth with averaging. (Practically, download ~50GB of data from Madrigal, store in AWS S3, chunk when using Lambda, run computations with h5py and scientific libraries on EC2 instances, and use Amazon Glue to process things with PySpark/Apache, then grid and smooth). <strong>Problems faced:</strong> Uneven distribution along longitude and frequency analysis not possible.</li>
+<li><strong>Preprocess</strong>: Discard negative values, estimate background with sliding windows to filter out diurnal/seasonal trends. Scaling up (with the proposed network) would allow implementation of band pass filters at higher resolution.</li>
+<li><strong>Scoring</strong>: Set up the inverse problem. Assume each preprocessed image is a linear combination of Gaussian RBFs and the weights are the image score values. The $n^{th}$ image is assumed to be $-A_n u_n+\epsilon_n$, where $u_n$ is the image we want, $A_n$ (after removing the basis columns) is a matrix with RBFs centered on the pixels of the grid, and there is some noise. We minimize the resultant image  $$u_n^* = \arg\min_{u_n} x_n^T A_n u_n + \alpha |W_n u_n|_2^2 + \beta R(u_n)$$. Here $x_n$ is the $n^{th}$ preprocessed image. You have standard regularizers and total variance denoising at the end.</li>
+<li><strong>Postprocess and verify</strong>: After this, we apply a combination of dilation and erosion to get the MIT. This is a no-ground-truth problem, so we have to compare with readings from local receivers to see if the structure exists.</li>
+</ol>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/trough-2.jpg" alt="Trough-2" width="600" height="500">
+</div>
+<div class="table-wrapper"><table><thead><tr><th><strong>Metric</strong></th><th><strong>Value for n=10,000</strong></th><th><strong>Value for n=100,000</strong></th></tr></thead><tbody>
+<tr><td><strong>Execution Time (Wall-clock)</strong></td><td>8 hours</td><td>5 days ms</td></tr>
+<tr><td><strong>Memory Usage</strong></td><td>22 GB</td><td>348GB</td></tr>
+</tbody></table>
+</div>
+<h3 id="3-rinex-conversion"><a class="header" href="#3-rinex-conversion">3. RINEX conversion</a></h3>
+<p>Developed an internal Python package named <code>rinexpy</code> - looking to merge with <code>georinex</code>:</p>
+<h4 id="rinexpy-operations"><a class="header" href="#rinexpy-operations">rinexpy Operations</a></h4>
+<ol>
+<li>
+<p><strong>Merging and Editing RINEX Files</strong>:</p>
+<ul>
+<li><code>rinexpy</code> provides the ability to merge multiple RINEX files into a single output. It also allows for editing of the file contents, such as adjusting header information, modifying observation types, and managing data intervals to ensure consistency across different GNSS data sources.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clock Jump Correction</strong>:</p>
+<ul>
+<li><code>rinexpy</code> automatically detects and corrects clock jumps in GNSS observation data. This feature ensures time continuity and improves the accuracy of the GNSS data by addressing disruptions caused by clock shifts.</li>
+</ul>
+</li>
+<li>
+<p><strong>Ionospheric Correction</strong>:</p>
+<ul>
+<li><code>rinexpy</code> applies higher-order ionospheric corrections to the GNSS data, mitigating the impact of ionospheric disturbances on the accuracy of satellite positioning information.</li>
+</ul>
+</li>
+<li>
+<p><strong>File Format Conversion</strong>:</p>
+<ul>
+<li><code>rinexpy</code> supports converting BINEX and RTCM files into the RINEX format. This conversion simplifies working with GNSS data by providing a standardized format that is widely used and recognized across various platforms.</li>
+</ul>
+</li>
+<li>
+<p><strong>Interactive RINEX File Viewer</strong>:</p>
+<ul>
+<li><code>rinexpy</code> includes an interactive, web-based viewer for RINEX files. This feature allows users to visualize and analyze GNSS data efficiently, making it easier to interpret and manage the information contained in RINEX files.</li>
+</ul>
+</li>
+</ol>
+<h4 id="examples"><a class="header" href="#examples">Examples:</a></h4>
+<ol>
+<li>Merging files</li>
+</ol>
+<pre><code>from rinexpy import merge_files
+
+# Merge multiple RINEX files into a single output
+merged_file = merge_files(['file1.rnx', 'file2.rnx'], output='merged_output.rnx')
+
+# Edit RINEX file: Change data interval and include only specific satellites
+edited_file = merge_files(
+    ['file1.rnx'],
+    output='edited_output.rnx',
+    interval=30,  # Change data interval to 30 seconds
+    include_sats=['G01', 'G02']  # Include only satellites G01 and G02
+)
+
+</code></pre>
+<ol start="2">
+<li>Correcting clock jumps</li>
+</ol>
+<pre><code>from rinexpy import correct_clock_jumps
+# Automatically detect and correct clock jumps in a RINEX file
+corrected_file = correct_clock_jumps('input_file.rnx', output='corrected_output.rnx')
+</code></pre>
+<ol start="3">
+<li>Ionospheric correction</li>
+</ol>
+<pre><code>from rinexpy import ionospheric_correction
+
+# Apply higher-order ionospheric corrections to a RINEX file
+corrected_file = ionospheric_correction('input_file.rnx', output='corrected_output.rnx')
+</code></pre>
+<ol start="4">
+<li>File Format Conversion - BINEX, RTCM, etc</li>
+</ol>
+<pre><code>from rinexpy import convert_to_rinex
+
+# Convert a BINEX file to RINEX format
+rinex_file = convert_to_rinex('input_file.binex', output='output_file.rnx')
+
+# Convert an RTCM file to RINEX format
+rinex_file = convert_to_rinex('input_file.rtcm', output='output_file.rnx')
+</code></pre>
+<ol start="5">
+<li>RINEX viewer (Georinex call)</li>
+</ol>
+<pre><code>from rinexpy import view_rinex # Soft Georinex call, output as interactive Matplotlib figure
+
+# Launch an interactive viewer for a RINEX file
+view_rinex('input_file.rnx')
+</code></pre>
+<h3 id="4-analysis"><a class="header" href="#4-analysis">4. Analysis</a></h3>
+<h4 id="1-cycle-slip-correction"><a class="header" href="#1-cycle-slip-correction">1. Cycle slip correction</a></h4>
+<p>We design machine learning models for cycle slip correction. These are better than the heuristic 'stiching' process that may remove important TEC jumps that could identify an ionospheric phenomenon.</p>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/cycleslipexample.png" alt="Cycle Slip" width="600" height="500">
+</div>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/bigvtec.png" alt="Practical Applications">
+</div>
+<p>The technique used is <strong>LSTM-based autoencoders</strong>, for several reasons.</p>
+<ul>
+<li>The Poker Flat setups are the same receiver in roughly the same area, so we are justified in using LSTM-based autoencoders for this.</li>
+<li>Under the assumptions that the internals of Pixel phones suffer roughly the same wear-and-tear, autoencoders are straightforward to deploy on Sagemaker and call for inference. We are looking into making cycle slip correction on-device using heuristic algorithms, but for large data, <strong>minimal scalloping</strong> and autoencoders are used. Caveat: we are still in the modeling stage because of the temperature dependence of recorded pseudorange on GNSS noise.</li>
+</ul>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/lstmgraphs.png" alt="LSTM">
+</div>
+<p>We also account for <strong>multipath noise</strong>, <strong>temperature noise</strong> (Rideout and Coster), <strong>propagation errors</strong>, <strong>ionospheric delays</strong>, and utilize <strong>precise point positioning</strong> to estimate slant TEC as accurately as possible.</p>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/SNR_GPS_S1C.png" alt="SNR Graph">
+</div>
+<div class="table-wrapper"><table><thead><tr><th><strong>LSTM-Based autoencoder metric</strong></th><th><strong>Low Power Receiver</strong></th><th><strong>High Power Receiver</strong></th></tr></thead><tbody>
+<tr><td><strong>Training Time (Wall-clock)</strong></td><td>18 hours</td><td>10 hours</td></tr>
+<tr><td><strong>Inference time (Wall-clock)</strong></td><td>~3 seconds</td><td>~3 seconds</td></tr>
+<tr><td><strong>Memory Usage</strong></td><td>13.5 GB</td><td>27 GB</td></tr>
+<tr><td><strong>GPU Utilization</strong></td><td>60%</td><td>80%</td></tr>
+<tr><td><strong>Disk I/O</strong></td><td>100 MB/s</td><td>200 MB/s</td></tr>
+<tr><td><strong>Network Bandwidth</strong></td><td>30 MB/s</td><td>80 MB/s</td></tr>
+<tr><td><strong>Model Size</strong></td><td>247 MB</td><td>332 MB</td></tr>
+</tbody></table>
+</div>
+<h4 id="2-environmental-conditions"><a class="header" href="#2-environmental-conditions">2. Environmental conditions</a></h4>
+<ol>
+<li>If a receiver fails, we use <strong>2-layer Gaussian process regression</strong> in order to estimate what readings of that receiver using receivers nearby. This is scalable but computationally expensive. We also use ConvLSTM fore long-time forecasting, but are looking to move to nowcasting.</li>
+</ol>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/convlstm1.jpg" alt="ConvlSTM-1">
+</div>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/convlstm2.jpg" alt="ConvLSTM-2">
+</div>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/convlstm3.jpg" alt="ConvLSTM-3">
+</div>
+<ol start="2">
+<li>Denoising technique: Assuming a zero-mean non-temperature-dependent noise, we do quick denoising with Haar coefficients on-device with the Raspberry Pi 4 Model B.</li>
+</ol>
+<h4 id="3-predictive-maintenence"><a class="header" href="#3-predictive-maintenence">3. Predictive maintenence:</a></h4>
+<p>We have continuous monitoring stations set up and collect the following data per station:</p>
+<div class="table-wrapper"><table><thead><tr><th><strong>Column Name</strong></th><th><strong>Description</strong></th><th><strong>Frequency</strong></th></tr></thead><tbody>
+<tr><td><code>Receiver_ID</code></td><td>Unique identifier for each GNSS receiver</td><td>Static</td></tr>
+<tr><td><code>Location</code></td><td>Latitude and Longitude coordinates of the receiver</td><td>Static</td></tr>
+<tr><td><code>Installation_Date</code></td><td>Date when the receiver was installed</td><td>Static</td></tr>
+<tr><td><code>Manufacturer</code></td><td>The manufacturer of the GNSS receiver</td><td>Static</td></tr>
+<tr><td><code>Model</code></td><td>Specific model of the GNSS receiver</td><td>Static</td></tr>
+<tr><td><code>Firmware_Version</code></td><td>Firmware version currently running on the receiver</td><td>Static/As Updated</td></tr>
+<tr><td><code>Maintenance_Date</code></td><td>Date of the last maintenance check</td><td>As Updated</td></tr>
+<tr><td><code>Temperature_C</code></td><td>Recorded temperature at the receiver location (in Celsius)</td><td>Hourly</td></tr>
+<tr><td><code>Humidity_%</code></td><td>Relative humidity at the receiver location (as a percentage)</td><td>Hourly</td></tr>
+<tr><td><code>Precipitation_mm</code></td><td>Amount of precipitation (in millimeters)</td><td>Hourly</td></tr>
+<tr><td><code>Wind_Speed_kmh</code></td><td>Wind speed at the receiver location (in km/h)</td><td>Hourly</td></tr>
+<tr><td><code>Solar_Radiation_Wm2</code></td><td>Solar radiation at the receiver location (in W/m²)</td><td>Hourly</td></tr>
+<tr><td><code>Signal_Strength_dB</code></td><td>Signal strength received by the GNSS receiver (in dB)</td><td>Receiver Frequency</td></tr>
+<tr><td><code>SNR_dB</code></td><td>Signal-to-noise ratio (in dB)</td><td>Receiver Frequency</td></tr>
+<tr><td><code>Number_of_Satellites</code></td><td>Number of satellites in view</td><td>Receiver Frequency</td></tr>
+<tr><td><code>PDOP</code></td><td>Position Dilution of Precision</td><td>Receiver Frequency</td></tr>
+<tr><td><code>HDOP</code></td><td>Horizontal Dilution of Precision</td><td>Receiver Frequency</td></tr>
+<tr><td><code>VDOP</code></td><td>Vertical Dilution of Precision</td><td>Receiver Frequency</td></tr>
+<tr><td><code>Correction_Latency_s</code></td><td>Time delay in the correction signal (in seconds)</td><td>Receiver Frequency</td></tr>
+<tr><td><code>Correction_Availability_%</code></td><td>Percentage of time correction data is available</td><td>Receiver Frequency</td></tr>
+<tr><td><code>Uptime_Hours</code></td><td>Total uptime of the receiver (in hours)</td><td>Daily</td></tr>
+<tr><td><code>Downtime_Hours</code></td><td>Total downtime of the receiver (in hours)</td><td>Daily</td></tr>
+<tr><td><code>Power_Consumption_W</code></td><td>Power consumption of the receiver (in watts)</td><td>Hourly</td></tr>
+<tr><td><code>Battery_Voltage_V</code></td><td>Battery voltage level (if applicable)</td><td>Hourly</td></tr>
+<tr><td><code>Internal_Temperature_C</code></td><td>Internal temperature of the GNSS receiver (in Celsius)</td><td>Hourly</td></tr>
+<tr><td><code>Error_Count</code></td><td>Total number of errors logged</td><td>As Occurred/Daily</td></tr>
+<tr><td><code>Warning_Count</code></td><td>Total number of warnings logged</td><td>As Occurred/Daily</td></tr>
+<tr><td><code>Reboot_Count</code></td><td>Number of reboots the receiver has undergone</td><td>As Occurred</td></tr>
+<tr><td><code>Last_Error_Code</code></td><td>Code of the last error encountered</td><td>As Occurred</td></tr>
+<tr><td><code>Maintenance_Flag</code></td><td>Boolean flag indicating whether maintenance is required</td><td>Daily/As Updated</td></tr>
+<tr><td><code>Nearby_Interference_Sources</code></td><td>Number of known interference sources near the receiver</td><td>Daily/As Updated</td></tr>
+<tr><td><code>Distance_to_Base_Station_km</code></td><td>Distance to the nearest base station (in kilometers)</td><td>Static</td></tr>
+<tr><td><code>Antenna_Condition</code></td><td>Condition of the antenna (e.g., "Good," "Needs Replacement")</td><td>As Updated</td></tr>
+<tr><td><code>Failed</code></td><td>Boolean</td><td>Set to 1 if no response for 24 hours</td></tr>
+</tbody></table>
+</div>
+<ol>
+<li><strong>Time-series classification</strong>: How does TEC change during an auroral event?</li>
+</ol>
+<div style="text-align: center;">
+<video  controls>
+  <source src="images/timeseriesanalysis/tecexample.mp4" type="video/mp4">
+</video>
+</div>
+<p>Given a dataset of time-series TEC curves at some frequencies, we want to classify them to make an <strong>early-warning system</strong> for auroral events (so citizen scientists can go out and take photographs!)</p>
+<p>You can probe ionospheric conditions (such as from DMSP) and get extra time series, as shown.</p>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/DMSP.png" alt="DMSP">
+</div>
+<p>a. To classify phenomena, we use two separate models. First, the method for auroral phenomenon identification.</p>
+<p><strong>Method</strong>:</p>
+<ul>
+<li>Use 1D CNN to just raw TEC changes as STEVE, SAPS, SAID, Discrete Aurora, Continuous Aurora, etc.</li>
+<li>Analyze satellite flyby data in order to see what ionospheric, magnetospheric, and thermospheric parameters change in that time period (use CNN for this, but we are testing VLM finetuning), and if the event is classified into two classes by two different models, then this is a warning event.</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th><strong>Metric</strong></th><th><strong>1-D CNN</strong></th><th><strong>Description</strong></th></tr></thead><tbody>
+<tr><td><strong>Accuracy</strong></td><td>0.88</td><td>Solid overall correctness, but room for improvement.</td></tr>
+<tr><td><strong>Precision</strong></td><td>0.85</td><td>Decent true positive rate out of all positive predictions.</td></tr>
+<tr><td><strong>Recall</strong></td><td>0.82</td><td>Good true positive rate, but some false negatives.</td></tr>
+<tr><td><strong>F1 Score</strong></td><td>0.83</td><td>Balanced precision and recall; slight drop in handling imbalanced classes.</td></tr>
+<tr><td><strong>AUC - ROC</strong></td><td>0.89</td><td>Good area under the ROC curve, decent class distinction.</td></tr>
+<tr><td><strong>Confusion Matrix</strong></td><td>Mostly high diagonal values</td><td>Most predictions are correct, but some off-diagonal errors exist.</td></tr>
+<tr><td><strong>Log Loss</strong></td><td>0.35</td><td>Moderate cross-entropy loss; predictions could be more confident.</td></tr>
+<tr><td><strong>Balanced Accuracy</strong></td><td>0.86</td><td>Good average recall across classes; some class imbalance issues.</td></tr>
+<tr><td><strong>Cohen’s Kappa</strong></td><td>0.75</td><td>Moderate agreement between predictions and actual classes.</td></tr>
+<tr><td><strong>MCC (Matthews Correlation Coefficient)</strong></td><td>0.72</td><td>Decent performance, some challenges with imbalanced classes.</td></tr>
+<tr><td><strong>Top-k Accuracy</strong></td><td>0.94 for k=3</td><td>High chance of true label being among top 3, but not perfect.</td></tr>
+<tr><td><strong>Mean Per-Class Error</strong></td><td>0.12</td><td>Acceptable error rate across classes, but some inconsistency.</td></tr>
+<tr><td><strong>Time-to-Inference</strong></td><td>~18s</td><td>Adequate prediction time, could be optimized for real-time applications.</td></tr>
+</tbody></table>
+</div>
+<p>b. Predictive Maintence:
+We use <strong>MINIROCKET</strong> for classification, but are actively refining this - we run into a data collection problem. We are now moving onto Bayesian modeling and predictive programming, with isolation forests.</p>
+<div class="table-wrapper"><table><thead><tr><th><strong>Metric</strong></th><th><strong>miniROCKET’s Value</strong></th><th><strong>Description</strong></th></tr></thead><tbody>
+<tr><td><strong>Accuracy</strong></td><td>0.82</td><td>Good overall correctness, but lower than more complex models.</td></tr>
+<tr><td><strong>Precision</strong></td><td>0.80</td><td>Reasonable true positive rate, with some false positives.</td></tr>
+<tr><td><strong>Recall</strong></td><td>0.78</td><td>Adequate true positive rate, with more false negatives than desired.</td></tr>
+<tr><td><strong>F1 Score</strong></td><td>0.79</td><td>Balanced performance between precision and recall, with noticeable trade-offs.</td></tr>
+<tr><td><strong>AUC - ROC</strong></td><td>0.78</td><td>Decent area under the ROC curve, with good but not exceptional class distinction.</td></tr>
+<tr><td><strong>Confusion Matrix</strong></td><td>Moderate diagonal values</td><td>Correct predictions for the most part, but more off-diagonal errors present.</td></tr>
+<tr><td><strong>Log Loss</strong></td><td>0.45</td><td>Higher cross-entropy loss, indicating less confident predictions.</td></tr>
+<tr><td><strong>Balanced Accuracy</strong></td><td>0.80</td><td>Average recall for classes shows room for improvement, especially with imbalance.</td></tr>
+<tr><td><strong>Cohen’s Kappa</strong></td><td>0.70</td><td>Moderate agreement, but a noticeable decline compared to stronger models.</td></tr>
+<tr><td><strong>MCC (Matthews Correlation Coefficient)</strong></td><td>0.68</td><td>Acceptable classification performance, but struggles more with imbalanced data.</td></tr>
+<tr><td><strong>Top-k Accuracy</strong></td><td>0.90 for k=3</td><td>Decent chance of true label being in the top 3, but not as strong as better models.</td></tr>
+<tr><td><strong>Mean Per-Class Error</strong></td><td>0.15</td><td>Higher error rate across classes, indicating inconsistency.</td></tr>
+<tr><td><strong>Time-to-Inference</strong></td><td>~5ms</td><td>Faster prediction time, a significant advantage in real-time applications.</td></tr>
+</tbody></table>
+</div>
+<p>c. Forecasting</p>
+<p>We test Lag-LLaMa, a foundational time-series model for predicting future environmental parameters, but this is still in the very early stage.</p>
+<h4 id="steve"><a class="header" href="#steve">STEVE</a></h4>
+<div style="text-align: center;">
+<img src="images/timeseriesanalysis/steve.avif" alt="STEVE">
+</div>
+<h1 id="miscellaneous"><a class="header" href="#miscellaneous">Miscellaneous</a></h1>
+<h2 id="computer-vision-algorithms-used"><a class="header" href="#computer-vision-algorithms-used">Computer Vision algorithms used:</a></h2>
+<p>We use Max-Tree for faint phenomenon identification, active learning, monocular depth estimation (Depth Prediction Transformers), and Open Set recognition to identify STEVE in citizen science images.</p>
+<p>The clustering model developed was to classify all-sky images of aurora  - using ResNet-18 to extract features, used PCA to reduce dimensionality, and K-Means++ to cluster. Achieved silhouette score of 0.7, Davies-Bouldin index of 0.9, Calinski-Harabase index of 256 indicating high-quality cluster separation, and better separation between clusters.</p>
+<h2 id="life-on-mars"><a class="header" href="#life-on-mars">Life on Mars</a></h2>
+<p>Generated TEC maps from MARSIS data by modeling with two-layer Chapman functions for Martian ionosphere. Used VISTA to reconstruct (in 3D), 3d volumes of maps. Auxiliary guess was made using natural pixel decomposition, where the 3d structure estimated with tomography. Specifically, it is modeled as a Fredkin integral of the first kind and pLogMART is used as the matrix inversion algorithm. Simulated GPS propagation through it</p>
+<<<<<<< HEAD
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="test.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="test.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="test.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="test.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
+=======
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="test2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="test2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+        <!-- Custom JavaScript to reset chapter numbers -->
+        <script>
+            (function customizeChapterNumbers() {
+                function resetChapterNumbers() {
+                    const sidebar = document.querySelector('#sidebar .sidebar-scrollbox');
+                    if (!sidebar) {
+                        console.log('Sidebar not found.');
+                        return;
+                    }
+
+                    let chapterCounter = 0;  // Counter for main chapters
+                    let subChapterCounter = 0;  // Counter for subchapters
+
+                    sidebar.querySelectorAll('ol.chapter > li').forEach((item) => {
+                        const partTitle = item.classList.contains('part-title');
+                        const chapterLink = item.querySelector('a');
+
+                        if (partTitle) {
+                            // Reset chapter counter for each new section
+                            chapterCounter = 0;
+                            console.log(`New section found: ${item.textContent.trim()}, resetting chapter counter.`);
+                        } else if (chapterLink) {
+                            // Determine if it's a main chapter or a subchapter
+                            const isSubChapter = item.querySelector('ol.section');
+
+                            if (!isSubChapter) {
+                                // It's a main chapter
+                                chapterCounter++;    // Increment main chapter counter
+                                subChapterCounter = 0;  // Reset subchapter counter for each new chapter
+                                const chapterNumber = `${chapterCounter}`;
+                                const strongElem = chapterLink.querySelector('strong');
+                                if (strongElem) {
+                                    console.log(`Setting chapter number: ${chapterNumber} for chapter ${chapterLink.textContent.trim()}`);
+                                    strongElem.textContent = `${chapterNumber}. `;
+                                }
+                            } else {
+                                // It's a subchapter
+                                subChapterCounter++;
+                                const chapterNumber = `${chapterCounter}`;
+                                const subChapterNumber = `${chapterNumber}.${subChapterCounter}`;
+                                const strongElem = chapterLink.querySelector('strong');
+                                if (strongElem) {
+                                    console.log(`Setting subchapter number: ${subChapterNumber} for chapter ${chapterLink.textContent.trim()}`);
+                                    strongElem.textContent = `${subChapterNumber}. `;
+                                }
+                            }
+                        }
+                    });
+                }
+
+                document.addEventListener('DOMContentLoaded', resetChapterNumbers);
+            })();
+        </script>
+
+    </div>
+    </body>
+</html>
+>>>>>>> 67fa202 (new access token)

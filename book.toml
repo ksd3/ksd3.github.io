@@ -1,0 +1,11 @@
+[book]
+authors = []
+language = "en"
+multilingual = false
+src = "src"
+
+[output.html]
+additional-css = ["src/customcss/header.css"]
+default-theme = "rust"
+mathjax-support = true
+preferred-dark-theme="rust"
