@@ -8,4 +8,4 @@
 - [Writing](./writing.md)
 
 # Semeter Lab
-- [Time Series](./outline.md)
+- [An overview of the work](./overview.md)
