@@ -6,11 +6,6 @@
 
 - [Courses I've taken at BU](./courses.md)
 - [Writing](./writing.md)
-<<<<<<< HEAD
-=======
-    - [Test](./test.md)
-        - [Test](./test2.md)
->>>>>>> 67fa202 (new access token)
 
 # Semeter Lab
 - [Time Series](./outline.md)

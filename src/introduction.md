@@ -27,7 +27,9 @@ I can be emailed at kshitijd [at] bu.edu. Inspired by [Piotr Teterwak](https://c
 
 # My interests
 
-I'm broadly interested in astrophysics and currently studying the application of inverse methods to astrophysical phenomena. I hope to branch out into more applied [SciML](https://sciml.ai/) and develop faster and more reliable methods to understand these phenomena.
+On the theory side, I'm broadly interested in astrophysics and currently studying the application of inverse methods to astrophysical phenomena. I hope to branch out into more applied [SciML](https://sciml.ai/) and develop faster and more reliable methods to understand these phenomena.
+
+On the practical side, I'm interested in developing fast, efficient, and scalable multimodal signal and image processing systems to solve engineering problems in unstructured, noisy, and sparse scenarios. 
 
 
 # Some things I've worked on
