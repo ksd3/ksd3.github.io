@@ -271,9 +271,8 @@ While the subject itself is not necessarily difficult, the instructor (Luca Dal 
 <li><a href="overview.html#data-processing">Data Processing</a>
 <ul>
 <li><a href="overview.html#1-ionospheric-assumption-validation">Ionospheric Assumption Validation</a></li>
-<li><a href="overview.html#2-main-ionospheric-trough-identification">Main Ionospheric Trough Identification</a></li>
-<li><a href="overview.html#3-rinex-conversion">RINEX conversion</a></li>
-<li><a href="overview.html#4-analysis">Analysis</a></li>
+<li><a href="overview.html#2-rinex-conversion">RINEX conversion</a></li>
+<li><a href="overview.html#3-analysis">Analysis</a></li>
 </ul>
 </li>
 </ul>
@@ -287,33 +286,7 @@ While the subject itself is not necessarily difficult, the instructor (Luca Dal 
 <img src="images/timeseriesanalysis/vista.webp" alt="VISTA" width="600" height="300">
 </div>
 <p>The assumption is (somewhat) invalid during solar storms, geophysical storms, magnetic reconnection with solar winds, coronal mass ejections, and so on.</p>
-<h3 id="2-main-ionospheric-trough-identification"><a class="header" href="#2-main-ionospheric-trough-identification">2. Main Ionospheric Trough Identification</a></h3>
-<p>The Main Ionospheric Trough (MIT)</p>
-<div style="text-align: center;">
-<img src="images/timeseriesanalysis/trough-1.jpg" alt="Trough-2" width="600" height="300">
-</div>
-<h4 id="characteristics-of-the-mit"><a class="header" href="#characteristics-of-the-mit">Characteristics of the MIT:</a></h4>
-<ol>
-<li>Low density arc-shaped trough whose formation is unknown.</li>
-<li>Forms at night due to depletion in the F-region, but it is unknown why.</li>
-<li>To identify it, we use global TEC data from the Madrigal database and use computer vision to identify it in spatiotemporal maps.</li>
-</ol>
-<h4 id="technique-to-identify-the-trough"><a class="header" href="#technique-to-identify-the-trough">Technique to identify the trough:</a></h4>
-<ol>
-<li>Grid TEC observations (1° x 1°) and smooth with averaging. (Practically, download ~50GB of data from Madrigal, store in AWS S3, chunk when using Lambda, run computations with h5py and scientific libraries on EC2 instances, and use Amazon Glue to process things with PySpark/Apache, then grid and smooth). <strong>Problems faced:</strong> Uneven distribution along longitude and frequency analysis not possible.</li>
-<li><strong>Preprocess</strong>: Discard negative values, estimate background with sliding windows to filter out diurnal/seasonal trends. Scaling up (with the proposed network) would allow implementation of band pass filters at higher resolution.</li>
-<li><strong>Scoring</strong>: Set up the inverse problem. Assume each preprocessed image is a linear combination of Gaussian RBFs and the weights are the image score values. The $n^{th}$ image is assumed to be $-A_n u_n+\epsilon_n$, where $u_n$ is the image we want, $A_n$ (after removing the basis columns) is a matrix with RBFs centered on the pixels of the grid, and there is some noise. We minimize the resultant image  $$u_n^* = \arg\min_{u_n} x_n^T A_n u_n + \alpha |W_n u_n|_2^2 + \beta R(u_n)$$. Here $x_n$ is the $n^{th}$ preprocessed image. You have standard regularizers and total variance denoising at the end.</li>
-<li><strong>Postprocess and verify</strong>: After this, we apply a combination of dilation and erosion to get the MIT. This is a no-ground-truth problem, so we have to compare with readings from local receivers to see if the structure exists.</li>
-</ol>
-<div style="text-align: center;">
-<img src="images/timeseriesanalysis/trough-2.jpg" alt="Trough-2" width="600" height="500">
-</div>
-<div class="table-wrapper"><table><thead><tr><th><strong>Metric</strong></th><th><strong>Value for n=10,000</strong></th><th><strong>Value for n=100,000</strong></th></tr></thead><tbody>
-<tr><td><strong>Execution Time (Wall-clock)</strong></td><td>8 hours</td><td>5 days ms</td></tr>
-<tr><td><strong>Memory Usage</strong></td><td>22 GB</td><td>348GB</td></tr>
-</tbody></table>
-</div>
-<h3 id="3-rinex-conversion"><a class="header" href="#3-rinex-conversion">3. RINEX conversion</a></h3>
+<h3 id="2-rinex-conversion"><a class="header" href="#2-rinex-conversion">2. RINEX conversion</a></h3>
 <p>Developed an internal Python package named <code>rinexpy</code> - looking to merge with <code>georinex</code>:</p>
 <h4 id="rinexpy-operations"><a class="header" href="#rinexpy-operations">rinexpy Operations</a></h4>
 <ol>
@@ -421,16 +394,6 @@ view_rinex('input_file.rnx')
 <div style="text-align: center;">
 <img src="images/timeseriesanalysis/SNR_GPS_S1C.png" alt="SNR Graph">
 </div>
-<div class="table-wrapper"><table><thead><tr><th><strong>LSTM-Based autoencoder metric</strong></th><th><strong>Low Power Receiver</strong></th><th><strong>High Power Receiver</strong></th></tr></thead><tbody>
-<tr><td><strong>Training Time (Wall-clock)</strong></td><td>18 hours</td><td>10 hours</td></tr>
-<tr><td><strong>Inference time (Wall-clock)</strong></td><td>~3 seconds</td><td>~3 seconds</td></tr>
-<tr><td><strong>Memory Usage</strong></td><td>13.5 GB</td><td>27 GB</td></tr>
-<tr><td><strong>GPU Utilization</strong></td><td>60%</td><td>80%</td></tr>
-<tr><td><strong>Disk I/O</strong></td><td>100 MB/s</td><td>200 MB/s</td></tr>
-<tr><td><strong>Network Bandwidth</strong></td><td>30 MB/s</td><td>80 MB/s</td></tr>
-<tr><td><strong>Model Size</strong></td><td>247 MB</td><td>332 MB</td></tr>
-</tbody></table>
-</div>
 <ol>
 <li><strong>Time-series classification</strong>: How does TEC change during an auroral event?</li>
 </ol>
@@ -447,49 +410,9 @@ view_rinex('input_file.rnx')
 <p>a. To classify phenomena, we use two separate models. First, the method for auroral phenomenon identification.</p>
 <p><strong>Method</strong>:</p>
 <ul>
-<li>Use 1D CNN to just raw TEC changes as STEVE, SAPS, SAID, Discrete Aurora, Continuous Aurora, etc.</li>
-<li>Analyze satellite flyby data in order to see what ionospheric, magnetospheric, and thermospheric parameters change in that time period (use CNN for this, but we are testing VLM finetuning), and if the event is classified into two classes by two different models, then this is a warning event.</li>
+<li>Use 1D CNN to classify raw TEC changes as STEVE, SAPS, SAID, Discrete Aurora, Continuous Aurora, etc.</li>
+<li>Analyze satellite flyby data in order to see what ionospheric, magnetospheric, and thermospheric parameters change in that time period, and if the event is classified into two classes by two different models, then this is a warning event.</li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th><strong>Metric</strong></th><th><strong>1-D CNN</strong></th><th><strong>Description</strong></th></tr></thead><tbody>
-<tr><td><strong>Accuracy</strong></td><td>0.88</td><td>Solid overall correctness, but room for improvement.</td></tr>
-<tr><td><strong>Precision</strong></td><td>0.85</td><td>Decent true positive rate out of all positive predictions.</td></tr>
-<tr><td><strong>Recall</strong></td><td>0.82</td><td>Good true positive rate, but some false negatives.</td></tr>
-<tr><td><strong>F1 Score</strong></td><td>0.83</td><td>Balanced precision and recall; slight drop in handling imbalanced classes.</td></tr>
-<tr><td><strong>AUC - ROC</strong></td><td>0.89</td><td>Good area under the ROC curve, decent class distinction.</td></tr>
-<tr><td><strong>Confusion Matrix</strong></td><td>Mostly high diagonal values</td><td>Most predictions are correct, but some off-diagonal errors exist.</td></tr>
-<tr><td><strong>Log Loss</strong></td><td>0.35</td><td>Moderate cross-entropy loss; predictions could be more confident.</td></tr>
-<tr><td><strong>Balanced Accuracy</strong></td><td>0.86</td><td>Good average recall across classes; some class imbalance issues.</td></tr>
-<tr><td><strong>Cohen’s Kappa</strong></td><td>0.75</td><td>Moderate agreement between predictions and actual classes.</td></tr>
-<tr><td><strong>MCC (Matthews Correlation Coefficient)</strong></td><td>0.72</td><td>Decent performance, some challenges with imbalanced classes.</td></tr>
-<tr><td><strong>Top-k Accuracy</strong></td><td>0.94 for k=3</td><td>High chance of true label being among top 3, but not perfect.</td></tr>
-<tr><td><strong>Mean Per-Class Error</strong></td><td>0.12</td><td>Acceptable error rate across classes, but some inconsistency.</td></tr>
-<tr><td><strong>Time-to-Inference</strong></td><td>~18s</td><td>Adequate prediction time, could be optimized for real-time applications.</td></tr>
-</tbody></table>
-</div>
-<p>b. Predictive Maintence:
-We use <strong>MINIROCKET</strong> for classification, but are actively refining this - we run into a data collection problem. We are now moving onto Bayesian modeling and predictive programming, with isolation forests.</p>
-<div class="table-wrapper"><table><thead><tr><th><strong>Metric</strong></th><th><strong>miniROCKET’s Value</strong></th><th><strong>Description</strong></th></tr></thead><tbody>
-<tr><td><strong>Accuracy</strong></td><td>0.82</td><td>Good overall correctness, but lower than more complex models.</td></tr>
-<tr><td><strong>Precision</strong></td><td>0.80</td><td>Reasonable true positive rate, with some false positives.</td></tr>
-<tr><td><strong>Recall</strong></td><td>0.78</td><td>Adequate true positive rate, with more false negatives than desired.</td></tr>
-<tr><td><strong>F1 Score</strong></td><td>0.79</td><td>Balanced performance between precision and recall, with noticeable trade-offs.</td></tr>
-<tr><td><strong>AUC - ROC</strong></td><td>0.78</td><td>Decent area under the ROC curve, with good but not exceptional class distinction.</td></tr>
-<tr><td><strong>Confusion Matrix</strong></td><td>Moderate diagonal values</td><td>Correct predictions for the most part, but more off-diagonal errors present.</td></tr>
-<tr><td><strong>Log Loss</strong></td><td>0.45</td><td>Higher cross-entropy loss, indicating less confident predictions.</td></tr>
-<tr><td><strong>Balanced Accuracy</strong></td><td>0.80</td><td>Average recall for classes shows room for improvement, especially with imbalance.</td></tr>
-<tr><td><strong>Cohen’s Kappa</strong></td><td>0.70</td><td>Moderate agreement, but a noticeable decline compared to stronger models.</td></tr>
-<tr><td><strong>MCC (Matthews Correlation Coefficient)</strong></td><td>0.68</td><td>Acceptable classification performance, but struggles more with imbalanced data.</td></tr>
-<tr><td><strong>Top-k Accuracy</strong></td><td>0.90 for k=3</td><td>Decent chance of true label being in the top 3, but not as strong as better models.</td></tr>
-<tr><td><strong>Mean Per-Class Error</strong></td><td>0.15</td><td>Higher error rate across classes, indicating inconsistency.</td></tr>
-<tr><td><strong>Time-to-Inference</strong></td><td>~5ms</td><td>Faster prediction time, a significant advantage in real-time applications.</td></tr>
-</tbody></table>
-</div>
-<p>c. Forecasting</p>
-<p>We test Lag-LLaMa, a foundational time-series model for predicting future environmental parameters, but this is still in the very early stage.</p>
-<h4 id="steve"><a class="header" href="#steve">STEVE</a></h4>
-<div style="text-align: center;">
-<img src="images/timeseriesanalysis/steve.avif" alt="STEVE">
-</div>
 <h1 id="miscellaneous-1"><a class="header" href="#miscellaneous-1">Miscellaneous</a></h1>
 <h2 id="computer-vision-algorithms-used"><a class="header" href="#computer-vision-algorithms-used">Computer Vision algorithms used:</a></h2>
 <p>We use Max-Tree for faint phenomenon identification, active learning, monocular depth estimation (Depth Prediction Transformers), and Open Set recognition to identify STEVE in citizen science images.</p>
