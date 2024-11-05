@@ -3,9 +3,8 @@
 1. [Algorithms](#algorithms)
     - [Data Processing](#data-processing)
         - [Ionospheric Assumption Validation](#1-ionospheric-assumption-validation)
-        - [Main Ionospheric Trough Identification](#2-main-ionospheric-trough-identification)
-        - [RINEX conversion](#3-rinex-conversion)
-        - [Analysis](#4-analysis)
+        - [RINEX conversion](#2-rinex-conversion)
+        - [Analysis](#3-analysis)
 
 
 # Algorithms
@@ -21,37 +20,7 @@ For speed of computation, we use **fast 2d and 3d natural neighbors interpolatio
 
 The assumption is (somewhat) invalid during solar storms, geophysical storms, magnetic reconnection with solar winds, coronal mass ejections, and so on.
 
-### 2. Main Ionospheric Trough Identification
-
-The Main Ionospheric Trough (MIT)
-<div style="text-align: center;">
-<img src="images/timeseriesanalysis/trough-1.jpg" alt="Trough-2" width="600" height="300">
-</div>
-
-#### Characteristics of the MIT:
-
-1. Low density arc-shaped trough whose formation is unknown.
-2. Forms at night due to depletion in the F-region, but it is unknown why.
-3. To identify it, we use global TEC data from the Madrigal database and use computer vision to identify it in spatiotemporal maps.
-
-#### Technique to identify the trough:
-
-1. Grid TEC observations (1° x 1°) and smooth with averaging. (Practically, download ~50GB of data from Madrigal, store in AWS S3, chunk when using Lambda, run computations with h5py and scientific libraries on EC2 instances, and use Amazon Glue to process things with PySpark/Apache, then grid and smooth). **Problems faced:** Uneven distribution along longitude and frequency analysis not possible.
-2. **Preprocess**: Discard negative values, estimate background with sliding windows to filter out diurnal/seasonal trends. Scaling up (with the proposed network) would allow implementation of band pass filters at higher resolution.
-3. **Scoring**: Set up the inverse problem. Assume each preprocessed image is a linear combination of Gaussian RBFs and the weights are the image score values. The $n^{th}$ image is assumed to be $-A_n u_n+\epsilon_n$, where $u_n$ is the image we want, $A_n$ (after removing the basis columns) is a matrix with RBFs centered on the pixels of the grid, and there is some noise. We minimize the resultant image  $$u_n^* = \arg\min_{u_n} x_n^T A_n u_n + \alpha \|W_n u_n\|_2^2 + \beta R(u_n)$$. Here $x_n$ is the $n^{th}$ preprocessed image. You have standard regularizers and total variance denoising at the end.
-4. **Postprocess and verify**: After this, we apply a combination of dilation and erosion to get the MIT. This is a no-ground-truth problem, so we have to compare with readings from local receivers to see if the structure exists. 
-
-<div style="text-align: center;">
-<img src="images/timeseriesanalysis/trough-2.jpg" alt="Trough-2" width="600" height="500">
-</div>
-
-| **Metric**                      | **Value for n=10,000** | **Value for n=100,000** |
-|---------------------------------|------------------------|-------------------------|
-| **Execution Time (Wall-clock)** | 8 hours                 | 5 days ms                |            |
-| **Memory Usage**                | 22 GB                  | 348GB|
-
-
-### 3. RINEX conversion
+### 2. RINEX conversion
 
 Developed an internal Python package named `rinexpy` - looking to merge with ``georinex``:
 
@@ -146,16 +115,6 @@ We also account for **multipath noise**, **temperature noise** (Rideout and Cost
 <img src="images/timeseriesanalysis/SNR_GPS_S1C.png" alt="SNR Graph">
 </div>
 
-| **LSTM-Based autoencoder metric**                      | **Low Power Receiver** | **High Power Receiver** |
-|---------------------------------|------------------------|-------------------------|
-| **Training Time (Wall-clock)** | 18 hours               | 10 hours                |
-| **Inference time (Wall-clock)** | ~3 seconds               | ~3 seconds                |
-| **Memory Usage**                | 13.5 GB                  | 27 GB                   |
-| **GPU Utilization**             | 60%                    | 80%                     |
-| **Disk I/O**                    | 100 MB/s               | 200 MB/s                |
-| **Network Bandwidth**           | 30 MB/s                | 80 MB/s                 |
-| **Model Size**                  | 247 MB                 | 332 MB                  |
-
 
 1. **Time-series classification**: How does TEC change during an auroral event?
 <div style="text-align: center;">
@@ -174,55 +133,8 @@ You can probe ionospheric conditions (such as from DMSP) and get extra time seri
 a. To classify phenomena, we use two separate models. First, the method for auroral phenomenon identification.
 
 **Method**: 
-- Use 1D CNN to just raw TEC changes as STEVE, SAPS, SAID, Discrete Aurora, Continuous Aurora, etc.
-- Analyze satellite flyby data in order to see what ionospheric, magnetospheric, and thermospheric parameters change in that time period (use CNN for this, but we are testing VLM finetuning), and if the event is classified into two classes by two different models, then this is a warning event. 
-
-| **Metric**                | **1-D CNN**   | **Description**                                                                 |
-|---------------------------|--------------------------|---------------------------------------------------------------------------------|
-| **Accuracy**              | 0.88                     | Solid overall correctness, but room for improvement.                            |
-| **Precision**             | 0.85                     | Decent true positive rate out of all positive predictions.                      |
-| **Recall**                | 0.82                     | Good true positive rate, but some false negatives.                              |
-| **F1 Score**              | 0.83                     | Balanced precision and recall; slight drop in handling imbalanced classes.      |
-| **AUC - ROC**             | 0.89                     | Good area under the ROC curve, decent class distinction.                        |
-| **Confusion Matrix**      | Mostly high diagonal values | Most predictions are correct, but some off-diagonal errors exist.            |
-| **Log Loss**              | 0.35                     | Moderate cross-entropy loss; predictions could be more confident.               |
-| **Balanced Accuracy**     | 0.86                     | Good average recall across classes; some class imbalance issues.                |
-| **Cohen’s Kappa**         | 0.75                     | Moderate agreement between predictions and actual classes.                      |
-| **MCC (Matthews Correlation Coefficient)** | 0.72   | Decent performance, some challenges with imbalanced classes.                    |
-| **Top-k Accuracy**        | 0.94 for k=3             | High chance of true label being among top 3, but not perfect.                   |
-| **Mean Per-Class Error**  | 0.12                     | Acceptable error rate across classes, but some inconsistency.                   |
-| **Time-to-Inference**     | ~18s                    | Adequate prediction time, could be optimized for real-time applications.        |
-
-
-
-
-b. Predictive Maintence:
-We use **MINIROCKET** for classification, but are actively refining this - we run into a data collection problem. We are now moving onto Bayesian modeling and predictive programming, with isolation forests.  
-| **Metric**                | **miniROCKET’s Value**   | **Description**                                                                 |
-|---------------------------|--------------------------|---------------------------------------------------------------------------------|
-| **Accuracy**              | 0.82                     | Good overall correctness, but lower than more complex models.                   |
-| **Precision**             | 0.80                     | Reasonable true positive rate, with some false positives.                       |
-| **Recall**                | 0.78                     | Adequate true positive rate, with more false negatives than desired.            |
-| **F1 Score**              | 0.79                     | Balanced performance between precision and recall, with noticeable trade-offs.  |
-| **AUC - ROC**             | 0.78                     | Decent area under the ROC curve, with good but not exceptional class distinction.|
-| **Confusion Matrix**      | Moderate diagonal values | Correct predictions for the most part, but more off-diagonal errors present.    |
-| **Log Loss**              | 0.45                     | Higher cross-entropy loss, indicating less confident predictions.               |
-| **Balanced Accuracy**     | 0.80                     | Average recall for classes shows room for improvement, especially with imbalance.|
-| **Cohen’s Kappa**         | 0.70                     | Moderate agreement, but a noticeable decline compared to stronger models.       |
-| **MCC (Matthews Correlation Coefficient)** | 0.68   | Acceptable classification performance, but struggles more with imbalanced data. |
-| **Top-k Accuracy**        | 0.90 for k=3             | Decent chance of true label being in the top 3, but not as strong as better models.|
-| **Mean Per-Class Error**  | 0.15                     | Higher error rate across classes, indicating inconsistency.                     |
-| **Time-to-Inference**     | ~5ms                     | Faster prediction time, a significant advantage in real-time applications.      |
-
-
-c. Forecasting
-
-We test Lag-LLaMa, a foundational time-series model for predicting future environmental parameters, but this is still in the very early stage.
-
-#### STEVE
-<div style="text-align: center;">
-<img src="images/timeseriesanalysis/steve.avif" alt="STEVE">
-</div>
+- Use 1D CNN to classify raw TEC changes as STEVE, SAPS, SAID, Discrete Aurora, Continuous Aurora, etc.
+- Analyze satellite flyby data in order to see what ionospheric, magnetospheric, and thermospheric parameters change in that time period, and if the event is classified into two classes by two different models, then this is a warning event. 
 
 
 # Miscellaneous
