@@ -9,3 +9,6 @@ additional-css = ["src/customcss/header.css"]
 default-theme = "rust"
 mathjax-support = true
 preferred-dark-theme="rust"
+
+[preprocessor.katex]
+after = ["links"]
