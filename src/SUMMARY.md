@@ -6,6 +6,7 @@
 
 - [Courses I've taken at BU](./courses.md)
 - [Writing](./writing.md)
+    - [Transformers from scratch in numpy.](./transformers.md)
 
 # Semeter Lab
 - [An overview of the work](./overview.md)

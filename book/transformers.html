@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title></title>
-        <meta name="robots" content="noindex">
+        <title>Transformers from scratch in numpy.</title>
 
         <!-- Custom HTML head -->
         
@@ -91,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Miscellaenous</li><li class="chapter-item expanded "><a href="courses.html"><strong aria-hidden="true">1.</strong> Courses I've taken at BU</a></li><li class="chapter-item expanded "><a href="writing.html"><strong aria-hidden="true">2.</strong> Writing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="transformers.html"><strong aria-hidden="true">2.1.</strong> Transformers from scratch in numpy.</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Semeter Lab</li><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">3.</strong> An overview of the work</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Miscellaenous</li><li class="chapter-item expanded "><a href="courses.html"><strong aria-hidden="true">1.</strong> Courses I've taken at BU</a></li><li class="chapter-item expanded "><a href="writing.html"><strong aria-hidden="true">2.</strong> Writing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="transformers.html" class="active"><strong aria-hidden="true">2.1.</strong> Transformers from scratch in numpy.</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Semeter Lab</li><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">3.</strong> An overview of the work</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -176,95 +175,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="who-i-am"><a class="header" href="#who-i-am">Who I am</a></h1>
-<div style="display: flex; align-items: flex-start;">
-    <img src="images/profilepic.jpg" width="250px" style="margin-right: 10px;"/>
-    <div>
-        I'm <b>Kshitij</b>, a May 2024 graduate from <a href="https://bu.edu">Boston University's</a> Master of Electrical and Computer Engineering program. As a student, I <a href="introduction.html#STEVE-BU-work" title="Find out more here!">worked</a> in Boston University's <a href="https://heaviside.bu.edu">Space Physics Lab</a> from October 2022 to May 2024, advised by <a href="https://bu.edu/end/profile/joshua-semeter/">Joshua Semeter</a>. I also worked at the <a href="https://www.bu.edu/hic/">Hariri Center</a> for NASA's Life on Mars initiative, developing signal processing and machine learning techniques to analyze the Martian ionosphere and simulated GPS propagation through it. I worked in biomedical signal processing, designing fault-tolerent error-correcting noise-reduction algorithms and medical notification systems for low-cost ventilators in 2020. Previously, I was at <a href="https://www.coep.org.in>">COEP</a> from 2018-2022.
-    </div>
-</div>
-<h1 id="links"><a class="header" href="#links">Links</a></h1>
-<div style="display: flex; flex-wrap: wrap; padding: 20px 0;">
-    <div style="flex: 1; margin: 10px; min-width: 200px;">
-        <a href="https://drive.google.com/file/d/14u4rBxTna7pX-4f4Z5tI3BIp3KjaKwIr/view?usp=sharing" style="display: block; padding: 10px; margin-bottom: 10px; text-decoration: none; background-color: #f8f9fa; text-align: center; border: 1px solid #dee2e6; border-radius: 4px; transition: background-color 0.3s ease;">
-            My Resume
-        </a>
-        <a href="https://linkedin.com/in/kshitij-duraphe" style="display: block; padding: 10px; margin-bottom: 10px; text-decoration: none; background-color: #f8f9fa; text-align: center; border: 1px solid #dee2e6; border-radius: 4px; transition: background-color 0.3s ease;">
-            My LinkedIn
-        </a>
-        <a href="https://github.com/ksd3" style="display: block; padding: 10px; margin-bottom: 10px; text-decoration: none; background-color: #f8f9fa; text-align: center; border: 1px solid #dee2e6; border-radius: 4px; transition: background-color 0.3s ease;">
-            My GitHub
-        </a>
-    </div>
-</div>
-<h1 id="contact-me"><a class="header" href="#contact-me">Contact me</a></h1>
-<p>I can be emailed at kshitijd [at] bu.edu. Inspired by <a href="https://cs-people.bu.edu/piotrt/">Piotr Teterwak</a> I am available for "office hours" (online or through video conferencing) each week to talk about anything you like. I have gone through Masters admissions and the post-COVID US STEM job hunt, and also defended a thesis, so I have some perspective on that as well as graduate student life. Email me with the subject line "OFFICE HOURS" and give me a brief overview of what you want to talk about. Ideally you should be an undergraduate or new (US) Masters student in some field relevant to EECS, but I am happy to talk with new grads and high schoolers as well.</p>
-<h1 id="my-interests"><a class="header" href="#my-interests">My interests</a></h1>
-<p>On the theory side, I'm broadly interested in astrophysics and currently studying the application of inverse methods to astrophysical phenomena. I hope to branch out into more applied <a href="https://sciml.ai/">SciML</a> and develop faster and more reliable methods to understand these phenomena.</p>
-<p>On the practical side, I'm interested in developing fast, efficient, and scalable multimodal signal and image processing systems to solve engineering problems in unstructured, noisy, and sparse scenarios.</p>
-<h1 id="some-things-ive-worked-on"><a class="header" href="#some-things-ive-worked-on">Some things I've worked on</a></h1>
-<ol>
-<li><strong>(BU, 2022-2024):</strong> A variety of investigations into the <a href="https://en.wikipedia.org/wiki/STEVE">STEVE</a> phenomenon - fluid electrodynamic simulations, citizen science + scientific data-driven reconstruction, deep learning methods for automated detection systems. I defended a <a href="https://open.bu.edu/handle/2144/48878">Master's thesis</a> in April 2024 (Committee: <a href="">Joshua Semeter</a>, <a href="https://www.bu.edu/eng/profile/toshi-nishimura/">Yukitoshi Nishimura</a>, <a href="https://www.bu.edu/eng/profile/michael-hirsch/">Michael Hirsch</a>) on the latter two topics.</li>
-<li><strong>(BU, 2023):</strong> I worked on the NASA Life on Mars initiative at Hariri. I simulated EM propagation through Mars' ionosphere and developed models for detecting features on GNSS maps.</li>
-<li><strong>(BU, 2024):</strong> During the <a href="https://en.wikipedia.org/wiki/Solar_eclipse_of_April_8,_2024">April 8</a> full solar eclipse, the Semeter Lab members went around New England and into Canada to record GNSS data from consumer cell phones. I helped take observations at MIT and Ogunquit, ME. A <a href="https://cedarscience.org/sites/default/files/2024-posters/IRRI-8-Nina-ServanSchreiber.pdf">poster</a> was presented by <a href="https://www.linkedin.com/in/nina-servan-schreiber-68834321b">Nina Servan-Schreiber</a> at the <a href="https://cedarscience.org/2024-workshop">2024 CEDAR Workshop</a>.</li>
-<li><strong>(GaTech, 2024):</strong> A VLM-LLM integrated end-to-end <a href="https://github.com/ksd3/updatedWeb">system</a> that generates insurance recommendation reports using a combination of tenant complaints and photos taken by an insurance agent for <a href="https://hacklytics.io">Hacklytics</a> 2024.</li>
-<li><strong>(MIT, 2024):</strong> Developed custom optimizers for <a href="https://github.com/ksd3/biqermicefrommars">linear quantum photonic GANs</a> at <a href="https://www.iquise.mit.edu/iQuHACK/2024-02-02">iQuHack-24</a>.</li>
-<li><strong>(MIT, 2023):</strong> A <a href="https://github.com/ksd3/BeatQraft">QCBM</a>-based music generator that won second place in the IBM x Covalent challenge at <a href="https://www.iquise.mit.edu/iQuHACK/2023-01-27">iQuHack-23</a>.</li>
-<li><strong>(COEP, 2022):</strong> Building a neutral hydrogen radio telescope <a href="https://github.com/ksd3/radio-telescope">from scratch</a>, advised by <a href="https://www.coep.org.in/mycoep/agteleccoepacin">Archana Thosar</a>.</li>
-<li><strong>(IIT Bombay, 2021, BU, 2022):</strong> Analysis of the binary star system <a href="https://simbad.u-strasbg.fr/simbad/sim-id?Ident=V*%20QX%20Cas">QX Cas</a> with <a href="https://phoebe-project.org">PHOEBE</a>.</li>
-<li><strong>(COEP, 2021):</strong> Some <a href="https://github.com/ksd3/radio-telescope">linear models</a> for solar power, advised by <a href="https://www.coep.org.in/mycoep/smkeleccoepacin">Suhas Kakade</a> and <a href="https://in.linkedin.com/in/rohan-kulkarni-35951566">Rohan Kulkarni</a>.</li>
-</ol>
-<h1 id="miscellaneous"><a class="header" href="#miscellaneous">Miscellaneous</a></h1>
-<ul>
-<li>
-<p>I keep a list of courses I took at BU along with my thoughts on them. The course name, number, and instructor might have changed since I wrote them. You can find them <a href="./courses.html">here</a>.</p>
-</li>
-<li>
-<p>Check out some of my thoughts <a href="./writing.html">here</a>.</p>
-</li>
-</ul>
-<h1 id="what-on-the-internet-do-i-find-interesting"><a class="header" href="#what-on-the-internet-do-i-find-interesting">What on the internet do I find interesting?</a></h1>
-<ul>
-<li><a href="https://scivision.dev">scivision.dev</a>: Michael Hirsch singlehandedly carries the GNSS community on his back with <a href="https://github.com/geospace-code/georinex/">Georinex</a> and his website is full of useful tips and tricks for wrangling with C Compilers.</li>
-<li><a href="https://danluu.com">Dan Luu</a>'s website. Commentary on programming and tech-society.</li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><ul>
-<li>
-<p><strong>Fall 2022</strong></p>
-<ul>
-<li><strong>EC516 Digital Signal Processing</strong><br />
-This was the first real signal processing course I'd taken and it was taught by the great <a href="https://www.bu.edu/eng/profile/hamid-nawab/">Hamid Nawab</a>, who contributed a great deal to Oppenheim's <a href="https://www.amazon.com/Signals-Systems-Willsky/dp/9332550239"><em>Signals and Systems</em></a>, the primary signal processing textbook used worldwide. The course mostly covered Fourier transforms for discrete signals and was largely mathematical, with very few practical applications. Professor Nawab is a great instructor and is lenient while grading, but the main appeal of this course is that he knows how to teach, and more importantly, how to solve problems. As far as I know, teaching duties for EC516 and EC520 are swapped every few years between Professors Nawab and <a href="https://sites.bu.edu/jkonrad/">Konrad</a>.</li>
-<li><strong>EC504 Advanced Data Structures</strong><br />
-This course was taught by <a href="https://www.bu.edu/eng/profile/richard-brower/">Richard Brower</a>, who has a (fairly unfounded) poor rating on RateMyProfessor. In contrast to many others, I believe this class is one of the best in the ECE department. The content is fairly standard for an algorithms course: arrays, linked lists, trees, graphs, and then a few classical problems such as the knapsack problem. Be prepared to practice. As of May 2024, this course seems to be taught by <a href="https://people.bu.edu/trachten/">Ari Trachtenberg</a>.</li>
-</ul>
-</li>
-<li>
-<p><strong>Spring 2023</strong></p>
-<ul>
-<li><strong>EC503 Learning from Data</strong><br />
-This is a basic introduction to machine learning and is taught by different instructors every semester. I took it with <a href="francesco.orabona.com">Francesco Orabona</a>, who is now at KAUST. As an expert in optimization theory, Professor Orabona starts with PAC learning and devotes the latter two-thirds of his course to algorithms and their implementation. If taught by <a href="https://sites.bu.edu/pi/">Ishwar</a>, I believe the content is reversed—he starts with regression, nearest neighbors, and then moves to optimization algorithms and the underlying theory. Quite homework-heavy.</li>
-<li><strong>AS708 Cosmic Plasma Physics</strong><br />
-Trial by fire if you haven't taken AS703 Introduction to Space Physics like I hadn’t. Professor <a href="https://www.bu.edu/astronomy/profile/meers-oppenheim/">Oppenheim</a> is approachable, but the course content is as hard as it gets for linear plasma theory, and solving homework is a team effort. Very homework heavy and requires a background in physics and reading papers just to understand some problems.</li>
-</ul>
-</li>
-<li>
-<p><strong>Fall 2023</strong></p>
-<ul>
-<li><strong>EC574 Physics of Semiconductor Materials</strong><br />
-Introductory quantum mechanics and solid-state physics. Professor <a href="https://www.bu.edu/eng/profile/enrico-bellotti/">Bellotti</a> has a great sense of humor and is a good instructor, but his teaching methods are definitely old-school. The latter third of the course is hard because the introduction to solid-state physics does not draw from Brandsen and Joachin.</li>
-<li><strong>PY536 Quantum Computing</strong><br />
-I was fairly disappointed with this course as it assumed the student had a background in graduate-level quantum mechanics, but was advertised as an algorithms course. The homework was obscure and confusing and relied on being able to peruse the literature and completely imbibe it. There is no hand-holding here.</li>
-<li><strong>EC533 Advanced Discrete Mathematics</strong><br />
-I will fully admit that I smurfed in this course. The subject matter was something I had done since the age of 13 and Professor <a href="https://www.bu.edu/eng/profile/lev-levitin/">Levitin</a> is great. I wish I had taken his other course, EC534 Discrete Stochastic Models, but I couldn't afford to.</li>
-<li><strong>EC562 Fourier Optics</strong><br />
-While the subject itself is not necessarily difficult, the instructor (Luca Dal Negro) makes you work very hard. Be prepared to spend many hours practicing the work. The textbooks used are Joseph Goodman's <a href="https://www.amazon.com/Introduction-Fourier-Optics-Joseph-Goodman/dp/0974707724">Introduction to Fourier Optics</a> and David Voelz's <a href="https://www.spiedigitallibrary.org/ebooks/TT/Computational-Fourier-Optics-A-MATLAB-Tutorial/eISBN-9780819482051/10.1117/3.858456#_=_">Computation Fourier Optics: A MATLAB tutorial</a>.</li>
-</ul>
-</li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="about"><a class="header" href="#about">About</a></h1>
-<p>Inspired by <a href="danluu.com">Dan Luu</a>, I've decided to add a writing section to this website. While I'm not sure whether I'd ever cover the kinds of topics he does, this might be useful.</p>
-<p>Whenever I post long-form content, a reverse-chronological list will update on this page.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="welcome"><a class="header" href="#welcome">Welcome</a></h1>
+                        <h1 id="welcome"><a class="header" href="#welcome">Welcome</a></h1>
 <p>Transformers are a type of <em>sequence to sequence</em> model, i.e., given a sequence of characters, which may be split into words, transformers are able to convert that sequence to another sequence in a way that preserves the original sequence's 'meaning' <em>without using any predefined rules</em>. An example of a sequence-to-sequence task is text translation, such as converting the English sentence "I ate an apple" into the Italian equivalent: "Ho mangiato una mela."</p>
 <p>Transformers are an example of an <em>encoder-decoder</em> architecture. Encoder-decoder architectures take input data, squeeze it into a kind of secret code (often called 'creating a latent representation'), and sometimes decode the squeezed data to perform useful tasks. An example of an encoder-decoder architecture and a task it may be used on would be using an <a href="https://en.wikipedia.org/wiki/Autoencoder">autoencoder</a> to denoise images.</p>
 <p>This page contains an implementation and demonstration of the transformer architecture <strong>from scratch</strong> using as few predefined libraries as possible in order to give the reader an understanding of what really goes on in each step of the process. We avoid using predefined models or implementations of algorithms as much as possible.</p>
@@ -2545,167 +2456,18 @@ Predicted: banane coniglio banane banane coniglio piacciono &lt;end&gt;
 <p>This aims to be an implementation of transformers that works, end-to-end, in numpy. No pointing to paper that blew up - Attention is All You Need (no, not it isn't). No awkward discussions of 'keys', 'values', 'queries' (replaced with <em>fundamental</em> names instead). No list of mathematical formulas for different attention mechanisms with 'choose what you want'. No describing the transformer architecture in a way that is essentially 'just look at the figure'. No code snippets without explanation for the basics. For the last point, the final implementation is, in fact, annoying. The assumption is that you read this point from start to end. However there is something I have not mentioned at all. That something is <strong>automatic differentiation</strong>.</p>
 <h4 id="automatic-differentiation"><a class="header" href="#automatic-differentiation">Automatic Differentiation</a></h4>
 <p>You may have noticed just how obnoxious implementing backpropagation was. Every single function had to be done manually. Was there a way we could have done it recursively? The answer is yes. This is called <em>automatic differentiation</em>. Automatic differentiation relies on the technique that all mathematical operations done by a computer are at the end pulled from basic arithmetic functions, since that's what's implemented on their circuit boards. Therefore, all computations of functions are inherently limited by this. Even though multiplication is not repeated addition, to a computer it is. Libraries exist entirely to implement backpropagation and automatic differentiation for user-defined functions. One such library is <strong>PyTorch</strong>. It implements automatic differentiation and abstracts it away, allowing users to define new functions and not worry about how backpropagation deals with that object. How would the transformer from scratch look like in PyTorch? <a href="https://github.com/IParraMartin/An-Explanation-Is-All-You-Need/blob/main/model.py">:)</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
-<ol>
-<li><a href="overview.html#algorithms">Algorithms</a>
-<ul>
-<li><a href="overview.html#data-processing">Data Processing</a>
-<ul>
-<li><a href="overview.html#1-ionospheric-assumption-validation">Ionospheric Assumption Validation</a></li>
-<li><a href="overview.html#2-rinex-conversion">RINEX conversion</a></li>
-<li><a href="overview.html#3-analysis">Analysis</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
-<h2 id="data-processing"><a class="header" href="#data-processing">Data Processing</a></h2>
-<h3 id="1-ionospheric-assumption-validation"><a class="header" href="#1-ionospheric-assumption-validation">1. Ionospheric Assumption Validation</a></h3>
-<p>For speed of computation, we use <strong>fast 2d and 3d natural neighbors interpolation</strong> (thick large-scale structures) and <strong>VISTA</strong> (thick medium-scale structures) (Video Imputation with SoftImpute, Temporal smoothing and Auxiliary data) to validate the ionospheric assumption. The VISTA algorithm is shown below</p>
-<div style="text-align: center;">
-<img src="images/timeseriesanalysis/vista.webp" alt="VISTA" width="600" height="300">
-</div>
-<p>The assumption is (somewhat) invalid during solar storms, geophysical storms, magnetic reconnection with solar winds, coronal mass ejections, and so on.</p>
-<h3 id="2-rinex-conversion"><a class="header" href="#2-rinex-conversion">2. RINEX conversion</a></h3>
-<p>Developed an internal Python package named <code>rinexpy</code> - looking to merge with <code>georinex</code>:</p>
-<h4 id="rinexpy-operations"><a class="header" href="#rinexpy-operations">rinexpy Operations</a></h4>
-<ol>
-<li>
-<p><strong>Merging and Editing RINEX Files</strong>:</p>
-<ul>
-<li><code>rinexpy</code> provides the ability to merge multiple RINEX files into a single output. It also allows for editing of the file contents, such as adjusting header information, modifying observation types, and managing data intervals to ensure consistency across different GNSS data sources.</li>
-</ul>
-</li>
-<li>
-<p><strong>Clock Jump Correction</strong>:</p>
-<ul>
-<li><code>rinexpy</code> automatically detects and corrects clock jumps in GNSS observation data. This feature ensures time continuity and improves the accuracy of the GNSS data by addressing disruptions caused by clock shifts.</li>
-</ul>
-</li>
-<li>
-<p><strong>Ionospheric Correction</strong>:</p>
-<ul>
-<li><code>rinexpy</code> applies higher-order ionospheric corrections to the GNSS data, mitigating the impact of ionospheric disturbances on the accuracy of satellite positioning information.</li>
-</ul>
-</li>
-<li>
-<p><strong>File Format Conversion</strong>:</p>
-<ul>
-<li><code>rinexpy</code> supports converting BINEX and RTCM files into the RINEX format. This conversion simplifies working with GNSS data by providing a standardized format that is widely used and recognized across various platforms.</li>
-</ul>
-</li>
-<li>
-<p><strong>Interactive RINEX File Viewer</strong>:</p>
-<ul>
-<li><code>rinexpy</code> includes an interactive, web-based viewer for RINEX files. This feature allows users to visualize and analyze GNSS data efficiently, making it easier to interpret and manage the information contained in RINEX files.</li>
-</ul>
-</li>
-</ol>
-<h4 id="examples"><a class="header" href="#examples">Examples:</a></h4>
-<ol>
-<li>Merging files</li>
-</ol>
-<pre><code>from rinexpy import merge_files
-
-# Merge multiple RINEX files into a single output
-merged_file = merge_files(['file1.rnx', 'file2.rnx'], output='merged_output.rnx')
-
-# Edit RINEX file: Change data interval and include only specific satellites
-edited_file = merge_files(
-    ['file1.rnx'],
-    output='edited_output.rnx',
-    interval=30,  # Change data interval to 30 seconds
-    include_sats=['G01', 'G02']  # Include only satellites G01 and G02
-)
-
-</code></pre>
-<ol start="2">
-<li>Correcting clock jumps</li>
-</ol>
-<pre><code>from rinexpy import correct_clock_jumps
-# Automatically detect and correct clock jumps in a RINEX file
-corrected_file = correct_clock_jumps('input_file.rnx', output='corrected_output.rnx')
-</code></pre>
-<ol start="3">
-<li>Ionospheric correction</li>
-</ol>
-<pre><code>from rinexpy import ionospheric_correction
-
-# Apply higher-order ionospheric corrections to a RINEX file
-corrected_file = ionospheric_correction('input_file.rnx', output='corrected_output.rnx')
-</code></pre>
-<ol start="4">
-<li>File Format Conversion - BINEX, RTCM, etc</li>
-</ol>
-<pre><code>from rinexpy import convert_to_rinex
-
-# Convert a BINEX file to RINEX format
-rinex_file = convert_to_rinex('input_file.binex', output='output_file.rnx')
-
-# Convert an RTCM file to RINEX format
-rinex_file = convert_to_rinex('input_file.rtcm', output='output_file.rnx')
-</code></pre>
-<ol start="5">
-<li>RINEX viewer (Georinex call)</li>
-</ol>
-<pre><code>from rinexpy import view_rinex # Soft Georinex call, output as interactive Matplotlib figure
-
-# Launch an interactive viewer for a RINEX file
-view_rinex('input_file.rnx')
-</code></pre>
-<h3 id="4-analysis"><a class="header" href="#4-analysis">4. Analysis</a></h3>
-<h4 id="1-cycle-slip-correction"><a class="header" href="#1-cycle-slip-correction">1. Cycle slip correction</a></h4>
-<p>We design machine learning models for cycle slip correction. These are better than the heuristic 'stiching' process that may remove important TEC jumps that could identify an ionospheric phenomenon.</p>
-<div style="text-align: center;">
-<img src="images/timeseriesanalysis/cycleslipexample.png" alt="Cycle Slip" width="600" height="500">
-</div>
-<div style="text-align: center;">
-<img src="images/timeseriesanalysis/bigvtec.png" alt="Practical Applications">
-</div>
-<p>The technique used is <strong>LSTM-based autoencoders</strong>, for several reasons.</p>
-<ul>
-<li>The Poker Flat setups are the same receiver in roughly the same area, so we are justified in using LSTM-based autoencoders for this.</li>
-<li>Under the assumptions that the internals of Pixel phones suffer roughly the same wear-and-tear, autoencoders are straightforward to deploy on Sagemaker and call for inference. We are looking into making cycle slip correction on-device using heuristic algorithms, but for large data, <strong>minimal scalloping</strong> and autoencoders are used. Caveat: we are still in the modeling stage because of the temperature dependence of recorded pseudorange on GNSS noise.</li>
-</ul>
-<div style="text-align: center;">
-<img src="images/timeseriesanalysis/lstmgraphs.png" alt="LSTM">
-</div>
-<p>We also account for <strong>multipath noise</strong>, <strong>temperature noise</strong> (Rideout and Coster), <strong>propagation errors</strong>, <strong>ionospheric delays</strong>, and utilize <strong>precise point positioning</strong> to estimate slant TEC as accurately as possible.</p>
-<div style="text-align: center;">
-<img src="images/timeseriesanalysis/SNR_GPS_S1C.png" alt="SNR Graph">
-</div>
-<ol>
-<li><strong>Time-series classification</strong>: How does TEC change during an auroral event?</li>
-</ol>
-<div style="text-align: center;">
-<video  controls>
-  <source src="images/timeseriesanalysis/tecexample.mp4" type="video/mp4">
-</video>
-</div>
-<p>Given a dataset of time-series TEC curves at some frequencies, we want to classify them to make an <strong>early-warning system</strong> for auroral events (so citizen scientists can go out and take photographs!)</p>
-<p>You can probe ionospheric conditions (such as from DMSP) and get extra time series, as shown.</p>
-<div style="text-align: center;">
-<img src="images/timeseriesanalysis/DMSP.png" alt="DMSP">
-</div>
-<p>a. To classify phenomena, we use two separate models. First, the method for auroral phenomenon identification.</p>
-<p><strong>Method</strong>:</p>
-<ul>
-<li>Use 1D CNN to classify raw TEC changes as STEVE, SAPS, SAID, Discrete Aurora, Continuous Aurora, etc.</li>
-<li>Analyze satellite flyby data in order to see what ionospheric, magnetospheric, and thermospheric parameters change in that time period, and if the event is classified into two classes by two different models, then this is a warning event.</li>
-</ul>
-<h1 id="miscellaneous-1"><a class="header" href="#miscellaneous-1">Miscellaneous</a></h1>
-<h2 id="computer-vision-algorithms-used"><a class="header" href="#computer-vision-algorithms-used">Computer Vision algorithms used:</a></h2>
-<p>We use Max-Tree for faint phenomenon identification, active learning, monocular depth estimation (Depth Prediction Transformers), and Open Set recognition to identify STEVE in citizen science images.</p>
-<p>The clustering model developed was to classify all-sky images of aurora  - using ResNet-18 to extract features, used PCA to reduce dimensionality, and K-Means++ to cluster. Achieved silhouette score of 0.7, Davies-Bouldin index of 0.9, Calinski-Harabase index of 256 indicating high-quality cluster separation, and better separation between clusters.</p>
-<h2 id="life-on-mars"><a class="header" href="#life-on-mars">Life on Mars</a></h2>
-<p>Generated TEC maps from MARSIS data by modeling with two-layer Chapman functions for Martian ionosphere. Used VISTA to reconstruct (in 3D), 3d volumes of maps. Auxiliary guess was made using natural pixel decomposition, where the 3d structure estimated with tomography. Specifically, it is modeled as a Fredkin integral of the first kind and pLogMART is used as the matrix inversion algorithm. Simulated GPS propagation through it</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="writing.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
+                            <a rel="next prefetch" href="overview.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -2713,7 +2475,13 @@ view_rinex('input_file.rnx')
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="writing.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
+                    <a rel="next prefetch" href="overview.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
@@ -2736,13 +2504,6 @@ view_rinex('input_file.rnx')
 
         <!-- Custom JS scripts -->
 
-        <script>
-        window.addEventListener('load', function() {
-            MathJax.Hub.Register.StartupHook('End', function() {
-                window.setTimeout(window.print, 100);
-            });
-        });
-        </script>
 
         <!-- Custom JavaScript to reset chapter numbers -->
         <script>
