@@ -113,7 +113,7 @@ Do you need to be in higher education to start working in AI research? The answe
 
 ### My first research experience
 
-My first research experience in machine learning was in 2021 when I worked in solar power forecasting at [COEP](https://www.coeptech.ac.in/) for the summer. It was an interesting experience, and I worked on it because it was a course requirement for the electrical engineer degree. I specifically went out of my way to work in solar power forecasting because I thought it would position me better for a job in the industry. I didn't particularly learn a lot because I didn't know what I was doing. That summer I worked at [Krittika's summer program](https://krittikaiitb.github.io/ksp/) where I learnt much more because I had time to do things on my own. 
+My first research experience in machine learning was in 2021 when I worked in solar power forecasting at [COEP](https://www.coeptech.ac.in/) from January to May. It was an interesting experience, and I worked on it because it was a course requirement for the electrical engineer degree. I specifically went out of my way to work in solar power forecasting because I thought it would position me better for a job in the industry. I didn't particularly learn a lot because I didn't know what I was doing. That summer I worked at [Krittika's summer program](https://krittikaiitb.github.io/ksp/) where I learnt much more because I had time to do things on my own. 
 
 #### If you're looking to start
 
