@@ -6,7 +6,7 @@
 
 - [Courses I've taken at BU](./courses.md)
 - [Writing](./writing.md)
-    - [Transformers from scratch in numpy.](./transformers.md)
-
+    - [Transformers from scratch in numpy](./transformers.md)
+    - [How to get into AI research as an outsider](./machinelearning.md)
 # Semeter Lab
 - [An overview of the work](./overview.md)
