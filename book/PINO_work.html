@@ -189,9 +189,10 @@
 <img src="images/Plasma_bubble_2.png" alt="" />
 <img src="images/Plasma_bubble_reconstruction.png" alt="" /></p>
 <h2 id="steve-mhd"><a class="header" href="#steve-mhd">STEVE MHD</a></h2>
-<p>A full STEVE-like simulation can be done with <a href="https://gemini3d.github.io/gemini3d/">Gemini3D</a>. I modeled the basic underlying phenomena and simulated them over lower resolutions and larger timescales. You can still see the underlying structure in the video.</p>
-<p><img src="https://github.com/ksd3/ksd3.github.io/blob/main/src/videos/mhd_pino.mp4" alt="" /></p>
+<p>A full STEVE-like simulation can be done with <a href="https://gemini3d.github.io/gemini3d/">Gemini3D</a>. I modeled the basic underlying phenomena and simulated them over lower resolutions and larger timescales. You can still see the underlying structure in the <a href="videos/mhd_pino.mp4">video</a>.</p>
 <p>For this, I used 2D spectral convolutions. The PINO didn't quite reconstruct the phenomenon because of the diffuse boundaries of ionospheric phenomena, which is what SIREN activations are designed for. I eventually ended up going with classical algorithms that helped me do a 3D reconstruction of STEVE.</p>
+<p>Here's a single frame (frame 39) from that video. I only used 16% of the simulation as training data, and it still reconstructed everything further on pretty well!</p>
+<p><img src="images/mhd_pino_frame.png" alt="" /></p>
 
                     </main>
 

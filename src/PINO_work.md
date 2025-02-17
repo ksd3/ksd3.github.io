@@ -22,8 +22,10 @@ The graphs below show simulations of plasma bubbles at low resolution using a PI
 
 ## STEVE MHD
 
-A full STEVE-like simulation can be done with [Gemini3D](https://gemini3d.github.io/gemini3d/). I modeled the basic underlying phenomena and simulated them over lower resolutions and larger timescales. You can still see the underlying structure in the video.
-
-![](https://github.com/ksd3/ksd3.github.io/blob/main/src/videos/mhd_pino.mp4)
+A full STEVE-like simulation can be done with [Gemini3D](https://gemini3d.github.io/gemini3d/). I modeled the basic underlying phenomena and simulated them over lower resolutions and larger timescales. You can still see the underlying structure in the [video](videos/mhd_pino.mp4).
 
 For this, I used 2D spectral convolutions. The PINO didn't quite reconstruct the phenomenon because of the diffuse boundaries of ionospheric phenomena, which is what SIREN activations are designed for. I eventually ended up going with classical algorithms that helped me do a 3D reconstruction of STEVE.
+
+Here's a single frame (frame 39) from that video. I only used 16% of the simulation as training data, and it still reconstructed everything further on pretty well!
+
+![](images/mhd_pino_frame.png)
