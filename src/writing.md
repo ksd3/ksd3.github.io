@@ -6,6 +6,7 @@ Whenever I post long-form content, a reverse-chronological list will update on t
 
 # 2025
 
+- **February 16, 2025** - [PINOs in space physics](./PINO_work.md)
 - **February 10, 2025** - [How to get into AI research as an outsider](./machinelearning.md)
 
 # 2024
