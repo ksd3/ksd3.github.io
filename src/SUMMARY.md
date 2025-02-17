@@ -8,5 +8,6 @@
 - [Writing](./writing.md)
     - [Transformers from scratch in numpy](./transformers.md)
     - [How to get into AI research as an outsider](./machinelearning.md)
+    - [PINOs in space physics](./PINO_work.md)
 # Semeter Lab
 - [An overview of the work](./overview.md)
