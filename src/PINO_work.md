@@ -10,11 +10,13 @@ This idea can be taken further. A [physics-informed neural _operator_](https://a
 
 The way this is done is also very simple. The idea is to take a [Fourier transform](https://en.wikipedia.org/wiki/Fourier_transform) of the input data, multiply it by a randomly-initialized weight matrix, and take the inverse Fourier transform and compare the results. Your backpropagation will update the weight matrix itself. In practice, noise in your input data is high frequency, so the weight matrix is often initialized to favour lower frequencies in the Fourier-transformed-data. The loss function is often modified as well to include the physics-informed loss.
 
-This is a very simple overview of an interesting topic. So far PINOs have found applications in CFD simulations. I, however, used them for [MHD](https://en.wikipedia.org/wiki/Magnetohydrodynamics) simulations. I modeled [STEVE](https://en.wikipedia.org/wiki/STEVE)-like phenomena and [plasma bubbles](https://en.wikipedia.org/wiki/Equatorial_plasma_bubble) in the ionosphere for novel-view generation and 3D reconstruction of the phenomena. This was done to answer some outstanding questions in ionospheric plasma physics; namely, what can we infer about the physical processes going on in the atmosphere if the phenomenon is so-and-so large?
+The natural generalization is the [implicit neural representation](https://github.com/vsitzmann/awesome-implicit-representations). This means training a neural network that more or less overfits to the specific function at all points. I have used INRs for modeling [plasma bubbles](https://en.wikipedia.org/wiki/Equatorial_plasma_bubble) in the ionosphere.
+
+This is a very simple overview of an interesting topic. So far PINOs have found applications in CFD simulations. I, however, used them for [MHD](https://en.wikipedia.org/wiki/Magnetohydrodynamics) simulations. I modeled [STEVE](https://en.wikipedia.org/wiki/STEVE)-like phenomena in the ionosphere for novel-view generation and 3D reconstruction. This was done to answer some outstanding questions in ionospheric plasma physics; namely, what can we infer about the physical processes going on in the atmosphere if the phenomenon is so-and-so large? 
 
 ## Plasma Bubbles
 
-The graphs below show simulations of plasma bubbles at low resolution using a PINO with 3D spectral convolutions and physics-informed loss. Of note is that even at different resolutions the PINO's reconstruction errors are more or less distributed equally over the image, showing that the PINO can capture different scales
+The graphs below show simulations of plasma bubbles at low resolution using a PINO with the SIREN architecture. The reconstruction is pretty good, even if the SIREN architecture is not designed for diffuse boundaries. This works because SIREN architectures work well at multiple scales.
 
 ![](images/Plasma_bubble_1.png)
 ![](images/Plasma_bubble_2.png)
