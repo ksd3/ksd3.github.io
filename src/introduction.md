@@ -4,7 +4,7 @@
     <div style="display: flex; align-items: flex-start;">
         <img src="images/profilepic.jpg" width="250px" style="margin-right: 10px;"/>
         <div>
-            I'm <b>Kshitij</b>. I work on automated stellar navigation at Absentia Technologies. I also developed foundation models at Spatialise. I'm a May 2024 graduate from <a href="https://bu.edu">Boston University's</a> Master of Electrical and Computer Engineering program. As a student, I <a href="#STEVE-BU-work" title="Find out more here!">worked</a> in Boston University's <a href="https://heaviside.bu.edu">Space Physics Lab</a> from October 2022 to May 2024, advised by <a href="https://bu.edu/end/profile/joshua-semeter/">Joshua Semeter</a>. I also worked at the <a href="https://www.bu.edu/hic/">Hariri Center</a> for NASA's Life on Mars initiative, developing signal processing and machine learning techniques to analyze the Martian ionosphere and simulated GPS propagation through it. Previously, I was at <a href="https://www.coeptech.ac.in">COEP</a> from 2018-2022.
+            I'm <b>Kshitij</b>. I work on automated stellar navigation at Absentia Technologies. I also work on AI Agents at Blue AI. I also developed foundation models at Spatialise. I'm a May 2024 graduate from <a href="https://bu.edu">Boston University's</a> Master of Electrical and Computer Engineering program. As a student, I <a href="#STEVE-BU-work" title="Find out more here!">worked</a> in Boston University's <a href="https://heaviside.bu.edu">Space Physics Lab</a> from October 2022 to May 2024, advised by <a href="https://bu.edu/end/profile/joshua-semeter/">Joshua Semeter</a>. I also worked at the <a href="https://www.bu.edu/hic/">Hariri Center</a> for NASA's Life on Mars initiative, developing signal processing and machine learning techniques to analyze the Martian ionosphere and simulated GPS propagation through it. Previously, I was at <a href="https://www.coeptech.ac.in">COEP</a> from 2018-2022.
             <p>
             I'm also a TA/mentor for <a href="https://cranephysics.org">CRANE</a> 2025's winter session, instructing students in computational plasma physics. I work on mechanistic interpretability in astrophysics at <a href="https://universetbd.org/">UniverseTBD</a>. Check out our first paper review <a href="https://www.youtube.com/watch?v=ZVO513Z8Uu0">here!</a>
             </p>
@@ -17,7 +17,7 @@
 # Links
 <div style="display: flex; flex-wrap: wrap; padding: 20px 0;">
     <div style="flex: 1; margin: 10px; min-width: 200px;">
-        <a href="https://drive.google.com/file/d/11U0KbFWEHeSML4ZkUB7pMRuvIh6n9ymk/view?usp=sharing" style="display: block; padding: 10px; margin-bottom: 10px; text-decoration: none; background-color: #f8f9fa; text-align: center; border: 1px solid #dee2e6; border-radius: 4px; transition: background-color 0.3s ease;">
+        <a href="https://drive.google.com/file/d/1uhel1E7GgfAgYc_Q_rbKG-1aWVkYgbN8/view?usp=sharing" style="display: block; padding: 10px; margin-bottom: 10px; text-decoration: none; background-color: #f8f9fa; text-align: center; border: 1px solid #dee2e6; border-radius: 4px; transition: background-color 0.3s ease;">
             My Resume
         </a>
         <a href="https://linkedin.com/in/kshitij-duraphe" style="display: block; padding: 10px; margin-bottom: 10px; text-decoration: none; background-color: #f8f9fa; text-align: center; border: 1px solid #dee2e6; border-radius: 4px; transition: background-color 0.3s ease;">
