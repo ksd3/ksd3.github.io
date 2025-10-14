@@ -4,9 +4,12 @@
     <div style="display: flex; align-items: flex-start;">
         <img src="images/profilepic.jpg" width="250px" style="margin-right: 10px;"/>
         <div>
-            I'm <b>Kshitij</b>. I work on automated stellar navigation at Absentia Technologies. I also work on AI Agents at Blue AI. I used to develop foundation models at Spatialise. I'm a May 2024 graduate from <a href="https://bu.edu">Boston University's</a> Master of Electrical and Computer Engineering program. As a student, I <a href="#STEVE-BU-work" title="Find out more here!">worked</a> in Boston University's <a href="https://heaviside.bu.edu">Space Physics Lab</a> from October 2022 to May 2024, advised by <a href="https://bu.edu/end/profile/joshua-semeter/">Joshua Semeter</a>. I also worked at the <a href="https://www.bu.edu/hic/">Hariri Center</a> for NASA's Life on Mars initiative, developing signal processing and machine learning techniques to analyze the Martian ionosphere and simulated GPS propagation through it. Previously, I was at <a href="https://www.coeptech.ac.in">COEP</a> from 2018-2022.
+            I'm <b>Kshitij</b>. I work on everything to do with AI understanding and the user experience for security professionals at Absentia Technologies. I used to work on recommendation systems at Nevara.ai and also developed foundation models at Spatialise. I'm a May 2024 graduate from <a href="https://bu.edu">Boston University's</a> Master of Electrical and Computer Engineering program. As a student, I <a href="#STEVE-BU-work" title="Find out more here!">worked</a> in Boston University's <a href="https://heaviside.bu.edu">Space Physics Lab</a> from October 2022 to May 2024, advised by <a href="https://bu.edu/end/profile/joshua-semeter/">Joshua Semeter</a>. I also worked at the <a href="https://www.bu.edu/hic/">Hariri Center</a> for NASA's Life on Mars initiative, developing signal processing and machine learning techniques to analyze the Martian ionosphere and simulated GPS propagation through it. Previously, I was at <a href="https://www.coeptech.ac.in">COEP</a> from 2018-2022.
             <p>
-            I'm also a TA/mentor for <a href="https://cranephysics.org">CRANE</a> 2025's winter session, instructing students in computational plasma physics. I work on mechanistic interpretability in astrophysics at <a href="https://universetbd.org/">UniverseTBD</a>. Check out our first paper review <a href="https://www.youtube.com/watch?v=ZVO513Z8Uu0">here!</a>
+            I was also a TA/mentor for <a href="https://cranephysics.org">CRANE</a> 2025's winter session, instructing students in computational plasma physics. I work on mechanistic interpretability in astrophysics at <a href="https://universetbd.org/">UniverseTBD</a>.
+            </p>
+            <p>
+            I am also at MIT as a <a href="https://sipb.mit.edu/">SIPB</a> member where I do DevOps + documentation for <a href="https://github.com/SGIARK/arkos">ArkOS.</a>
             </p>
         </div>
     </div>
@@ -33,7 +36,7 @@
 </div>
 
 # Contact me
-I can be emailed at kshitijd [at] bu.edu or at kshitijduraphe5 [at] gmail.com.  Inspired by [Piotr Teterwak](https://cs-people.bu.edu/piotrt/) I am available for "office hours" (offline or through video conferencing) each week to talk about anything you like. I have gone through Masters admissions and the post-COVID US STEM job hunt, and also defended a thesis, so I have some perspective on that as well as graduate student life. Email me with the subject line "OFFICE HOURS" and give me a brief overview of what you want to talk about. Ideally you should be an undergraduate or new (US) Masters student in some field relevant to EECS, but I am happy to talk with new grads and high schoolers as well.
+I can be emailed at kshitijd [at] bu.edu or at kshitijduraphe5 [at] gmail.com or at kshitij.ark [at] mit.edu.  Inspired by [Piotr Teterwak](https://cs-people.bu.edu/piotrt/) I am available for "office hours" (offline or through video conferencing) each week to talk about anything you like. I have gone through Masters admissions and the post-COVID US STEM job hunt, and also defended a thesis, so I have some perspective on that as well as graduate student life. Email me with the subject line "OFFICE HOURS" and give me a brief overview of what you want to talk about. Ideally you should be an undergraduate or new (US) Masters student in some field relevant to EECS, but I am happy to talk with new grads and high schoolers as well.
 
 # My interests
 
@@ -43,7 +46,8 @@ On the practical side, I'm interested in developing fast, efficient, and scalabl
 
 
 # Some things I've worked on
-
+1. **(University of Zielona Góra, 2025)**: Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of [that work](https://arxiv.org/pdf/2510.10746) is under review at ApJ. 
+1. **(UniverseTBD, 2025)**: Mechanistic interpretability in astronomy. In particular, we showed that the [Platonic Representation Hypothesis](https://arxiv.org/abs/2405.07987) holds for astronomy in [this](https://arxiv.org/abs/2509.19453) paper, and published at the 2025 edition of NeurIPS' [ML4PS](https://ml4physicalsciences.github.io/2025/) workshop.
 1. **(BU, 2022-2024):** A variety of investigations into the [STEVE](https://en.wikipedia.org/wiki/STEVE) phenomenon - fluid electrodynamic simulations, citizen science + scientific data-driven reconstruction, deep learning methods for automated detection systems. I defended a [Master's thesis](https://open.bu.edu/handle/2144/48878) in April 2024 (Committee: [Joshua Semeter](https://www.bu.edu/eng/profile/joshua-semeter/), [Yukitoshi Nishimura](https://www.bu.edu/eng/profile/toshi-nishimura/), [Michael Hirsch](https://www.bu.edu/eng/profile/michael-hirsch/)) on the latter two topics.
 1. **(BU, 2023):** I worked on the NASA Life on Mars initiative at Hariri. I simulated EM propagation through Mars' ionosphere and developed models for detecting features on GNSS maps.
 1. **(BU, 2024):** During the [April 8](https://en.wikipedia.org/wiki/Solar_eclipse_of_April_8,_2024) full solar eclipse, the Semeter Lab members went around New England and into Canada to record GNSS data from consumer cell phones. I helped take observations at MIT and Ogunquit, ME. A [poster](https://cedarscience.org/sites/default/files/2024-posters/IRRI-8-Nina-ServanSchreiber.pdf) was presented by [Nina Servan-Schreiber](https://www.linkedin.com/in/nina-servan-schreiber-68834321b) at the [2024 CEDAR Workshop](https://cedarscience.org/2024-workshop).
