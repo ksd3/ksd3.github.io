@@ -19,6 +19,7 @@
 
 
 
+
 <p>When I was just starting at the <a href="https://heaviside.bu.edu">Semeter Lab</a> in October 2022, one of the first tasks assigned to me (which eventually became the first section of my thesis) was to do what is known to computer graphics scientists as <a href="https://www.youtube.com/watch?v=yYKqNjIMhek">novel view synthesis</a> using different 2D spectra viewing the ionosphere.</p>
 <p>As with most deep learning tasks, the trick to this challenge often lies in <a href="https://en.wikipedia.org/wiki/Data_preprocessing">data preprocessing</a>, choosing the right <a href="https://en.wikipedia.org/wiki/Neural_architecture_search">architecture</a>, <a href="https://en.wikipedia.org/wiki/Activation_function">activation function</a>, designing the right type of layer for the data you are processing, and designing the <a href="https://en.wikipedia.org/wiki/Loss_function">loss function</a>. When dealing with physical simulations, a natural choise is to start with a <a href="https://i-systems.github.io/tutorial/KSNVE/220525/01_PINN.html">Physics-Informed Neural Network</a>. There is no difference between an ANN and a PINN. ANNs are <a href="https://en.wikipedia.org/wiki/Universal_approximation_theorem">universal function approximators</a> which are trained by <a href="https://en.wikipedia.org/wiki/Backpropagation">backpropagating</a> errors through the entire network and updating the weight of each node. Many fields in deep learning are built on defining this loss function itself. The famous <a href="https://en.wikipedia.org/wiki/You_Only_Look_Once">YOLO</a> algorithm is entirely a result of loss function engineering. While the idea itself predates machine learning, modifying the loss function and training for long enough with gradient descent gets you fairly accurate results in many scenarios.</p>
 <p>The idea behind a PINN is to map a set of <em>input</em> points to their <em>outputs</em>, where the output is decided as the result of passing each point through a solution of the physical system being modeled. The most common way to get the output is to map input points to the solution of a particular differential equation that the physical system is being modeled as. Since ANNs can fit any function if trained for long enough, PINNs are designed as a neural network that are trained for shorter time periods and generalize to solutions of the differential equation that are not seen in the training data. The way they do this is by adding the differential equation itself to the loss function.</p>
@@ -77,6 +78,7 @@
   <title>How to get into AI research as an outsider</title>
   <link>https://ksd3.github.io/blog/2025-02-10-ml-research/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -144,6 +146,7 @@
   <title>Transformers from scratch in numpy</title>
   <link>https://ksd3.github.io/blog/2024-12-07-transformers/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -7672,6 +7675,7 @@ Predicted: banane coniglio banane banane coniglio piacciono &lt;end&gt;</code></
 
 
 
+
 <section id="an-annotated-explanation-of-a-gas-rich-cosmic-web-revealed-by-partitioning-the-missing-baryons-by-connor-et-al.-2024" class="level1">
 <h1>An annotated explanation of ‘A gas rich cosmic web revealed by partitioning the missing baryons’ by Connor et al.&nbsp;(2024)</h1>
 <section id="about" class="level2">
@@ -7750,6 +7754,7 @@ DM_{obs}=DM_{MW}+DM_{IGM}(z_s)+\sum_{i}^{N_x}\frac{DM_X(M_i,b_{\perp})}{1+z_i}+\
   <dc:creator>Kshitij Duraphe</dc:creator>
   <link>https://ksd3.github.io/blog/2024-05-01-bu-courses/</link>
   <description><![CDATA[ 
+
 
 
 

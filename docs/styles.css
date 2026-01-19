@@ -19,8 +19,9 @@
   --content-max-width: 1400px;
 }
 
+/* Dark mode - works with both system preference and Quarto toggle */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.quarto-light) {
     --bg-color: #181818;
     --text-color: #e0e0e0;
     --text-muted: #999;
@@ -31,33 +32,59 @@
     --code-bg: #252525;
     --accent: #6db3c9;
   }
-
-  body,
-  .navbar,
-  #quarto-header,
-  #quarto-content,
-  pre, code,
-  .callout {
-    background-color: var(--bg-color) !important;
-    color: var(--text-color) !important;
-  }
-
-  #quarto-sidebar,
-  .sidebar {
-    background-color: var(--bg-subtle) !important;
-    color: var(--text-color) !important;
-    border-color: var(--border-color) !important;
-  }
-
-  h1, h2, h3, h4, h5, h6, p, li, td, th {
-    color: var(--text-color) !important;
-  }
-
-  a { color: var(--link-color) !important; }
-  pre, code { background-color: var(--code-bg) !important; }
-  table, th, td { border-color: var(--border-color) !important; }
-  th { background-color: var(--bg-subtle) !important; }
 }
+
+/* Quarto toggle dark mode */
+.quarto-dark {
+  --bg-color: #181818;
+  --text-color: #e0e0e0;
+  --text-muted: #999;
+  --link-color: #6db3c9;
+  --link-hover: #9dd4e4;
+  --border-color: #333;
+  --bg-subtle: #1e1e1e;
+  --code-bg: #252525;
+  --accent: #6db3c9;
+}
+
+.quarto-dark body,
+.quarto-dark .navbar,
+.quarto-dark #quarto-header,
+.quarto-dark #quarto-content,
+.quarto-dark pre,
+.quarto-dark code,
+.quarto-dark .callout {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+.quarto-dark #quarto-sidebar,
+.quarto-dark .sidebar {
+  background-color: var(--bg-subtle) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.quarto-dark h1,
+.quarto-dark h2,
+.quarto-dark h3,
+.quarto-dark h4,
+.quarto-dark h5,
+.quarto-dark h6,
+.quarto-dark p,
+.quarto-dark li,
+.quarto-dark td,
+.quarto-dark th {
+  color: var(--text-color) !important;
+}
+
+.quarto-dark a { color: var(--link-color) !important; }
+.quarto-dark pre,
+.quarto-dark code { background-color: var(--code-bg) !important; }
+.quarto-dark table,
+.quarto-dark th,
+.quarto-dark td { border-color: var(--border-color) !important; }
+.quarto-dark th { background-color: var(--bg-subtle) !important; }
 
 /* ===== Base ===== */
 html {
@@ -199,6 +226,28 @@ main {
   border-bottom: 1px solid var(--border-color) !important;
   padding: 0 !important;
   box-shadow: none !important;
+}
+
+/* Fix navbar icons for light theme (overrides data-bs-theme="dark") */
+.quarto-light .navbar {
+  --bs-navbar-color: var(--text-muted);
+  --bs-navbar-hover-color: var(--text-color);
+  --bs-navbar-active-color: var(--text-color);
+}
+
+.quarto-light #quarto-search button {
+  color: var(--text-muted) !important;
+  border-color: var(--border-color) !important;
+}
+
+.quarto-light #quarto-search .aa-DetachedSearchButtonIcon svg,
+.quarto-light .navbar .bi {
+  color: var(--text-muted) !important;
+  fill: var(--text-muted) !important;
+}
+
+.quarto-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23666' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 .navbar > .container-fluid {
@@ -449,21 +498,6 @@ img[src*="profilepic"] {
 
   .columns-2, .columns-3, .multi-column {
     column-count: 1;
-  }
-
-  /* Fix navbar icons visibility on light theme */
-  .navbar-toggler {
-    border-color: var(--border-color) !important;
-  }
-
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23666' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-  }
-
-  .navbar .bi-search,
-  .navbar .nav-link i,
-  .navbar button i {
-    color: var(--text-muted) !important;
   }
 }
 

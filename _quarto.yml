@@ -30,7 +30,9 @@ website:
 
 format:
   html:
-    theme: default
+    theme:
+      light: default
+      dark: darkly
     css: styles.css
     html-math-method: mathml
     toc: true
