@@ -809,6 +809,17 @@ img[src*="profilepic"] {
   border-color: var(--border-color) !important;
 }
 
+/* ===== Theme Toggle Icon Content ===== */
+/* Quarto doesn't add icon class, so we set it via CSS */
+.quarto-color-scheme-toggle .bi::before {
+  content: "\F5A2"; /* bi-sun-fill */
+  font-family: "bootstrap-icons" !important;
+}
+
+.quarto-color-scheme-toggle.alternate .bi::before {
+  content: "\F497"; /* bi-moon-fill */
+}
+
 /* ===== NUCLEAR OPTION: Force toggle icon visibility ===== */
 /* This must be at the end to override everything */
 i.bi,
