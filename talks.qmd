@@ -1,0 +1,32 @@
+---
+title: "Talks"
+---
+
+Presentations and slides from conferences, seminars, and workshops.
+
+*No talks uploaded yet.*
+
+<!--
+Template for adding talks:
+
+## 2025
+
+### Talk Title
+*Month Year — Event/Conference Name*
+
+Brief description of the talk.
+
+[View Slides (HTML)](talks/YYYY-talk-name/index.html) | [Download (PDF)](talks/YYYY-talk-name/index.pdf)
+
+---
+
+To create a new talk:
+1. Copy talks/_template/ to talks/YYYY-talk-name/
+2. Edit index.qmd with your content
+3. Run: quarto render talks/YYYY-talk-name/
+4. Add entry above
+
+To generate PDF from RevealJS:
+quarto render talks/YYYY-talk-name/index.qmd --to pdf
+(Requires Chrome/Chromium)
+-->

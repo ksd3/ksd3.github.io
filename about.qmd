@@ -1,0 +1,23 @@
+---
+title: "About"
+---
+
+## Bio
+
+I'm Kshitij Duraphe. I work on human-computer interaction, reinforcement learning, foundation models, and related topics in AI/ML. I'm a May 2024 graduate from Boston University's Master of Electrical and Computer Engineering program.
+
+## Research Interests
+
+**Theory**: Astrophysics and the application of inverse methods to astrophysical phenomena. SciML methods for faster and more reliable scientific understanding.
+
+**Practice**: Fast, efficient, and scalable multimodal signal and image processing systems for engineering problems in unstructured, noisy, and sparse scenarios.
+
+## Education
+
+- M.S. Electrical and Computer Engineering, Boston University, 2024
+- B.Tech., College of Engineering Pune (COEP), 2022
+
+## CV
+
+- [Resume](https://drive.google.com/file/d/1uhel1E7GgfAgYc_Q_rbKG-1aWVkYgbN8/view?usp=sharing)
+- [Academic CV](https://drive.google.com/file/d/1ErrNLNR__kXQm8GVmJxAJg-RFaOyhR0k/view?usp=sharing)

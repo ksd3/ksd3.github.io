@@ -1,0 +1,40 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - "talks/**/*.pptx"
+    - "talks/**/*.pdf"
+    - "books/**/*.pdf"
+    - "cv/*.pdf"
+    - "images/**/*"
+    - "videos/**/*"
+
+website:
+  title: ""
+  site-url: https://ksd3.github.io
+  navbar:
+    title: false
+    left:
+      - href: index.qmd
+        text: Home
+      - href: blog/index.qmd
+        text: Blog
+      - href: research.qmd
+        text: Research
+      - href: textbooks.qmd
+        text: Textbooks
+      - href: talks.qmd
+        text: Talks
+      - href: cv.qmd
+        text: Resume/CV
+
+format:
+  html:
+    theme: default
+    css: styles.css
+    html-math-method: mathml
+    toc: true
+    toc-location: left
+    toc-depth: 3
+    toc-expand: 2
+    page-layout: article

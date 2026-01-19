@@ -1,0 +1,106 @@
+---
+title: "Curriculum Vitae"
+author: "Kshitij Duraphe"
+format:
+  typst:
+    # To use a custom template, e.g.:
+    # template: academic-cv.typ
+    margin:
+      x: 2cm
+      y: 2cm
+    fontsize: 11pt
+---
+
+
+<!--
+For academic CV templates, check:
+- https://typst.app/universe (search "cv" or "academic")
+- Popular options: "modern-cv", "brilliant-cv", "academic-cv"
+-->
+
+# Kshitij Duraphe
+
+{{< fa envelope >}} email\@example.com |
+{{< fa globe >}} ksd3.github.io |
+{{< fa brands github >}} github.com/ksd3
+
+---
+
+## Education
+
+**University Name**\
+*Degree, Major* | Expected: Year
+
+- Thesis: "Title of Thesis" (if applicable)
+- Advisor: Prof. Name
+- GPA: X.XX/4.00
+
+**Previous University**\
+*Previous Degree* | Year
+
+---
+
+## Research Interests
+
+Your research interests here. Keywords: keyword1, keyword2, keyword3.
+
+---
+
+## Publications
+
+### Journal Articles
+
+1. **Author, A.**, Co-author, B., & Other, C. (Year). Title of the paper. *Journal Name*, Volume(Issue), pages. DOI
+
+### Conference Papers
+
+1. **Author, A.**, & Co-author, B. (Year). Title of the paper. In *Proceedings of Conference Name* (pp. XX-XX). Location.
+
+### Preprints
+
+1. **Author, A.** (Year). Title of the preprint. *arXiv:XXXX.XXXXX*.
+
+---
+
+## Presentations
+
+- "Talk Title," Conference Name, Location, Month Year
+- "Another Talk," Workshop Name, Location, Month Year
+
+---
+
+## Teaching Experience
+
+**Course Name** | *Role* | Semester Year
+
+- Description of responsibilities
+
+---
+
+## Awards & Honors
+
+- Award Name, Organization, Year
+- Fellowship/Scholarship Name, Year
+
+---
+
+## Professional Service
+
+- Reviewer for Journal/Conference Name
+- Member, Professional Organization
+
+---
+
+## Skills
+
+**Programming:** Python, R, Julia, C++, SQL
+
+**Tools:** Git, Docker, LaTeX, Typst, Linux
+
+**Languages:** English (native), Other Language (proficiency)
+
+---
+
+## References
+
+Available upon request.

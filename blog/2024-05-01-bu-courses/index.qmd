@@ -1,0 +1,39 @@
+---
+title: "Courses I Took at BU"
+author: "Kshitij Duraphe"
+date: "2024-05-01"
+categories: [education, BU, graduate school]
+description: "A review of the courses I took during my Master's at Boston University (2022-2024)."
+---
+
+A rundown of the courses I took during my Master of Electrical and Computer Engineering at Boston University, along with my thoughts on each.
+
+## Fall 2022
+
+### EC516 Digital Signal Processing
+This was the first real signal processing course I'd taken and it was taught by the great [Hamid Nawab](https://www.bu.edu/eng/profile/hamid-nawab/), who contributed a great deal to Oppenheim's [*Signals and Systems*](https://www.amazon.com/Signals-Systems-Willsky/dp/9332550239), the primary signal processing textbook used worldwide. The course mostly covered Fourier transforms for discrete signals and was largely mathematical, with very few practical applications. Professor Nawab is a great instructor and is lenient while grading, but the main appeal of this course is that he knows how to teach, and more importantly, how to solve problems. As far as I know, teaching duties for EC516 and EC520 are swapped every few years between Professors Nawab and [Konrad](https://sites.bu.edu/jkonrad/).
+
+### EC504 Advanced Data Structures
+This course was taught by [Richard Brower](https://www.bu.edu/eng/profile/richard-brower/), who has a (fairly unfounded) poor rating on RateMyProfessor. In contrast to many others, I believe this class is one of the best in the ECE department. The content is fairly standard for an algorithms course: arrays, linked lists, trees, graphs, and then a few classical problems such as the knapsack problem. Be prepared to practice. As of May 2024, this course seems to be taught by [Ari Trachtenberg](https://people.bu.edu/trachten/).
+
+## Spring 2023
+
+### EC503 Learning from Data
+This is a basic introduction to machine learning and is taught by different instructors every semester. I took it with [Francesco Orabona](francesco.orabona.com), who is now at KAUST. As an expert in optimization theory, Professor Orabona starts with PAC learning and devotes the latter two-thirds of his course to algorithms and their implementation. If taught by [Ishwar](https://sites.bu.edu/pi/), I believe the content is reversed—he starts with regression, nearest neighbors, and then moves to optimization algorithms and the underlying theory. Quite homework-heavy.
+
+### AS708 Cosmic Plasma Physics
+Trial by fire if you haven't taken AS703 Introduction to Space Physics like I hadn't. Professor [Oppenheim](https://www.bu.edu/astronomy/profile/meers-oppenheim/) is approachable, but the course content is as hard as it gets for linear plasma theory, and solving homework is a team effort. Very homework heavy and requires a background in physics and reading papers just to understand some problems.
+
+## Fall 2023
+
+### EC574 Physics of Semiconductor Materials
+Introductory quantum mechanics and solid-state physics. Professor [Bellotti](https://www.bu.edu/eng/profile/enrico-bellotti/) has a great sense of humor and is a good instructor, but his teaching methods are definitely old-school. The latter third of the course is hard because the introduction to solid-state physics does not draw from Brandsen and Joachin.
+
+### PY536 Quantum Computing
+I was fairly disappointed with this course as it assumed the student had a background in graduate-level quantum mechanics, but was advertised as an algorithms course. The homework was obscure and confusing and relied on being able to peruse the literature and completely imbibe it. There is no hand-holding here.
+
+### EC533 Advanced Discrete Mathematics
+I will fully admit that I smurfed in this course. The subject matter was something I had done since the age of 13 and Professor [Levitin](https://www.bu.edu/eng/profile/lev-levitin/) is great. I wish I had taken his other course, EC534 Discrete Stochastic Models, but I couldn't afford to.
+
+### EC562 Fourier Optics
+While the subject itself is not necessarily difficult, the instructor (Luca Dal Negro) makes you work very hard. Be prepared to spend many hours practicing the work. The textbooks used are Joseph Goodman's [Introduction to Fourier Optics](https://www.amazon.com/Introduction-Fourier-Optics-Joseph-Goodman/dp/0974707724) and David Voelz's [Computation Fourier Optics: A MATLAB tutorial](https://www.spiedigitallibrary.org/ebooks/TT/Computational-Fourier-Optics-A-MATLAB-Tutorial/eISBN-9780819482051/10.1117/3.858456#_=_).

@@ -1,0 +1,46 @@
+# Advanced Topics
+
+This chapter covers more advanced features.
+
+## Mathematics
+
+Typst has excellent math support:
+
+$$
+\mathbf{A} = \begin{pmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{pmatrix}
+$$
+
+Inline math also works: $f(x) = ax^2 + bx + c$.
+
+## Figures
+
+Include figures with captions:
+
+```markdown
+![Figure caption](path/to/image.png){#fig-example}
+```
+
+Reference figures with `@fig-example`.
+
+## Cross-References
+
+- Reference chapters: @sec-introduction (if using `{#sec-introduction}`)
+- Reference equations: @eq-example (if using `{#eq-example}`)
+- Reference figures: @fig-example (if using `{#fig-example}`)
+
+## Callout Blocks
+
+::: {.callout-note}
+This is a note callout.
+:::
+
+::: {.callout-warning}
+This is a warning callout.
+:::
+
+::: {.callout-tip}
+This is a tip callout.
+:::

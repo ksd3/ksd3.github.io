@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-12-01">
+<meta name="description" content="An annotated explanation of ‘A gas rich cosmic web revealed by partitioning the missing baryons’ by Connor et al.&nbsp;(2024).">
+
+<title>Papers explained: Partitioning the Universe’s baryons (Connor et al 2024)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-be53553f563a7f8912e850d522ba7b71.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../textbooks.html"> 
+<span class="menu-text">Textbooks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks.html"> 
+<span class="menu-text">Talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#an-annotated-explanation-of-a-gas-rich-cosmic-web-revealed-by-partitioning-the-missing-baryons-by-connor-et-al.-2024" id="toc-an-annotated-explanation-of-a-gas-rich-cosmic-web-revealed-by-partitioning-the-missing-baryons-by-connor-et-al.-2024" class="nav-link active" data-scroll-target="#an-annotated-explanation-of-a-gas-rich-cosmic-web-revealed-by-partitioning-the-missing-baryons-by-connor-et-al.-2024">An annotated explanation of ‘A gas rich cosmic web revealed by partitioning the missing baryons’ by Connor et al.&nbsp;(2024)</a>
+  <ul class="collapse">
+  <li><a href="#about" id="toc-about" class="nav-link" data-scroll-target="#about">About</a>
+  <ul class="collapse">
+  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Papers explained: Partitioning the Universe’s baryons (Connor et al 2024)</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">astrophysics</div>
+    <div class="quarto-category">paper-explanation</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    An annotated explanation of ‘A gas rich cosmic web revealed by partitioning the missing baryons’ by Connor et al.&nbsp;(2024).
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 1, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="an-annotated-explanation-of-a-gas-rich-cosmic-web-revealed-by-partitioning-the-missing-baryons-by-connor-et-al.-2024" class="level1">
+<h1>An annotated explanation of ‘A gas rich cosmic web revealed by partitioning the missing baryons’ by Connor et al.&nbsp;(2024)</h1>
+<section id="about" class="level2">
+<h2 class="anchored" data-anchor-id="about">About</h2>
+<p>Connor et al.&nbsp;(2024) recently published a <a href="https://arxiv.org/html/2409.16952v1">paper</a> that shows a way to partition the universe’s baryons to reveal the underlying <a href="https://science.nasa.gov/resource/cosmic-web/">cosmic web</a> structure and showed that it contains a lot of gas. Is it possible to explain this paper to mildly intelligent people with an interest in astronomy?</p>
+<section id="abstract" class="level3">
+<h3 class="anchored" data-anchor-id="abstract">Abstract</h3>
+<p>Approximately half of the universe’s dark matter (that is, matter that does not interact with electromagnetic radiation such as light, so we can’t see it) resides in structures known as ‘collapsed halos’. Collapsed halos are ellipsoidal or quasi-spherical structures surrounding a central object like a star. The initial universe’s density field was approximately uniform, but quantum fluctuations led to changes in the initial density field at different points. Changes in density eventually led to gravity taking over and clustering the matter into halo-like structures. Significantly less than half of the universe’s baryons (protons and neutrons; electrons are leptons because they interact only using the weak nuclear force and the electromagnetic force) are confined to halos. A small fraction of the baryons are present as stars and in the interstellar medium (ISM) between galaxies. A lot of them are very diffuse (less than 1000 per cubic centimeter) and ionized (less than one in ten thousand is ionized in the baryonic gas) and are located in the halos of galaxy clusters, galaxy groups (literally just some galaxies together but not enough to be a cluster), or individual galaxies. Because this gas is so diffuse and ionized, the quantity and spatial distribution is very difficult to measure. If we measure it really well and are able to provide an accurate answer to the question ‘what is this quantity and spatial distribution?’ then we have an answer to a lot of important questions in galaxy formation, astrophysical feedback (the ejection of matter by stars, black holes, etc into the universe, or the reverse!), and precision cosmology. Recently, people have used Fast Radio Bursts (FRBs), very violent emissions of radio waves first discovered in 2007, to measure the total content of cosmic baryons. The problem in those studies is that they did not contain methods to discriminate between the intergalactic material (IGM) and halo gases. In this paper we present a large cosmological sample of FRB sources localized to their host galaxies. Also we have managed to partition (that is, determine the distribution of) missing baryons into the IGM, galaxy clusters, and galaxies. As a reminder, the term missing baryons refers to the following problem: cosmological models say that the number of baryons in the universe should be so-and-so, but actual measurements show that there are much fewer baryons. Then where are the missing baryons? The study provides a late-Universe (that is, the current universe) measurement of the total baryon density of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Ω</mi><mi>b</mi></msub><mi>​</mi><msub><mi>h</mi><mn>70</mn></msub></mrow><annotation encoding="application/x-tex">\Omega_{b}​h_{70}</annotation></semantics></math> as 0.049 $$0.003, where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Ω</mi><mi>b</mi></msub><annotation encoding="application/x-tex">\Omega_{b}</annotation></semantics></math> is the universe’s critical density (the density needed for a flat universe) that is made of baryonic matter. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>h</mi><mn>70</mn></msub><annotation encoding="application/x-tex">h_{70}</annotation></semantics></math> is simply a scaling factor related to the Hubble constant. The results indicate that feedback processes can expel gas from galaxy halos and into the intergalactic medium, agreeing with the enriched cosmic web scenario (that is, how the cosmic web contains elements heavier than hydrogen and helium) seen in cosmological simulations. We measured a large diffuse baryon fraction and that probably means that the distribution of stellar masses in a population of stars (the initial stellar mass function) is probably not bottom-heavy (it does not predict a large number of low mass stars, which in turn live for longer).</p>
+</section>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<p>The Deep Synoptic Array-110 is a radio inteferometer (a system of radio telescopes that observe the same source at the same time) operating between 1.28-1.53 GHz and is the first radio telescope built to detect and localize FRBs (that is, find out the galaxy they originate from). Doing this helps use FRBs as cosmological tools and unveil their physical origin. 60 new FRBs were discovered by DSA-110 and 39 of them now have an associated host galaxy spectroscopic redshift. Our companion work shows the properties of the host galaxies of a uniformly selected subset of these. The work also includes 9 sources not in that sample. Three new FRBs near or beyond redshift 1 (redshift 1 means ~8-9 billion years old, as the wavelength of light has doubled) are also presented. Because these FRBs are at redshift 1, they constrain the IGM column (that is, the distribution of material along the line of sight) by virtue of their great distance.</p>
+<p>We add our sample to 30 previously localized FRB sources. The distribution of extragalactic DM (dispersion measure - the TEC, but measured in terms of redshift) and redshift for the full sample is plotted in figure 1; the positions, DM, redshifts, and detection instruments are displayed in extended data table 1. The extragalactic DM of localized FRBs tells us how many diffuse baryons are in what place in the Universe. The total observed DM of an FRB can be split into several components. Let’s take a moment to think about this. When looking at a radio source occurring so far away, we need to consider several things. First, we are looking out of the Milky Way, so the Milky Way’s ISM contributes to the total DM. The Milky Way’s halo also contributes to it. The inter <em>galactic</em> medium along the line of sight is of course always present. There is also some ionized gas in stable halos (<em>virialized</em> halos). Then there are also the contributions from each ionized halo along the line of sight. To account for the expansion of the universe and relativistic motion the factor <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msub><mi>z</mi><mrow><mi>h</mi><mi>a</mi><mi>l</mi><mi>o</mi></mrow></msub></mrow></mfrac><annotation encoding="application/x-tex">\frac{1}{1+z_{halo}}</annotation></semantics></math> is applied to the observed dispersion measure. Finally there is the contribution of the FRB host galaxy’s matter (note that since we are now talking about plasmas, it means that we must consider fermionic matter such as electrons too), which may come from its halo, ISM, or any other plasma lying around the galaxy.</p>
+<p>We can therefore write the observed FRB of a galaxy in the following way: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><msub><mi>M</mi><mrow><mi>o</mi><mi>b</mi><mi>s</mi></mrow></msub><mo>=</mo><mi>D</mi><msub><mi>M</mi><mrow><mi>M</mi><mi>W</mi></mrow></msub><mo>+</mo><mi>D</mi><msub><mi>M</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>z</mi><mi>s</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><munderover><mo>∑</mo><mi>i</mi><msub><mi>N</mi><mi>x</mi></msub></munderover><mfrac><mrow><mi>D</mi><msub><mi>M</mi><mi>X</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>M</mi><mi>i</mi></msub><mo>,</mo><msub><mi>b</mi><mo>⟂</mo></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mn>1</mn><mo>+</mo><msub><mi>z</mi><mi>i</mi></msub></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>D</mi><msub><mi>M</mi><mrow><mi>h</mi><mi>o</mi><mi>s</mi><mi>t</mi></mrow></msub></mrow><mrow><mn>1</mn><mo>+</mo><msub><mi>z</mi><mi>s</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+DM_{obs}=DM_{MW}+DM_{IGM}(z_s)+\sum_{i}^{N_x}\frac{DM_X(M_i,b_{\perp})}{1+z_i}+\frac{DM_{host}}{1+z_s}
+</annotation></semantics></math></p>
+<p>Note that the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mo>⟂</mo></msub><annotation encoding="application/x-tex">b_{\perp}</annotation></semantics></math> term is the <em>physical impact parameter</em>, which is a measure of how close the line of sight passes to higher-mass regions in the intersecting halo. A higher <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mo>⟂</mo></msub><annotation encoding="application/x-tex">b_{\perp}</annotation></semantics></math> means that the line of sight is on the outskirts of the matter distribution and vice versa. Also, the subscript <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> just means intersection. DM_{IGM} generally dominates for sources beyond <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>≈</mo><mn>0.2</mn></mrow><annotation encoding="application/x-tex">z \approx 0.2</annotation></semantics></math> unless the FRB is in an ununsual galaxy. Let us now define a ‘cosmological DM’ as <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><msub><mi>M</mi><mrow><mi>c</mi><mi>o</mi><mi>s</mi></mrow></msub><mo>≡</mo><mi>D</mi><msub><mi>M</mi><mi>X</mi></msub><mo>+</mo><mi>D</mi><msub><mi>M</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub></mrow><annotation encoding="application/x-tex">DM_{cos}\equiv DM_{X}+DM_{IGM}</annotation></semantics></math>. Our goal is to now find out what the average sightline’s DM from the IGM and intervening halos would be.</p>
+<hr>
+<section id="interlude-dm-and-tec" class="level4">
+<h4 class="anchored" data-anchor-id="interlude-dm-and-tec">Interlude: DM and TEC</h4>
+<p>The <a href="https://en.wikipedia.org/wiki/Total_electron_content">Total Electron Content</a> is simply the columnar number density of electrons where the column is along a line of sight. It is obtained by integrating the electron density along a path <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">ds</annotation></semantics></math>: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>l</mi></msubsup><msub><mi>n</mi><mi>e</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>d</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">\int_{0}^{l}n_e(s)ds</annotation></semantics></math>, where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>l</mi><annotation encoding="application/x-tex">l</annotation></semantics></math> is the straight-line distance the radio source and the observer. It is a measure of how the underlying plasma interferes with radio signals passing through it.</p>
+<p>The <a href="https://arxiv.org/pdf/2407.16748">dispersion measure</a> is the exact same thing. It is a measure of how the intermediary plasma affects radio waves passing through it. The catch is that the DM is measured on galactic scales; we must take into account the effects of relativity. The dispersion measure is defined as <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>z</mi></msubsup><msub><mi>n</mi><mi>e</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>d</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">\int_{0}^{z}n_e(z)dl</annotation></semantics></math>, where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math> is the <strong>redshift</strong> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">dl</annotation></semantics></math> is the proper distance element. The proper distance is the actual distance between two objects in the universe at a certain point in cosmic time. What does this mean? We know the universe is expanding. If we want to measure the distance between two objects at a certain point in time, we simply freeze the universe and observe it from a god’s-eye perspective. The proper distance is now the distance between the two objects. The proper distance is related to the <em>comoving distance</em> by multiplying with a simple factor (called the scale factor), given the universe is described by the <a href="https://en.wikipedia.org/wiki/Friedmann%E2%80%93Lema%C3%AEtre%E2%80%93Robertson%E2%80%93Walker_metric">FLRW metric</a>. The differential of the proper distance element is related to the <a href="https://en.wikipedia.org/wiki/Hubble%27s_law">Hubble factor</a> and redshift by the equation <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>l</mi><mo>=</mo><mi>c</mi><mfrac><mrow><mi>d</mi><mi>z</mi></mrow><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">dl=c\frac{dz}{H(z)}</annotation></semantics></math>.</p>
+<p>Because of how the redshift is <a href="https://en.wikipedia.org/wiki/Redshift">defined</a>, the physical baryon density scales with redshift as <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><annotation encoding="application/x-tex">(1+z)^3</annotation></semantics></math>. The DM is therefore a redshift corrected version of the TEC. It is correct to use it when considering things on intergalactic scales, not on interstellar scales.</p>
+<hr>
+<p>Since the DM is a measure of interference by electrons, we need to figure out how to relate this with baryons. We know that the number of protons and electrons are roughly the same in the universe. Of course, some of the baryons could be locked up in stars like neutrons in neutron stars; some of the protons could be flying around on their own without an electron to balance them. Let’s relate our dispersion measure to baryons. First, let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f_d(z)</annotation></semantics></math> be the fraction of all baryons lying in the diffuse ionized IGM or halos (not in stars, cold gas, and so on), and let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>e</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f_e(z)</annotation></semantics></math> be the effective number of free electrons per baryon (if they’re electrically neutral, how can they intefere with radio waves?).</p>
+<p>Then <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>e</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>f</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>f</mi><mi>e</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">n_e(z)=f_d(z)f_e(z)</annotation></semantics></math>. The proper baryon density at redshift <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math> scales as <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><annotation encoding="application/x-tex">(1+z)^3</annotation></semantics></math>, so you can write <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>e</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>f</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>f</mi><mi>e</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>Ω</mi><mi>b</mi></msub><msub><mi>ρ</mi><mrow><mi>c</mi><mo>,</mo><mn>0</mn></mrow></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><mi>/</mi><msub><mi>m</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">n_e(z)=f_d(z)f_e(z)\Omega_b \rho_{c,0} (1+z)^3/m_p</annotation></semantics></math></p>
+<p>where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Ω</mi><mi>b</mi></msub><annotation encoding="application/x-tex">\Omega_b</annotation></semantics></math> is the present-day baryon density parameter (the <em>cosmic baryon abundance</em>), <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi>c</mi><mo>,</mo><mn>0</mn></mrow></msub><mo>=</mo><mfrac><mrow><mn>3</mn><msubsup><mi>H</mi><mn>0</mn><mn>2</mn></msubsup></mrow><mrow><mn>8</mn><mi>π</mi><mi>G</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\rho_{c,0}=\frac{3H_0^2}{8\pi G}</annotation></semantics></math> is the present <a href="https://en.wikipedia.org/wiki/Friedmann_equations#Density_parameter">critical density</a> for a flat universe, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>m</mi><mi>p</mi></msub><annotation encoding="application/x-tex">m_p</annotation></semantics></math> is the proton mass (so <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><msub><mi>ρ</mi><mrow><mi>c</mi><mo>,</mo><mn>0</mn></mrow></msub><msub><mi>m</mi><mi>p</mi></msub></mfrac><annotation encoding="application/x-tex">\frac{\rho_{c,0}}{m_p}</annotation></semantics></math> counts the number of baryons).</p>
+<p>Therefore, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>e</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>f</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>f</mi><mi>e</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Ω</mi><mi>b</mi></msub><mfrac><mrow><mn>3</mn><msubsup><mi>H</mi><mn>0</mn><mn>2</mn></msubsup></mrow><mrow><mn>8</mn><mi>π</mi><mi>G</mi></mrow></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><msub><mi>m</mi><mi>p</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">n_e(z)=f_d(z)f_e(z)(\Omega_b\frac{3H_0^2}{8 \pi G}(1+z)^3)\frac{1}{m_p}</annotation></semantics></math>.</p>
+<p>The Hubble parameter at redshift <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math> for a spatially flat FRW universe with matter fraction <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Ω</mi><mi>m</mi></msub><annotation encoding="application/x-tex">\Omega_m</annotation></semantics></math> and cosmological constant (the <em>dark energy parameter</em>) <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Ω</mi><mi>Λ</mi></msub><annotation encoding="application/x-tex">\Omega_{\Lambda}</annotation></semantics></math> is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>H</mi><mn>0</mn></msub><msqrt><mrow><msub><mi>Ω</mi><mi>m</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><mo>+</mo><msub><mi>Ω</mi><mi>Λ</mi></msub></mrow></msqrt></mrow><annotation encoding="application/x-tex">H(z)=H_0 \sqrt{\Omega_m (1+z)^3+ \Omega_\Lambda}</annotation></semantics></math></p>
+<p>and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>l</mi><mo>=</mo><mfrac><mi>c</mi><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">dl=\frac{c}{H(z)}dz</annotation></semantics></math>, so <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>l</mi><mo>=</mo><mfrac><mi>c</mi><msub><mi>H</mi><mn>0</mn></msub></mfrac><mfrac><mrow><mi>d</mi><mi>z</mi></mrow><msqrt><mrow><msub><mi>Ω</mi><mi>m</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><mo>+</mo><msub><mi>Ω</mi><mi>Λ</mi></msub></mrow></msqrt></mfrac></mrow><annotation encoding="application/x-tex">dl=\frac{c}{H_0}\frac{dz}{\sqrt{\Omega_m (1+z)^3+ \Omega_\Lambda}}</annotation></semantics></math></p>
+<p>Therefore the average sightline DM would be <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mi>D</mi><msub><mi>M</mi><mrow><mi>c</mi><mi>o</mi><mi>s</mi></mrow></msub><mo>&gt;</mo><mo>=</mo><mfrac><mrow><mn>3</mn><mi>c</mi></mrow><mrow><mn>8</mn><mi>π</mi></mrow></mfrac><mfrac><msub><mi>Ω</mi><mi>b</mi></msub><mi>G</mi></mfrac><mfrac><msub><mi>H</mi><mn>0</mn></msub><msub><mi>m</mi><mi>p</mi></msub></mfrac><msubsup><mo>∫</mo><mn>0</mn><msub><mi>z</mi><mi>s</mi></msub></msubsup><mfrac><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>f</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>f</mi><mi>e</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><msqrt><mrow><msub><mi>Ω</mi><mi>m</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><mo>+</mo><msub><mi>Ω</mi><mi>Λ</mi></msub></mrow></msqrt></mfrac></mrow><annotation encoding="application/x-tex">&lt;DM_{cos}&gt;=\frac{3c}{8\pi}\frac{\Omega_b}{G}\frac{H_0}{m_p} \int_{0}^{z_s}\frac{(1+z)f_d(z)f_e(z)}{\sqrt{\Omega_m (1+z)^3+ \Omega_\Lambda}}</annotation></semantics></math></p>
+<p>where the extra <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">1+z</annotation></semantics></math> in the denominator comes from how many factors in the group-delay integral you want to account for.</p>
+<p>We take <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>e</mi></msub><mo>=</mo><mn>0.875</mn></mrow><annotation encoding="application/x-tex">f_e=0.875</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>d</mi></msub><annotation encoding="application/x-tex">f_d</annotation></semantics></math> as a constant, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>70</mn></msub><mo>≡</mo><msub><mi>H</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>70</mn><mi>k</mi><mi>m</mi><msup><mi>s</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>M</mi><mi>p</mi><msup><mi>c</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">h_{70}\equiv H_0(70 km s^{-1} Mpc^{-1})</annotation></semantics></math>, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mi>D</mi><msub><mi>M</mi><mrow><mi>c</mi><mi>o</mi><mi>s</mi></mrow></msub><mo>&gt;</mo><mo>≈</mo><mn>1085</mn><mi>z</mi><msub><mi>f</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><msub><mi>Ω</mi><mi>b</mi></msub><msub><mi>h</mi><mn>70</mn></msub></mrow><mrow><mn>0</mn><mi>/</mi><mn>04703</mn></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mfrac><mrow><mi>p</mi><mi>c</mi></mrow><mrow><mi>c</mi><msup><mi>m</mi><mn>3</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">&lt;DM_{cos}&gt; \approx 1085zf_d(\frac{\Omega_b h_{70}}{0/04703}) \frac{pc}{cm^3}</annotation></semantics></math> for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>s</mi></msub><mo>≲</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z_s \lesssim 1</annotation></semantics></math>.</p>
+<p>For each FRB, we compute the extragalactic DM distribution <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><msub><mi>M</mi><mrow><mi>e</mi><mi>x</mi><mi>t</mi></mrow></msub><mo>=</mo><mi>D</mi><msub><mi>M</mi><mrow><mi>o</mi><mi>b</mi><mi>s</mi></mrow></msub><mo>−</mo><mi>D</mi><msub><mi>M</mi><mrow><mi>M</mi><mi>W</mi></mrow></msub></mrow><annotation encoding="application/x-tex">DM_{ext}=DM_{obs}-DM_{MW}</annotation></semantics></math> as a function of the source redshift <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mi>s</mi></msub><annotation encoding="application/x-tex">z_s</annotation></semantics></math>. This means that we compute a 1D likelihood function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><msub><mi>M</mi><mrow><mi>e</mi><mi>x</mi></mrow></msub><mo stretchy="false" form="prefix">|</mo><msub><mi>z</mi><mi>s</mi></msub><mo>,</mo><mover><mi>θ</mi><mo accent="true">→</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(DM_{ex} | z_s, \vec{\theta})</annotation></semantics></math>, where the model parameters <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>θ</mi><mo accent="true">→</mo></mover><annotation encoding="application/x-tex">\vec{\theta}</annotation></semantics></math> are given by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>θ</mi><mo accent="true">→</mo></mover><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>f</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub><mo>,</mo><msub><mi>f</mi><mi>X</mi></msub><mo>,</mo><msub><mi>μ</mi><mrow><mi>h</mi><mi>o</mi><mi>s</mi><mi>t</mi></mrow></msub><mo>,</mo><msub><mi>σ</mi><mrow><mi>h</mi><mi>o</mi><mi>s</mi><mi>t</mi></mrow></msub><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\vec{\theta}=\{f_{IGM}, f_X, \mu_{host}, \sigma_{host}\}.</annotation></semantics></math> Here <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub><annotation encoding="application/x-tex">f_{IGM}</annotation></semantics></math> is the fraction of baryons in the IGM (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><msub><mi>Ω</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub><msub><mi>Ω</mi><mi>b</mi></msub></mfrac><annotation encoding="application/x-tex">\frac{\Omega_{IGM}}{\Omega_b}</annotation></semantics></math>) and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>X</mi></msub><mo>=</mo><mfrac><msub><mi>Ω</mi><mrow><mi>h</mi><mi>a</mi><mi>l</mi><mi>o</mi><mi>s</mi></mrow></msub><msub><mi>Ω</mi><mi>b</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">f_X=\frac{\Omega_{halos}}{\Omega_{b}}</annotation></semantics></math> is the fraction of baryons in the intersected halos referenced (normalized) to redshift 0.1. Why can this be done? It’s because the three components of the dispersion measure - <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><msub><mi>M</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub></mrow><annotation encoding="application/x-tex">DM_{IGM}</annotation></semantics></math>,<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><msub><mi>M</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">DM_{X}</annotation></semantics></math>, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><msub><mi>M</mi><mrow><mi>M</mi><mi>W</mi></mrow></msub></mrow><annotation encoding="application/x-tex">DM_{MW}</annotation></semantics></math> all have different dependencies on the redshift (their distributions <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><mi>M</mi><mo stretchy="false" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(DM|z)</annotation></semantics></math> are different) given a sufficiently large sample size. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mrow><mi>h</mi><mi>o</mi><mi>s</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">\mu_{host}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>σ</mi><mrow><mi>h</mi><mi>o</mi><mi>s</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">\sigma_{host}</annotation></semantics></math> are the mean dispersion measure and scattering coefficient of the host galaxy of the source, respectively. Note that the IGM is defined as the gas outside of <a href="https://en.wikipedia.org/wiki/Virial_theorem">virialized</a> (i.e.&nbsp;stable) dark matter halos.</p>
+<hr>
+</section>
+<section id="interlude-bayes-theorem" class="level4">
+<h4 class="anchored" data-anchor-id="interlude-bayes-theorem">Interlude: Bayes’ Theorem</h4>
+<p>Bayes’ theorem allows one to compute the probability of a cause given its effect. Given a prior belief of the hypothesis (the <strong>prior</strong>), you update it with new data (the <strong>likelihood</strong>), and compute the probability of the cause given the effect (the <strong>posterior probability</strong> or <strong>posterior</strong>) according to the formula <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="prefix">|</mo><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="prefix">|</mo><mi>θ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>θ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">P(\theta|D)=\frac{P(D|\theta) P(\theta)}{P(D)}</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>θ</mi><mo stretchy="false" form="prefix">|</mo><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(\theta|D)</annotation></semantics></math> is the posterior, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="prefix">|</mo><mi>θ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(D|\theta)</annotation></semantics></math> is the likelihood, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>θ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(\theta)</annotation></semantics></math> is the prior, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(D)</annotation></semantics></math> is the <strong>marginal likelihood</strong> or <strong>evidence</strong> - the total probability of the effect itself occurring, considering all possible causes.</p>
+<hr>
+<p>We want to find out the <a href="https://en.wikipedia.org/wiki/Joint_probability_distribution">joint distribution</a> that describes the probability that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><msub><mi>M</mi><mrow><mi>e</mi><mi>x</mi></mrow></msub></mrow><annotation encoding="application/x-tex">DM_{ex}</annotation></semantics></math> is a certain value given a certain value of the redshift <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>. To do this, we compute the 1D likelihood function given above for each FRB, and multiply them together. (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∏</mo><mi>i</mi><mi>n</mi></msubsup><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><msub><mi>M</mi><mrow><mi>e</mi><mi>x</mi><mo>,</mo><mi>i</mi></mrow></msub><mo stretchy="false" form="prefix">|</mo><msub><mi>z</mi><mrow><mi>s</mi><mo>,</mo><mi>i</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mover><mi>θ</mi><mo accent="true">→</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\prod_{i}^{n}P(DM_{ex,i}|z_{s,i})P(\vec{\theta})</annotation></semantics></math>). To do this, we apply Markov Chain Monte Carlo (MCMC) methods.</p>
+<hr>
+</section>
+<section id="interlude-markov-chain-monte-carlo-mcmc-methods" class="level4">
+<h4 class="anchored" data-anchor-id="interlude-markov-chain-monte-carlo-mcmc-methods">Interlude: Markov Chain Monte Carlo (MCMC) methods:</h4>
+<p>Sampling from a probability distribution means randomly selecting points where the likelihood of selecting a given point is defined by the probability distribution. To sample from a one-dimensional probability distribution is easy - suppose someone said to you ‘I have a Gaussian probability distribution with a mean of 3.5 and a standard deviation of 2. You can take as many numbers as you want and I’ll give them to you. Since it is a normal distribution, you’re more likely to get a bunch of numbers around 3.5; once you get a bunch of numbers you can compute how many fell between 3.2 and 3.63, 1.32 and 1.39, and so on’. You could simply get a bunch of numbers (say 3266 numbers) and run some tests on them and go ‘okay, makes sense, I see that I have 299 numbers between 3.2 and 3.63 and 29 between 1.32 and 1.39. This is fairly reasonable’. The numbers you chose are <strong>samples</strong> of that probability distribution and you chose them one at a time.</p>
+<p>Then the person (let’s say the ghost of your great grandfather) comes up to you and says ‘I have a probability distribution defined as the convolution of the Riemann Zeta function and the Von Mangoldt function for 55681 variables, but the convolution is only computed at roots of the normal numbers between 4 and 48575’. You are stuck. How would you even go about sampling this distribution? You’re not allowed to ask him to give you numbers, because even he doesn’t want to compute things. This is where MCMC methods come in.</p>
+<p>Let us focus on how MCMC methods broadly work. You want to sample from a probability distribution. Why do you want to do this? If you have enough samples then you can compute averages (more precisely, <strong>expectation values</strong>), answer probabilistic questions, or even just flat out plot it. You say, “Okay, let me start with an initial guess. For lack of a better guess, I’ll start with a completely random guess. Then I look at points near to my guess and pick one. How? Let’s just go with any random point near me. Then I decide whether to move in that direction or not. If yes, I move in that direction and repeat the procedure. Otherwise I pick another point. If I keep moving for long enough I will probably cover the whole probability distribution.”</p>
+<p>More precisely, given some underlying knowledge of the probability distribution, you can sample from it and construct a rough approximation of the actual probability distribution. This underlying knowledge may also be based on hunches: assume that at least, locally, the distribution is Gaussian.</p>
+<p>The process of getting this sample from the underlying knowledge is called a <strong>Monte Carlo</strong> method and the construction of a series of steps (a straightforward example of a <strong>random walk</strong>) is an example of generating a <strong>Markov Chain</strong>. The implicit assumption is that the next step only depends on your current state, so this is a first-order Markov chain.</p>
+<hr>
+<p>What distribution do we assume for the host contribution to the dispersion measure? Let’s go with a log-normal distribution, as it is right-skewed and defined only for positive values. We are going to estimate <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mrow><mi>h</mi><mi>o</mi><mi>s</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">\mu_{host}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>σ</mi><mrow><mi>h</mi><mi>o</mi><mi>s</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">\sigma_{host}</annotation></semantics></math>. The prior values for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mrow><mi>h</mi><mi>o</mi><mi>s</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">\mu_{host}</annotation></semantics></math> are assumed to be from a uniform probability distribution between 0 and 7 (therefore the DM spans 0 to 1000 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>c</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> </mtext><mspace width="0.333em"></mspace></mrow><mi>c</mi><msup><mi>m</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">pc\text{ }cm^{-3}</annotation></semantics></math>) and the same flat prior shape is used for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub><annotation encoding="application/x-tex">f_{IGM}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>X</mi></msub><annotation encoding="application/x-tex">f_{X}</annotation></semantics></math>, but the values range from 0 to 1. The added constraint is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub><mo>+</mo><msub><mi>f</mi><mi>X</mi></msub><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f_{IGM}+f_X\leq 1</annotation></semantics></math>.</p>
+<p>Fitting this distribution to our dataset gives <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub><mo>=</mo><msubsup><mn>0.80</mn><mrow><mi>−</mi><mn>0.09</mn></mrow><mrow><mi>+</mi><mn>0.08</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">f_{IGM}=0.80^{+0.08}_{-0.09}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>X</mi></msub><mo>=</mo><msubsup><mn>0.11</mn><mrow><mi>−</mi><mn>0.07</mn></mrow><mrow><mi>+</mi><mn>0.10</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">f_{X}=0.11^{+0.10}_{-0.07}</annotation></semantics></math>. We calculate that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mrow><mi>h</mi><mi>o</mi><mi>s</mi><mi>t</mi></mrow></msub><mo>=</mo><msubsup><mn>4.90</mn><mrow><mi>−</mi><mn>0.20</mn></mrow><mrow><mi>+</mi><mn>0.18</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">\mu_{host}=4.90^{+0.18}_{-0.20}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mrow><mi>h</mi><mi>o</mi><mi>s</mi><mi>t</mi></mrow></msub><mo>=</mo><msubsup><mn>0.56</mn><mrow><mi>−</mi><mn>0.14</mn></mrow><mrow><mi>+</mi><mn>0.16</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">\sigma_{host}=0.56^{+0.16}_{-0.14}</annotation></semantics></math>. This means that the median rest-frame contribution of the host to the DM is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mn>130</mn><mrow><mi>−</mi><mn>23</mn></mrow><mrow><mi>+</mi><mn>25</mn></mrow></msubsup><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> </mtext><mspace width="0.333em"></mspace></mrow><mi>p</mi><mi>c</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> </mtext><mspace width="0.333em"></mspace></mrow><mi>c</mi><msup><mi>m</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">130^{+25}_{-23}\text{ } pc \text{ }cm^{-3}</annotation></semantics></math> for our sample. We fit subsamples of the data (such as DSA-110 detected sources) and do jackknife resampling (such as leave-one-out and compute every sample, and compute each statistic for every sample set, and take the mean), and end up observing that sources with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>s</mi></msub><mo>≳</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">z_s\gtrsim 0.5</annotation></semantics></math> constrain the range of the parameters significantly. But our data prefer a large fraction of baryonic material in the IGm and a large total diffuse fraction <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>d</mi></msub><annotation encoding="application/x-tex">f_d</annotation></semantics></math>. This is probably because there are too few sources with low <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><msub><mi>M</mi><mrow><mi>e</mi><mi>x</mi></mrow></msub></mrow><annotation encoding="application/x-tex">DM_{ex}</annotation></semantics></math> per unit redshift (called the <strong>DM cliff</strong>). As an example, none of our sources beyond redshift 0.1 has <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>D</mi><msub><mi>M</mi><mrow><mi>e</mi><mi>x</mi></mrow></msub></mrow><msub><mi>z</mi><mi>s</mi></msub></mfrac><mo>&lt;</mo><mn>800</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> </mtext><mspace width="0.333em"></mspace></mrow><mi>p</mi><mi>c</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> </mtext><mspace width="0.333em"></mspace></mrow><mi>c</mi><msup><mi>m</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\frac{DM_{ex}}{z_s}&lt;800 \text{ }pc \text{ } cm^{-3}</annotation></semantics></math>. If the extragalactic DM was dominated by intervening halos or host galaxies then <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><msub><mi>M</mi><mrow><mi>e</mi><mi>x</mi></mrow></msub><mo stretchy="false" form="prefix">|</mo><msub><mi>z</mi><mi>s</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(DM_{ex} | z_s)</annotation></semantics></math> would be smaller for low DMs because of the increased line-of-sight variance. Incidentally, this would be true for a universe where baryons perfectly trace the dark matter. But the IGM provides a significant statistical floor for DM per unit distance because most sightlines intersect dozens of filaments and even cosmic voids have a considerable electron column present. Our FRB sample rules out scenarios where baryons trace dark matter (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub><annotation encoding="application/x-tex">f_{IGM}</annotation></semantics></math> is low and a large portion of missing baryons are confined to galaxy halos).</p>
+<p>Although FRB DMs are affected by ionized gas in galaxy groups and clusters, the most precise constraints on the baryon budget in massive halos come from X-ray and <a href="https://en.wikipedia.org/wiki/Sunyaev%E2%80%93Zeldovich_effect">SZ</a> measurements. As a reminder, thermal X-ray emission is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∝</mo><mo>∫</mo><msubsup><mi>n</mi><mi>e</mi><mn>2</mn></msubsup><mi>d</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">\propto \int n_e^2dl</annotation></semantics></math> and SZ is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∝</mo><mo>∫</mo><msub><mi>n</mi><mi>e</mi></msub><msub><mi>T</mi><mi>e</mi></msub><mi>d</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">\propto \int n_eT_edl</annotation></semantics></math>. This means that both measurements are sensitive to large, dense regions of hot gas. FRBs pick up DM from ionized plasmas in the way. The hot baryon fraction in halos (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mrow><mi>h</mi><mi>o</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">f_{hot}</annotation></semantics></math>) is a function of halo mass, approaching the cosmological ratio <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≈</mo><mfrac><msub><mi>Ω</mi><mi>b</mi></msub><msub><mi>Ω</mi><mi>M</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">\approx \frac{\Omega_b}{\Omega_M}</annotation></semantics></math> for most massive galaxy clusters. It should be noted that this quantity is less certain for halos below <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mn>14</mn></msup><msubsup><mi>h</mi><mn>70</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><msub><mi>M</mi><mo>⊙</mo></msub></mrow><annotation encoding="application/x-tex">10^{14} h_{70}^{-1}M_\odot</annotation></semantics></math>, but recent advances in sample sizes and measurement precision has significantly improved our knowledge of both the cluster mass function and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mrow><mi>h</mi><mi>o</mi><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">f_{hot}</annotation></semantics></math>. Combining these multiwavelength observations allows us to estimate the fraction of the universe’s baryons in the hot gas of galaxy groups and clusters. We find <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>I</mi><mi>C</mi><mi>M</mi></mrow></msub><mo>=</mo><mn>3.75</mn><mo>±</mo><mn>0.5</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">f_{ICM}=3.75 \pm 0.5\%</annotation></semantics></math> of all baryons in the intracluster medium (ICM). For galaxy groups with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mn>12.7</mn></msup><msub><mi>M</mi><mo>⊙</mo></msub><mo>≤</mo><msub><mi>M</mi><mi>h</mi></msub><mo>≤</mo><msup><mn>10</mn><mn>14</mn></msup><msub><mi>M</mi><mo>⊙</mo></msub></mrow><annotation encoding="application/x-tex">10^{12.7}M_{\odot} \leq M_h \leq 10^{14} M_{\odot}</annotation></semantics></math> this number is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5.4</mn><mo>±</mo><mn>1.0</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">5.4 \pm 1.0 \%</annotation></semantics></math> and therefore, a simple addition shows that roughly 9% of baryons are in a diffuse ionized state in massive halos.</p>
+<p>What about the baryons in galaxies, including stars and cold gas? They are the last major group of baryons left. The majority of the cold gas is neutral atomic hydrogen (along with a little molecular hydrogen and helium). 21cm HI surveys at low redshifts measure the HI mass function which is then integrated to estimate the neutral hydrogen density. Taking <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Ω</mi><mrow><mi>H</mi><mi>I</mi></mrow></msub><mo>,</mo><msub><mi>Ω</mi><msub><mi>H</mi><mn>2</mn></msub></msub></mrow><annotation encoding="application/x-tex">\Omega_{HI}, \Omega_{H_2}</annotation></semantics></math> from recent surveys we find <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>H</mi><mi>I</mi></mrow></msub><mo>=</mo><msubsup><mn>9.6</mn><mrow><mi>−</mi><mn>2.3</mn></mrow><mrow><mi>+</mi><mn>3.8</mn></mrow></msubsup><mo>×</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>3</mn></mrow></msup><mo>,</mo><msub><mi>f</mi><msub><mi>H</mi><mn>2</mn></msub></msub><mo>=</mo><msubsup><mn>1.6</mn><mrow><mi>−</mi><mn>0.4</mn></mrow><mrow><mi>+</mi><mn>0.8</mn></mrow></msubsup><mo>×</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>3</mn></mrow></msup><mo>,</mo><msub><mi>f</mi><mrow><mi>c</mi><mi>o</mi><mi>l</mi><mi>d</mi></mrow></msub><mo>=</mo><msubsup><mn>1.1</mn><mrow><mi>−</mi><mn>0.2</mn></mrow><mrow><mi>+</mi><mn>0.3</mn></mrow></msubsup><mo>×</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">f_{HI}=9.6^{+3.8}_{-2.3} \times 10^{-3}, f_{H_2}=1.6^{+0.8}_{-0.4} \times 10^{-3}, f_{cold}=1.1^{+0.3}_{-0.2} \times 10^{-2}</annotation></semantics></math>. This means just over one percent of the Universe’s baryons are in cold neutral gas within galaxies. For stars estimating this fraction is significantly more difficult. The fraction itself is larger as well. Most stellar mass is in low-mass stars and we can easily see from earlier discussion that the choice of the initial mass function affects the baryon fraction <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mo>*</mo></msub><annotation encoding="application/x-tex">f_*</annotation></semantics></math> quite a bit. The <a href="https://en.wikipedia.org/wiki/Initial_mass_function#Salpeter_(1955)">Salpeter IMF</a> (bottom heavy) can return a value of 14%. Instead we can use the Chabrier IMF and a smooth fit to multiple measurements of the local stellar density to get about 4-7%.</p>
+<p>After all of this, we can fully account for the <a href="https://en.wikipedia.org/wiki/Missing_baryon_problem">missing baryons</a> by combining the FRB results with other observations. We can also partition the baryons into the IGM, galaxy groups, galaxy clusters, and galaxies. A significant majority of baryonic matter resides in the IGM, outside of virialized halos. From the FRB-independent analysis X-ray groups and clusters, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mn>9.2</mn><mrow><mi>−</mi><mn>1.6</mn></mrow><mn>1.6</mn></msubsup><mi>%</mi></mrow><annotation encoding="application/x-tex">9.2^{1.6}_{-1.6}\%</annotation></semantics></math> are in an ionized phase occupying massive halos. Roughly one percent are in cold neutral gas in galaxies. The conclusion is that the circumgalactic medium (CGM) of individual galaxies cannot contain a substantial fraction of the baryons in the universe. This is in agreement with detailed studies of individual FRB source sightlines. Our FRBs that intersect one or more foreground galaxy CGM at low impact parameters do not have significant excess dispersion. We find <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>g</mi><mi>a</mi><mi>s</mi></mrow></msub><mo>=</mo><msubsup><mn>0.22</mn><mrow><mi>−</mi><mn>0.17</mn></mrow><mrow><mi>+</mi><mn>0.23</mn></mrow></msubsup><mfrac><msub><mi>Ω</mi><mi>b</mi></msub><msub><mi>Ω</mi><mi>M</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">f_{gas}=0.22^{+0.23}_{-0.17} \frac{\Omega_b}{\Omega_M}</annotation></semantics></math> for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mn>9</mn></msup><msub><mi>M</mi><mo>⊙</mo></msub><mo>&lt;</mo><mi>M</mi><mo>&lt;</mo><mn>5</mn><mo>×</mo><msup><mn>10</mn><mn>12</mn></msup><msub><mi>M</mi><mo>⊙</mo></msub></mrow><annotation encoding="application/x-tex">10^9 M_\odot &lt; M &lt; 5 \times 10^{12} M_\odot</annotation></semantics></math>, below the cosmic average.</p>
+<p>What do these results mean? The first basic observation is that feedback processes are required to expel gas and/or prevent gas from falling into their potential wells. We cannot differentiate between specific methods but our conclusion of a rich IGM and baryon-deficient CGM is consistent with simulations where feedback suppresses lower-mass baryon halos. As a reminder, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub><annotation encoding="application/x-tex">f_{IGM}</annotation></semantics></math> is about 0.8. This agrees with other simulations. In <a href="http://simba.roe.ac.uk/">SIMBA</a> simulation with feedback turned off, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub><mo>≈</mo><mn>0.6</mn></mrow><annotation encoding="application/x-tex">f_{IGM}\approx 0.6</annotation></semantics></math> by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z&lt;1</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&gt;</mo><mn>0.85</mn></mrow><annotation encoding="application/x-tex">&gt;0.85</annotation></semantics></math> with <a href="https://en.wikipedia.org/wiki/Active_galactic_nucleus">AGN</a> feedback turned on. In the <a href="https://www.tng-project.org/">IllustrisTNG</a> simulation <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub><mo>≈</mo><mn>0.8</mn></mrow><annotation encoding="application/x-tex">f_{IGM}\approx 0.8</annotation></semantics></math> at low redshifts and baryons were missing from the CGM of Milky Way-like galaxies. Statistical cross-correlations of galaxy surveys with X-ray and kinematic SZ also agreed and showed that there were few baryons in galaxy halos.</p>
+<p>So far we have shown that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub><annotation encoding="application/x-tex">f_{IGM}</annotation></semantics></math> is high and agrees with simulations. Let’s check if another method leads to the same answer. This other method should not rely on a partition of the cosmic baryons as the quantity is sensitive to both the intergalactic and intervening halo gas. To do this, we can use the average cosmic dispersion derived above. This results in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>d</mi></msub><mo>=</mo><msubsup><mn>0.93</mn><mrow><mi>−</mi><mn>0.05</mn></mrow><mrow><mi>+</mi><mn>0.04</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">f_d=0.93^{+0.04}_{-0.05}</annotation></semantics></math>, independent of any assumptions about <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi>c</mi><mi>o</mi><mi>s</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><msub><mi>M</mi><mrow><mi>I</mi><mi>G</mi><mi>M</mi></mrow></msub><mo>,</mo><mi>D</mi><msub><mi>M</mi><mi>X</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P_{cos}(DM_{IGM}, DM_{X})</annotation></semantics></math> and its redshift evolution.</p>
+<p>The mean cosmological DM of FRBs places a ceiling on the total stellar mass of the universe because <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mo>*</mo></msub><mo>&lt;</mo><mn>1</mn><mo>−</mo><msub><mi>f</mi><mi>d</mi></msub><mo>−</mo><msub><mi>f</mi><mrow><mi>c</mi><mi>o</mi><mi>l</mi><mi>d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_*&lt;1-f_d-f_{cold}</annotation></semantics></math>. The results our our analysis suggest that over 90% of baryons are in a diffuse state in the IGM and in dark matter halos or cold gas (read: not in stars). This is independent of galaxy spectral energy distribution modeling, choice of the IMF, and the low mass cutoff for other methods. As we have repeatedly stated, most of the stellar mass is in numerous small stars. Our <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mo>*</mo></msub><annotation encoding="application/x-tex">f_*</annotation></semantics></math> constrains the mean stellar IMF. We place a 90% upper limit on the stellar baryon fraction at low redshifts of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>≤</mo><mn>9</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">f\leq 9\%</annotation></semantics></math> and therefore <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mo>*</mo></msub><mo>≤</mo><mn>5.6</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup><msub><mi>M</mi><mo>⊙</mo></msub><mi>M</mi><mi>p</mi><msup><mi>c</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\rho_* \leq 5.6 \times 10^8 M_\odot Mpc^{-3}</annotation></semantics></math> and therefore Salpeter IMFs can be ruled out for a low-mass cutoff below 0.10 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mo>⊙</mo></msub><annotation encoding="application/x-tex">M_\odot</annotation></semantics></math>.</p>
+<p>If the Universe’s total cosmic baryon content is made a free parameter then <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Ω</mi><mi>b</mi></msub><msub><mi>h</mi><mn>70</mn></msub><mo>=</mo><msubsup><mn>0.049</mn><mrow><mi>−</mi><mn>0.003</mn></mrow><mrow><mi>+</mi><mn>0.004</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">\Omega_bh_{70}=0.049^{+0.004}_{-0.003}</annotation></semantics></math>. This measurement at a late time (remember that we are measuring at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>h</mi><mn>70</mn></msub><annotation encoding="application/x-tex">h_{70}</annotation></semantics></math>) is consistent at the sub-10% level with early Universe constraints of the physical baryon density from Big Bang Nucleosynthesis and the CMB. An equally precise constraint can be obtained for the Hubble constant - <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>=</mo><msubsup><mn>71</mn><mrow><mi>−</mi><mn>6</mn></mrow><mrow><mi>+</mi><mn>6</mn></mrow></msubsup><mi>k</mi><mi>m</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> </mtext><mspace width="0.333em"></mspace></mrow><msup><mi>s</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> </mtext><mspace width="0.333em"></mspace></mrow><mi>M</mi><mi>p</mi><msup><mi>c</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">H_0=71^{+6}_{-6} km \text{ } s^{-1} \text{ } Mpc^{-1}</annotation></semantics></math> with the caveat that disactually calculating this value <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math> from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Ω</mi><mi>b</mi></msub><annotation encoding="application/x-tex">\Omega_b</annotation></semantics></math> requires fixing the baryon density parameter at the value it would be in the early universe. A possible future task could be cross-correlating a large sample of FRB DMs against other measurements that indicate the large-scale structure. This will enable even tighter bounds of some cosmological parameters and also allow measuring astrophysical feedback.</p>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ksd3\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

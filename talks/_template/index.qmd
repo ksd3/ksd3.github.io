@@ -1,0 +1,65 @@
+---
+title: "Example Talk Title"
+subtitle: "Conference Name 2025"
+author: "Kshitij Duraphe"
+date: "2025-01-18"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    preview-links: auto
+    transition: slide
+    background-transition: fade
+  typst:
+    # For custom template, uncomment and specify:
+    # template: template.typ
+    papersize: presentation-16-9
+---
+
+## Introduction
+
+This is an example presentation with dual output:
+
+- **RevealJS** → HTML slides for the web
+- **Typst** → PDF download
+
+## Mathematics {.smaller}
+
+Both formats support LaTeX math:
+
+$$E = mc^2$$
+
+And inline math like $\alpha + \beta = \gamma$.
+
+## Code Example
+
+```python
+def hello_world():
+    print("Hello, World!")
+```
+
+## Images
+
+![Placeholder image](images/placeholder.svg)
+
+Add images to the `images/` subdirectory and reference them.
+
+## Two Columns
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Left column content
+:::
+
+::: {.column width="50%"}
+Right column content
+:::
+
+::::
+
+## Questions?
+
+Thank you for attending!
+
+Contact: [ksd3.github.io](https://ksd3.github.io)

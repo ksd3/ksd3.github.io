@@ -1,0 +1,20 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Example Book Title"
+  author: "Kshitij Duraphe"
+  date: "2025-01-18"
+  chapters:
+    - index.qmd
+    - chapter1.qmd
+    - chapter2.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+  typst:
+    toc: true
+    number-sections: true

@@ -1,0 +1,79 @@
+---
+title: "Research Overview"
+---
+
+An overview of my work at the Semeter Lab at Boston University.
+
+## Algorithms
+
+### Data Processing
+
+#### 1. Ionospheric Assumption Validation
+
+For speed of computation, we use **fast 2d and 3d natural neighbors interpolation** (thick large-scale structures) and **VISTA** (thick medium-scale structures) (Video Imputation with SoftImpute, Temporal smoothing and Auxiliary data) to validate the ionospheric assumption.
+
+![VISTA Algorithm](images/timeseriesanalysis/vista.webp){width="600"}
+
+The assumption is (somewhat) invalid during solar storms, geophysical storms, magnetic reconnection with solar winds, coronal mass ejections, and so on.
+
+#### 2. RINEX conversion
+
+Developed an internal Python package named `rinexpy` - looking to merge with `georinex`:
+
+**rinexpy Operations:**
+
+1. **Merging and Editing RINEX Files**: Provides the ability to merge multiple RINEX files into a single output. Allows for editing of the file contents, such as adjusting header information, modifying observation types, and managing data intervals.
+
+2. **Clock Jump Correction**: Automatically detects and corrects clock jumps in GNSS observation data.
+
+3. **Ionospheric Correction**: Applies higher-order ionospheric corrections to the GNSS data.
+
+4. **File Format Conversion**: Supports converting BINEX and RTCM files into the RINEX format.
+
+5. **Interactive RINEX File Viewer**: Includes an interactive, web-based viewer for RINEX files.
+
+#### 3. Analysis
+
+**Cycle slip correction**: We design machine learning models for cycle slip correction. These are better than the heuristic 'stiching' process that may remove important TEC jumps that could identify an ionospheric phenomenon.
+
+![Cycle Slip Example](images/timeseriesanalysis/cycleslipexample.png){width="600"}
+
+![Practical Applications](images/timeseriesanalysis/bigvtec.png)
+
+The technique used is **LSTM-based autoencoders**, for several reasons:
+
+- The Poker Flat setups are the same receiver in roughly the same area, so we are justified in using LSTM-based autoencoders for this.
+- Under the assumptions that the internals of Pixel phones suffer roughly the same wear-and-tear, autoencoders are straightforward to deploy on Sagemaker and call for inference.
+
+![LSTM Architecture](images/timeseriesanalysis/lstmgraphs.png)
+
+We also account for **multipath noise**, **temperature noise** (Rideout and Coster), **propagation errors**, **ionospheric delays**, and utilize **precise point positioning** to estimate slant TEC as accurately as possible.
+
+![SNR Graph](images/timeseriesanalysis/SNR_GPS_S1C.png)
+
+**Time-series classification**: How does TEC change during an auroral event?
+
+<video controls width="600">
+  <source src="images/timeseriesanalysis/tecexample.mp4" type="video/mp4">
+</video>
+
+Given a dataset of time-series TEC curves at some frequencies, we want to classify them to make an **early-warning system** for auroral events (so citizen scientists can go out and take photographs!)
+
+You can probe ionospheric conditions (such as from DMSP) and get extra time series:
+
+![DMSP Data](images/timeseriesanalysis/DMSP.png)
+
+**Method for auroral phenomenon identification**:
+
+- Use 1D CNN to classify raw TEC changes as STEVE, SAPS, SAID, Discrete Aurora, Continuous Aurora, etc.
+- Analyze satellite flyby data to see what ionospheric, magnetospheric, and thermospheric parameters change in that time period.
+
+## Computer Vision Algorithms
+
+We use Max-Tree for faint phenomenon identification, active learning, monocular depth estimation (Depth Prediction Transformers), and Open Set recognition to identify STEVE in citizen science images.
+
+The clustering model developed was to classify all-sky images of aurora - using ResNet-18 to extract features, used PCA to reduce dimensionality, and K-Means++ to cluster. Achieved silhouette score of 0.7, Davies-Bouldin index of 0.9, Calinski-Harabase index of 256 indicating high-quality cluster separation.
+
+## Life on Mars
+
+Generated TEC maps from MARSIS data by modeling with two-layer Chapman functions for Martian ionosphere. Used VISTA to reconstruct (in 3D), 3d volumes of maps. Auxiliary guess was made using natural pixel decomposition, where the 3d structure estimated with tomography. Specifically, it is modeled as a Fredkin integral of the first kind and pLogMART is used as the matrix inversion algorithm. Simulated GPS propagation through it.

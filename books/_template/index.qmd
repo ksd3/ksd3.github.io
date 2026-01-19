@@ -1,0 +1,27 @@
+# Preface {.unnumbered}
+
+This is an example Quarto book with Typst PDF output.
+
+## About This Book
+
+This template demonstrates how to create a book using Quarto with both HTML and Typst PDF output formats.
+
+## How to Build
+
+To build this book:
+
+```bash
+# HTML and PDF
+quarto render books/example-book/
+
+# HTML only
+quarto render books/example-book/ --to html
+
+# PDF only (requires Typst)
+quarto render books/example-book/ --to typst
+```
+
+## Prerequisites
+
+- [Quarto](https://quarto.org/) installed
+- [Typst](https://typst.app/) installed for PDF generation

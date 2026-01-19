@@ -1,0 +1,27 @@
+---
+title: "Resume & CV"
+---
+
+## Resume
+
+A concise one-page summary of my experience and skills.
+
+<a href="cv/resume.pdf" class="btn btn-primary" download>Download Resume (PDF)</a>
+
+<iframe src="cv/resume.pdf" width="100%" height="600px" style="border: 1px solid var(--border-color); border-radius: 6px; margin-top: 1rem;"></iframe>
+
+---
+
+## Curriculum Vitae
+
+A comprehensive academic CV including publications, presentations, and teaching.
+
+<a href="cv/cv.pdf" class="btn btn-primary" download>Download CV (PDF)</a>
+
+<iframe src="cv/cv.pdf" width="100%" height="800px" style="border: 1px solid var(--border-color); border-radius: 6px; margin-top: 1rem;"></iframe>
+
+<!--
+To rebuild PDFs after editing:
+quarto render cv/resume.qmd
+quarto render cv/cv.qmd
+-->

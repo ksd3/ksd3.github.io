@@ -1,0 +1,35 @@
+---
+title: "Textbooks"
+---
+
+Online textbooks and lecture notes.
+
+## Published
+
+*No textbooks published yet.*
+
+## In Progress
+
+*Textbooks in progress are kept in private repositories until release.*
+
+<!--
+Template for adding books:
+
+### Book Title
+
+Brief description of the textbook.
+
+[Read Online](books/book-name/_book/index.html) | [Download PDF](books/book-name/_book/Book-Title.pdf)
+
+---
+
+To create a new book:
+1. Copy books/_template/ to books/book-name/
+2. Edit _quarto.yml with book metadata
+3. Add/modify chapter .qmd files
+4. Run: quarto render books/book-name/
+5. Add entry above
+
+The HTML output goes to books/book-name/_book/
+The PDF output goes to books/book-name/_book/Book-Title.pdf
+-->

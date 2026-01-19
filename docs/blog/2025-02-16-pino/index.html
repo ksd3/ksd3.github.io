@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-02-16">
+<meta name="description" content="An overview of Physics-Informed Neural Operators and their applications in space physics.">
+
+<title>PINOs in space physics – Kshitij Duraphe</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body>
+
+
+<header id="title-block-header">
+<h1 class="title">PINOs in space physics</h1>
+
+<p class="date">2025-02-16</p>
+</header>
+
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#plasma-bubbles" id="toc-plasma-bubbles">Plasma Bubbles</a></li>
+  <li><a href="#steve-mhd" id="toc-steve-mhd">STEVE MHD</a></li>
+  </ul>
+</nav>
+<p>When I was just starting at the <a href="https://heaviside.bu.edu">Semeter Lab</a> in October 2022, one of the first tasks assigned to me (which eventually became the first section of my thesis) was to do what is known to computer graphics scientists as <a href="https://www.youtube.com/watch?v=yYKqNjIMhek">novel view synthesis</a> using different 2D spectra viewing the ionosphere.</p>
+<p>As with most deep learning tasks, the trick to this challenge often lies in <a href="https://en.wikipedia.org/wiki/Data_preprocessing">data preprocessing</a>, choosing the right <a href="https://en.wikipedia.org/wiki/Neural_architecture_search">architecture</a>, <a href="https://en.wikipedia.org/wiki/Activation_function">activation function</a>, designing the right type of layer for the data you are processing, and designing the <a href="https://en.wikipedia.org/wiki/Loss_function">loss function</a>. When dealing with physical simulations, a natural choise is to start with a <a href="https://i-systems.github.io/tutorial/KSNVE/220525/01_PINN.html">Physics-Informed Neural Network</a>. There is no difference between an ANN and a PINN. ANNs are <a href="https://en.wikipedia.org/wiki/Universal_approximation_theorem">universal function approximators</a> which are trained by <a href="https://en.wikipedia.org/wiki/Backpropagation">backpropagating</a> errors through the entire network and updating the weight of each node. Many fields in deep learning are built on defining this loss function itself. The famous <a href="https://en.wikipedia.org/wiki/You_Only_Look_Once">YOLO</a> algorithm is entirely a result of loss function engineering. While the idea itself predates machine learning, modifying the loss function and training for long enough with gradient descent gets you fairly accurate results in many scenarios.</p>
+<p>The idea behind a PINN is to map a set of <em>input</em> points to their <em>outputs</em>, where the output is decided as the result of passing each point through a solution of the physical system being modeled. The most common way to get the output is to map input points to the solution of a particular differential equation that the physical system is being modeled as. Since ANNs can fit any function if trained for long enough, PINNs are designed as a neural network that are trained for shorter time periods and generalize to solutions of the differential equation that are not seen in the training data. The way they do this is by adding the differential equation itself to the loss function.</p>
+<p>This idea can be taken further. A <a href="https://arxiv.org/abs/2111.03794">physics-informed neural <em>operator</em></a> tries to generalize to the entire domain. Specifically, given an <a href="https://en.wikipedia.org/wiki/Operator_(mathematics)">operator</a> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>:</mo><mi>X</mi><mo>→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">F:X \rightarrow Y</annotation></semantics></math>, the idea is to take some points from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> and their corresponding transformations from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> and learn <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>. That is: given a neural network represented as a function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mi>x</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">N(x), x \in X</annotation></semantics></math>, we want to make <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> arbitrarily close to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>. The resulting matrix multiplication that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> performs should be close to the transformation <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>, which may not be a matrix multiplication. The way you feed points from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> into <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> is often modalities such as an image. In simple terms: If you have a video of waves in the ocean, the PINO should be able to predict where the wave is going (that is, where it is as time <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">t+1</annotation></semantics></math>) given only the picture of the wave (the current frame) at the current time <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>.</p>
+<p>The way this is done is also very simple. The idea is to take a <a href="https://en.wikipedia.org/wiki/Fourier_transform">Fourier transform</a> of the input data, multiply it by a randomly-initialized weight matrix, and take the inverse Fourier transform and compare the results. Your backpropagation will update the weight matrix itself. In practice, noise in your input data is high frequency, so the weight matrix is often initialized to favour lower frequencies in the Fourier-transformed-data. The loss function is often modified as well to include the physics-informed loss.</p>
+<p>The natural generalization is the <a href="https://github.com/vsitzmann/awesome-implicit-representations">implicit neural representation</a>. This means training a neural network that more or less overfits to the specific function at all points. I have used INRs for modeling <a href="https://en.wikipedia.org/wiki/Equatorial_plasma_bubble">plasma bubbles</a> in the ionosphere.</p>
+<p>This is a very simple overview of an interesting topic. So far PINOs have found applications in CFD simulations. I, however, used them for <a href="https://en.wikipedia.org/wiki/Magnetohydrodynamics">MHD</a> simulations. I modeled <a href="https://en.wikipedia.org/wiki/STEVE">STEVE</a>-like phenomena in the ionosphere for novel-view generation and 3D reconstruction. This was done to answer some outstanding questions in ionospheric plasma physics; namely, what can we infer about the physical processes going on in the atmosphere if the phenomenon is so-and-so large?</p>
+<h2 id="plasma-bubbles">Plasma Bubbles</h2>
+<p>The graphs below show simulations of plasma bubbles at low resolution using a PINO with the SIREN architecture. The reconstruction is pretty good, even if the SIREN architecture is not designed for diffuse boundaries. This works because SIREN architectures work well at multiple scales.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../images/Plasma_bubble_1.png"></p>
+<figcaption>Plasma Bubble 1</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../images/Plasma_bubble_2.png"></p>
+<figcaption>Plasma Bubble 2</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../images/Plasma_bubble_reconstruction.png"></p>
+<figcaption>Plasma Bubble Reconstruction</figcaption>
+</figure>
+</div>
+<h2 id="steve-mhd">STEVE MHD</h2>
+<p>A full STEVE-like simulation can be done with <a href="https://gemini3d.github.io/gemini3d/">Gemini3D</a>. I modeled the basic underlying phenomena and simulated them over lower resolutions and larger timescales. You can still see the underlying structure in the video.</p>
+<video controls="" width="100%">
+<source src="../../videos/mhd_pino.mp4" type="video/mp4">
+</video>
+<p>For this, I used 2D spectral convolutions. The PINO didn’t quite reconstruct the phenomenon because of the diffuse boundaries of ionospheric phenomena, which is what SIREN activations are designed for. I eventually ended up going with classical algorithms that helped me do a 3D reconstruction of STEVE.</p>
+<p>Here’s a single frame (frame 39) from that video. I only used 16% of the simulation as training data, and it still reconstructed everything further on pretty well!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="../../images/mhd_pino_frame.png"></p>
+<figcaption>MHD PINO Frame</figcaption>
+</figure>
+</div>
+
+
+
+
+
+
+</body></html>

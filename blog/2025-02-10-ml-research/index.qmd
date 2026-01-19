@@ -1,0 +1,66 @@
+---
+title: "How to get into AI research as an outsider"
+date: 2025-02-10
+categories: [machine-learning, career, research]
+description: "My perspective on how to break into AI research."
+---
+
+This post offers my perspective on how to break into AI research. Although it is divided into several chapters, I will primarily discuss two things. The first is *what* AI research is really like, and the second is what to do in AI research depending on your aims.
+
+## Preliminaries
+
+Let's not beat around the bush. The reason a lot of people want to get into AI research is because they want to be rich, respected, 'in the know', or be able to say 'I did it first'; primarily the first reason. It's the same with any fad. It was the same with cryptocurrency. Bitcoin [opened](https://finance.yahoo.com/quote/BTC-USD/history/?period1=1410912000&period2=1739128862) at \$10,077.40 on November 29, 2017 and nearly doubled in price three weeks later, before correcting to below \$10,000 on February 2 of the following year. It felt like practically every financial technology company launched an initial coin offering (think initial public offering, but crypto) in the summer of 2018 based on nothing more than a whitepaper proving how their cryptocurrency would beat all the other cryptocurrencies on the market. Nearly all of the coins ended up being fraudulent schemes designed to extract money from unsuspecting customers. After regulations curtailed private investments that enabled these launches the volume of coins being traded plummeted.
+
+Why did this happen? The main reason was that every financial company wanted to get in on this shiny new money-making opportunity because of fear of missing out. What did they do? They hired en masse, trying to set up teams that had domain knowledge. If they didn't hire, no one else would. Venture capitalists and private equity offered money freely to people who presented murky plans detailing expected return on investment (often 100x or more) and promised the moon. What ended up happening? Bitcoin didn't replace paper currency. The world didn't move to public-ledger-only transactions. Governments introduced new regulations to tax cryptocurrency earnings. Large companies rolled out public projects for facilitating transactions with a verifiable token.
+
+It's the same with AI. The only major difference is that cryptocurrency was still locked behind a door that only people with the right knowledge could open. AI is accessible and usable by everyone, even children. Let me take a step back and define what exactly 'AI' means, and what people think it means. A person employed as an AI engineer, ML engineer, Data Scientist, or something similar primarily works on one of the following things. I personally categorize them in the following way:
+
+- A *data scientist* is primarily concerned with *statistical inference* and hypothesis testing.
+- A *machine learning engineer* is primarily concerned with writing code that builds models to solve a particular task.
+- An *AI engineer* is primarily someone that takes together open-source tools people have built and stacks them on top of each other like LEGO blocks.
+
+These are not mutually exclusive. I know many ML engineers that only write backend software and use models available online. I know a few data scientists that primarily take models others have built and use them on tasks. I myself was an AI engineer that worked on model finetuning and data analytics.
+
+## What AI research is like
+
+In [2024](https://arxiv.org/stats/monthly_submissions) there were just under an average of 20000 submissions per month on arXiv. A [paper](https://arxiv.org/pdf/2210.00881) published two years earlier showed the number of papers submitted per month in four 'AI' categories doubled every two years or so. By my count, there are about [155 separate categories](https://arxiv.org/) on arXiv's front page. This means that in 2024, 20000 papers were submitted per month to 155 categories. Under the fairly biased and weak assumption that the abovementioned trends hold, we can say that there were 8000 papers on AI submitted per month in 2024 to arXiv, or about 40% of all submissions were in these four categories.
+
+We need to make a distinction between different types of AI research. A straightforward one can be made by classifying research as *applied machine learning* and *non-applied machine learning*.
+
+**Applied machine learning** is the application of pre-researched methods to a task. Papers such as [Day-ahead regional solar power forecasting with hierarchical temporal convolutional neural networks](https://www.sciencedirect.com/science/article/pii/S0306261924003544) are a prime example. The authors construct a model to do something, then apply it to the dataset and evaluate the results.
+
+**Non-applied machine learning** creates general methods and applies them to a variety of tasks. [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385) is an example. They create residual connections and show empirically that they are a huge improvement over all pre-existing models.
+
+When people say they want to get into AI research, they often mean *non-applied machine learning* research.
+
+## The reality of research
+
+Before you think about AI research, you should probably know what research, the field, is like. A lot of people are drawn to research because they see it as a calling. But research as a field is populated by humans, and humans are biased. The big research jobs available at big companies (Applied Scientists at Amazon, Research Scientists at NVIDIA) are only available to people with PhDs. Because they are the biggest and highest-paying research jobs, they tend to take PhDs only from high-ranking universities.
+
+There is no difference between AI research and other types of research, at least on the 'research' side. It still involves learning your field from first principles, reproducing other peoples' work, coming up with hypotheses about what can be improved in the field and how to improve it, and finally rigorously testing everything before publishing.
+
+## Practicalities
+
+### Tooling
+
+One of the big things when being introduced to a new field is learning the tooling. One of the good things about machine learning is that it is easily accessible. With tools like Google Colab, Paperspace's Gradient, and Kaggle Notebooks, it is very easy for people to start working with models and datasets. The common theme among these is Python. Python has become synonymous with machine learning, with [PyTorch](https://pytorch.org/) being the library of choice for implementing most general-purpose models.
+
+If you want to work more on the data science side of things, [R](https://www.r-project.org/) is better than Python because of the sheer variety of algorithms implemented in it. If you want to work in scientific computing, [Jax](https://docs.jax.dev/en/latest/quickstart.html) and [Julia](https://julialang.org/) are better options.
+
+The next part is the mathematics. People need to know the basics - undergraduate-level multivariate calculus, statistics, optimization theory, and possibly some formal mathematical proving before working in machine learning. A popular book is [Mathematics of Machine Learning](https://mml-book.github.io/). The two holy books of the field are [ESL](https://hastie.su.domains/ElemStatLearn/) and [ISL](https://www.statlearning.com/). To get into *deep learning*, read [Deep Learning](https://www.deeplearningbook.org/).
+
+### Educational requirements
+
+Do you need to be in higher education to start working in AI research? The answer without any caveats is **no**. AI is one of the few fields that allows people unaffiliated with an institution to submit research works to a conference. But you have a much higher chance of your research getting results if you are in higher education.
+
+### If you're looking to start
+
+If you know someone who needs a problem solved with machine learning, start working. Identifying which problems need to be solved with machine learning is an art in itself.
+
+If you're an undergraduate student then you should actively reach out to professors. Many professors are happy to take undergraduate students and assign them to a project. If you're a Master's student then it's significantly more difficult: you have to prove to professors that 1. you have the technical skill and 2. enough domain knowledge to immediately start making a contribution.
+
+A good technique is to cold email a lot of people. More than 99% of the time you will not get a reply. Be honest about your skills and shortcomings and hope for the best.
+
+### Mindset
+
+I can throw around buzzwords like resilience, mental fortitude, determination, discipline, but that's not quite what's required. Like anything, you do need to have some amount of natural talent in thinking through a problem before tackling it. The second thing is that you need to have [Sitzfleisch](https://en.wiktionary.org/wiki/Sitzfleisch), the ability to carry on under any circumstances. You only get this with practice and liking the work you do. Hard work, when properly applied, is the only thing that makes you successful.
