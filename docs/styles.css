@@ -792,3 +792,34 @@ img[src*="profilepic"] {
 .quarto-dark hr {
   border-color: var(--border-color) !important;
 }
+
+/* ===== NUCLEAR OPTION: Force toggle icon visibility ===== */
+/* This must be at the end to override everything */
+.quarto-color-scheme-toggle.quarto-navigation-tool .bi,
+.quarto-color-scheme-toggle.quarto-navigation-tool .bi::before,
+a.quarto-color-scheme-toggle .bi,
+a.quarto-color-scheme-toggle .bi::before,
+.navbar .quarto-navigation-tool .bi,
+.navbar .quarto-navigation-tool .bi::before,
+.quarto-navbar-tools .bi,
+.quarto-navbar-tools .bi::before {
+  color: #333 !important;
+  fill: #333 !important;
+  -webkit-text-fill-color: #333 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Dark mode override - must come after */
+.quarto-dark .quarto-color-scheme-toggle.quarto-navigation-tool .bi,
+.quarto-dark .quarto-color-scheme-toggle.quarto-navigation-tool .bi::before,
+.quarto-dark a.quarto-color-scheme-toggle .bi,
+.quarto-dark a.quarto-color-scheme-toggle .bi::before,
+.quarto-dark .navbar .quarto-navigation-tool .bi,
+.quarto-dark .navbar .quarto-navigation-tool .bi::before,
+.quarto-dark .quarto-navbar-tools .bi,
+.quarto-dark .quarto-navbar-tools .bi::before {
+  color: #ddd !important;
+  fill: #ddd !important;
+  -webkit-text-fill-color: #ddd !important;
+}
