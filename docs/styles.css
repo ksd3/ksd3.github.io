@@ -268,10 +268,16 @@ main {
 .quarto-light .quarto-color-scheme-toggle,
 .quarto-light .quarto-color-scheme-toggle .bi,
 .quarto-light .quarto-color-scheme-toggle .bi::before,
-.quarto-light .quarto-color-scheme-toggle i {
-  color: #444 !important;
-  fill: #444 !important;
-  -webkit-text-fill-color: #444 !important;
+.quarto-light .quarto-color-scheme-toggle i,
+body.quarto-light .navbar .quarto-color-scheme-toggle,
+body.quarto-light .navbar .quarto-color-scheme-toggle .bi,
+body.quarto-light .navbar .quarto-color-scheme-toggle i,
+html.quarto-light .quarto-color-scheme-toggle,
+[data-bs-theme="dark"] .quarto-light .quarto-color-scheme-toggle .bi {
+  color: #333 !important;
+  fill: #333 !important;
+  -webkit-text-fill-color: #333 !important;
+  opacity: 1 !important;
 }
 
 /* Force dark mode toggle to be light colored */
@@ -279,6 +285,21 @@ main {
 .quarto-dark .quarto-color-scheme-toggle .bi,
 .quarto-dark .quarto-color-scheme-toggle .bi::before,
 .quarto-dark .quarto-color-scheme-toggle i {
+  color: #ccc !important;
+  fill: #ccc !important;
+  -webkit-text-fill-color: #ccc !important;
+}
+
+/* Override navbar data-bs-theme="dark" for light mode */
+.navbar[data-bs-theme="dark"] .quarto-color-scheme-toggle .bi,
+.navbar[data-bs-theme="dark"] .quarto-color-scheme-toggle .bi::before {
+  color: #333 !important;
+  fill: #333 !important;
+  -webkit-text-fill-color: #333 !important;
+}
+
+.quarto-dark .navbar[data-bs-theme="dark"] .quarto-color-scheme-toggle .bi,
+.quarto-dark .navbar[data-bs-theme="dark"] .quarto-color-scheme-toggle .bi::before {
   color: #ccc !important;
   fill: #ccc !important;
   -webkit-text-fill-color: #ccc !important;
