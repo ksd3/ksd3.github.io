@@ -560,8 +560,105 @@ img[src*="profilepic"] {
   color: var(--bg-color);
 }
 
-/* ===== Quarto-specific dark mode overrides ===== */
-/* These catch any remaining elements */
+/* ===== Quarto/Bootstrap dark mode overrides ===== */
+/* Override darkly theme's hardcoded colors with our variables */
+
+/* Main backgrounds - override Bootstrap's bg classes */
+.quarto-dark,
+.quarto-dark body,
+.quarto-dark .bg-body,
+.quarto-dark .bg-light,
+.quarto-dark #quarto-content,
+.quarto-dark #quarto-document-content,
+.quarto-dark main,
+.quarto-dark main.content,
+.quarto-dark .page-columns,
+.quarto-dark article,
+.quarto-dark section {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Navbar in dark mode */
+.quarto-dark #quarto-header,
+.quarto-dark .navbar,
+.quarto-dark .navbar.bg-dark,
+.quarto-dark .navbar.bg-primary {
+  background-color: var(--bg-subtle) !important;
+  border-color: var(--border-color) !important;
+}
+
+.quarto-dark .nav-link,
+.quarto-dark .navbar-nav .nav-link {
+  color: var(--text-muted) !important;
+}
+
+.quarto-dark .nav-link:hover,
+.quarto-dark .nav-link.active {
+  color: var(--text-color) !important;
+}
+
+/* Sidebar in dark mode */
+.quarto-dark #quarto-sidebar,
+.quarto-dark .sidebar,
+.quarto-dark #TOC {
+  background-color: var(--bg-subtle) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* All text elements */
+.quarto-dark h1,
+.quarto-dark h2,
+.quarto-dark h3,
+.quarto-dark h4,
+.quarto-dark h5,
+.quarto-dark h6,
+.quarto-dark p,
+.quarto-dark li,
+.quarto-dark span,
+.quarto-dark div,
+.quarto-dark label {
+  color: var(--text-color) !important;
+}
+
+/* Links */
+.quarto-dark a:not(.nav-link):not(.navbar-brand) {
+  color: var(--link-color) !important;
+}
+
+.quarto-dark a:hover:not(.nav-link):not(.navbar-brand) {
+  color: var(--link-hover) !important;
+}
+
+/* Code blocks */
+.quarto-dark pre,
+.quarto-dark code,
+.quarto-dark .sourceCode {
+  background-color: var(--code-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.quarto-dark pre code {
+  background-color: transparent !important;
+}
+
+/* Tables */
+.quarto-dark table,
+.quarto-dark th,
+.quarto-dark td,
+.quarto-dark .table {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.quarto-dark th,
+.quarto-dark thead th {
+  background-color: var(--bg-subtle) !important;
+}
+
+/* Cards and containers */
 .quarto-dark .card,
 .quarto-dark .card-body,
 .quarto-dark .card-header,
@@ -576,25 +673,48 @@ img[src*="profilepic"] {
   border-color: var(--border-color) !important;
 }
 
+/* Buttons */
+.quarto-dark .btn,
 .quarto-dark .btn-outline-secondary,
 .quarto-dark .btn-outline-primary {
   color: var(--text-color) !important;
   border-color: var(--border-color) !important;
 }
 
+/* Forms */
 .quarto-dark .form-control,
-.quarto-dark .form-select {
+.quarto-dark .form-select,
+.quarto-dark input,
+.quarto-dark textarea {
   background-color: var(--bg-subtle) !important;
   color: var(--text-color) !important;
   border-color: var(--border-color) !important;
 }
 
-/* Search modal/dropdown dark mode */
+/* Footer */
+.quarto-dark .nav-footer,
+.quarto-dark footer {
+  background-color: var(--bg-color) !important;
+  color: var(--text-muted) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Blockquotes and callouts */
+.quarto-dark blockquote,
+.quarto-dark .callout {
+  background-color: var(--bg-subtle) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Search modal/dropdown */
 .quarto-dark .aa-Panel,
 .quarto-dark .aa-DetachedContainer,
-.quarto-dark .aa-Autocomplete {
+.quarto-dark .aa-Autocomplete,
+.quarto-dark .aa-Form {
   background-color: var(--bg-subtle) !important;
   color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
 }
 
 .quarto-dark .aa-Item {
@@ -603,4 +723,28 @@ img[src*="profilepic"] {
 
 .quarto-dark .aa-Item[aria-selected="true"] {
   background-color: var(--bg-color) !important;
+}
+
+.quarto-dark .aa-Input {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Listing/blog cards */
+.quarto-dark .quarto-listing,
+.quarto-dark .listing-item,
+.quarto-dark .quarto-grid-item {
+  background-color: var(--bg-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.quarto-dark .listing-title,
+.quarto-dark .listing-description,
+.quarto-dark .listing-date {
+  color: var(--text-color) !important;
+}
+
+/* Horizontal rules */
+.quarto-dark hr {
+  border-color: var(--border-color) !important;
 }

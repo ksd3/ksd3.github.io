@@ -32,7 +32,7 @@ format:
   html:
     theme:
       light: default
-      dark: default
+      dark: darkly
     css: styles.css
     html-math-method: mathml
     toc: true
