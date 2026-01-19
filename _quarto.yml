@@ -10,7 +10,7 @@ project:
     - "videos/**/*"
 
 website:
-  title: ""
+  title: "Kshitij Duraphe"
   site-url: https://ksd3.github.io
   navbar:
     title: false

@@ -20,9 +20,9 @@ To use a Typst template from Typst Universe:
 
 # Kshitij Duraphe
 
-{{< fa envelope >}} email\@example.com |
-{{< fa globe >}} ksd3.github.io |
-{{< fa brands github >}} github.com/ksd3
+email\@example.com |
+ksd3.github.io |
+github.com/ksd3
 
 ## Education
 

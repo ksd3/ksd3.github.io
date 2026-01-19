@@ -48,9 +48,9 @@ Suppose our input language only has four words ('My', 'rabbit', 'likes', 'banana
 
 ### Tokenization
 
-We first need to split the sentence into individual words. Because our language does not have any sort of punctuation, we can do what is called whitespace tokenization. This is the most natural way of splitting an English sentence - assume that individual words are separated by a blank space, read through the sentence, and store all characters between two whitespaces as a single word [^1].
+We first need to split the sentence into individual words. Because our language does not have any sort of punctuation, we can do what is called whitespace tokenization. This is the most natural way of splitting an English sentence - assume that individual words are separated by a blank space, read through the sentence, and store all characters between two whitespaces as a single word [^6].
 
-[^1]: Obviously, this goes wrong the instant you add punctuation, have strings like 'abcdefghijklabcabcdabcdeab' as input, have more words than your input stream can handle, and so on. However, implementing byte-pair encoding would go beyond the scope of the tutorial.
+[^6]: Obviously, this goes wrong the instant you add punctuation, have strings like 'abcdefghijklabcabcdabcdeab' as input, have more words than your input stream can handle, and so on. However, implementing byte-pair encoding would go beyond the scope of the tutorial.
 
 
 ```python
@@ -145,7 +145,7 @@ $
 \end{pmatrix}
 $
 
-Let's call the last matrix $W$, for 'word matrix'. Observe that when any one-hot encoded is multiplied with another matrix, by [the rules of matrix multiplication](https://www.dummies.com/article/academics-the-arts/math/pre-calculus/how-to-multiply-matrices-by-each-other-167710/), the column of the second matrix corresponding to the position of the 1 in the column vector is 'pulled out'[^1]. This is illustrated below:
+Let's call the last matrix $W$, for 'word matrix'. Observe that when any one-hot encoded is multiplied with another matrix, by [the rules of matrix multiplication](https://www.dummies.com/article/academics-the-arts/math/pre-calculus/how-to-multiply-matrices-by-each-other-167710/), the column of the second matrix corresponding to the position of the 1 in the column vector is 'pulled out'[^7]. This is illustrated below:
 
 $
 \begin{pmatrix}
@@ -169,10 +169,10 @@ $=\begin{pmatrix}
 TREE(3)
 \end{pmatrix}$
 
-If you're able to construct this second matrix, then it can potentially lead to something interesting[^2]. There are of course other ways to encode words, and for practical language tasks you take someone else's encoding and use it, but it is important to understand the core principle.
+If you're able to construct this second matrix, then it can potentially lead to something interesting[^8]. There are of course other ways to encode words, and for practical language tasks you take someone else's encoding and use it, but it is important to understand the core principle.
 
-[^1]: I have transposed the column vector to make it a row vector.
-[^2]: Foreshadowing
+[^7]: I have transposed the column vector to make it a row vector.
+[^8]: Foreshadowing
 
 
 
@@ -256,7 +256,7 @@ print("Multiplying an example random matrix\n", random_matrix, "\nby", random_to
 
 ### Sequence prediction
 
-An immediate application of this specific kind of matrix multiplication is as follows. Suppose we have the following sentence in our four-word language: 'My rabbit'. Our task is to predict the next word that comes after it[^1]. One easy way of doing this is by observing that we only have four options. We can construct the following four sentences:
+An immediate application of this specific kind of matrix multiplication is as follows. Suppose we have the following sentence in our four-word language: 'My rabbit'. Our task is to predict the next word that comes after it[^9]. One easy way of doing this is by observing that we only have four options. We can construct the following four sentences:
 | Next Word | Potential next (possible incomplete) sentence |
 |----|----|
 |My|My rabbit My|
@@ -302,11 +302,11 @@ The matrix is read row-first, column-second i.e. the probability that the word '
 
 This tells us something about how the language is constructed. We know that if we hear an alien say 'rabbit', there is a very high chance that it will say 'likes' next. If we hear it say 'likes', there is a very high chance it will say 'bananas' next. There is also a very small chance it will say 'My' after 'likes', but it will never say 'likes' after 'likes'. Therefore, **to a first order**, we can construct this matrix of probabilities that tells us what the next word in the language is going to be. In more formal terms, this is the **stochastic matrix** of a **first-order Markov chain**. It is first-order because the next word in the language only depends on the current word of the language.
 
-But wait. Languages tend to have meaning when several words are used together. For example, in English, the word 'cold' refers to something whose molecules have a lower average kinetic energy than a reference object. However, the phrase 'cold call' means unsolicited phone calls typically made for business purposes. If you only know that the current word in the sentence is 'cold' and your probability matrix says that the word 'call' appears after 'cold' 70% of the time, you may say that the sentence 'The water is cold.' is incomplete and would complete it by saying 'The water is cold call.', which makes no sense[^2]. What do we do?
+But wait. Languages tend to have meaning when several words are used together. For example, in English, the word 'cold' refers to something whose molecules have a lower average kinetic energy than a reference object. However, the phrase 'cold call' means unsolicited phone calls typically made for business purposes. If you only know that the current word in the sentence is 'cold' and your probability matrix says that the word 'call' appears after 'cold' 70% of the time, you may say that the sentence 'The water is cold.' is incomplete and would complete it by saying 'The water is cold call.', which makes no sense[^10]. What do we do?
 
-The natural approach is to say, "I know combinations of words tend to change the meaning of a phrase[^3], but I don't have any idea what constitutes a phrase in my unknown language, nor do I know if the 'meaning' of the sentence itself changes if a two words are present in adjacent positions[^4]. Let me do the same thing I did for my first-order Markov chain. Instead of asking the talking dog the probabilities of the next word after my current word, I will look at the probabilities of the next word after my current word **if another word is present in the sentence**."
+The natural approach is to say, "I know combinations of words tend to change the meaning of a phrase[^11], but I don't have any idea what constitutes a phrase in my unknown language, nor do I know if the 'meaning' of the sentence itself changes if a two words are present in adjacent positions[^12]. Let me do the same thing I did for my first-order Markov chain. Instead of asking the talking dog the probabilities of the next word after my current word, I will look at the probabilities of the next word after my current word **if another word is present in the sentence**."
 
-Specifically, you can ask the talking dog the questions "If 'rabbit likes' is present in the sentence, what is the probability that the next word is 'bananas'? What about 'rabbit', 'My', and 'likes'? If 'My rabbit' is present, what is are the probabilities for the next word?" and construct the same matrix as we did above. Since we are looking at _every_ pair of words, the number of rows of the matrix quickly grows in size. If there are 5 words in the language, the number of two-word pairs is 20 (obtained from $ 5 \choose 2$) since the order matters. If there are 100 words, there are 4950 pairs. If there are 260,000 words (a quick Google search tells me that this is roughly the number of words in Italian) then there are 33799870000 pairs. And this is just for consecutive word pairings! If we attempt to look even further back i.e. three-word pairs, there will be even more. It is easy to see that the amount of space required to store this prediction matrix grows exponentially[^5].
+Specifically, you can ask the talking dog the questions "If 'rabbit likes' is present in the sentence, what is the probability that the next word is 'bananas'? What about 'rabbit', 'My', and 'likes'? If 'My rabbit' is present, what is are the probabilities for the next word?" and construct the same matrix as we did above. Since we are looking at _every_ pair of words, the number of rows of the matrix quickly grows in size. If there are 5 words in the language, the number of two-word pairs is 20 (obtained from $ 5 \choose 2$) since the order matters. If there are 100 words, there are 4950 pairs. If there are 260,000 words (a quick Google search tells me that this is roughly the number of words in Italian) then there are 33799870000 pairs. And this is just for consecutive word pairings! If we attempt to look even further back i.e. three-word pairs, there will be even more. It is easy to see that the amount of space required to store this prediction matrix grows exponentially[^13].
 
 $
 \
@@ -348,7 +348,7 @@ One approach is to modify the values in the columns before you sum them up, in a
 
 $x_i\rightarrow\frac{e^{x_i}}{\sum_{i=1}^{i=n}e^{x_i}}$
 
-This is the famous **softmax** function which is more or less used to convert a probability distribution to another probability distribution[^6]. The important thing is that the softmax function suppressed irrelevant values (as $e^k \rightarrow 1$ as $k \rightarrow 0$).
+This is the famous **softmax** function which is more or less used to convert a probability distribution to another probability distribution[^14]. The important thing is that the softmax function suppressed irrelevant values (as $e^k \rightarrow 1$ as $k \rightarrow 0$).
 
 However, the softmax function is also not applicable to our scenario. Suppose we did actually end up converting the votes to a probability distribution and summing them. What would it actually look like? Let's do an example below:
 
@@ -365,7 +365,7 @@ $
 
 The sum of the softmaxed vector elements is 1. This is correct, because we did just convert it to a probability distribution. So this approach, while it did 'suppress' the smaller values, does not actually help us with voting. What can we do?
 
-"Okay," we say. "Let's do something else. Instead of attempting to modify every value, let's just discard the values that aren't important[^7]. First, let's look at how to extract specific features from our matrix. We know one-hot encoded vectors pull relevant rows/columns out of the matrix, so let's make a one-hot encoded vector to pull out the relevant features in the matrix in the following way. We construct a vector initially filled with zeros featuring all possible pairs in sentence where the second word is the current word, and the first word has all other words (possibly including the current word, depending on the dimensions of our matrix). Then, if the first word appears before the current word in the sentence, set that element to 1. This vector allows us to pull out the features of our probability matrix that are 'active' until that current point."
+"Okay," we say. "Let's do something else. Instead of attempting to modify every value, let's just discard the values that aren't important[^15]. First, let's look at how to extract specific features from our matrix. We know one-hot encoded vectors pull relevant rows/columns out of the matrix, so let's make a one-hot encoded vector to pull out the relevant features in the matrix in the following way. We construct a vector initially filled with zeros featuring all possible pairs in sentence where the second word is the current word, and the first word has all other words (possibly including the current word, depending on the dimensions of our matrix). Then, if the first word appears before the current word in the sentence, set that element to 1. This vector allows us to pull out the features of our probability matrix that are 'active' until that current point."
 
 This would look like:
 
@@ -400,13 +400,13 @@ Note the transpose sign. We can see that the matrix multiplication will **suppre
 Incidentally, the second form of suppression is the idea behind **attention**.
 
 
-[^1]: In the sense that the next word is 'meaningful'.
-[^2]: I am deliberately including punctuation here, as the same technique can be used when punctuations are treated as unique words.
-[^3]: This is also partially the reason the appeal to etymology is incorrect.
-[^4]: Compare 'hot', 'dog', and 'hot dog'. 
-[^5]: See [Stirling's approximation](https://en.wikipedia.org/wiki/Stirling%27s_approximation)
-[^6]: Foreshadowing
-[^7]: Technically, this is what we have been attempting to do this entire time. 
+[^9]: In the sense that the next word is 'meaningful'.
+[^10]: I am deliberately including punctuation here, as the same technique can be used when punctuations are treated as unique words.
+[^11]: This is also partially the reason the appeal to etymology is incorrect.
+[^12]: Compare 'hot', 'dog', and 'hot dog'.
+[^13]: See [Stirling's approximation](https://en.wikipedia.org/wiki/Stirling%27s_approximation)
+[^14]: Foreshadowing
+[^15]: Technically, this is what we have been attempting to do this entire time. 
 
 
 ```python
@@ -595,7 +595,10 @@ Neural networks are equivalent to matrix multiplication. Why is this so? Suppose
 
 The input to $n_1$ is $w_{11}x_1+w_{21}x_2+w_{31}x_3$, and the input to $n_2$ is $w_{12}x_1+w_{22}x_1+w_{32}x_3$. Writing these out in the form of a system of linear expressions:
 
-$$w_{11}x_1+w_{21}x_2+w_{31}x_3\\w_{12}x_1+w_{22}x_1+w_{32}x_3$$
+$$\begin{aligned}
+w_{11}x_1+w_{21}x_2+w_{31}x_3 \\
+w_{12}x_1+w_{22}x_1+w_{32}x_3
+\end{aligned}$$
 
  it is easy to see that this is in fact a matrix multiplication:$WX$, where $W=\begin{pmatrix}w_{11}&w_{21}&w_{31}\\w_{21}&w_{22}&w_{32}\end{pmatrix}, X=\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}$. Each layer also tends to have a **bias** term, so the input to a layer can be represented as the equation $WX+B$, where $B$ is the bias matrix (usually a column vector containing the same value). The activation function is applied to this resultant vector. This means that **the output of a layer of a neural network can be represented by a vector**.
 
@@ -603,7 +606,7 @@ $$w_{11}x_1+w_{21}x_2+w_{31}x_3\\w_{12}x_1+w_{22}x_1+w_{32}x_3$$
 
  1. Neural networks are **universal function approximators**. This means that given a large-enough network with nonlinear activation functions, neural networks can model **any** mapping between elements of a domain $X$ and a codomain $Y$. However, this does NOT tell us how many neurons and layers we need or what the activation function is. 
  2. Neural networks can model nonlinear relationships between elements. While the discussion of linear decision boundaries is beyond the scope of this tutorial, it is enough to know that $f$, the activation function, is usually chosen to be something like [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) or the [sigmoid function](https://en.wikipedia.org/wiki/Sigmoid_function).
- 3. Since neural networks are just matrix multiplication, they are extremely fast to train on computers[^1]
+ 3. Since neural networks are just matrix multiplication, they are extremely fast to train on computers[^16]
 
  #### Activation functions
 
@@ -624,7 +627,7 @@ where $/$ is read as 'OR'. We _subtract_ the gradient because the gradient denot
 
 Let us consider a neural network set up in the following way. We have **3** input neurons (that is, 3 input variables) and **1** hidden layer with 4 neurons, and **one** output neuron. For the sake of this example, assume that every neuron in one layer is connected to every neuron in the next layer and every neuron in the previous layer. Such a neural network is called a **fully-connected neural network**. 
 
-We have already seen how matrices can represent the input to a layer. Let's represent the output of a layer by a vector after an activation function is applied to each neuron[^2]. We will now define several variables that mathematically represent each layer. For each layer $l$, we have:
+We have already seen how matrices can represent the input to a layer. Let's represent the output of a layer by a vector after an activation function is applied to each neuron[^17]. We will now define several variables that mathematically represent each layer. For each layer $l$, we have:
 
 $$
 n_l \text{, the number of neurons in it} \\
@@ -648,7 +651,7 @@ z_l=w_la_l+b_l\\
 a_l=g_l(z_l)\\
 $$
 
-The next question is choosing an appropriate cost function for our task. Let us think about our task for a moment. Since we have been using probabilities all along to predict the next word in our sequence, it is appropriate to use a cost function that tells us how good our probability prediction is. The classical cost function that is used to explain backpropagation is the **squared error function**, $(\text{real value}-\text{predicted value})^2$. This function is natural because it is simply the difference between what we predict and what the truth is, and it is squared for many reasons such as being the variance of the unbiased estimator (if used in its mean-square form) and also being easily differentiable[^3]. But we effectively want to measure the difference between a _predicted probability distribution_ and the _real probability distribution_, as we are predicting the next word in a sentence. This requires having a maximum likelihood estimate of the parameters, and when working with Bernoulli-distributed variables (such as one-hot encoded vectors) the **cross-entropy loss** function $-(yln\hat{y}+(1-y)ln(1-\hat{y}))$ minimizes the maximum likelihood estimate[^4].
+The next question is choosing an appropriate cost function for our task. Let us think about our task for a moment. Since we have been using probabilities all along to predict the next word in our sequence, it is appropriate to use a cost function that tells us how good our probability prediction is. The classical cost function that is used to explain backpropagation is the **squared error function**, $(\text{real value}-\text{predicted value})^2$. This function is natural because it is simply the difference between what we predict and what the truth is, and it is squared for many reasons such as being the variance of the unbiased estimator (if used in its mean-square form) and also being easily differentiable[^18]. But we effectively want to measure the difference between a _predicted probability distribution_ and the _real probability distribution_, as we are predicting the next word in a sentence. This requires having a maximum likelihood estimate of the parameters, and when working with Bernoulli-distributed variables (such as one-hot encoded vectors) the **cross-entropy loss** function $-(yln\hat{y}+(1-y)ln(1-\hat{y}))$ minimizes the maximum likelihood estimate[^19].
 
 Let's see how the derivative is calculated. 
 
@@ -672,10 +675,10 @@ and similarly for the first (input) layer, named layer 0.
 
 The next task is setting up a way to recursively calculate the derivative of the cost function for any arbitrary layer's weight and bias. The general equation for this is
 
-$$
-\frac{\partial C}{\partial w_l}=\frac{\partial C}{\partial z_l}\frac{\partial z_l}{\partial w_l}\\[5pt]
-\frac{\partial C}{\partial b_l}=\frac{\partial C}{\partial z_l}\frac{\partial z_l}{\partial b_l}
-$$
+$$\begin{aligned}
+\frac{\partial C}{\partial w_l}&=\frac{\partial C}{\partial z_l}\frac{\partial z_l}{\partial w_l} \\[5pt]
+\frac{\partial C}{\partial b_l}&=\frac{\partial C}{\partial z_l}\frac{\partial z_l}{\partial b_l}
+\end{aligned}$$
 
 There are two observations we can make from this. The first is that it is straightfoward to numerically calculate the partial derivative for the last/output layer, and we can store this value in order to avoid repeated computation wherever possible. The second is that you need to calculate the change in the gradient for the last layer, then use that changed gradient for the layer before that one, and so on, 'back-propagating' the errors. 
 
@@ -707,15 +710,15 @@ $$
 \frac{\partial C_l}{\partial b_l}=\frac{\partial C}{\partial z_l}
 $$
 
-A more complete derivation can be found [here](https://towardsdatascience.com/deriving-backpropagation-with-cross-entropy-loss-d24811edeaf9)[^5], but the fundamental idea is the same.
+A more complete derivation can be found [here](https://towardsdatascience.com/deriving-backpropagation-with-cross-entropy-loss-d24811edeaf9), but the fundamental idea is the same.
 
 We can now implement this in Python and train the neural network from scratch.
 
 
- [^1]: More on this later
- [^2]: For this reason, layers tend to have the same activation function, as it is easy to parallelize the computation
- [^3]: Making automatic differentiation easier led to the invention of many fundamental inventions in empirical learning 
- [^4]: https://sacred-texts.com/hin/m01/m01002.htm, 'I am (continued Sauti)...'
+[^16]: More on this later
+[^17]: For this reason, layers tend to have the same activation function, as it is easy to parallelize the computation
+[^18]: Making automatic differentiation easier led to the invention of many fundamental inventions in empirical learning
+[^19]: https://sacred-texts.com/hin/m01/m01002.htm, 'I am (continued Sauti)...'
 
 
 ```python
