@@ -4,7 +4,7 @@ title: "About"
 
 ## Bio
 
-I'm Kshitij Duraphe. I work on human-computer interaction, reinforcement learning, foundation models, and related topics in AI/ML. I'm a May 2024 graduate from Boston University's Master of Electrical and Computer Engineering program.
+I'm Kshitij. I work on human-computer interaction, reinforcement learning, foundation models, and related topics in AI/ML. I'm a May 2024 graduate from Boston University's Master of Electrical and Computer Engineering program.
 
 ## Research Interests
 

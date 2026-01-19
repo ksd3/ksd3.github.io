@@ -22,7 +22,7 @@ I am also at MIT as a [SIPB](https://sipb.mit.edu/) member where I do DevOps + d
 
 ## Research Interests
 
-On the theory side, I'm broadly interested in astrophysics and the application of inverse methods to astrophysical phenomena. I hope to branch out into more applied [SciML](https://sciml.ai/) and develop faster and more reliable methods to understand these phenomena.
+On the theory side, I'm broadly interested in astrophysics and the application of inverse methods to astrophysical phenomena. I hope to branch out into more applied [SciML](https://sciml.ai/) and develop faster and more reliable methods to bound predictions for these phenomena.
 
 On the practical side, I'm interested in developing fast, efficient, and scalable multimodal signal and image processing systems to solve engineering problems in unstructured, noisy, and sparse scenarios.
 
@@ -30,7 +30,7 @@ On the practical side, I'm interested in developing fast, efficient, and scalabl
 
 1. **(University of Zielona Gora, 2025)**: Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of [that work](https://arxiv.org/pdf/2510.10746) is under review at ApJ.
 
-2. **(UniverseTBD, 2025)**: Mechanistic interpretability in astronomy. In particular, we showed that the [Platonic Representation Hypothesis](https://arxiv.org/abs/2405.07987) holds for astronomy in [this](https://arxiv.org/abs/2509.19453) paper, and published at the 2025 edition of NeurIPS' [ML4PS](https://ml4physicalsciences.github.io/2025/) workshop. *Update*: This is now a **spotlight** paper (top 1%), and I will be giving a talk at NeurIPS this year.
+2. **(UniverseTBD, 2025)**: Mechanistic interpretability in astronomy. In particular, we showed that the [Platonic Representation Hypothesis](https://arxiv.org/abs/2405.07987) holds for astronomy in [this](https://arxiv.org/abs/2509.19453) paper, and published at the 2025 edition of NeurIPS' [ML4PS](https://ml4physicalsciences.github.io/2025/) workshop. *Update*: This is now a **spotlight** paper (top 1%). I [gave a small talk](https://neurips.cc/virtual/2025/loc/san-diego/workshop/109577) at NeurIPS 2025 and a longer [AstroAI talk](https://www.youtube.com/watch?v=NIf-QQikukE) at Harvard in January 2026.
 
 3. **(BU, 2022-2024):** A variety of investigations into the [STEVE](https://en.wikipedia.org/wiki/STEVE) phenomenon - fluid electrodynamic simulations, citizen science + scientific data-driven reconstruction, deep learning methods for automated detection systems. I defended a [Master's thesis](https://open.bu.edu/handle/2144/48878) in April 2024 (Committee: [Joshua Semeter](https://www.bu.edu/eng/profile/joshua-semeter/), [Yukitoshi Nishimura](https://www.bu.edu/eng/profile/toshi-nishimura/), [Michael Hirsch](https://www.bu.edu/eng/profile/michael-hirsch/)) on the latter two topics.
 
