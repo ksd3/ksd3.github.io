@@ -244,10 +244,26 @@ main {
 
 /* ===== Navbar Icons Fix (Light & Dark) ===== */
 /* Override Bootstrap's data-bs-theme="dark" */
-.navbar {
-  --bs-navbar-color: var(--text-muted);
-  --bs-navbar-hover-color: var(--text-color);
-  --bs-navbar-active-color: var(--text-color);
+.navbar,
+.navbar[data-bs-theme="dark"],
+nav.navbar[data-bs-theme="dark"] {
+  --bs-navbar-color: #555 !important;
+  --bs-navbar-hover-color: #222 !important;
+  --bs-navbar-active-color: #222 !important;
+  --bs-link-color: #555 !important;
+  --bs-emphasis-color: #333 !important;
+  --bs-body-color: #333 !important;
+}
+
+.quarto-dark .navbar,
+.quarto-dark .navbar[data-bs-theme="dark"],
+.quarto-dark nav.navbar[data-bs-theme="dark"] {
+  --bs-navbar-color: #aaa !important;
+  --bs-navbar-hover-color: #eee !important;
+  --bs-navbar-active-color: #eee !important;
+  --bs-link-color: #aaa !important;
+  --bs-emphasis-color: #ddd !important;
+  --bs-body-color: #ddd !important;
 }
 
 /* Theme toggle button - force visibility */
@@ -795,14 +811,19 @@ img[src*="profilepic"] {
 
 /* ===== NUCLEAR OPTION: Force toggle icon visibility ===== */
 /* This must be at the end to override everything */
-.quarto-color-scheme-toggle.quarto-navigation-tool .bi,
-.quarto-color-scheme-toggle.quarto-navigation-tool .bi::before,
-a.quarto-color-scheme-toggle .bi,
-a.quarto-color-scheme-toggle .bi::before,
-.navbar .quarto-navigation-tool .bi,
-.navbar .quarto-navigation-tool .bi::before,
+i.bi,
+.bi,
+.bi::before,
+[class^="bi-"]::before,
+.quarto-color-scheme-toggle i,
+.quarto-color-scheme-toggle .bi,
+.quarto-color-scheme-toggle .bi::before,
+.quarto-navbar-tools i,
 .quarto-navbar-tools .bi,
-.quarto-navbar-tools .bi::before {
+.quarto-navbar-tools .bi::before,
+.navbar i.bi,
+.navbar .bi,
+.navbar .bi::before {
   color: #333 !important;
   fill: #333 !important;
   -webkit-text-fill-color: #333 !important;
@@ -811,14 +832,19 @@ a.quarto-color-scheme-toggle .bi::before,
 }
 
 /* Dark mode override - must come after */
-.quarto-dark .quarto-color-scheme-toggle.quarto-navigation-tool .bi,
-.quarto-dark .quarto-color-scheme-toggle.quarto-navigation-tool .bi::before,
-.quarto-dark a.quarto-color-scheme-toggle .bi,
-.quarto-dark a.quarto-color-scheme-toggle .bi::before,
-.quarto-dark .navbar .quarto-navigation-tool .bi,
-.quarto-dark .navbar .quarto-navigation-tool .bi::before,
+.quarto-dark i.bi,
+.quarto-dark .bi,
+.quarto-dark .bi::before,
+.quarto-dark [class^="bi-"]::before,
+.quarto-dark .quarto-color-scheme-toggle i,
+.quarto-dark .quarto-color-scheme-toggle .bi,
+.quarto-dark .quarto-color-scheme-toggle .bi::before,
+.quarto-dark .quarto-navbar-tools i,
 .quarto-dark .quarto-navbar-tools .bi,
-.quarto-dark .quarto-navbar-tools .bi::before {
+.quarto-dark .quarto-navbar-tools .bi::before,
+.quarto-dark .navbar i.bi,
+.quarto-dark .navbar .bi,
+.quarto-dark .navbar .bi::before {
   color: #ddd !important;
   fill: #ddd !important;
   -webkit-text-fill-color: #ddd !important;
