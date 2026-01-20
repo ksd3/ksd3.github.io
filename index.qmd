@@ -1,5 +1,5 @@
 ---
-title: "Kshitij Duraphe"
+title: "About"
 ---
 
 ::: {layout="[30,70]"}
@@ -8,7 +8,7 @@ title: "Kshitij Duraphe"
 I'm **Kshitij**. I work on human-computer interaction, reinforcement learning, foundation models, and all that jazz. I used to work on everything to do with AI understanding and the user experience for security professionals at [Absentia Technologies](https://www.absentiatech.com). I previously worked on recommendation systems at [Nevara.ai](https://www.nevara.ai) and also developed foundation models at [Spatialise](https://spatiali.se/). I'm a May 2024 graduate from [Boston University's](https://bu.edu) Master of Electrical and Computer Engineering program.
 :::
 
-As a student, I [worked](research.qmd) in Boston University's [Space Physics Lab](https://heaviside.bu.edu) from October 2022 to May 2024, advised by [Joshua Semeter](https://bu.edu/end/profile/joshua-semeter/). I also worked at the [Hariri Center](https://www.bu.edu/hic/) for NASA's Life on Mars initiative, developing signal processing and machine learning techniques to analyze the Martian ionosphere and simulated GPS propagation through it. Previously, I was at [COEP](https://www.coeptech.ac.in) from 2018-2022.
+As a student, I [worked](research.qmd) in Boston University's [Space Physics Lab](https://heaviside.bu.edu) from October 2022 to May 2024, advised by [Joshua Semeter](https://bu.edu/end/profile/joshua-semeter/). I also worked at the [Hariri Center](https://www.bu.edu/hic/) for NASA's Life on Mars initiative, developing signal processing and machine learning techniques to analyze the Martian ionosphere and simulate GPS propagation through it. Previously, I was at [COEP](https://www.coeptech.ac.in) from 2018-2022.
 
 I was also a TA/mentor for [CRANE](https://cranephysics.org) 2025's winter session, instructing students in computational plasma physics. I work on mechanistic interpretability in astrophysics at [UniverseTBD](https://universetbd.org/).
 
