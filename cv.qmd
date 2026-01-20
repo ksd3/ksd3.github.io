@@ -4,7 +4,7 @@ title: "Resume & CV"
 
 ## Resume
 
-A concise one-page summary of my experience and skills.
+My Resume
 
 <a href="cv/resume.pdf" class="btn btn-primary" download>Download Resume (PDF)</a>
 
@@ -14,7 +14,7 @@ A concise one-page summary of my experience and skills.
 
 ## Curriculum Vitae
 
-A comprehensive academic CV including publications, presentations, and teaching.
+My CV
 
 <a href="cv/cv.pdf" class="btn btn-primary" download>Download CV (PDF)</a>
 

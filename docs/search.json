@@ -65,35 +65,35 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Kshitij Duraphe",
+    "title": "About",
     "section": "",
-    "text": "I’m Kshitij. I work on human-computer interaction, reinforcement learning, foundation models, and all that jazz. I used to work on everything to do with AI understanding and the user experience for security professionals at Absentia Technologies. I previously worked on recommendation systems at Nevara.ai and also developed foundation models at Spatialise. I’m a May 2024 graduate from Boston University’s Master of Electrical and Computer Engineering program.\nAs a student, I worked in Boston University’s Space Physics Lab from October 2022 to May 2024, advised by Joshua Semeter. I also worked at the Hariri Center for NASA’s Life on Mars initiative, developing signal processing and machine learning techniques to analyze the Martian ionosphere and simulated GPS propagation through it. Previously, I was at COEP from 2018-2022.\nI was also a TA/mentor for CRANE 2025’s winter session, instructing students in computational plasma physics. I work on mechanistic interpretability in astrophysics at UniverseTBD.\nI am also at MIT as a SIPB member where I do DevOps + documentation for ArkOS.\nResume | Academic CV | LinkedIn | GitHub"
+    "text": "I’m Kshitij. I work on human-computer interaction, reinforcement learning, foundation models, and all that jazz. I used to work on everything to do with AI understanding and the user experience for security professionals at Absentia Technologies. I previously worked on recommendation systems at Nevara.ai and also developed foundation models at Spatialise. I’m a May 2024 graduate from Boston University’s Master of Electrical and Computer Engineering program.\nAs a student, I worked in Boston University’s Space Physics Lab from October 2022 to May 2024, advised by Joshua Semeter. I also worked at the Hariri Center for NASA’s Life on Mars initiative, developing signal processing and machine learning techniques to analyze the Martian ionosphere and simulate GPS propagation through it. Previously, I was at COEP from 2018-2022.\nI was also a TA/mentor for CRANE 2025’s winter session, instructing students in computational plasma physics. I work on mechanistic interpretability in astrophysics at UniverseTBD.\nI am also at MIT as a SIPB member where I do DevOps + documentation for ArkOS.\nResume | Academic CV | LinkedIn | GitHub"
   },
   {
     "objectID": "index.html#research-interests",
     "href": "index.html#research-interests",
-    "title": "Kshitij Duraphe",
+    "title": "About",
     "section": "Research Interests",
     "text": "Research Interests\nOn the theory side, I’m broadly interested in astrophysics and the application of inverse methods to astrophysical phenomena. I hope to branch out into more applied SciML and develop faster and more reliable methods to bound predictions for these phenomena.\nOn the practical side, I’m interested in developing fast, efficient, and scalable multimodal signal and image processing systems to solve engineering problems in unstructured, noisy, and sparse scenarios."
   },
   {
     "objectID": "index.html#selected-work",
     "href": "index.html#selected-work",
-    "title": "Kshitij Duraphe",
+    "title": "About",
     "section": "Selected Work",
     "text": "Selected Work\n\n(University of Zielona Gora, 2025): Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of that work is under review at ApJ.\n(UniverseTBD, 2025): Mechanistic interpretability in astronomy. In particular, we showed that the Platonic Representation Hypothesis holds for astronomy in this paper, and published at the 2025 edition of NeurIPS’ ML4PS workshop. Update: This is now a spotlight paper (top 1%). I gave a small talk at NeurIPS 2025 and a longer AstroAI talk at Harvard in January 2026.\n(BU, 2022-2024): A variety of investigations into the STEVE phenomenon - fluid electrodynamic simulations, citizen science + scientific data-driven reconstruction, deep learning methods for automated detection systems. I defended a Master’s thesis in April 2024 (Committee: Joshua Semeter, Yukitoshi Nishimura, Michael Hirsch) on the latter two topics.\n(BU, 2023): I worked on the NASA Life on Mars initiative at Hariri. I simulated EM propagation through Mars’ ionosphere and developed models for detecting features on GNSS maps.\n(BU, 2024): During the April 8 full solar eclipse, the Semeter Lab members went around New England and into Canada to record GNSS data from consumer cell phones. I helped take observations at MIT and Ogunquit, ME. A poster was presented by Nina Servan-Schreiber at the 2024 CEDAR Workshop. The work is now a paper.\n(GaTech, 2024): A VLM-LLM integrated end-to-end system that generates insurance recommendation reports using a combination of tenant complaints and photos taken by an insurance agent for Hacklytics 2024.\n(MIT, 2024): Developed custom optimizers for linear quantum photonic GANs at iQuHack-24.\n(MIT, 2023): A QCBM-based music generator that won second place in the IBM x Covalent challenge at iQuHack-23.\n(COEP, 2022): Building a neutral hydrogen radio telescope from scratch, advised by Archana Thosar.\n(IIT Bombay, 2021, BU, 2022): Analysis of the binary star system QX Cas with PHOEBE.\n(COEP, 2021): Some linear models for solar power, advised by Suhas Kakade and Rohan Kulkarni."
   },
   {
     "objectID": "index.html#contact",
     "href": "index.html#contact",
-    "title": "Kshitij Duraphe",
+    "title": "About",
     "section": "Contact",
     "text": "Contact\nI can be emailed at kshitijd [at] bu.edu or at kshitijduraphe5 [at] gmail.com or at kshitij.ark [at] mit.edu.\nInspired by Piotr Teterwak I am available for “office hours” (offline or through video conferencing) each week to talk about anything you like. I have gone through Masters admissions and the post-COVID US STEM job hunt, and also defended a thesis, so I have some perspective on that as well as graduate student life. Email me with the subject line “OFFICE HOURS” and give me a brief overview of what you want to talk about. Ideally you should be an undergraduate or new (US) Masters student in some field relevant to EECS, but I am happy to talk with new grads and high schoolers as well."
   },
   {
     "objectID": "index.html#miscellaneous",
     "href": "index.html#miscellaneous",
-    "title": "Kshitij Duraphe",
+    "title": "About",
     "section": "Miscellaneous",
     "text": "Miscellaneous\n\nI keep a list of courses I took at BU along with my thoughts on them.\nCheck out some of my writings.\n\nWebsites I find interesting:\n\nscivision.dev: Michael Hirsch singlehandedly carries the GNSS community on his back with Georinex and his website is full of useful tips and tricks for wrangling with C Compilers.\nDan Luu’s website. Commentary on programming and tech-society.\nThe UCR Matrix Profile Page: The best time-series page on the internet."
   },
@@ -102,21 +102,21 @@
     "href": "cv.html",
     "title": "Resume & CV",
     "section": "",
-    "text": "A concise one-page summary of my experience and skills.\nDownload Resume (PDF)"
+    "text": "My Resume\nDownload Resume (PDF)"
   },
   {
     "objectID": "cv.html#resume",
     "href": "cv.html#resume",
     "title": "Resume & CV",
     "section": "",
-    "text": "A concise one-page summary of my experience and skills.\nDownload Resume (PDF)"
+    "text": "My Resume\nDownload Resume (PDF)"
   },
   {
     "objectID": "cv.html#curriculum-vitae",
     "href": "cv.html#curriculum-vitae",
     "title": "Resume & CV",
     "section": "Curriculum Vitae",
-    "text": "Curriculum Vitae\nA comprehensive academic CV including publications, presentations, and teaching.\nDownload CV (PDF)"
+    "text": "Curriculum Vitae\nMy CV\nDownload CV (PDF)"
   },
   {
     "objectID": "blog/index.html",
