@@ -119,6 +119,13 @@
     "text": "Curriculum Vitae\nMy CV\nDownload CV (PDF)"
   },
   {
+    "objectID": "cv/resume.html",
+    "href": "cv/resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Download: resume.pdf"
+  },
+  {
     "objectID": "blog/index.html",
     "href": "blog/index.html",
     "title": "Blog",
@@ -250,6 +257,13 @@
     "title": "How to get into AI research as an outsider",
     "section": "Practicalities",
     "text": "Practicalities\n\nTooling\nOne of the big things when being introduced to a new field is learning the tooling. One of the good things about machine learning is that it is easily accessible. With tools like Google Colab, Paperspace’s Gradient, and Kaggle Notebooks, it is very easy for people to start working with models and datasets. The common theme among these is Python. Python has become synonymous with machine learning, with PyTorch being the library of choice for implementing most general-purpose models.\nIf you want to work more on the data science side of things, R is better than Python because of the sheer variety of algorithms implemented in it. If you want to work in scientific computing, Jax and Julia are better options.\nThe next part is the mathematics. People need to know the basics - undergraduate-level multivariate calculus, statistics, optimization theory, and possibly some formal mathematical proving before working in machine learning. A popular book is Mathematics of Machine Learning. The two holy books of the field are ESL and ISL. To get into deep learning, read Deep Learning.\n\n\nEducational requirements\nDo you need to be in higher education to start working in AI research? The answer without any caveats is no. AI is one of the few fields that allows people unaffiliated with an institution to submit research works to a conference. But you have a much higher chance of your research getting results if you are in higher education.\n\n\nIf you’re looking to start\nIf you know someone who needs a problem solved with machine learning, start working. Identifying which problems need to be solved with machine learning is an art in itself.\nIf you’re an undergraduate student then you should actively reach out to professors. Many professors are happy to take undergraduate students and assign them to a project. If you’re a Master’s student then it’s significantly more difficult: you have to prove to professors that 1. you have the technical skill and 2. enough domain knowledge to immediately start making a contribution.\nA good technique is to cold email a lot of people. More than 99% of the time you will not get a reply. Be honest about your skills and shortcomings and hope for the best.\n\n\nMindset\nI can throw around buzzwords like resilience, mental fortitude, determination, discipline, but that’s not quite what’s required. Like anything, you do need to have some amount of natural talent in thinking through a problem before tackling it. The second thing is that you need to have Sitzfleisch, the ability to carry on under any circumstances. You only get this with practice and liking the work you do. Hard work, when properly applied, is the only thing that makes you successful."
+  },
+  {
+    "objectID": "cv/cv.html",
+    "href": "cv/cv.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Download: cv.pdf"
   },
   {
     "objectID": "textbooks.html",
