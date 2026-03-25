@@ -476,10 +476,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="cv-resume" class="level3">
 <h3 class="anchored" data-anchor-id="cv-resume">CV / Resume</h3>
-<p>Edit <code>cv/cv.qmd</code> or <code>cv/resume.qmd</code> (Typst format), then:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render cv/cv.qmd</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render cv/resume.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The <code>cv.qmd</code> landing page embeds the generated PDFs. Find Typst templates at <a href="https://typst.app/universe">typst.app/universe</a>.</p>
+<p>Edit the Typst source files (<code>cv/cv.typ</code> or <code>cv/resume.typ</code>), then compile directly into the output directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> typst compile cv/cv.typ docs/cv/cv.pdf</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> typst compile cv/resume.typ docs/cv/resume.pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>cv.qmd</code> landing page embeds the PDFs from <code>docs/cv/</code>. Find Typst templates at <a href="https://typst.app/universe">typst.app/universe</a>.</p>
 </section>
 </section>
 <section id="deployment" class="level2">

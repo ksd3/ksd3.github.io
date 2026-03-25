@@ -1,11 +1,14 @@
 project:
   type: website
   output-dir: docs
+  pre-render:
+    - mkdir -p docs/cv
+    - quarto typst compile cv/cv.typ docs/cv/cv.pdf
+    - quarto typst compile cv/resume.typ docs/cv/resume.pdf
   resources:
     - "talks/**/*.pptx"
     - "talks/**/*.pdf"
     - "books/**/*.pdf"
-    - "cv/*.pdf"
     - "images/**/*"
     - "videos/**/*"
 

@@ -182,69 +182,6 @@
     "text": "Fall 2023\n\nEC574 Physics of Semiconductor Materials\nIntroductory quantum mechanics and solid-state physics. Professor Bellotti has a great sense of humor and is a good instructor, but his teaching methods are definitely old-school. The latter third of the course is hard because the introduction to solid-state physics does not draw from Brandsen and Joachin.\n\n\nPY536 Quantum Computing\nI was fairly disappointed with this course as it assumed the student had a background in graduate-level quantum mechanics, but was advertised as an algorithms course. The homework was obscure and confusing and relied on being able to peruse the literature and completely imbibe it. There is no hand-holding here.\n\n\nEC533 Advanced Discrete Mathematics\nI will fully admit that I smurfed in this course. The subject matter was something I had done since the age of 13 and Professor Levitin is great. I wish I had taken his other course, EC534 Discrete Stochastic Models, but I couldn’t afford to.\n\n\nEC562 Fourier Optics\nWhile the subject itself is not necessarily difficult, the instructor (Luca Dal Negro) makes you work very hard. Be prepared to spend many hours practicing the work. The textbooks used are Joseph Goodman’s Introduction to Fourier Optics and David Voelz’s Computation Fourier Optics: A MATLAB tutorial."
   },
   {
-    "objectID": "blog/2026-03-03-new-setup/index.html",
-    "href": "blog/2026-03-03-new-setup/index.html",
-    "title": "My new setup",
-    "section": "",
-    "text": "A lot of new tools supporting my workflow have been released over the past few years. The majority of a typical day for me is spent writing Markdown, Python3, and C++ code. Given that my day job used to involve reproducing and modernizing dozens of broken deep learning repositories, it’s no surprise that the combination of dependency management hell, obfuscated (often on purpose) code, and the authors’ general ineptitude in writing documentation resulted in a lot of frustration. A general situation of this kind is usually like this:"
-  },
-  {
-    "objectID": "blog/2026-03-03-new-setup/index.html#abstract",
-    "href": "blog/2026-03-03-new-setup/index.html#abstract",
-    "title": "My new setup",
-    "section": "🤩Abstract",
-    "text": "🤩Abstract\n\nProblem X is hard because of (vague and generalist statement). There have been significant advances in this field but issues such as (some technical wording) are yet to be addressed. Also, other peoples’ datasets have so-and-so problem so we introduce a new dataset (the world’s best so far) and new evals (the world’s best so far) and show that our method is state of the art and our data is also state of the art. We then use (some architecture or method) and show that it is super amazing (we trained for more epochs and extensively tuned hyperparameters) and also super scalable (you can’t run this on consumer GPUs). Our results are good enough and we can start addressing (some unsolved general problem) and (some unsolved domain-specific problem). This is a significant step towards (holy grail of the field that is going to remain unsolved until someone develops theoretical bounds for our methods)."
-  },
-  {
-    "objectID": "blog/2026-03-03-new-setup/index.html#news",
-    "href": "blog/2026-03-03-new-setup/index.html#news",
-    "title": "My new setup",
-    "section": "📢News",
-    "text": "📢News\n[2025-12-31] Dataset released! (but you need 50TB to store it, also it may require emailling us and we barely respond)\n[2025-08-12] We got award!\n[2025-05-23] We release training code (just run train.sh), inference code (just run inference.py) and model checkpoints (woYtKDTRVGlwCreI6xWDQjWu_15_28.pth (only works with PyTorch 1.X))\n[2025-03-02] Accepted to some place."
-  },
-  {
-    "objectID": "blog/2026-03-03-new-setup/index.html#quick-start",
-    "href": "blog/2026-03-03-new-setup/index.html#quick-start",
-    "title": "My new setup",
-    "section": "👨‍🏫Quick Start",
-    "text": "👨‍🏫Quick Start\nThese are the instructions we give our interns, who work on our machines, with our software setup, to reproduce our work.\n\nSet up the environment\nUse conda and then activate the environment. Also pip install -r requirements.txt\n\n\nDependency management\nGo to (some third party website) and download (5-10 files that require you to spend a significant amount of time downloading them).\n\n\nPretrained models\nDownload pretrained models from (Google Drive/Baidu/EUDAT/HuggingFace/Zenodo/Git LFS storage). But you can also use our handy script to download them! Just execute download_models.sh that may or may not require elevated user access (not supported on many industry machines) and also invoke access tokens located at ~/.folder/token.json that you need to set up before and may scrape websites you’ve never heard of!\nThen move them to ./models.\n\n\nPrepare the datasets\nComing soon! The dataset structure is\ndataset/\n├── dataset_name/\n│   ├── raw/\n│   │   ├── modality_a/\n│   │   │   ├── ...\n│   │   │   └── ...\n│   │   ├── modality_b/\n│   │   └── ...\n│   │\n│   ├── processed/\n│   │   └── representation_type/\n│   │       ├── ...\n│   │       └── ...\n│   │\n│   ├── annotations/\n│   │   ├── ...\n│   │   └── ...\n│   │\n│   ├── splits/\n│   │   └── version_x/\n│   │       ├── setup_a/\n│   │       │   ├── train.txt\n│   │       │   ├── val.txt\n│   │       │   ├── test.txt\n│   │       │   └── all.txt\n│   │       └── setup_b/\n│   │           ├── train.txt\n│   │           ├── val.txt\n│   │           └── test.txt\n│   │\n│   ├── statistics/\n│   │   └── representation_type/\n│   │       ├── mean.npy\n│   │       └── std.npy\n│   │\n│   ├── metadata/\n│   │   ├── config.yaml\n│   │   ├── info.json\n│   │   └── README.md\n│   │\n│   ├── misc/\n│   │   ├── legacy_files/\n│   │   ├── experimental/\n│   │   ├── temporary/\n│   │   └── some_files_that_are_never_used/\n│   │\n│   └── scripts/\n│       ├── preprocessing_script.py\n│       └── split_generation.py\n│\n├── external/\n│   └── ...\n│\n└── ..."
-  },
-  {
-    "objectID": "blog/2026-03-03-new-setup/index.html#inference",
-    "href": "blog/2026-03-03-new-setup/index.html#inference",
-    "title": "My new setup",
-    "section": "🎬Inference",
-    "text": "🎬Inference\nIf you want to test the inference (which you don’t need to download datasets for), run\nscripts/inference/single_inference/test_woYtKDTRVGlwCreI6xWDQjWu_15_28.sh\nscripts/inference/single_inference/test_woYtKDTRVGlwCreI6xWDQjWu_15_28_big.sh\nAlso you won’t be able to run these scripts on your own. You have to replace ${some-abbreviated-variable-denoting-preprocessing-type} and ${some-abbreviated-variable-denoting-file-path} in those scripts to process the input data (often processed with another deep learning model) correctly. You can also not use them, just comment them out! (And you won’t get the results we show in our paper..)\nYou can also benchmark the models by running these scripts:\nscripts/inference/batch_inference/test_woYtKDTRVGlwCreI6xWDQjWu_15_28.sh\nscripts/inference/batch_inference/test_woYtKDTRVGlwCreI6xWDQjWu_15_28_big.sh\nThe input data (that’s processed from your original data) is saved to folder_that_was_just_created/real_processed_data."
-  },
-  {
-    "objectID": "blog/2026-03-03-new-setup/index.html#train-your-own-models",
-    "href": "blog/2026-03-03-new-setup/index.html#train-your-own-models",
-    "title": "My new setup",
-    "section": "🚀Train your own models",
-    "text": "🚀Train your own models\nHere’s how you can train your own models.\n\nTrain the preprocessing models\nOur preprocessing models have been trained on multiple GPUs.\nscripts/train/train_preprocessor.sh\nBut you can also train on a single GPU.\nscripts/train/train_preprocessor_single.sh\nAnd you have several options while training this preprocessor. You can turn these options off by deleting ${variable1}, ${variable2}, and ${variable3}\n\n\nTrain the main model\nYou should run this command to extract the processed data obtained from the model you just trained. (Often times, this command will retrain the entire model, making the previous command useless)\nscripts/train/train_preprocessor_get_codes.sh\nYou can then train the small or big models.\nscripts/train/train_woYtKDTRVGlwCreI6xWDQjWu_15_28.sh\nscripts/train/train_woYtKDTRVGlwCreI6xWDQjWu_15_28_big.sh\n\n\nEvaluate the models\nYou can then evaluate the models with\nscripts/eval/eval_preprocessor.sh\nscripts/eval/eval_woYtKDTRVGlwCreI6xWDQjWu_15_28.sh\nscripts/eval/eval_woYtKDTRVGlwCreI6xWDQjWu_15_28_big.sh"
-  },
-  {
-    "objectID": "blog/2026-03-03-new-setup/index.html#postprocessing",
-    "href": "blog/2026-03-03-new-setup/index.html#postprocessing",
-    "title": "My new setup",
-    "section": "🚨Postprocessing",
-    "text": "🚨Postprocessing\nYou can postprocess the results of the inference. You can adjust ${postprocessing_variable} to get somewhat better results.\ncd postprocess/scripts\nscripts/run_postprocessing.sh"
-  },
-  {
-    "objectID": "blog/2026-03-03-new-setup/index.html#acknowledgement",
-    "href": "blog/2026-03-03-new-setup/index.html#acknowledgement",
-    "title": "My new setup",
-    "section": "🌹Acknowledgement",
-    "text": "🌹Acknowledgement\nInsert acknowlegements here."
-  },
-  {
-    "objectID": "blog/2026-03-03-new-setup/index.html#citation",
-    "href": "blog/2026-03-03-new-setup/index.html#citation",
-    "title": "My new setup",
-    "section": "📜Citation",
-    "text": "📜Citation\nYou can cite our work in the following BibTeX way:\n@misc{anonymous202Xgeneric,\n  title        = {Title of the Paper},\n  author       = {Anonymous Author(s)},\n  year         = {202X},\n  eprint       = {XXXX.XXXXX},\n  archivePrefix= {arXiv},\n  primaryClass = {cs.XX},\n  url          = {https://arxiv.org/abs/XXXX.XXXXX}\n}\nThere are a myriad of problems with this kind of README.md. For the sake of brevity, here are a few of them:\n\nNowhere - not a single time - does the README mention that you must clone it and then set up the virtual environment. This may sound resoundingly obvious, but I have run into too many repositories filled with nonsensical files that actively hinder you from using it.\nNowhere - not a single time - does the README mention how the training was done, any nuances, whether they averaged over several seeds, how they minimized randomness.\nNowhere - not a single time - does the README mention what the raw output looks like before postprocessing.\nNowhere - not a single time - does the README mention how to visualize outputs in different formats.\nNowhere - not a single time - does the README mention that your data goes through several stages of preprocessing before its actually fed into the trained model. While this may be obvious to people in the field, it’s still hard to determine what’s going on with your data.\nNowhere - not a single time - does the README mention any parameters used to tweak the pre and postprocessing of data. This information is often times not mentioned in the paper either.\nNowhere - not a single time, does the README mention reliance on a ten-year-old package that needs manual source editing to work with modern pipelines.\n\nThe kicker? The last update to the repository was eight months ago, and despite many people creating issues showing bad the results are from the authors’ pretrained models, or asking for access to data, the authors never respond.\nI could go on a rant about the reproducibility crisis in science, but that’s not the point of this blog. However I do understand why people do it. At the student level, you don’t want to get scooped because your future career depends on it. At the corporate level, model architectures, feature engineering tricks, and training pipelines are often treated as proprietary assets, leading to deliberate obfuscation. Scientists are rewarded for novel results, not clean, documented, reusable code, so there is little incentive to invest in clarity and every incentive to keep a competitive edge. There is also the possibility that many people are just bad at coding, so they write sloppy code. Given the amount of moving parts in a typical deep learning pipeline (GPU behavior, random seeds, data loaders), small, undocumented implementation choices can change results, and opaque code makes it nearly impossible to track these down. Finally, groups often use clusters (which take a long time to update their software versions) to compute, so there’s no point in writing code for modern versions of the software stack.\nI like using modern software. I think software that’s clean, well-implemented, open-source, and modernized offers a myriad of advantages over older versions of the code. For example, Python 3.14 removes the GIL, so there will finally be support for true multithreading. This greatly simplifies creating efficient PyTorch dataloaders, but I expect it to take a couple of years before PyTorch natively supports this. Given that I expect to be developing on Linux machines for the foreseeable future, I want to use a setup stack that leverages modern open source tools and configure it to my taste.\nThere are of course some caveats to this. Open-source software controlled by corporations can be monetized. Take the case of MySQL. Oracle copyrights MySQL but maintains an open-source version for community use. However, the community version of MySQl does not have TDE or thread pooling for hundreds of thousands of edition. If you’re ever in a situation where you require your MySQL database to handle a large amount of transactions, you’re forced to fork over the money for a license. On the other hand, you do (in theory) get the benefits of training programs, technical support, and security fixes.\nFor personal projects, I prefer my software to be open-source (this is due to years spent fighting MATLAB). However, I understand that without a dedicated team supporting and updating the software the user experience is horrible. I will admit that I, like many others, prefer a solid user experience more than I’d like to admit. Given that I work mostly in Python, I run into most of the usual problems (paraphrasing from this):\n\nThere are a lot of ways to install Python, depending on the OS; each method comes with its own gotchas.\nThere’s a lot to know upfront about using Python, a language designed for beginners.\nPython is extremely versatile and is used in so many different contexts that it’s hard to know what’s ‘good’ and what’s ‘bad’.\nMany people claim to give good advice on the matter.\nThere are many tools to solve Python’s problems, so we suffer from the paradox of choices.\n-m and py are hardly used.\nMany popular packages are compiled!\nPYTHONPATH and PATH and general bad naming conventions make setting up Python hard to use across different machines.\n\nI recommend reading the rest of the article to gain a more nuanced understanding of uv. But I’ve switched to it as my package manager anyway. It’s perfect for someone like me, who writes a lot of greenfield projects. Like the article, however, I will also address the elephant in the room. uv’s owner Astral is a commercial entity with no obvious path to profitability. If they’re aiming to become a direct competitor to Anaconda, they must eventually include a GUI as the vast majority of Python users run Python on Windows. However, uv is so good in every other possible way that I don’t see myself switching off it any time soon.\nI also care a lot about code readability and maintainability. I care about well-formatted, heavily-commented, and straightforward code. Astral’s other product, Ruff is a code linter that’s extremely easy to use and extremely fast. It replaces all of the other linters I’ve used (like Black, Flake8, isort - (un)ironically, Ruff advertises itself as alternatives to all of them) and works blazingly fast right out of the box."
-  },
-  {
     "objectID": "blog/2025-02-10-ml-research/index.html",
     "href": "blog/2025-02-10-ml-research/index.html",
     "title": "How to get into AI research as an outsider",
@@ -319,7 +256,7 @@
     "href": "template.html#adding-content",
     "title": "Build Your Own",
     "section": "Adding Content",
-    "text": "Adding Content\n\nBlog Post\nmkdir blog/2026-01-15-my-post\nCreate blog/2026-01-15-my-post/index.qmd:\n---\ntitle: \"Post Title\"\nauthor: \"Your Name\"\ndate: \"2026-01-15\"\ncategories: [topic1, topic2]\ndescription: \"Brief description for listings\"\n---\n\nYour content here...\nPosts are auto-sorted by date with categories and an RSS feed.\n\n\nTalk (RevealJS + PDF)\ncp -r talks/_template talks/2026-my-talk\n# Edit talks/2026-my-talk/index.qmd\nquarto render talks/2026-my-talk/\nThen add an entry to talks.qmd with links to the HTML slides and PDF.\n\n\nBook / Textbook\ncp -r books/_template books/my-book\n# Edit books/my-book/_quarto.yml and chapter files\nquarto render books/my-book/\nThen add an entry to textbooks.qmd.\n\n\nCV / Resume\nEdit cv/cv.qmd or cv/resume.qmd (Typst format), then:\nquarto render cv/cv.qmd\nquarto render cv/resume.qmd\nThe cv.qmd landing page embeds the generated PDFs. Find Typst templates at typst.app/universe."
+    "text": "Adding Content\n\nBlog Post\nmkdir blog/2026-01-15-my-post\nCreate blog/2026-01-15-my-post/index.qmd:\n---\ntitle: \"Post Title\"\nauthor: \"Your Name\"\ndate: \"2026-01-15\"\ncategories: [topic1, topic2]\ndescription: \"Brief description for listings\"\n---\n\nYour content here...\nPosts are auto-sorted by date with categories and an RSS feed.\n\n\nTalk (RevealJS + PDF)\ncp -r talks/_template talks/2026-my-talk\n# Edit talks/2026-my-talk/index.qmd\nquarto render talks/2026-my-talk/\nThen add an entry to talks.qmd with links to the HTML slides and PDF.\n\n\nBook / Textbook\ncp -r books/_template books/my-book\n# Edit books/my-book/_quarto.yml and chapter files\nquarto render books/my-book/\nThen add an entry to textbooks.qmd.\n\n\nCV / Resume\nEdit the Typst source files (cv/cv.typ or cv/resume.typ), then compile directly into the output directory:\nquarto typst compile cv/cv.typ docs/cv/cv.pdf\nquarto typst compile cv/resume.typ docs/cv/resume.pdf\nThe cv.qmd landing page embeds the PDFs from docs/cv/. Find Typst templates at typst.app/universe."
   },
   {
     "objectID": "template.html#deployment",
@@ -376,47 +313,5 @@
     "title": "About",
     "section": "Miscellaneous",
     "text": "Miscellaneous\n\nI keep a list of courses I took at BU along with my thoughts on them.\nCheck out some of my writings.\n\nWebsites I find interesting:\n\nscivision.dev: Michael Hirsch singlehandedly carries the GNSS community on his back with Georinex and his website is full of useful tips and tricks for wrangling with C Compilers.\nDan Luu’s website. Commentary on programming and tech-society.\nThe UCR Matrix Profile Page: The best time-series page on the internet.\nAlwinfy’s Garden: D is a legitimate programming language (and I should start learning Zig)."
-  },
-  {
-    "objectID": "talks/2026-open-source-arkos/index.html#introduction",
-    "href": "talks/2026-open-source-arkos/index.html#introduction",
-    "title": "Example Talk Title",
-    "section": "Introduction",
-    "text": "Introduction\nThis is an example presentation with dual output:\n\nRevealJS → HTML slides for the web\nTypst → PDF download"
-  },
-  {
-    "objectID": "talks/2026-open-source-arkos/index.html#mathematics",
-    "href": "talks/2026-open-source-arkos/index.html#mathematics",
-    "title": "Example Talk Title",
-    "section": "Mathematics",
-    "text": "Mathematics\nBoth formats support LaTeX math:\n\\[E = mc^2\\]\nAnd inline math like \\(\\alpha + \\beta = \\gamma\\)."
-  },
-  {
-    "objectID": "talks/2026-open-source-arkos/index.html#code-example",
-    "href": "talks/2026-open-source-arkos/index.html#code-example",
-    "title": "Example Talk Title",
-    "section": "Code Example",
-    "text": "Code Example\ndef hello_world():\n    print(\"Hello, World!\")"
-  },
-  {
-    "objectID": "talks/2026-open-source-arkos/index.html#images",
-    "href": "talks/2026-open-source-arkos/index.html#images",
-    "title": "Example Talk Title",
-    "section": "Images",
-    "text": "Images\n\nPlaceholder imageAdd images to the images/ subdirectory and reference them."
-  },
-  {
-    "objectID": "talks/2026-open-source-arkos/index.html#two-columns",
-    "href": "talks/2026-open-source-arkos/index.html#two-columns",
-    "title": "Example Talk Title",
-    "section": "Two Columns",
-    "text": "Two Columns\n\n\nLeft column content\n\nRight column content"
-  },
-  {
-    "objectID": "talks/2026-open-source-arkos/index.html#questions",
-    "href": "talks/2026-open-source-arkos/index.html#questions",
-    "title": "Example Talk Title",
-    "section": "Questions?",
-    "text": "Questions?\nThank you for attending!\nContact: ksd3.github.io"
   }
 ]
