@@ -107,7 +107,7 @@
 #resume_list[
   - Architected and deployed a production-ready SaaS video analysis platform from the ground up on AWS, establishing core AI service infrastructure and a full CI/CD pipeline with Terraform and Docker, reducing deployment cycles from days to *\<2 hours*.
   - Built the core infrastructure and APIs enabling a fleet of autonomous *AI agents* to *read* video streams, *understand* complex events through a reasoning engine, and *act* by flagging anomalies in real-time using Python, PyTorch, and Kafka on Kubernetes (K8S).
-  - Engineered the platform's high-performance inference service for computer vision models (ViM/SwinV2), achieving *\<10ms p99 latency* through model quantization and optimized data loaders.
+  - Designed and implemented a “ChatGPT for videos” pipeline using frame-level SVM classification to route frames to offline ViM/SwinV2 enhancement, with precomputed AI agent answers delivering \<1s p99 latency for common queries and ~30s for novel questions, enabling efficient interactive video Q&A at scale
   - Established a rigorous, automated *evaluation pipeline* to benchmark agent performance and API latency, reducing model regressions by 40%; improved system stability to *99.9%* by resolving a critical memory leak during on-call duties.
   - Developed a multimodal Video Question-Answering (VideoQA) system for complex temporal reasoning, improving answer accuracy by *25%*, and built a synthetic data pipeline with diffusion models to reduce false positives by *15%*.
 ]
