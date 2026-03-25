@@ -12,3 +12,6 @@ cv/cv_*.typ
 
 # Source PDFs (only docs/cv/ copies are needed for the site)
 cv/*.pdf
+
+# Draft blog posts (rendered HTML)
+docs/blog/2026-03-03-new-setup/

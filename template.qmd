@@ -115,14 +115,7 @@ Then add an entry to `textbooks.qmd`.
 
 ### CV / Resume
 
-Edit the Typst source files (`cv/cv.typ` or `cv/resume.typ`), then compile directly into the output directory:
-
-```bash
-quarto typst compile cv/cv.typ docs/cv/cv.pdf
-quarto typst compile cv/resume.typ docs/cv/resume.pdf
-```
-
-The `cv.qmd` landing page embeds the PDFs from `docs/cv/`. Find Typst templates at [typst.app/universe](https://typst.app/universe).
+Edit the Typst source files (`cv/cv.typ` or `cv/resume.typ`). The PDFs are compiled automatically by `quarto render` via a pre-render hook — no separate step needed. The `cv.qmd` landing page embeds the PDFs from `docs/cv/`. Find Typst templates at [typst.app/universe](https://typst.app/universe).
 
 ## Deployment
 
@@ -131,12 +124,11 @@ This site uses GitHub Pages serving from the `docs/` folder on `main`.
 ### Workflow
 
 ```bash
-# 1. Edit .qmd source files
-# 2. Render (selectively or fully)
-quarto render index.qmd          # single page
-quarto render                    # everything
+# 1. Edit source files (.qmd, .typ, etc.)
+# 2. Render everything (compiles CV/resume PDFs automatically)
+quarto render
 
-# 3. Commit source AND rendered output together
+# 3. Commit and push
 git add .
 git commit -m "Update site"
 git push
