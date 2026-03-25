@@ -1,8 +1,8 @@
 ---
-title: "Example Talk Title"
-subtitle: "Conference Name 2025"
-author: "Kshitij Duraphe"
-date: "2025-01-18"
+title: "How to Contribute to ArkOS"
+subtitle: "and an introduction to (open-source) software development"
+author: "Kshitij DUraphe"
+date: "2026-02-27"
 format:
   revealjs:
     theme: simple
@@ -16,7 +16,7 @@ format:
     papersize: presentation-16-9
 ---
 
-## Introduction
+## Introductioni
 
 This is an example presentation with dual output:
 

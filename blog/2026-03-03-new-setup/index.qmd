@@ -1,0 +1,268 @@
+---
+title: "My new setup"
+date: 2026-03-03
+categories: [zed, quarto, vim, webview]
+description: "How I'd set things up on a new Linux machine"
+filters:
+  - details
+---
+
+A lot of new tools supporting my workflow have been released over the past few years. The majority of a typical day for me is spent writing [Markdown](https://en.wikipedia.org/wiki/Markdown), Python3, and C++ code.
+Given that my day job _used_ to involve reproducing and modernizing dozens of broken deep learning repositories, it's no surprise that the combination of dependency management hell, obfuscated (often on purpose) code, and the authors' general ineptitude in writing documentation resulted in a lot of frustration. A general situation of this kind is usually like this: 
+
+- I have a link to a GitHub repository that claims to be the official implementation of one of three or four papers claiming to be SOTA on a particular problem. This repository has a `README.md` usually structured as follows:
+
+# Generic AI repository
+::: {.text-center}
+**Catchy Name: Task X with one or more of method Y/dataset Z**
+:::
+::: {.text-center}
+Author 1^1^, Author 2, Author 3, Author 4, Author 5, Author 6
+
+^1^Affiliation 1
+
+†Corresponding Author
+
+**Award awarded to the paper**
+:::
+
+(Some videos)
+
+🤩Abstract
+---
+
+> Problem X is hard because of (vague and generalist statement). There have been significant advances in this field but issues such as (some technical wording) are yet to be addressed. Also, other peoples' datasets have so-and-so problem so we introduce a new dataset (the world's best so far) and new evals (the world's best so far) and show that our method is state of the art and our data is also state of the art. We then use (some architecture or method) and show that it is super amazing (we trained for more epochs and extensively tuned hyperparameters) and also super scalable (you can't run this on consumer GPUs). Our results are good enough and we can start addressing (some unsolved general problem) and (some unsolved domain-specific problem). This is a significant step towards (holy grail of the field that is going to remain unsolved until someone develops theoretical bounds for our methods).
+
+📢News
+---
+
+[2025-12-31] Dataset released! (but you need 50TB to store it, also it may require emailling us and we barely respond)
+
+[2025-08-12] We got **award**!
+
+[2025-05-23] We release training code (just run `train.sh`), inference code (just run `inference.py`) and model checkpoints (`woYtKDTRVGlwCreI6xWDQjWu_15_28.pth` (only works with PyTorch 1.X))
+
+[2025-03-02] Accepted to **some place**.
+
+👨‍🏫Quick Start
+---
+
+These are the instructions we give our interns, who work on our machines, with our software setup, to reproduce our work.
+
+::: {.details}
+### Set up the environment
+
+Use `conda` and then activate the environment. Also `pip install -r requirements.txt`
+:::
+
+::: {.details}
+### Dependency management
+
+Go to (some third party website) and download (5-10 files that require you to spend a significant amount of time downloading them).
+
+:::
+
+::: {.details}
+
+### Pretrained models
+
+Download pretrained models from (Google Drive/Baidu/EUDAT/HuggingFace/Zenodo/Git LFS storage). But you can also use our handy script to download them! Just execute `download_models.sh` that may or may not require elevated user access (not supported on many industry machines) and also invoke access tokens located at `~/.folder/token.json` that you need to set up before and may scrape websites you've never heard of!
+
+Then move them to `./models`.
+:::
+
+::: {.details}
+
+### Prepare the datasets
+
+Coming soon! The dataset structure is
+
+```
+dataset/
+├── dataset_name/
+│   ├── raw/
+│   │   ├── modality_a/
+│   │   │   ├── ...
+│   │   │   └── ...
+│   │   ├── modality_b/
+│   │   └── ...
+│   │
+│   ├── processed/
+│   │   └── representation_type/
+│   │       ├── ...
+│   │       └── ...
+│   │
+│   ├── annotations/
+│   │   ├── ...
+│   │   └── ...
+│   │
+│   ├── splits/
+│   │   └── version_x/
+│   │       ├── setup_a/
+│   │       │   ├── train.txt
+│   │       │   ├── val.txt
+│   │       │   ├── test.txt
+│   │       │   └── all.txt
+│   │       └── setup_b/
+│   │           ├── train.txt
+│   │           ├── val.txt
+│   │           └── test.txt
+│   │
+│   ├── statistics/
+│   │   └── representation_type/
+│   │       ├── mean.npy
+│   │       └── std.npy
+│   │
+│   ├── metadata/
+│   │   ├── config.yaml
+│   │   ├── info.json
+│   │   └── README.md
+│   │
+│   ├── misc/
+│   │   ├── legacy_files/
+│   │   ├── experimental/
+│   │   ├── temporary/
+│   │   └── some_files_that_are_never_used/
+│   │
+│   └── scripts/
+│       ├── preprocessing_script.py
+│       └── split_generation.py
+│
+├── external/
+│   └── ...
+│
+└── ...
+```
+:::
+
+🎬Inference
+---
+If you want to test the inference (which you don't need to download datasets for), run
+```bash
+scripts/inference/single_inference/test_woYtKDTRVGlwCreI6xWDQjWu_15_28.sh
+scripts/inference/single_inference/test_woYtKDTRVGlwCreI6xWDQjWu_15_28_big.sh
+```
+
+Also you won't be able to run these scripts on your own. You have to replace `${some-abbreviated-variable-denoting-preprocessing-type}` and `${some-abbreviated-variable-denoting-file-path}` in those scripts to process the input data (often processed with another deep learning model) correctly. You can also _not_ use them, just comment them out! (And you won't get the results we show in our paper..)
+
+You can also benchmark the models by running these scripts:
+```bash
+scripts/inference/batch_inference/test_woYtKDTRVGlwCreI6xWDQjWu_15_28.sh
+scripts/inference/batch_inference/test_woYtKDTRVGlwCreI6xWDQjWu_15_28_big.sh
+```
+
+The input data (that's processed from your original data) is saved to `folder_that_was_just_created/real_processed_data`.
+
+🚀Train your own models
+---
+
+Here's how you can train your own models.
+
+::: {.details}
+### Train the preprocessing models
+
+Our preprocessing models have been trained on multiple GPUs.
+
+```bash
+scripts/train/train_preprocessor.sh
+```
+
+But you can also train on a single GPU.
+```bash
+scripts/train/train_preprocessor_single.sh
+```
+
+And you have several options while training this preprocessor. You can turn these options off by deleting `${variable1}`, `${variable2}`, and `${variable3}`
+
+:::
+
+::: {.details}
+### Train the main model
+
+You should run this command to extract the processed data obtained from the model you just trained. (Often times, this command will retrain the entire model, making the previous command useless)
+```bash
+scripts/train/train_preprocessor_get_codes.sh
+```
+
+You can then train the small or big models.
+```bash
+scripts/train/train_woYtKDTRVGlwCreI6xWDQjWu_15_28.sh
+scripts/train/train_woYtKDTRVGlwCreI6xWDQjWu_15_28_big.sh
+```
+:::
+
+::: {.details}
+### Evaluate the models
+
+You can then evaluate the models with
+```bash
+scripts/eval/eval_preprocessor.sh
+scripts/eval/eval_woYtKDTRVGlwCreI6xWDQjWu_15_28.sh
+scripts/eval/eval_woYtKDTRVGlwCreI6xWDQjWu_15_28_big.sh
+```
+:::
+
+🚨Postprocessing
+---
+
+You can postprocess the results of the inference. You can adjust `${postprocessing_variable}` to get somewhat better results.
+
+```bash
+cd postprocess/scripts
+scripts/run_postprocessing.sh
+```
+
+🌹Acknowledgement
+---
+
+Insert acknowlegements here.
+
+📜Citation
+---
+
+You can cite our work in the following BibTeX way:
+```bibtex
+@misc{anonymous202Xgeneric,
+  title        = {Title of the Paper},
+  author       = {Anonymous Author(s)},
+  year         = {202X},
+  eprint       = {XXXX.XXXXX},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.XX},
+  url          = {https://arxiv.org/abs/XXXX.XXXXX}
+}
+```
+
+There are a myriad of problems with this kind of `README.md`. For the sake of brevity, here are a few of them:
+
+- Nowhere - not a single time - does the `README` mention that you must _clone_ it and then set up the virtual environment. This may sound resoundingly obvious, but I have run into too many repositories filled with nonsensical files that actively hinder you from using it.
+- Nowhere - not a single time - does the `README` mention _how_ the training was done, any nuances, whether they averaged over several seeds, how they minimized randomness.
+- Nowhere - not a single time - does the `README` mention what the raw output looks like before postprocessing.
+- Nowhere - not a single time - does the `README` mention how to visualize outputs in different formats.
+- Nowhere - not a single time - does the `README` mention that your data goes through several stages of preprocessing before its actually fed into the trained model. While this may be obvious to people in the field, it's still hard to determine what's going on with your data.
+- Nowhere - not a single time - does the `README` mention any parameters used to tweak the pre and postprocessing of data. This information is often times not mentioned in the paper either.
+- Nowhere - not a single time, does the `README` mention reliance on a ten-year-old package that needs manual source editing to work with modern pipelines.
+
+The kicker? The last update to the repository was eight months ago, and despite many people creating issues showing bad the results are from the authors' pretrained models, or asking for access to data, the authors never respond.
+
+I [could](https://www.science.org/doi/10.1126/science.359.6377.725) [go](https://reproducible.cs.princeton.edu/) [on](https://www.youtube.com/watch?v=vY9mGJQFdyE) [a](https://www.technologynetworks.com/tn/news/scientists-blame-publish-or-perish-culture-for-reproducibility-crisis-395293) [rant](https://en.wikipedia.org/wiki/Replication_crisis) [about](https://bdtechtalks.com/2021/03/01/papers-without-code-machine-learning-reproducibility/) [the](https://royalsocietypublishing.org/rsos/article/3/9/160384/56494/The-natural-selection-of-bad-scienceThe-Natural) [reproducibility crisis](https://www.nature.com/articles/d41586-023-03817-6) [in](https://www.paperswithoutcode.com) [science](https://www.wired.com/story/artificial-intelligence-confronts-reproducibility-crisis/), but that's not the point of this blog. However I do understand why people do it. At the student level, you don't want to get [scooped](https://insight.kellogg.northwestern.edu/article/scientists-dont-want-to-get-scooped-and-its-hurting-science) because your future career depends on it. At the corporate level, model architectures, feature engineering tricks, and training pipelines are often treated as proprietary assets, leading to deliberate obfuscation.
+Scientists are rewarded for novel results, not clean, documented, reusable code, so there is little incentive to invest in clarity and every incentive to keep a competitive edge. There is also the possibility that many people are just bad at coding, so they write sloppy code. Given the amount of moving parts in a typical deep learning pipeline (GPU behavior, random seeds, data loaders), small, undocumented implementation choices can change results, and opaque code makes it nearly impossible to track these down. Finally, groups often use clusters (which take a long time to update their software versions) to compute, so there's no point in writing code for modern versions of the software stack.
+
+I like using modern software. I think software that's clean, well-implemented, open-source, and modernized offers a myriad of advantages over older versions of the code. For example, [Python 3.14 removes the GIL](https://peps.python.org/pep-0779/), so there will finally be support for true multithreading. This greatly simplifies creating efficient PyTorch dataloaders, but I expect it to take a [couple of years before PyTorch](https://github.com/pytorch/pytorch/issues/158714) natively supports this. Given that I expect to be developing on Linux machines for the foreseeable future, I want to use a setup stack that leverages modern open source tools and configure it to my taste.
+
+There are of course some caveats to this. Open-source software controlled by corporations can be monetized. Take the case of [MySQL](https://en.wikipedia.org/wiki/MySQL). Oracle copyrights MySQL but maintains an open-source version for community use. However, the community version of MySQl [does not have TDE](https://www.mysql.com/products/enterprise/tde.html) or thread pooling for hundreds of thousands of edition. If you're ever in a situation where you require your MySQL database to handle a large amount of transactions, you're forced to fork over the money for a license. On the other hand, you do (in theory) get the benefits of training programs, technical support, and security fixes. 
+
+For personal projects, I prefer my software to be open-source (this is due to years spent fighting MATLAB). However, I understand that without a dedicated team supporting and updating the software the user experience is horrible. I will admit that I, like many others, prefer a solid user experience more than I'd like to admit. Given that I work mostly in Python, I run into most of the usual problems (paraphrasing from [this](https://www.bitecode.dev/p/a-year-of-uv-pros-cons-and-should)): 
+
+- There are a lot of ways to install Python, depending on the OS; each method comes with its own gotchas.
+- There's a lot to know upfront about using Python, a language designed for beginners.
+- Python is extremely versatile and is used in so many different contexts that it's hard to know what's 'good' and what's 'bad'.
+- Many people claim to give good advice on the matter.
+- There are many tools to solve Python's problems, so we suffer from the paradox of choices.
+- `-m` and `py` are hardly used.
+- Many popular packages are compiled!
+- `PYTHONPATH` and `PATH` and general bad naming conventions make setting up Python hard to use across different machines.
+
+I recommend reading the rest of the article to gain a more nuanced understanding of `uv`. But I've switched to it as my package manager anyway. It's perfect for someone like me, who writes a lot of greenfield projects. Like the article, however, I will also address the elephant in the room. `uv`'s owner [Astral](astral.sh) is a commercial entity with no obvious path to profitability. If they're aiming to become a direct competitor to Anaconda, they must eventually include a GUI as the vast majority of Python users run Python on Windows. However, `uv` is so good in every other possible way that I don't see myself switching off it any time soon. 
+ 
+I also care a lot about code readability and maintainability. I care about well-formatted, heavily-commented, and straightforward code. Astral's other product, [Ruff](https://docs.astral.sh/ruff/) is a code linter that's extremely easy to use and extremely fast. It replaces all of the other linters I've used (like [Black](https://github.com/psf/black), [Flake8](https://flake8.pycqa.org/en/latest/), [isort](https://pycqa.github.io/isort/) - (un)ironically, Ruff advertises itself as alternatives to all of them) and works blazingly fast right out of the box.

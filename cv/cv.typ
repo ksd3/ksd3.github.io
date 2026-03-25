@@ -254,14 +254,14 @@ Advisors: Prof. Archana Thosar, Prof. Suhas Kakade
 // Numbered List for Papers
 #set enum(spacing: 0.6em)
 
-+ K. Duraphe, R. Baviskar, S. Shingade, A. Thosar, _Optimizing Solar Panel Tilt using Machine Learning Techniques_, #link("https://ieeexplore.ieee.org/document/9587892/")[GPECOM 2021]
++ K. Duraphe, S. Kakade, et al., _Optimizing Solar Panel Tilt using Machine Learning Techniques_, #link("https://ieeexplore.ieee.org/document/9587892/")[GPECOM 2021]
 
 + N. Servan-Schreiber, J. Semeter, K. Duraphe, et al., _Smartphone Carrier Phase TEC: A Study Across Ionospheric Spatio-Temporal Scales_, #link("https://essopenarchive.org/users/1006611/articles/1370630-smartphone-carrier-phase-tec-a-study-across-ionospheric-spatio-temporal-scales")[ESS Open Archive (2024)]
 
 + K. Duraphe et al., _The Platonic Universe: Do Foundation Models See the Same Sky?_, #link("https://ml4physicalsciences.github.io/2025/")[NeurIPS ML4PS 2025 - *Spotlight Paper*] #link("https://arxiv.org/abs/2509.19453")[\[arXiv\]] \
   Investigates if foundation models see the same underlying astrophysical phenomena and develops custom foundation models to better learn underlying astrophysics
 
-+ G. Bhatta, S. Markowitz, K. Duraphe et al., _Hard X-ray Variability from Cygnus X-1: Spectral-Timing Analysis with NuSTAR_, #link("https://arxiv.org/abs/2510.10746")[The Astrophysical Journal (under review)]
++ K. Duraphe, G Bhatta, et al., _Hard X-ray Variability from Cygnus X-1: Spectral-Timing Analysis with NuSTAR_, #link("https://arxiv.org/abs/2510.10746")[The Astrophysical Journal, 2026]
 
 // --- SELECTED PROJECTS ---
 #cvsection("Selected Projects")
@@ -283,7 +283,7 @@ Advisors: Prof. Archana Thosar, Prof. Suhas Kakade
 #cvsection("Talks and Presentations")
 
 #list(indent: 1em, body-indent: 0.5em, spacing: 0.6em)[
-  - _The Platonic Universe: Do Foundation Models See the Same Sky?_ (long version) #h(1fr) #link("https://www.youtube.com/watch?v=NIf-QQikukE")[AstroAI, 2025]
+  - _The Platonic Universe: Do Foundation Models See the Same Sky?_ (long version) #h(1fr) #link("https://www.youtube.com/watch?v=NIf-QQikukE")[AstroAI, 2026]
   - _The Platonic Universe: Do Foundation Models See the Same Sky?_ #h(1fr) #link("https://neurips.cc/virtual/2025/loc/san-diego/135877")[NeurIPS ML4PS Workshop, Dec 2025]
   - _Using high-rate dual-frequency cellphones to study the April 8th total solar eclipse_ #h(1fr) CEDAR Workshop, Jun 2024
   - _Optimizing Solar Panel Tilt using Machine Learning Techniques_ #h(1fr) GPECOM, Dec 2021

@@ -27,6 +27,8 @@ website:
         text: Talks
       - href: cv.qmd
         text: Resume/CV
+      - href: template.qmd
+        text: Build Your Own
 
 format:
   html:

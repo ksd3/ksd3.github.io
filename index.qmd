@@ -5,7 +5,7 @@ title: "About"
 ::: {layout="[30,70]"}
 ![](images/profilepic.jpg){width="200px"}
 
-I'm **Kshitij**. I work on human-computer interaction, reinforcement learning, foundation models, and all that jazz. I used to work on everything to do with AI understanding and the user experience for security professionals at [Absentia Technologies](https://www.absentiatech.com). I previously worked on recommendation systems at [Nevara.ai](https://www.nevara.ai) and also developed foundation models at [Spatialise](https://spatiali.se/). I'm a May 2024 graduate from [Boston University's](https://bu.edu) Master of Electrical and Computer Engineering program.
+I'm **Kshitij**. I used to work on human-computer interaction, reinforcement learning, foundation models, and all that jazz. Before that, I worked on everything to do with AI understanding and the user experience for security professionals at [Absentia Technologies](https://www.absentiatech.com). I previously worked on recommendation systems at [Nevara.ai](https://www.nevara.ai) and also developed environmental foundation models at [Spatialise](https://spatiali.se/). I'm a May 2024 graduate from [Boston University's](https://bu.edu) Master of Electrical and Computer Engineering program.
 :::
 
 As a student, I [worked](research.qmd) in Boston University's [Space Physics Lab](https://heaviside.bu.edu) from October 2022 to May 2024, advised by [Joshua Semeter](https://bu.edu/end/profile/joshua-semeter/). I also worked at the [Hariri Center](https://www.bu.edu/hic/) for NASA's Life on Mars initiative, developing signal processing and machine learning techniques to analyze the Martian ionosphere and simulate GPS propagation through it. Previously, I was at [COEP](https://www.coeptech.ac.in) from 2018-2022.
@@ -28,7 +28,7 @@ On the practical side, I'm interested in developing fast, efficient, and scalabl
 
 ## Selected Work
 
-1. **(University of Zielona Gora, 2025)**: Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of [that work](https://arxiv.org/pdf/2510.10746) is under review at ApJ.
+1. **(University of Zielona Gora, 2025)**: Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of [that work](https://arxiv.org/pdf/2510.10746) has been accepted to ApJ. 
 
 2. **(UniverseTBD, 2025)**: Mechanistic interpretability in astronomy. In particular, we showed that the [Platonic Representation Hypothesis](https://arxiv.org/abs/2405.07987) holds for astronomy in [this](https://arxiv.org/abs/2509.19453) paper, and published at the 2025 edition of NeurIPS' [ML4PS](https://ml4physicalsciences.github.io/2025/) workshop. *Update*: This is now a **spotlight** paper (top 1%). I [gave a small talk](https://neurips.cc/virtual/2025/loc/san-diego/workshop/109577) at NeurIPS 2025 and a longer [AstroAI talk](https://www.youtube.com/watch?v=NIf-QQikukE) at Harvard in January 2026.
 

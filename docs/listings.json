@@ -2,6 +2,7 @@
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/2026-03-03-new-setup/index.html",
       "/blog/2025-02-16-pino/index.html",
       "/blog/2025-02-10-ml-research/index.html",
       "/blog/2024-12-07-transformers/index.html",

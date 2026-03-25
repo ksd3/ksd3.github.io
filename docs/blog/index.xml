@@ -10,7 +10,266 @@
 <atom:link href="https://ksd3.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Sun, 16 Feb 2025 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 03 Mar 2026 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>My new setup</title>
+  <link>https://ksd3.github.io/blog/2026-03-03-new-setup/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>A lot of new tools supporting my workflow have been released over the past few years. The majority of a typical day for me is spent writing <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, Python3, and C++ code. Given that my day job <em>used</em> to involve reproducing and modernizing dozens of broken deep learning repositories, it’s no surprise that the combination of dependency management hell, obfuscated (often on purpose) code, and the authors’ general ineptitude in writing documentation resulted in a lot of frustration. A general situation of this kind is usually like this:</p>
+<ul>
+<li>I have a link to a GitHub repository that claims to be the official implementation of one of three or four papers claiming to be SOTA on a particular problem. This repository has a <code>README.md</code> usually structured as follows:</li>
+</ul>
+<section id="generic-ai-repository" class="level1">
+<h1>Generic AI repository</h1>
+<div class="text-center">
+<p><strong>Catchy Name: Task X with one or more of method Y/dataset Z</strong></p>
+</div>
+<div class="text-center">
+<p>Author 1<sup>1</sup>, Author 2, Author 3, Author 4, Author 5, Author 6</p>
+<p><sup>1</sup>Affiliation 1</p>
+<p>†Corresponding Author</p>
+<p><strong>Award awarded to the paper</strong></p>
+</div>
+<p>(Some videos)</p>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">🤩Abstract</h2>
+<blockquote class="blockquote">
+<p>Problem X is hard because of (vague and generalist statement). There have been significant advances in this field but issues such as (some technical wording) are yet to be addressed. Also, other peoples’ datasets have so-and-so problem so we introduce a new dataset (the world’s best so far) and new evals (the world’s best so far) and show that our method is state of the art and our data is also state of the art. We then use (some architecture or method) and show that it is super amazing (we trained for more epochs and extensively tuned hyperparameters) and also super scalable (you can’t run this on consumer GPUs). Our results are good enough and we can start addressing (some unsolved general problem) and (some unsolved domain-specific problem). This is a significant step towards (holy grail of the field that is going to remain unsolved until someone develops theoretical bounds for our methods).</p>
+</blockquote>
+</section>
+<section id="news" class="level2">
+<h2 class="anchored" data-anchor-id="news">📢News</h2>
+<p>[2025-12-31] Dataset released! (but you need 50TB to store it, also it may require emailling us and we barely respond)</p>
+<p>[2025-08-12] We got <strong>award</strong>!</p>
+<p>[2025-05-23] We release training code (just run <code>train.sh</code>), inference code (just run <code>inference.py</code>) and model checkpoints (<code>woYtKDTRVGlwCreI6xWDQjWu_15_28.pth</code> (only works with PyTorch 1.X))</p>
+<p>[2025-03-02] Accepted to <strong>some place</strong>.</p>
+</section>
+<section id="quick-start" class="level2">
+<h2 class="anchored" data-anchor-id="quick-start">👨‍🏫Quick Start</h2>
+<p>These are the instructions we give our interns, who work on our machines, with our software setup, to reproduce our work.</p>
+<details id="details-1" aria-label="Set up the environment">
+<summary>Set up the environment</summary>
+<p>Use <code>conda</code> and then activate the environment. Also <code>pip install -r requirements.txt</code></p>
+</details>
+<details id="details-2" aria-label="Dependency management">
+<summary>Dependency management</summary>
+<p>Go to (some third party website) and download (5-10 files that require you to spend a significant amount of time downloading them).</p>
+</details>
+<details id="details-3" aria-label="Pretrained models">
+<summary>Pretrained models</summary>
+<p>Download pretrained models from (Google Drive/Baidu/EUDAT/HuggingFace/Zenodo/Git LFS storage). But you can also use our handy script to download them! Just execute <code>download_models.sh</code> that may or may not require elevated user access (not supported on many industry machines) and also invoke access tokens located at <code>~/.folder/token.json</code> that you need to set up before and may scrape websites you’ve never heard of!</p>
+<p>Then move them to <code>./models</code>.</p>
+</details>
+<details id="details-4" aria-label="Prepare the datasets">
+<summary>Prepare the datasets</summary>
+<p>Coming soon! The dataset structure is</p>
+<pre><code>dataset/
+├── dataset_name/
+│   ├── raw/
+│   │   ├── modality_a/
+│   │   │   ├── ...
+│   │   │   └── ...
+│   │   ├── modality_b/
+│   │   └── ...
+│   │
+│   ├── processed/
+│   │   └── representation_type/
+│   │       ├── ...
+│   │       └── ...
+│   │
+│   ├── annotations/
+│   │   ├── ...
+│   │   └── ...
+│   │
+│   ├── splits/
+│   │   └── version_x/
+│   │       ├── setup_a/
+│   │       │   ├── train.txt
+│   │       │   ├── val.txt
+│   │       │   ├── test.txt
+│   │       │   └── all.txt
+│   │       └── setup_b/
+│   │           ├── train.txt
+│   │           ├── val.txt
+│   │           └── test.txt
+│   │
+│   ├── statistics/
+│   │   └── representation_type/
+│   │       ├── mean.npy
+│   │       └── std.npy
+│   │
+│   ├── metadata/
+│   │   ├── config.yaml
+│   │   ├── info.json
+│   │   └── README.md
+│   │
+│   ├── misc/
+│   │   ├── legacy_files/
+│   │   ├── experimental/
+│   │   ├── temporary/
+│   │   └── some_files_that_are_never_used/
+│   │
+│   └── scripts/
+│       ├── preprocessing_script.py
+│       └── split_generation.py
+│
+├── external/
+│   └── ...
+│
+└── ...</code></pre>
+</details>
+</section>
+<section id="inference" class="level2">
+<h2 class="anchored" data-anchor-id="inference">🎬Inference</h2>
+<p>If you want to test the inference (which you don’t need to download datasets for), run</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">scripts/inference/single_inference/test_woYtKDTRVGlwCreI6xWDQjWu_15_28.sh</span></span>
+<span id="cb2-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">scripts/inference/single_inference/test_woYtKDTRVGlwCreI6xWDQjWu_15_28_big.sh</span></span></code></pre></div></div>
+<p>Also you won’t be able to run these scripts on your own. You have to replace <code>${some-abbreviated-variable-denoting-preprocessing-type}</code> and <code>${some-abbreviated-variable-denoting-file-path}</code> in those scripts to process the input data (often processed with another deep learning model) correctly. You can also <em>not</em> use them, just comment them out! (And you won’t get the results we show in our paper..)</p>
+<p>You can also benchmark the models by running these scripts:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">scripts/inference/batch_inference/test_woYtKDTRVGlwCreI6xWDQjWu_15_28.sh</span></span>
+<span id="cb3-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">scripts/inference/batch_inference/test_woYtKDTRVGlwCreI6xWDQjWu_15_28_big.sh</span></span></code></pre></div></div>
+<p>The input data (that’s processed from your original data) is saved to <code>folder_that_was_just_created/real_processed_data</code>.</p>
+</section>
+<section id="train-your-own-models" class="level2">
+<h2 class="anchored" data-anchor-id="train-your-own-models">🚀Train your own models</h2>
+<p>Here’s how you can train your own models.</p>
+<details id="details-5" aria-label="Train the preprocessing models">
+<summary>Train the preprocessing models</summary>
+<p>Our preprocessing models have been trained on multiple GPUs.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">scripts/train/train_preprocessor.sh</span></span></code></pre></div></div>
+<p>But you can also train on a single GPU.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">scripts/train/train_preprocessor_single.sh</span></span></code></pre></div></div>
+<p>And you have several options while training this preprocessor. You can turn these options off by deleting <code>${variable1}</code>, <code>${variable2}</code>, and <code>${variable3}</code></p>
+</details>
+<details id="details-6" aria-label="Train the main model">
+<summary>Train the main model</summary>
+<p>You should run this command to extract the processed data obtained from the model you just trained. (Often times, this command will retrain the entire model, making the previous command useless)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">scripts/train/train_preprocessor_get_codes.sh</span></span></code></pre></div></div>
+<p>You can then train the small or big models.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">scripts/train/train_woYtKDTRVGlwCreI6xWDQjWu_15_28.sh</span></span>
+<span id="cb7-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">scripts/train/train_woYtKDTRVGlwCreI6xWDQjWu_15_28_big.sh</span></span></code></pre></div></div>
+</details>
+<details id="details-7" aria-label="Evaluate the models">
+<summary>Evaluate the models</summary>
+<p>You can then evaluate the models with</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">scripts/eval/eval_preprocessor.sh</span></span>
+<span id="cb8-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">scripts/eval/eval_woYtKDTRVGlwCreI6xWDQjWu_15_28.sh</span></span>
+<span id="cb8-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">scripts/eval/eval_woYtKDTRVGlwCreI6xWDQjWu_15_28_big.sh</span></span></code></pre></div></div>
+</details>
+</section>
+<section id="postprocessing" class="level2">
+<h2 class="anchored" data-anchor-id="postprocessing">🚨Postprocessing</h2>
+<p>You can postprocess the results of the inference. You can adjust <code>${postprocessing_variable}</code> to get somewhat better results.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> postprocess/scripts</span>
+<span id="cb9-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">scripts/run_postprocessing.sh</span></span></code></pre></div></div>
+</section>
+<section id="acknowledgement" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgement">🌹Acknowledgement</h2>
+<p>Insert acknowlegements here.</p>
+</section>
+<section id="citation" class="level2">
+<h2 class="anchored" data-anchor-id="citation">📜Citation</h2>
+<p>You can cite our work in the following BibTeX way:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb10-1"><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">@misc</span>{<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">anonymous202Xgeneric</span>,</span>
+<span id="cb10-2">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">title</span>        = {Title of the Paper},</span>
+<span id="cb10-3">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">author</span>       = {Anonymous Author(s)},</span>
+<span id="cb10-4">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">year</span>         = {202X},</span>
+<span id="cb10-5">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">eprint</span>       = {XXXX.XXXXX},</span>
+<span id="cb10-6">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">archivePrefix</span>= {arXiv},</span>
+<span id="cb10-7">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">primaryClass</span> = {cs.XX},</span>
+<span id="cb10-8">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">url</span>          = {https://arxiv.org/abs/XXXX.XXXXX}</span>
+<span id="cb10-9">}</span></code></pre></div></div>
+<p>There are a myriad of problems with this kind of <code>README.md</code>. For the sake of brevity, here are a few of them:</p>
+<ul>
+<li>Nowhere - not a single time - does the <code>README</code> mention that you must <em>clone</em> it and then set up the virtual environment. This may sound resoundingly obvious, but I have run into too many repositories filled with nonsensical files that actively hinder you from using it.</li>
+<li>Nowhere - not a single time - does the <code>README</code> mention <em>how</em> the training was done, any nuances, whether they averaged over several seeds, how they minimized randomness.</li>
+<li>Nowhere - not a single time - does the <code>README</code> mention what the raw output looks like before postprocessing.</li>
+<li>Nowhere - not a single time - does the <code>README</code> mention how to visualize outputs in different formats.</li>
+<li>Nowhere - not a single time - does the <code>README</code> mention that your data goes through several stages of preprocessing before its actually fed into the trained model. While this may be obvious to people in the field, it’s still hard to determine what’s going on with your data.</li>
+<li>Nowhere - not a single time - does the <code>README</code> mention any parameters used to tweak the pre and postprocessing of data. This information is often times not mentioned in the paper either.</li>
+<li>Nowhere - not a single time, does the <code>README</code> mention reliance on a ten-year-old package that needs manual source editing to work with modern pipelines.</li>
+</ul>
+<p>The kicker? The last update to the repository was eight months ago, and despite many people creating issues showing bad the results are from the authors’ pretrained models, or asking for access to data, the authors never respond.</p>
+<p>I <a href="https://www.science.org/doi/10.1126/science.359.6377.725">could</a> <a href="https://reproducible.cs.princeton.edu/">go</a> <a href="https://www.youtube.com/watch?v=vY9mGJQFdyE">on</a> <a href="https://www.technologynetworks.com/tn/news/scientists-blame-publish-or-perish-culture-for-reproducibility-crisis-395293">a</a> <a href="https://en.wikipedia.org/wiki/Replication_crisis">rant</a> <a href="https://bdtechtalks.com/2021/03/01/papers-without-code-machine-learning-reproducibility/">about</a> <a href="https://royalsocietypublishing.org/rsos/article/3/9/160384/56494/The-natural-selection-of-bad-scienceThe-Natural">the</a> <a href="https://www.nature.com/articles/d41586-023-03817-6">reproducibility crisis</a> <a href="https://www.paperswithoutcode.com">in</a> <a href="https://www.wired.com/story/artificial-intelligence-confronts-reproducibility-crisis/">science</a>, but that’s not the point of this blog. However I do understand why people do it. At the student level, you don’t want to get <a href="https://insight.kellogg.northwestern.edu/article/scientists-dont-want-to-get-scooped-and-its-hurting-science">scooped</a> because your future career depends on it. At the corporate level, model architectures, feature engineering tricks, and training pipelines are often treated as proprietary assets, leading to deliberate obfuscation. Scientists are rewarded for novel results, not clean, documented, reusable code, so there is little incentive to invest in clarity and every incentive to keep a competitive edge. There is also the possibility that many people are just bad at coding, so they write sloppy code. Given the amount of moving parts in a typical deep learning pipeline (GPU behavior, random seeds, data loaders), small, undocumented implementation choices can change results, and opaque code makes it nearly impossible to track these down. Finally, groups often use clusters (which take a long time to update their software versions) to compute, so there’s no point in writing code for modern versions of the software stack.</p>
+<p>I like using modern software. I think software that’s clean, well-implemented, open-source, and modernized offers a myriad of advantages over older versions of the code. For example, <a href="https://peps.python.org/pep-0779/">Python 3.14 removes the GIL</a>, so there will finally be support for true multithreading. This greatly simplifies creating efficient PyTorch dataloaders, but I expect it to take a <a href="https://github.com/pytorch/pytorch/issues/158714">couple of years before PyTorch</a> natively supports this. Given that I expect to be developing on Linux machines for the foreseeable future, I want to use a setup stack that leverages modern open source tools and configure it to my taste.</p>
+<p>There are of course some caveats to this. Open-source software controlled by corporations can be monetized. Take the case of <a href="https://en.wikipedia.org/wiki/MySQL">MySQL</a>. Oracle copyrights MySQL but maintains an open-source version for community use. However, the community version of MySQl <a href="https://www.mysql.com/products/enterprise/tde.html">does not have TDE</a> or thread pooling for hundreds of thousands of edition. If you’re ever in a situation where you require your MySQL database to handle a large amount of transactions, you’re forced to fork over the money for a license. On the other hand, you do (in theory) get the benefits of training programs, technical support, and security fixes.</p>
+<p>For personal projects, I prefer my software to be open-source (this is due to years spent fighting MATLAB). However, I understand that without a dedicated team supporting and updating the software the user experience is horrible. I will admit that I, like many others, prefer a solid user experience more than I’d like to admit. Given that I work mostly in Python, I run into most of the usual problems (paraphrasing from <a href="https://www.bitecode.dev/p/a-year-of-uv-pros-cons-and-should">this</a>):</p>
+<ul>
+<li>There are a lot of ways to install Python, depending on the OS; each method comes with its own gotchas.</li>
+<li>There’s a lot to know upfront about using Python, a language designed for beginners.</li>
+<li>Python is extremely versatile and is used in so many different contexts that it’s hard to know what’s ‘good’ and what’s ‘bad’.</li>
+<li>Many people claim to give good advice on the matter.</li>
+<li>There are many tools to solve Python’s problems, so we suffer from the paradox of choices.</li>
+<li><code>-m</code> and <code>py</code> are hardly used.</li>
+<li>Many popular packages are compiled!</li>
+<li><code>PYTHONPATH</code> and <code>PATH</code> and general bad naming conventions make setting up Python hard to use across different machines.</li>
+</ul>
+<p>I recommend reading the rest of the article to gain a more nuanced understanding of <code>uv</code>. But I’ve switched to it as my package manager anyway. It’s perfect for someone like me, who writes a lot of greenfield projects. Like the article, however, I will also address the elephant in the room. <code>uv</code>’s owner <a href="astral.sh">Astral</a> is a commercial entity with no obvious path to profitability. If they’re aiming to become a direct competitor to Anaconda, they must eventually include a GUI as the vast majority of Python users run Python on Windows. However, <code>uv</code> is so good in every other possible way that I don’t see myself switching off it any time soon.</p>
+<p>I also care a lot about code readability and maintainability. I care about well-formatted, heavily-commented, and straightforward code. Astral’s other product, <a href="https://docs.astral.sh/ruff/">Ruff</a> is a code linter that’s extremely easy to use and extremely fast. It replaces all of the other linters I’ve used (like <a href="https://github.com/psf/black">Black</a>, <a href="https://flake8.pycqa.org/en/latest/">Flake8</a>, <a href="https://pycqa.github.io/isort/">isort</a> - (un)ironically, Ruff advertises itself as alternatives to all of them) and works blazingly fast right out of the box.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>zed</category>
+  <category>quarto</category>
+  <category>vim</category>
+  <category>webview</category>
+  <guid>https://ksd3.github.io/blog/2026-03-03-new-setup/</guid>
+  <pubDate>Tue, 03 Mar 2026 05:00:00 GMT</pubDate>
+</item>
 <item>
   <title>PINOs in space physics</title>
   <link>https://ksd3.github.io/blog/2025-02-16-pino/</link>

@@ -1,0 +1,220 @@
+---
+title: "Build Your Own"
+---
+
+Want to build a site like this? This is a [Quarto](https://quarto.org)-based academic website deployed on GitHub Pages. Everything here is open source — fork [the repo](https://github.com/ksd3/ksd3.github.io) and make it your own.
+
+## Prerequisites
+
+- **[Quarto](https://quarto.org/docs/get-started/)** (v1.3+) — the static site generator
+- **[Typst](https://typst.app/)** — for CV/resume PDF generation
+
+```bash
+# Linux/macOS via Homebrew
+brew install quarto typst
+
+# Or download directly:
+# Quarto: https://quarto.org/docs/download/
+# Typst: https://github.com/typst/typst/releases
+```
+
+## Directory Structure
+
+```
+your-site/
+├── _quarto.yml           # Site configuration (navbar, theme, output)
+├── styles.css            # Custom CSS (dark mode, layout, typography)
+│
+├── index.qmd             # Home page
+├── research.qmd          # Research page
+├── talks.qmd             # Talks listing page
+├── textbooks.qmd         # Books listing page
+├── cv.qmd                # Resume/CV landing page (embeds PDFs)
+│
+├── blog/                 # Blog posts
+│   ├── index.qmd         # Blog listing (auto-generated)
+│   └── YYYY-MM-DD-slug/  # Each post in its own directory
+│       └── index.qmd
+│
+├── talks/                # RevealJS presentations
+│   └── _template/        # Copy this to create a new talk
+│
+├── books/                # Textbooks (Quarto book projects)
+│   └── _template/        # Copy this to create a new book
+│
+├── cv/                   # CV and resume (Typst → PDF)
+│   ├── cv.qmd
+│   └── resume.qmd
+│
+├── images/               # Shared images
+├── videos/               # Video files
+└── docs/                 # Generated output (GitHub Pages serves this)
+```
+
+## Quick Start
+
+```bash
+# 1. Fork and clone
+git clone https://github.com/YOUR-USERNAME/YOUR-USERNAME.github.io
+cd YOUR-USERNAME.github.io
+
+# 2. Build CV/resume PDFs (needed before full render)
+quarto render cv/resume.qmd
+quarto render cv/cv.qmd
+
+# 3. Preview locally (hot reload at http://localhost:4000)
+quarto preview
+
+# 4. Build the full site
+quarto render
+```
+
+## Adding Content
+
+### Blog Post
+
+```bash
+mkdir blog/2026-01-15-my-post
+```
+
+Create `blog/2026-01-15-my-post/index.qmd`:
+
+```yaml
+---
+title: "Post Title"
+author: "Your Name"
+date: "2026-01-15"
+categories: [topic1, topic2]
+description: "Brief description for listings"
+---
+
+Your content here...
+```
+
+Posts are auto-sorted by date with categories and an RSS feed.
+
+### Talk (RevealJS + PDF)
+
+```bash
+cp -r talks/_template talks/2026-my-talk
+# Edit talks/2026-my-talk/index.qmd
+quarto render talks/2026-my-talk/
+```
+
+Then add an entry to `talks.qmd` with links to the HTML slides and PDF.
+
+### Book / Textbook
+
+```bash
+cp -r books/_template books/my-book
+# Edit books/my-book/_quarto.yml and chapter files
+quarto render books/my-book/
+```
+
+Then add an entry to `textbooks.qmd`.
+
+### CV / Resume
+
+Edit `cv/cv.qmd` or `cv/resume.qmd` (Typst format), then:
+
+```bash
+quarto render cv/cv.qmd
+quarto render cv/resume.qmd
+```
+
+The `cv.qmd` landing page embeds the generated PDFs. Find Typst templates at [typst.app/universe](https://typst.app/universe).
+
+## Deployment
+
+This site uses GitHub Pages serving from the `docs/` folder on `main`.
+
+### Workflow
+
+```bash
+# 1. Edit .qmd source files
+# 2. Render (selectively or fully)
+quarto render index.qmd          # single page
+quarto render                    # everything
+
+# 3. Commit source AND rendered output together
+git add .
+git commit -m "Update site"
+git push
+```
+
+### GitHub Pages Setup
+
+In your repo's Settings → Pages:
+
+- **Source**: Deploy from a branch
+- **Branch**: `main`
+- **Folder**: `/docs`
+
+### Optional: GitHub Actions
+
+You can automate builds so you only commit source files. Create `.github/workflows/publish.yml`:
+
+```yaml
+name: Build and Deploy
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: quarto-dev/quarto-actions/setup@v2
+      - name: Install Typst
+        run: |
+          curl -fsSL https://typst.community/typst-install/install.sh | sh
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+      - name: Build PDFs
+        run: |
+          quarto render cv/resume.qmd
+          quarto render cv/cv.qmd
+      - name: Render Site
+        run: quarto render
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+```
+
+## Customization
+
+### Layout & Styling
+
+The site uses a wide layout (up to 1400px) with a left TOC sidebar, inspired by [gwern.net](https://gwern.net). Dark mode auto-detects your system preference. See `styles.css` for CSS variables you can tweak:
+
+```css
+:root {
+  --bg-color: #fefefe;
+  --text-color: #2c2c2c;
+  --link-color: #1a5f7a;
+  --sidebar-width: 200px;
+  --content-max-width: 1400px;
+}
+```
+
+### Navbar
+
+Edit `_quarto.yml` to add or remove pages:
+
+```yaml
+website:
+  navbar:
+    left:
+      - href: newpage.qmd
+        text: New Page
+```
+
+## Resources
+
+- [Quarto Documentation](https://quarto.org/docs/)
+- [Quarto Websites](https://quarto.org/docs/websites/)
+- [Quarto Presentations (RevealJS)](https://quarto.org/docs/presentations/revealjs/)
+- [Quarto Books](https://quarto.org/docs/books/)
+- [Typst Documentation](https://typst.app/docs/)
+- [Typst Templates](https://typst.app/universe)
