@@ -127,7 +127,7 @@ Bachelor's Thesis, Electrical Engineering, College of Engineering Pune, 2021
 Advisor: Prof. Gopal Bhatta
 
 #list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Analyzed a decade of NuSTAR hard X-ray observations of Cygnus X-1, employing spectral-timing analysis and fitting techniques to investigate accretion flow properties — #link("https://arxiv.org/abs/2510.10746")[The Astrophysical Journal (under review)]
+  - Analyzed a decade of NuSTAR hard X-ray observations of Cygnus X-1, employing spectral-timing analysis and fitting techniques to investigate accretion flow properties — #link("https://arxiv.org/abs/2510.10746")[The Astrophysical Journal, 2026]
   - Characterizing the system's behavior in different spectral states to advance the understanding of accretion physics near stellar-mass black holes, revealing a failed state transition
 ]
 
@@ -138,7 +138,7 @@ Advisor: Prof. Gopal Bhatta
 Advisors: Dr. Ioana Ciucă, Dr. Michael Smith, Dr. John Wu
 
 #list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Led the first empirical test of the *Platonic Representation Hypothesis* in astronomy, showing foundation models converge on shared representations with scale — #link("https://arxiv.org/abs/2509.19453")[NeurIPS ML4PS 2025]
+  - Led the first empirical test of the *Platonic Representation Hypothesis* in astronomy, showing foundation models converge on shared representations with scale — #link("https://arxiv.org/abs/2509.19453")[NeurIPS ML4PS 2025 *Spotlight*]
   - Engineered a cross-modal framework to evaluate foundation models on premier astronomical surveys, validating the use of general-purpose architectures for computationally-efficient AI
 ]
 
@@ -210,8 +210,17 @@ Advisors: Prof. Archana Thosar, Prof. Suhas Kakade
 // --- INDUSTRY EXPERIENCE ---
 #cvsection("Industry Experience")
 
+#entry_header("Thespian Labs", "Somerville, MA")
+#emph("AI Engineer") #h(1fr) Nov 2025 -- Feb 2026
+
+#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
+  - Developed and evaluated Text2Motion deep learning models using DARTControl-style reinforcement learning for controllable digital human performance generation, contributing to a foundation model for human motion synthesis
+  - Designed data processing pipelines for 5000+ hours of human performance data, enabling large-scale analysis of motion capture sequences for model training and evaluation
+  - Published an open-source MLOps library for model lifecycle management: #link("https://github.com/ksd3/jobber")[Link]
+]
+
 #entry_header("Absentia Technologies", "Boston, MA")
-#emph("Machine Learning Engineer") #h(1fr) Jan 2025 -- Present
+#emph("Machine Learning Engineer") #h(1fr) Jan 2025 -- Nov 2025
 
 #list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
   - Implemented distributed training pipelines (PyTorch FSDP) for deep learning models applied to astronomical image denoising and real-time scene understanding using content-aware architectures
