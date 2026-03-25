@@ -92,7 +92,7 @@
 
 // Thespian Labs
 #entry_header("Thespian Labs", "Somerville, MA")
-#emph("AI Engineer") #h(1fr) Nov 2025 -- Present
+#emph("AI Engineer") #h(1fr) Nov 2025 -- Feb 2026
 
 #resume_list[
   - Managed the lifecycle of custom *Text2Motion* deep learning models from development, deployment, and monitoring, ensuring optimal performance and stability on *GCP*. Published an open-source library for MLOps: #link("https://github.com/ksd3/jobber")[Link].

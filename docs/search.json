@@ -354,7 +354,7 @@
     "href": "index.html#research-interests",
     "title": "About",
     "section": "Research Interests",
-    "text": "Research Interests\nOn the theory side, I’m broadly interested in astrophysics and the application of inverse methods to astrophysical phenomena. I hope to branch out into more applied SciML and develop faster and more reliable methods to bound predictions for these phenomena.\nOn the practical side, I’m interested in developing fast, efficient, and scalable multimodal signal and image processing systems to solve engineering problems in unstructured, noisy, and sparse scenarios."
+    "text": "Research Interests\nOn the theory side, I’m broadly interested in astrophysics and the application of inverse methods to astrophysical phenomena. I hope to branch out into more applied SciML and develop faster and more reliable methods to bound predictions for these phenomena.\nOn the practical side, I’m interested in developing fast, efficient, and scalable multimodal signal and image processing systems to solve engineering problems in unstructured, noisy, and sparse scenarios.\n\nUpcoming\nI think crossmatching data is cool and is definitely a worthwhile use of my time. Also I am on the lookout for spectral foundation models, if you know of any please send them over to me! Really, any spectral foundation model is fine, I just need like 2."
   },
   {
     "objectID": "index.html#selected-work",
@@ -375,7 +375,7 @@
     "href": "index.html#miscellaneous",
     "title": "About",
     "section": "Miscellaneous",
-    "text": "Miscellaneous\n\nI keep a list of courses I took at BU along with my thoughts on them.\nCheck out some of my writings.\n\nWebsites I find interesting:\n\nscivision.dev: Michael Hirsch singlehandedly carries the GNSS community on his back with Georinex and his website is full of useful tips and tricks for wrangling with C Compilers.\nDan Luu’s website. Commentary on programming and tech-society.\nThe UCR Matrix Profile Page: The best time-series page on the internet."
+    "text": "Miscellaneous\n\nI keep a list of courses I took at BU along with my thoughts on them.\nCheck out some of my writings.\n\nWebsites I find interesting:\n\nscivision.dev: Michael Hirsch singlehandedly carries the GNSS community on his back with Georinex and his website is full of useful tips and tricks for wrangling with C Compilers.\nDan Luu’s website. Commentary on programming and tech-society.\nThe UCR Matrix Profile Page: The best time-series page on the internet.\nAlwinfy’s Garden: D is a legitimate programming language (and I should start learning Zig)."
   },
   {
     "objectID": "talks/2026-open-source-arkos/index.html#introduction",

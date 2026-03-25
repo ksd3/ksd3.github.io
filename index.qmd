@@ -26,6 +26,10 @@ On the theory side, I'm broadly interested in astrophysics and the application o
 
 On the practical side, I'm interested in developing fast, efficient, and scalable multimodal signal and image processing systems to solve engineering problems in unstructured, noisy, and sparse scenarios.
 
+### Upcoming
+
+I think crossmatching data is cool and is definitely a worthwhile use of my time. Also I am on the lookout for spectral foundation models, if you know of any please send them over to me! Really, any spectral foundation model is fine, I just need like 2. 
+
 ## Selected Work
 
 1. **(University of Zielona Gora, 2025)**: Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of [that work](https://arxiv.org/pdf/2510.10746) has been accepted to ApJ. 
@@ -67,6 +71,7 @@ Inspired by [Piotr Teterwak](https://cs-people.bu.edu/piotrt/) I am available fo
 
 **Websites I find interesting:**
 
-- [scivision.dev](https://scivision.dev): Michael Hirsch singlehandedly carries the GNSS community on his back with [Georinex](https://github.com/geospace-code/georinex/) and his website is full of useful tips and tricks for wrangling with C Compilers.
+- [scivision.dev](https://scivision.dev): [Michael Hirsch](https://www.bu.edu/eng/profile/michael-hirsch/) singlehandedly carries the GNSS community on his back with [Georinex](https://github.com/geospace-code/georinex/) and his website is full of useful tips and tricks for wrangling with C Compilers.
 - [Dan Luu](https://danluu.com)'s website. Commentary on programming and tech-society.
 - [The UCR Matrix Profile Page](https://www.cs.ucr.edu/%7Eeamonn/MatrixProfile.html): The best time-series page on the internet.
+- [Alwinfy's Garden](https://chireiden.alwinfy.net/furnace/): D is a legitimate programming language (and I should start learning Zig).
