@@ -9,3 +9,6 @@
 
 # Job-tailored CVs (keep local, don't publish)
 cv/cv_*.typ
+
+# Source PDFs (only docs/cv/ copies are needed for the site)
+cv/*.pdf

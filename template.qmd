@@ -115,14 +115,14 @@ Then add an entry to `textbooks.qmd`.
 
 ### CV / Resume
 
-Edit `cv/cv.qmd` or `cv/resume.qmd` (Typst format), then:
+Edit the Typst source files (`cv/cv.typ` or `cv/resume.typ`), then compile directly into the output directory:
 
 ```bash
-quarto render cv/cv.qmd
-quarto render cv/resume.qmd
+quarto typst compile cv/cv.typ docs/cv/cv.pdf
+quarto typst compile cv/resume.typ docs/cv/resume.pdf
 ```
 
-The `cv.qmd` landing page embeds the generated PDFs. Find Typst templates at [typst.app/universe](https://typst.app/universe).
+The `cv.qmd` landing page embeds the PDFs from `docs/cv/`. Find Typst templates at [typst.app/universe](https://typst.app/universe).
 
 ## Deployment
 
