@@ -1,3 +1,5 @@
+// Academic CV — compiled by the _quarto.yml pre-render hook into docs/cv/cv.pdf.
+
 // --- CONFIGURATION ---
 #let linkcolor = rgb("#800000") // Maroon
 #let lightsep = text(fill: rgb("999999"))[ | ]
@@ -16,25 +18,27 @@
 #set text(
   font: "New Computer Modern",
   size: 11pt,
-  lang: "en"
+  lang: "en",
+  hyphenate: true
 )
+
+#set par(leading: 0.75em, justify: true)
+
+#set list(marker: text(size: 0.7em)[•], indent: 0.5em, body-indent: 0.5em, spacing: 0.9em)
 
 #show link: set text(fill: linkcolor)
 
 // --- CUSTOM FUNCTIONS ---
-
-// 1. CV Section Header
 #let cvsection(title) = {
-  v(1em)
+  v(3mm)
   block(sticky: true)[
     #text(size: 13pt, weight: "bold")[#smallcaps(title)]
     #v(-6pt)
     #line(length: 100%, stroke: 0.5pt)
   ]
-  v(2mm)
+  v(3mm)
 }
 
-// 2. Appointment/Education Entry Layout (Left/Right spread)
 #let entry_header(title, location) = {
   grid(
     columns: (1fr, auto),
@@ -42,15 +46,7 @@
   )
 }
 
-// 3. Compact List (Optional helper if you want to wrap lists)
-#let compact_list(body) = {
-  set list(indent: 1em, body-indent: 0.5em, spacing: 0.6em)
-  body
-}
-
 // --- CONTENT START ---
-
-// Header: Last Updated Date
 #place(
   top + right,
   dy: -20pt,
@@ -59,7 +55,6 @@
   ]
 )
 
-// Header: Name and Contact Info
 #align(center)[
   #text(size: 24pt, weight: "bold")[#smallcaps("Kshitij Duraphe")] \
   #v(-5pt)
@@ -67,7 +62,7 @@
   Boston, MA \
   #v(3pt)
 
-  #link("mailto:kshitijduraphe5@gmail.com")[kshitijduraphe5\@gmail.com]
+  #link("mailto:kshitijd@bu.edu")[kshitijd\@bu.edu]
   #lightsep
   #link("tel:13148863066")[+1 (314) 886-3066]
   #lightsep
@@ -84,282 +79,253 @@
 #line(length: 100%, stroke: 0.5pt)
 #v(10pt)
 
-// --- BODY SECTIONS ---
-
-// --- EDUCATION SECTION ---
+// --- EDUCATION ---
 #cvsection("Education")
 
 #entry_header("Boston University", "Boston, MA")
-Master of Science in Electrical and Computer Engineering #h(1fr) Sep 2022 -- May 2024 \
-Advisor: Prof. Joshua Semeter \
-GPA: 3.8/4.0
+_M.S., Electrical and Computer Engineering (with Thesis)_ #h(1fr) Sep 2022 -- May 2024 \
+Advisor: Prof. #link("https://www.bu.edu/eng/profile/joshua-semeter/")[Joshua Semeter] \
+Degree GPA: 3.8/4.0 \
+#text(size: 9.5pt)[#emph[Selected coursework:] Cosmic Plasma Physics #sym.dot.c Fourier Optics #sym.dot.c Quantum Mechanics and Semiconductor Physics #sym.dot.c Quantum Computing #sym.dot.c Signal Processing #sym.dot.c Machine Learning #sym.dot.c Advanced Algorithms #sym.dot.c Advanced Discrete Mathematics]
 
-#v(3mm)
+#v(2mm)
 
 #entry_header("College of Engineering Pune", "Pune, India")
-B.Tech. in Electrical Engineering with Minor in Computer Science and Engineering #h(1fr) Aug 2018 -- June 2022 \
+_B.Tech., Electrical Engineering (Minor: Computer Science)_ #h(1fr) Aug 2018 -- June 2022 \
 Advisors: Prof. Archana Thosar, Prof. Suhas Kakade \
-GPA: 9.11/10.0
+GPA: 9.11/10.0 (#underline[Department Bronze Medalist]) \
+#text(size: 9.5pt)[#emph[Selected coursework:] Probability Theory and Statistical Inference #sym.dot.c Optics and Modern Physics #sym.dot.c Electromagnetism #sym.dot.c Numerical Methods #sym.dot.c Vector Calculus #sym.dot.c Partial Differential Equations #sym.dot.c Ordinary Differential Equations #sym.dot.c Complex Analysis]
 
 // --- RESEARCH INTERESTS ---
 #cvsection("Research Interests")
 
-Astrophysics, Plasma Physics, Scientific Machine Learning, Remote Sensing
+High-Energy Astrophysics; Foundation Models; Mechanistic Interpretability; Space Physics; Time-Domain Astrophysics.
+
+// --- PUBLICATIONS ---
+#cvsection("Publications")
+
+#set enum(spacing: 1em)
+
+
++ *State-Dependent X-ray Variability in Cygnus X-1: A 12-Year NuSTAR Timing Study of Accretion Flow Geometry* \
+  #strong[#emph[K. Duraphe]], G. Bhatta, K. Mandar, C. Khanal, et al. \
+  #link("https://arxiv.org/abs/2510.10746")[The Astrophysical Journal], 2026
+
++ *Multi-Epoch NuSTAR Spectral Analysis of Cygnus X-1: Coronal and Reflection Properties Across Spectral States* \
+  #strong[#emph[K. Duraphe]], G. Bhatta, A. A. Zdziarski, et al. \
+  Submitted to The Astrophysical Journal, 2026
+ 
++ *Cross-Modal Attention is Overparameterized: The Sufficiency of Modality-Level Alignment* \
+  #strong[#emph[K. Duraphe]], K. Mohamed, N. Morgan \
+  Submitted to NeurIPS Main Track, 2026
+
++ *Smartphone Carrier Phase TEC: A Study Across Ionospheric Spatio-Temporal Scales* \
+  N. Servan-Schreiber, J. Semeter, #strong[#emph[K. Duraphe]], et al. \
+  #link("https://essopenarchive.org/users/1006611/articles/1370630-smartphone-carrier-phase-tec-a-study-across-ionospheric-spatio-temporal-scales")[Space Weather], 2026
+
++ *The Platonic Universe: Do Foundation Models See the Same Sky?* \
+  #strong[#emph[K. Duraphe]], M. J. Smith, J. F. Wu, S. Sourav #emph[(co-first author)] \
+  #link("https://arxiv.org/abs/2509.19453")[NeurIPS ML4PS Workshop, 2025] — #underline[Spotlight (top 1%)]; expanded follow-up submitted to NeurIPS 2026 main track
+
++ *Optimizing Solar Panel Tilt using Machine Learning Techniques* \
+  #strong[#emph[K. Duraphe]], S. Kakade, et al. \
+  #link("https://ieeexplore.ieee.org/document/9587892/")[GPECOM], 2021
 
 // --- THESES ---
 #cvsection("Theses")
 
-#entry_header([Data Driven Techniques to Advance Our Understanding of the STEVE Phenomenon], [])
-#emph[#underline[Kshitij Duraphe], Joshua Semeter] \
-Master's Thesis, Electrical and Computer Engineering, Boston University, 2024
++ *Data-Driven Techniques to Advance Our Understanding of the STEVE Phenomenon* \
+  #strong[#emph[Kshitij Duraphe]], Joshua Semeter \
+  M.S. Thesis, Department of Electrical and Computer Engineering, Boston University, 2024
 
-#v(3mm)
-
-#entry_header([Design of an Automated Radio Telescope for Observing the 21 cm Hydrogen Line], [])
-#emph[#underline[Kshitij Duraphe], Archana Thosar] \
-Bachelor's Thesis, Electrical Engineering, College of Engineering Pune, 2021
++ *Design of an Automated Radio Telescope for Observing the 21 cm Hydrogen Line* \
+  #strong[#emph[Kshitij Duraphe]], Archana Thosar \
+  B.Tech. Thesis, Department of Electrical Engineering, College of Engineering Pune, 2022
 
 // --- RESEARCH EXPERIENCE ---
 #cvsection("Research Experience")
 
-#entry_header("University of Zielona Góra", "Zielona Góra, Poland")
-#emph("Research Assistant (Remote)") #h(1fr) Mar 2025 -- Sep 2025 \
-Advisor: Prof. Gopal Bhatta
+#entry_header("University of Zielona Góra", "Zielona Góra, Poland (Remote)")
+#emph("Research Assistant") #h(1fr) Mar 2025 -- Present \
+Advisor: Prof. #link("https://inspirehep.net/authors/1722470")[Gopal Bhatta]
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Analyzed a decade of NuSTAR hard X-ray observations of Cygnus X-1, employing spectral-timing analysis and fitting techniques to investigate accretion flow properties — #link("https://arxiv.org/abs/2510.10746")[The Astrophysical Journal, 2026]
-  - Characterizing the system's behavior in different spectral states to advance the understanding of accretion physics near stellar-mass black holes, revealing a failed state transition
-]
+- #underline[First-authored] a 12-year NuSTAR archival timing study of Cygnus X-1 (#emph[The Astrophysical Journal], 2026), mapping accretion-flow geometry across spectral states via hard X-ray spectral-timing analysis.
+- Identified a previously unrecognized failed state transition and characterized state-dependent variability (power spectra, rms-flux relations, lag-frequency spectra), placing direct constraints on the corona–disk geometry near the black hole.
+- Reduced and analyzed the complete public NuSTAR Cyg X-1 archive with HEASoft / NuSTARDAS / Stingray / AstroPy; led manuscript writing and referee response.
+- Currently leading a follow-up multi-epoch *spectral* study of Cyg X-1 with #link("https://www.camk.edu.pl/en/staff/aaz/")[Andrzej A. Zdziarski] (NCAC Warsaw), submitted to #emph[The Astrophysical Journal], characterizing coronal and reflection properties across spectral states and investigating the potential failed state transition.
 
-#v(3mm)
+#v(2mm)
 
-#entry_header("UniverseTBD Collaboration", "")
+#entry_header("UniverseTBD Collaboration", "Remote")
 #emph("Researcher") #h(1fr) Jul 2024 -- Present \
-Advisors: Dr. Ioana Ciucă, Dr. Michael Smith, Dr. John Wu
+Collaborators: Dr. #link("https://mjjsmith.com")[Michael J. Smith], Dr. #link("https://jwuphysics.github.io/")[John F. Wu]
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Led the first empirical test of the *Platonic Representation Hypothesis* in astronomy, showing foundation models converge on shared representations with scale — #link("https://arxiv.org/abs/2509.19453")[NeurIPS ML4PS 2025 *Spotlight*]
-  - Engineered a cross-modal framework to evaluate foundation models on premier astronomical surveys, validating the use of general-purpose architectures for computationally-efficient AI
-]
+- #underline[Co-first author] on #emph[The Platonic Universe] (NeurIPS ML4PS 2025 #underline[*Spotlight*, top 1%]; expanded follow-up submitted to NeurIPS 2026 main track with M. J. Smith and J. F. Wu). Designed the evaluation framework comparing foundation-model representations across SDSS, DESI, JWST, and other surveys under model and data scaling.
+- Creator of the open-source #link("https://github.com/UniverseTBD/platonic-universe")[platonic-universe] package (Python / PyTorch): data loaders, evaluation harness, reproducible configs, test infrastructure.
+- Invited #link("https://www.youtube.com/watch?v=NIf-QQikukE")[AstroAI talk at the Harvard Center for Astrophysics] (Jan 2026) and #link("https://neurips.cc/virtual/2025/loc/san-diego/135877")[NeurIPS ML4PS oral presentation] (Dec 2025). Spotlight award (top 1% paper) NeurIPS ML4PS 2025.
+- Used NCSA DeltaAI compute allocation *PHY250286* — _The Platonic Universe: Do Foundation Models See the Same Sky?_ — 6,000 GPU-hours (PI: M. J. Smith; Sep 2025 -- Sep 2026); actively running training and evaluation experiments under the allocation.
 
-#v(3mm)
+#v(2mm)
 
 #entry_header("Space Physics Lab, Boston University", "Boston, MA")
 #emph("Graduate Research Assistant") #h(1fr) Oct 2022 -- May 2024 \
 Advisor: Prof. Joshua Semeter
 
-#emph("MS Thesis") #h(1fr) Jul 2023 -- May 2024
+#emph[MS Thesis: Data-Driven Techniques for STEVE] #h(1fr) Jul 2023 -- May 2024
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Characterized STEVE morphology and kinetics using high-resolution citizen science imagery, developing computer vision tracking methods to quantify fine-scale dynamics, revealing distinct westward velocities for columnar (~13 km/s) and picket fence (~1 km/s) features
-  - Investigated STEVE's impact on the ionosphere by analyzing Total Electron Content (TEC) variations using high-cadence GNSS data processed via custom ETL pipelines, identifying potential two-stage TEC increases linked to STEVE passage distinct from typical substorm
-  - Developed automated STEVE detection capabilities for noisy All-Sky Imager data by adapting faint-source astronomical algorithms and evaluating deep learning models (ConvNeXt), enhanced by custom image superresolution, inpainting, and time-series classification modules
-]
+- Characterized #link("https://en.wikipedia.org/wiki/STEVE")[STEVE] morphology and kinetics from high-resolution citizen-science imagery; developed computer-vision tracking methods that quantified distinct westward velocities for columnar (~13 km/s) and picket-fence (~1 km/s) features.
+- Developed and contributed to various open-source Python and C++ libraries for high-cadence GNSS carrier-phase processing and Total Electron Content (TEC) analysis; identified a candidate two-stage TEC signature of STEVE passage distinct from typical substorms.
+- Developed automated STEVE detection for noisy All-Sky Imager data by adapting faint-source astronomical algorithms and evaluating deep-learning models (ConvNeXt), with modular superresolution, inpainting, and time-series classification components.
 
-#emph("Hariri Center for Computing, Boston University") #h(1fr) Jul 2023 -- Jan 2024
+#emph[NASA Life on Mars Initiative - BU Center for Computing and Data Sciences] #h(1fr) Jul 2023 -- Jan 2024
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Developed GPS propagation models for ionospheres of Mars for the NASA Life on Mars initiative
-  - Developed classical and deep learning models for spatiotemporal interpolation of sparse Total Electron Content (TEC) data of the Martian ionosphere
-]
+- Developed GPS-signal propagation models and spatiotemporal interpolation of sparse Martian-ionosphere TEC data (classical and deep-learning baselines) from MARSIS.
 
-#emph("MS Project") #h(1fr) Oct 2022 -- May 2023
+#emph[MS Project — Plasma Dynamics of STEVE] #h(1fr) Oct 2022 -- May 2023
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Investigated ionospheric plasma dynamics conducive to STEVE formation by configuring and executing 3D forward modeling simulations using the GEMINI3D fluid-electrodynamic model
-  - Analyzed simulation outputs to identify key plasma parameter variations (density structures, temperature enhancements, flow shears) and dynamical features driven by modeled STEVE-like conditions
-]
+- Ran 3D forward-modeling simulations of the ionospheric plasma regime conducive to STEVE formation using the open-source GEMINI3D fluid-electrodynamic model; analyzed density structures, temperature enhancements, and flow shears driven by STEVE-like conditions.
 
-#v(3mm)
+#v(2mm)
+
+#entry_header("IIT Bombay", "Mumbai, India")
+#emph("Research Intern — Bayesian Binary-Star Analysis") #h(1fr) May 2021 -- Aug 2021
+
+- Performed Bayesian analysis of the eclipsing binary #link("https://arxiv.org/pdf/2107.10954")[QX Cas] using PHOEBE and MCMC; developed a custom 3-body dynamics simulator with a differential-evolution solver to constrain parameters of a hypothesized tertiary companion.
+
+#v(2mm)
 
 #entry_header("College of Engineering Pune", "Pune, India")
 #emph("Undergraduate Research Assistant") #h(1fr) Jan 2021 -- May 2022 \
 Advisors: Prof. Archana Thosar, Prof. Suhas Kakade
 
-#emph("B.Tech. Thesis") #h(1fr) Aug 2021 -- May 2022
+#block(breakable: false)[
+  #emph[Signal Processing Lab — Data-Driven Solar Panel Tilt Optimization] #h(1fr) Jan 2021 -- Apr 2021 \
+  Advisor: Prof. Suhas Kakade
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Developed a high-gain (~20dB) pyramidal horn radio telescope for 21cm line observations, including waveguide/feed design simulated and verified using Ansys HFSS
-  - Integrated COTS hardware (RTL-SDR, LNA) and created C++/Python spectral analysis software (implementing WOLA FFT based on VIRGO) to detect galactic 21cm emission and derive a partial rotation curve
+  - Formulated optimal solar-panel tilt as a regression problem over multi-year irradiance and meteorological time-series; benchmarked gradient-boosted, kernel-based, and shallow-network estimators against the standard latitude-based heuristic.
+  - Showed measurable energy-yield gains across heterogeneous Indian and American climatological zones; first-authored the resulting publication at #link("https://ieeexplore.ieee.org/document/9587892/")[IEEE GPECOM 2021].
 ]
 
-#emph("Signal Processing Lab") #h(1fr) Jan 2021 -- May 2021
+#emph[B.Tech. Thesis: 21 cm Radio Telescope] #h(1fr) Aug 2021 -- May 2022
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Developed machine learning models to predict optimal photovoltaic panel tilt angles for maximum power generation by incorporating environmental and seasonal factors, achieving predicted output increases of 8.44%-11.8% and validating results against the SMARTS2 analytical model. #link("https://ieeexplore.ieee.org/document/9587892")[Presented] at GPECOM-21
-]
+- Designed and built a high-gain (~20 dB) pyramidal horn radio telescope for 21 cm hydrogen-line observations (Ansys HFSS-simulated waveguide/feed).
+- Integrated RTL-SDR + LNA front-end with *Python and C++* WOLA-FFT spectral-analysis software (#link("https://github.com/jobgeheniau/VIRGO")[VIRGO] spectrometer-based); recovered a partial galactic rotation curve from 21 cm emission.
 
-#v(3mm)
-
-#entry_header("IIT Bombay", "Mumbai, India")
-#emph("Research Intern") #h(1fr) May 2021 -- Aug 2021
-
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Performed Bayesian analysis of the eclipsing binary QX Cas, using PHOEBE/MCMC for light curve fitting and developing a custom 3-body dynamics simulator with a differential evolution solver to investigate variability drivers and constrain parameters of a hypothesized tertiary companion
-]
-
-#v(3mm)
+#v(2mm)
 
 #entry_header("Naxxatra Equinox Initiative", "Bangalore, India")
-#emph("Research Intern") #h(1fr) Jul 2020 -- Oct 2020
+#emph("Research Intern — Stellar Structure and Compact Objects") #h(1fr) Jul 2020 -- Oct 2020
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Derived the equations of stellar structure incorporating hydrostatic equilibrium and relativistic electron degeneracy pressure; numerically solved the resulting ODEs using a 4th-order Runge-Kutta method in Python to compute the white dwarf mass-radius relationship and determine the Chandrasekhar limit
-]
+- Derived the equations of stellar structure incorporating hydrostatic equilibrium and relativistic electron-degeneracy pressure; numerically solved the coupled ODEs with a 4#super[th]-order Runge-Kutta scheme in Python to compute the white-dwarf mass-radius relation and determine the Chandrasekhar limit.
 
-// --- INDUSTRY EXPERIENCE ---
-#cvsection("Industry Experience")
+// --- TALKS ---
+#cvsection("Selected Talks and Posters")
 
-#entry_header("Thespian Labs", "Somerville, MA")
-#emph("AI Engineer") #h(1fr) Nov 2025 -- Feb 2026
+- _The Platonic Universe: Do Foundation Models See the Same Sky?_ (invited, long version) #h(1fr) #link("https://www.youtube.com/watch?v=NIf-QQikukE")[AstroAI, Harvard CfA, Jan 2026]
+- _The Platonic Universe: Do Foundation Models See the Same Sky?_ (oral) #h(1fr) #link("https://neurips.cc/virtual/2025/loc/san-diego/135877")[NeurIPS ML4PS, Dec 2025]
+- _Using high-rate dual-frequency cellphones to study the April 8#super[th] solar eclipse_ #h(1fr) #link("https://cedarscience.org/sites/default/files/2024-posters/IRRI-8-Nina-ServanSchreiber.pdf")[CEDAR Workshop, Jun 2024]
+- _Optimizing Solar Panel Tilt using Machine Learning Techniques_ #h(1fr) GPECOM, Dec 2021
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Developed and evaluated Text2Motion deep learning models using DARTControl-style reinforcement learning for controllable digital human performance generation, contributing to a foundation model for human motion synthesis
-  - Designed data processing pipelines for 5000+ hours of human performance data, enabling large-scale analysis of motion capture sequences for model training and evaluation
-  - Published an open-source MLOps library for model lifecycle management: #link("https://github.com/ksd3/jobber")[Link]
-]
+// --- AWARDS ---
+#cvsection("Awards and Honors")
 
-#entry_header("Absentia Technologies", "Boston, MA")
-#emph("Machine Learning Engineer") #h(1fr) Jan 2025 -- Nov 2025
+- NeurIPS ML4PS 2025 — #underline[*Spotlight Paper* (top 1%)] #h(1fr) 2025
+- MS Ambassador, Boston University ECE Department #h(1fr) 2024
+- 2#super[nd] / 100+ international teams, MIT iQuHack 2023 (IBM x Covalent Challenge) #h(1fr) 2023
+- Bronze Medalist, Electrical Engineering Department, College of Engineering Pune #h(1fr) 2022
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Implemented distributed training pipelines (PyTorch FSDP) for deep learning models applied to astronomical image denoising and real-time scene understanding using content-aware architectures
-  - Configured and managed automated CI/CD workflows (Docker, Jenkins, AWS) for model versioning, integration, and deployment
-]
+// --- TEACHING AND COMMUNITY ---
+#cvsection("Teaching, Mentoring, and Open-Source Community")
 
-#v(3mm)
+#entry_header(link("https://www.cranephysics.org/")[Computational Research Access NEtwork (CRANE) Physics], "Winter 2024, 2025")
+#emph("TA / Mentor")
 
-#entry_header("Spatialise", "Noordwijk, The Netherlands (Remote)")
-#emph("Geospatial Machine Learning Engineer") #h(1fr) Feb 2025 -- May 2025
-
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Developed a multimodal spatiotemporal foundation model using multispectral satellite data, informed by statistical modeling (GPR, clustering) of soil properties for remote sensing predictions and soil health monitoring
-  - Engineered a scalable cloud pipeline (GCP, DVC, Dask) for processing large geospatial datasets and training foundation models
-]
-
-#v(3mm)
-
-#entry_header("The KeelWorks Foundation", "Oak Harbor, WA")
-#emph("Software Engineer (Machine Learning Applications)") #h(1fr) Jul 2024 -- Jan 2025
-
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Architected complex agentic LLM systems (LangChain, Idefics-3) and optimized RAG pipelines (Pinecone) for QA, contextual summarization, and efficient information retrieval over large document corpora (85% QA accuracy, under 500ms retrieval)
-  - Engineered a synthetic data generation framework by fine-tuning language models (Mistral) using techniques like back-translation and sequential style representation for specific data augmentation tasks
-]
-
-#v(3mm)
-
-#entry_header("Halo AI (Stealth startup incubated at Columbia University)", "New York, NY")
-#emph("Founding AI Engineer") #h(1fr) Dec 2023 -- Aug 2024
-
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Developed and optimized (via pruning, distillation, quantization) on-device federated/ensemble LLMs for real-time, multimodal agentic assistants, leveraging TF LiteRT and ONNX for deployment (latency cut by 27%, inference under 1.5s)
-  - Engineered cloud data pipelines (AWS) and a microservice-based MLOps framework (Kubeflow) to support distributed federated learning experiments and continuous integration (reducing data preparation time by 70%)
-]
-
-// --- PAPERS SECTION ---
-#cvsection("Papers")
-
-// Numbered List for Papers
-#set enum(spacing: 0.6em)
-
-+ K. Duraphe, S. Kakade, et al., _Optimizing Solar Panel Tilt using Machine Learning Techniques_, #link("https://ieeexplore.ieee.org/document/9587892/")[GPECOM 2021]
-
-+ N. Servan-Schreiber, J. Semeter, K. Duraphe, et al., _Smartphone Carrier Phase TEC: A Study Across Ionospheric Spatio-Temporal Scales_, #link("https://essopenarchive.org/users/1006611/articles/1370630-smartphone-carrier-phase-tec-a-study-across-ionospheric-spatio-temporal-scales")[ESS Open Archive (2024)]
-
-+ K. Duraphe et al., _The Platonic Universe: Do Foundation Models See the Same Sky?_, #link("https://ml4physicalsciences.github.io/2025/")[NeurIPS ML4PS 2025 - *Spotlight Paper*] #link("https://arxiv.org/abs/2509.19453")[\[arXiv\]] \
-  Investigates if foundation models see the same underlying astrophysical phenomena and develops custom foundation models to better learn underlying astrophysics
-
-+ K. Duraphe, G Bhatta, et al., _Hard X-ray Variability from Cygnus X-1: Spectral-Timing Analysis with NuSTAR_, #link("https://arxiv.org/abs/2510.10746")[The Astrophysical Journal, 2026]
-
-// --- SELECTED PROJECTS ---
-#cvsection("Selected Projects")
-
-#entry_header([Using high-rate dual-frequency cellphones to study the April 8#super[th] total solar eclipse], "Ogunquit, ME")
-2024 #h(1fr) #link("https://cedarscience.org/sites/default/files/2024-posters/IRRI-8-Nina-ServanSchreiber.pdf")[Poster] | #link("https://essopenarchive.org/users/1006611/articles/1370630-smartphone-carrier-phase-tec-a-study-across-ionospheric-spatio-temporal-scales")[Paper]
+- Topics: signal processing, Python, numerical methods, machine learning, PIC simulations. Wrote tutorial materials and supported students during hands-on sessions across both cohorts.
 
 #v(2mm)
 
-#entry_header("Comparative Optimization of Photonic QGANs using Quandela Perceval", "MIT iQuHack 2024")
-2024 #h(1fr) #link("https://github.com/ksd3/biqermicefrommars")[Code]
+#entry_header("ENG EC520 Image Processing (Graduate Course), Boston University", "Spring 2023")
+#emph("Grader") \
+Instructor: Prof. #link("https://www.bu.edu/eng/profile/janusz-konrad/")[Janusz Konrad]
+
+- Graded problem sets and projects on filtering, compression, reconstruction, and computer-vision algorithms for a graduate-level image-processing course.
 
 #v(2mm)
 
-#entry_header("BeatQraft: QCBM-Based Rhythmic Pattern Generation", "MIT iQuHack 2023")
-2023 #h(1fr) #link("https://github.com/ksd3/BeatQraft")[Code]
+#entry_header([#link("https://github.com/SGIARK/")[ArkOS] — MIT Student Information Processing Board (SIPB)], "Cambridge, MA")
+#emph("Contributor — DevOps and Documentation") #h(1fr) 2025 -- Present
 
-// --- TALKS SECTION ---
-#cvsection("Talks and Presentations")
+- Lead DevOps and documentation for an open-source local-LLM agent platform; maintain GitHub Actions CI/CD, contributor onboarding, and developer-facing documentation.
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.6em)[
-  - _The Platonic Universe: Do Foundation Models See the Same Sky?_ (long version) #h(1fr) #link("https://www.youtube.com/watch?v=NIf-QQikukE")[AstroAI, 2026]
-  - _The Platonic Universe: Do Foundation Models See the Same Sky?_ #h(1fr) #link("https://neurips.cc/virtual/2025/loc/san-diego/135877")[NeurIPS ML4PS Workshop, Dec 2025]
-  - _Using high-rate dual-frequency cellphones to study the April 8th total solar eclipse_ #h(1fr) CEDAR Workshop, Jun 2024
-  - _Optimizing Solar Panel Tilt using Machine Learning Techniques_ #h(1fr) GPECOM, Dec 2021
-]
+#v(2mm)
 
-// --- REVIEW EXPERIENCE ---
-#cvsection("Review Experience")
+#entry_header("COEP Astronomy Club", "Pune, India")
+#emph("Head of Projects") #h(1fr) 2018 -- 2022
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.6em)[
-  - United States Research Software Engineer Conference (US-RSE) #h(1fr) 2025
-]
-
-// --- AWARDS AND HONORS ---
-#cvsection("Selected Awards and Honors")
-
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.6em)[
-  - MS Ambassador, Boston University ECE Department #h(1fr) 2024
-  - 2#super[nd] out of 100+ international teams at MIT iQuHack-2023, IBM x Covalent Challenge #h(1fr) 2023
-  - 3#super[rd] in class of 81 at College of Engineering Pune #h(1fr) 2022
-]
+- Mentored 30 undergraduates on processing astronomical data, operating telescopes, and building reflector optics.
+- Ran outreach sessions at schools for autistic children on identifying constellations in the night sky.
 
 // --- KEY SKILLS ---
 #cvsection("Key Skills")
 
-*Programming:* Python, C, C++, SQL, MATLAB, Octave
+*Astronomy tooling:* AstroPy, HEASoft, NuSTARDAS, Stingray, PHOEBE, GEMINI3D, FITS / HDF5 I/O
 
-*ML Libraries & Frameworks:* PyTorch, TensorFlow, scikit-learn, pandas, NumPy, Matplotlib, AstroPy
+*Scientific Python ecosystem:* NumPy, SciPy, Matplotlib, pandas, PyTorch, scikit-learn
 
-*ML Techniques:* Deep Learning, Statistical & Bayesian Modeling (MCMC), Spectral Analysis, Time-Series Analysis, Computer Vision (Scientific Data), LLM Applications (RAG, Fine-tuning)
+*Languages:* Python (primary), C, C++, SQL, MATLAB
 
-*Astrophysics & Simulation:* GEMINI3D, PHOEBE, Ansys HFSS, HEASoft, Numerical Methods
+*Statistical and numerical methods:* Bayesian inference (MCMC), spectral-timing analysis, time-series analysis, ODE/PDE numerical solvers, Runge–Kutta
 
-*Cloud, MLOps & Tools:* AWS, GCP, Docker, Kubeflow/MLflow, CI/CD (Jenkins), SQL/NoSQL DBs, Dask/PySpark, Git
+*Software engineering:* Git / GitHub, GitHub Actions CI/CD, pytest, Sphinx-style documentation, open-source contribution and code review
 
-// --- TEACHING EXPERIENCE ---
-#cvsection("Teaching Experience")
+*Instrumentation:* Ansys HFSS, radio receiver chains (RTL-SDR + LNA), antenna design
 
-#entry_header("Computational Research Access NEtwork (CRANE) Physics", "Winter 2024")
-#emph("TA/Mentor")
+// --- INDUSTRY RESEARCH EXPERIENCE ---
+#cvsection("Industry Research Experience")
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Topics: Signal Processing, Introduction to Python, Numerical Methods, Machine Learning, PIC Simulations
-]
+#entry_header("Thespian Labs", "Somerville, MA")
+#emph("AI Engineer") #h(1fr) Nov 2025 -- Feb 2026
+
+- Developed state-of-the-art *Text2Motion* foundation models using *VQ-VAE* motion tokenization; ran multimodal pre-training on 5000+ hours of human-performance time-series and DARTControl-style *reinforcement-learning post-training* for controllable motion synthesis.
+- Released the open-source MLOps library #link("https://github.com/ksd3/jobber")[jobber] for programmatic research-job submission to cloud platforms.
+
+#v(2mm)
+
+#entry_header("Absentia Technologies", "Boston, MA")
+#emph("Founding Machine Learning Engineer") #h(1fr) Jan 2025 -- Nov 2025
+
+- Developed state-of-the-art *vision-language models (VLMs)* for multimodal video understanding; combined large-scale pre-training with *supervised fine-tuning and alignment post-training* on domain-specific data.
+- Implemented distributed training pipelines with *PyTorch FSDP* (multi-GPU, mixed-precision) to train foundation models beyond single-device memory, handling sharding, checkpointing, and fault recovery.
+
+#v(2mm)
+
+#entry_header("Halo AI (Columbia-incubated stealth)", "New York, NY (Remote)")
+#emph("Founding AI Engineer") #h(1fr) Dec 2023 -- Aug 2024
+
+- Researched on-device *federated* and *ensemble* LLMs for agentic assistants under tight compute and memory constraints, including ablations on federated-aggregation strategies.
+- Systematic study of *model-compression* techniques — pruning, knowledge distillation, and 8-bit post-training quantization — and their trade-offs for latency, memory footprint, and task accuracy (50% size reduction, 80% inference speedup, 90% accuracy retention).
+
+#v(2mm)
+
+#entry_header("Spatialise", "Noordwijk, The Netherlands (Remote)")
+#emph("Geospatial Machine Learning Engineer") #h(1fr) Feb 2025 -- May 2025
+
+- Developed a *multimodal spatiotemporal foundation model* over multispectral satellite imagery for soil-health remote sensing; combined deep learning with statistical priors (Gaussian-process regression, clustering) to produce calibrated predictions.
+
+#v(2mm)
+
+#entry_header("The KeelWorks Foundation", "Oak Harbor, WA (Remote)")
+#emph("Software Engineer, ML Applications") #h(1fr) Jul 2024 -- Jan 2025
+
+- Synthetic-data generation research via *Mistral-7B* fine-tuning (back-translation, sequential style representation); agentic LLM systems with RAG pipelines for large-scale document retrieval and question answering.
 
 // --- ASTRONOMY SCHOOLS AND WORKSHOPS ---
-#cvsection("Astronomy Schools and Workshops Attended")
+#cvsection("Astronomy Schools and Workshops")
 
 #entry_header("Inter-University Center for Astronomy and Astrophysics (IUCAA)", "Pune, India")
 #emph("Introductory Summer School in Astronomy and Astrophysics") #h(1fr) May -- Jun 2020
 
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Daily lectures on different introductory topics in astronomy and astrophysics
-]
+// --- REVIEW EXPERIENCE ---
+#cvsection("Review Experience")
 
-// --- OUTREACH AND VOLUNTEERING ---
-#cvsection("Outreach and Volunteering")
-
-#entry_header("COEP Astronomy Club", "Pune, India")
-#emph("Project Head") #h(1fr) 2018 -- 2022
-
-#list(indent: 1em, body-indent: 0.5em, spacing: 0.5em, marker: [--])[
-  - Led projects on antenna design for low-frequency observations of the universe, deep learning methods to detect neutral hydrogen galaxies, telescope operation
-  - Gave talks at schools for autistic children on identifying constellations in the night sky
-  - Mentored 30 undergraduates on how to process astronomical data and build reflector telescopes
-]
-
-#v(3mm)
-
-#entry_header("COEP Mathematics Club", "Pune, India")
-#emph("Member") #h(1fr) 2018 -- 2020
+- United States Research Software Engineer Conference (US-RSE) #h(1fr) 2025, 2026

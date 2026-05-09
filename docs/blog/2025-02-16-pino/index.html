@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Kshitij Duraphe">
 <meta name="dcterms.date" content="2025-02-16">
 <meta name="description" content="An overview of Physics-Informed Neural Operators and their applications in space physics.">
 
@@ -47,6 +48,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-be53553f563a7f8912e850d522ba7b71.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-2a6e5912c7b77960347162fe2ed21525.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/bootstrap/bootstrap-be53553f563a7f8912e850d522ba7b71.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="../../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -329,6 +332,12 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Kshitij Duraphe </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
@@ -377,9 +386,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="steve-mhd" class="level2">
 <h2 class="anchored" data-anchor-id="steve-mhd">STEVE MHD</h2>
 <p>A full STEVE-like simulation can be done with <a href="https://gemini3d.github.io/gemini3d/">Gemini3D</a>. I modeled the basic underlying phenomena and simulated them over lower resolutions and larger timescales. You can still see the underlying structure in the video.</p>
-<video controls="" width="100%">
-<source src="../../videos/mhd_pino.mp4" type="video/mp4">
-</video>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="../../videos/mhd_pino.mp4"></video></div>
 <p>For this, I used 2D spectral convolutions. The PINO didn’t quite reconstruct the phenomenon because of the diffuse boundaries of ionospheric phenomena, which is what SIREN activations are designed for. I eventually ended up going with classical algorithms that helped me do a 3D reconstruction of STEVE.</p>
 <p>Here’s a single frame (frame 39) from that video. I only used 16% of the simulation as training data, and it still reconstructed everything further on pretty well!</p>
 <div class="quarto-figure quarto-figure-center">
@@ -807,6 +814,7 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 

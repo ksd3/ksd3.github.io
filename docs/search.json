@@ -10,85 +10,64 @@
     "objectID": "research.html#algorithms",
     "href": "research.html#algorithms",
     "title": "Research Overview",
-    "section": "Algorithms",
-    "text": "Algorithms\n\nData Processing\n\n1. Ionospheric Assumption Validation\nFor speed of computation, we use fast 2d and 3d natural neighbors interpolation (thick large-scale structures) and VISTA (thick medium-scale structures) (Video Imputation with SoftImpute, Temporal smoothing and Auxiliary data) to validate the ionospheric assumption.\n\n\n\nVISTA Algorithm\n\n\nThe assumption is (somewhat) invalid during solar storms, geophysical storms, magnetic reconnection with solar winds, coronal mass ejections, and so on.\n\n\n2. RINEX conversion\nDeveloped an internal Python package named rinexpy - looking to merge with georinex:\nrinexpy Operations:\n\nMerging and Editing RINEX Files: Provides the ability to merge multiple RINEX files into a single output. Allows for editing of the file contents, such as adjusting header information, modifying observation types, and managing data intervals.\nClock Jump Correction: Automatically detects and corrects clock jumps in GNSS observation data.\nIonospheric Correction: Applies higher-order ionospheric corrections to the GNSS data.\nFile Format Conversion: Supports converting BINEX and RTCM files into the RINEX format.\nInteractive RINEX File Viewer: Includes an interactive, web-based viewer for RINEX files.\n\n\n\n3. Analysis\nCycle slip correction: We design machine learning models for cycle slip correction. These are better than the heuristic ‘stiching’ process that may remove important TEC jumps that could identify an ionospheric phenomenon.\n\n\n\nCycle Slip Example\n\n\n\n\n\nPractical Applications\n\n\nThe technique used is LSTM-based autoencoders, for several reasons:\n\nThe Poker Flat setups are the same receiver in roughly the same area, so we are justified in using LSTM-based autoencoders for this.\nUnder the assumptions that the internals of Pixel phones suffer roughly the same wear-and-tear, autoencoders are straightforward to deploy on Sagemaker and call for inference.\n\n\n\n\nLSTM Architecture\n\n\nWe also account for multipath noise, temperature noise (Rideout and Coster), propagation errors, ionospheric delays, and utilize precise point positioning to estimate slant TEC as accurately as possible.\n\n\n\nSNR Graph\n\n\nTime-series classification: How does TEC change during an auroral event?\n\n\n\nGiven a dataset of time-series TEC curves at some frequencies, we want to classify them to make an early-warning system for auroral events (so citizen scientists can go out and take photographs!)\nYou can probe ionospheric conditions (such as from DMSP) and get extra time series:\n\n\n\nDMSP Data\n\n\nMethod for auroral phenomenon identification:\n\nUse 1D CNN to classify raw TEC changes as STEVE, SAPS, SAID, Discrete Aurora, Continuous Aurora, etc.\nAnalyze satellite flyby data to see what ionospheric, magnetospheric, and thermospheric parameters change in that time period."
+    "section": "1 Algorithms",
+    "text": "1 Algorithms\n\n1.1 Data Processing\n\n1.1.1 Ionospheric Assumption Validation\nFor speed of computation, we use fast 2d and 3d natural neighbors interpolation (thick large-scale structures) and VISTA (thick medium-scale structures) (Video Imputation with SoftImpute, Temporal smoothing and Auxiliary data) to validate the ionospheric assumption.\n\n\n\nVISTA Algorithm\n\n\nThe assumption is (somewhat) invalid during solar storms, geophysical storms, magnetic reconnection with solar winds, coronal mass ejections, and so on.\n\n\n1.1.2 RINEX conversion\nDeveloped an internal Python package named rinexpy - looking to merge with georinex:\nrinexpy Operations:\n\nMerging and Editing RINEX Files: Provides the ability to merge multiple RINEX files into a single output. Allows for editing of the file contents, such as adjusting header information, modifying observation types, and managing data intervals.\nClock Jump Correction: Automatically detects and corrects clock jumps in GNSS observation data.\nIonospheric Correction: Applies higher-order ionospheric corrections to the GNSS data.\nFile Format Conversion: Supports converting BINEX and RTCM files into the RINEX format.\nInteractive RINEX File Viewer: Includes an interactive, web-based viewer for RINEX files.\n\n\n\n1.1.3 Analysis\nCycle slip correction: We design machine learning models for cycle slip correction. These are better than the heuristic ‘stiching’ process that may remove important TEC jumps that could identify an ionospheric phenomenon.\n\n\n\nCycle Slip Example\n\n\n\n\n\nPractical Applications\n\n\nThe technique used is LSTM-based autoencoders, for several reasons:\n\nThe Poker Flat setups are the same receiver in roughly the same area, so we are justified in using LSTM-based autoencoders for this.\nUnder the assumptions that the internals of Pixel phones suffer roughly the same wear-and-tear, autoencoders are straightforward to deploy on Sagemaker and call for inference.\n\n\n\n\nLSTM Architecture\n\n\nWe also account for multipath noise, temperature noise (Rideout and Coster), propagation errors, ionospheric delays, and utilize precise point positioning to estimate slant TEC as accurately as possible.\n\n\n\nSNR Graph\n\n\nTime-series classification: How does TEC change during an auroral event?\n\nGiven a dataset of time-series TEC curves at some frequencies, we want to classify them to make an early-warning system for auroral events (so citizen scientists can go out and take photographs!)\nYou can probe ionospheric conditions (such as from DMSP) and get extra time series:\n\n\n\nDMSP Data\n\n\nMethod for auroral phenomenon identification:\n\nUse 1D CNN to classify raw TEC changes as STEVE, SAPS, SAID, Discrete Aurora, Continuous Aurora, etc.\nAnalyze satellite flyby data to see what ionospheric, magnetospheric, and thermospheric parameters change in that time period."
   },
   {
     "objectID": "research.html#computer-vision-algorithms",
     "href": "research.html#computer-vision-algorithms",
     "title": "Research Overview",
-    "section": "Computer Vision Algorithms",
-    "text": "Computer Vision Algorithms\nWe use Max-Tree for faint phenomenon identification, active learning, monocular depth estimation (Depth Prediction Transformers), and Open Set recognition to identify STEVE in citizen science images.\nThe clustering model developed was to classify all-sky images of aurora - using ResNet-18 to extract features, used PCA to reduce dimensionality, and K-Means++ to cluster. Achieved silhouette score of 0.7, Davies-Bouldin index of 0.9, Calinski-Harabase index of 256 indicating high-quality cluster separation."
+    "section": "2 Computer Vision Algorithms",
+    "text": "2 Computer Vision Algorithms\nWe use Max-Tree for faint phenomenon identification, active learning, monocular depth estimation (Depth Prediction Transformers), and Open Set recognition to identify STEVE in citizen science images.\nThe clustering model developed was to classify all-sky images of aurora - using ResNet-18 to extract features, used PCA to reduce dimensionality, and K-Means++ to cluster. Achieved silhouette score of 0.7, Davies-Bouldin index of 0.9, Calinski-Harabase index of 256 indicating high-quality cluster separation."
   },
   {
     "objectID": "research.html#life-on-mars",
     "href": "research.html#life-on-mars",
     "title": "Research Overview",
-    "section": "Life on Mars",
-    "text": "Life on Mars\nGenerated TEC maps from MARSIS data by modeling with two-layer Chapman functions for Martian ionosphere. Used VISTA to reconstruct (in 3D), 3d volumes of maps. Auxiliary guess was made using natural pixel decomposition, where the 3d structure estimated with tomography. Specifically, it is modeled as a Fredkin integral of the first kind and pLogMART is used as the matrix inversion algorithm. Simulated GPS propagation through it."
+    "section": "3 Life on Mars",
+    "text": "3 Life on Mars\nGenerated TEC maps from MARSIS data by modeling with two-layer Chapman functions for Martian ionosphere. Used VISTA to reconstruct (in 3D), 3d volumes of maps. Auxiliary guess was made using natural pixel decomposition, where the 3d structure estimated with tomography. Specifically, it is modeled as a Fredkin integral of the first kind and pLogMART is used as the matrix inversion algorithm. Simulated GPS propagation through it."
   },
   {
     "objectID": "talks.html",
     "href": "talks.html",
     "title": "Talks",
     "section": "",
-    "text": "Presentations and slides from conferences, seminars, and workshops.\nNo talks uploaded yet."
+    "text": "Presentations and slides from conferences, seminars, and workshops.\n\n\n\n\n\n\nTipHow to add a talk\n\n\n\n\n\n\nCopy talks/_template/ to talks/YYYY-talk-name/.\nEdit index.qmd. Remove draft: true from the front-matter when ready to publish.\nRun quarto render from the project root — the listing above will pick it up automatically.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "textbooks.html",
     "href": "textbooks.html",
     "title": "Textbooks",
     "section": "",
-    "text": "Online textbooks and lecture notes."
-  },
-  {
-    "objectID": "textbooks.html#published",
-    "href": "textbooks.html#published",
-    "title": "Textbooks",
-    "section": "Published",
-    "text": "Published\nNo textbooks published yet."
-  },
-  {
-    "objectID": "textbooks.html#in-progress",
-    "href": "textbooks.html#in-progress",
-    "title": "Textbooks",
-    "section": "In Progress",
-    "text": "In Progress\nTextbooks in progress are kept in private repositories until release."
+    "text": "Online textbooks and lecture notes.\nTextbooks in progress are kept in private repositories until release.\n\n\n\n\n\n\nTipHow to add a book\n\n\n\n\n\n\nCopy books/_template/ to books/book-name/.\nEdit _quarto.yml and the chapter .qmd files.\nRemove draft: true from the book’s index.qmd front-matter when ready.\nRun quarto render — the listing picks it up automatically.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "cv.html",
     "href": "cv.html",
     "title": "Resume & CV",
     "section": "",
-    "text": "My Resume\nDownload Resume (PDF)"
+    "text": "Download Resume (PDF)"
   },
   {
     "objectID": "cv.html#resume",
     "href": "cv.html#resume",
     "title": "Resume & CV",
     "section": "",
-    "text": "My Resume\nDownload Resume (PDF)"
+    "text": "Download Resume (PDF)"
   },
   {
     "objectID": "cv.html#curriculum-vitae",
     "href": "cv.html#curriculum-vitae",
     "title": "Resume & CV",
     "section": "Curriculum Vitae",
-    "text": "Curriculum Vitae\nMy CV\nDownload CV (PDF)"
-  },
-  {
-    "objectID": "cv/resume.html",
-    "href": "cv/resume.html",
-    "title": "Resume",
-    "section": "",
-    "text": "Download: resume.pdf"
+    "text": "Curriculum Vitae\nDownload CV (PDF)"
   },
   {
     "objectID": "blog/index.html",
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "PINOs in space physics\n\n\n\nphysics\n\nmachine-learning\n\nresearch\n\n\n\nAn overview of Physics-Informed Neural Operators and their applications in space physics.\n\n\n\n\n\nFeb 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nHow to get into AI research as an outsider\n\n\n\nmachine-learning\n\ncareer\n\nresearch\n\n\n\nMy perspective on how to break into AI research.\n\n\n\n\n\nFeb 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nTransformers from scratch in numpy\n\n\n\nmachine-learning\n\ntutorial\n\ndeep-learning\n\n\n\nAn implementation and demonstration of the transformer architecture from scratch using as few predefined libraries as possible.\n\n\n\n\n\nDec 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nPapers explained: Partitioning the Universe’s baryons (Connor et al 2024)\n\n\n\nastrophysics\n\npaper-explanation\n\n\n\nAn annotated explanation of ‘A gas rich cosmic web revealed by partitioning the missing baryons’ by Connor et al. (2024).\n\n\n\n\n\nDec 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nCourses I Took at BU\n\n\n\neducation\n\nBU\n\ngraduate school\n\n\n\nA review of the courses I took during my Master’s at Boston University (2022-2024).\n\n\n\n\n\nMay 1, 2024\n\n\nKshitij Duraphe\n\n\n\n\n\nNo matching items"
+    "text": "PINOs in space physics\n\n\n\nphysics\n\nmachine-learning\n\nresearch\n\n\n\nAn overview of Physics-Informed Neural Operators and their applications in space physics.\n\n\n\n\n\nFeb 16, 2025\n\n\nKshitij Duraphe\n\n\n\n\n\n\n\n\n\n\n\n\nHow to get into AI research as an outsider\n\n\n\nmachine-learning\n\ncareer\n\nresearch\n\n\n\nMy perspective on how to break into AI research.\n\n\n\n\n\nFeb 10, 2025\n\n\nKshitij Duraphe\n\n\n\n\n\n\n\n\n\n\n\n\nTransformers from scratch in numpy\n\n\n\nmachine-learning\n\ntutorial\n\ndeep-learning\n\n\n\nAn implementation and demonstration of the transformer architecture from scratch using as few predefined libraries as possible.\n\n\n\n\n\nDec 7, 2024\n\n\nKshitij Duraphe\n\n\n\n\n\n\n\n\n\n\n\n\nPapers explained: Partitioning the Universe’s baryons (Connor et al 2024)\n\n\n\nastrophysics\n\npaper-explanation\n\n\n\nAn annotated explanation of ‘A gas rich cosmic web revealed by partitioning the missing baryons’ by Connor et al. (2024).\n\n\n\n\n\nDec 1, 2024\n\n\nKshitij Duraphe\n\n\n\n\n\n\n\n\n\n\n\n\nCourses I Took at BU\n\n\n\neducation\n\nBU\n\ngraduate school\n\n\n\nA review of the courses I took during my Master’s at Boston University (2022-2024).\n\n\n\n\n\nMay 1, 2024\n\n\nKshitij Duraphe\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/2024-12-01-partitioning/index.html",
@@ -151,7 +130,7 @@
     "href": "blog/2025-02-16-pino/index.html#steve-mhd",
     "title": "PINOs in space physics",
     "section": "STEVE MHD",
-    "text": "STEVE MHD\nA full STEVE-like simulation can be done with Gemini3D. I modeled the basic underlying phenomena and simulated them over lower resolutions and larger timescales. You can still see the underlying structure in the video.\n\n\n\nFor this, I used 2D spectral convolutions. The PINO didn’t quite reconstruct the phenomenon because of the diffuse boundaries of ionospheric phenomena, which is what SIREN activations are designed for. I eventually ended up going with classical algorithms that helped me do a 3D reconstruction of STEVE.\nHere’s a single frame (frame 39) from that video. I only used 16% of the simulation as training data, and it still reconstructed everything further on pretty well!\n\n\n\nMHD PINO Frame"
+    "text": "STEVE MHD\nA full STEVE-like simulation can be done with Gemini3D. I modeled the basic underlying phenomena and simulated them over lower resolutions and larger timescales. You can still see the underlying structure in the video.\n\nFor this, I used 2D spectral convolutions. The PINO didn’t quite reconstruct the phenomenon because of the diffuse boundaries of ionospheric phenomena, which is what SIREN activations are designed for. I eventually ended up going with classical algorithms that helped me do a 3D reconstruction of STEVE.\nHere’s a single frame (frame 39) from that video. I only used 16% of the simulation as training data, and it still reconstructed everything further on pretty well!\n\n\n\nMHD PINO Frame"
   },
   {
     "objectID": "blog/2024-05-01-bu-courses/index.html",
@@ -217,13 +196,6 @@
     "text": "Practicalities\n\nTooling\nOne of the big things when being introduced to a new field is learning the tooling. One of the good things about machine learning is that it is easily accessible. With tools like Google Colab, Paperspace’s Gradient, and Kaggle Notebooks, it is very easy for people to start working with models and datasets. The common theme among these is Python. Python has become synonymous with machine learning, with PyTorch being the library of choice for implementing most general-purpose models.\nIf you want to work more on the data science side of things, R is better than Python because of the sheer variety of algorithms implemented in it. If you want to work in scientific computing, Jax and Julia are better options.\nThe next part is the mathematics. People need to know the basics - undergraduate-level multivariate calculus, statistics, optimization theory, and possibly some formal mathematical proving before working in machine learning. A popular book is Mathematics of Machine Learning. The two holy books of the field are ESL and ISL. To get into deep learning, read Deep Learning.\n\n\nEducational requirements\nDo you need to be in higher education to start working in AI research? The answer without any caveats is no. AI is one of the few fields that allows people unaffiliated with an institution to submit research works to a conference. But you have a much higher chance of your research getting results if you are in higher education.\n\n\nIf you’re looking to start\nIf you know someone who needs a problem solved with machine learning, start working. Identifying which problems need to be solved with machine learning is an art in itself.\nIf you’re an undergraduate student then you should actively reach out to professors. Many professors are happy to take undergraduate students and assign them to a project. If you’re a Master’s student then it’s significantly more difficult: you have to prove to professors that 1. you have the technical skill and 2. enough domain knowledge to immediately start making a contribution.\nA good technique is to cold email a lot of people. More than 99% of the time you will not get a reply. Be honest about your skills and shortcomings and hope for the best.\n\n\nMindset\nI can throw around buzzwords like resilience, mental fortitude, determination, discipline, but that’s not quite what’s required. Like anything, you do need to have some amount of natural talent in thinking through a problem before tackling it. The second thing is that you need to have Sitzfleisch, the ability to carry on under any circumstances. You only get this with practice and liking the work you do. Hard work, when properly applied, is the only thing that makes you successful."
   },
   {
-    "objectID": "cv/cv.html",
-    "href": "cv/cv.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Download: cv.pdf"
-  },
-  {
     "objectID": "template.html",
     "href": "template.html",
     "title": "Build Your Own",
@@ -242,14 +214,14 @@
     "href": "template.html#directory-structure",
     "title": "Build Your Own",
     "section": "Directory Structure",
-    "text": "Directory Structure\nyour-site/\n├── _quarto.yml           # Site configuration (navbar, theme, output)\n├── styles.css            # Custom CSS (dark mode, layout, typography)\n│\n├── index.qmd             # Home page\n├── research.qmd          # Research page\n├── talks.qmd             # Talks listing page\n├── textbooks.qmd         # Books listing page\n├── cv.qmd                # Resume/CV landing page (embeds PDFs)\n│\n├── blog/                 # Blog posts\n│   ├── index.qmd         # Blog listing (auto-generated)\n│   └── YYYY-MM-DD-slug/  # Each post in its own directory\n│       └── index.qmd\n│\n├── talks/                # RevealJS presentations\n│   └── _template/        # Copy this to create a new talk\n│\n├── books/                # Textbooks (Quarto book projects)\n│   └── _template/        # Copy this to create a new book\n│\n├── cv/                   # CV and resume (Typst → PDF)\n│   ├── cv.qmd\n│   └── resume.qmd\n│\n├── images/               # Shared images\n├── videos/               # Video files\n└── docs/                 # Generated output (GitHub Pages serves this)"
+    "text": "Directory Structure\nyour-site/\n├── _quarto.yml           # Site configuration (navbar, theme, output)\n├── styles.css            # Custom CSS (dark mode, layout, typography)\n│\n├── index.qmd             # Home page\n├── research.qmd          # Research page\n├── talks.qmd             # Talks listing page\n├── textbooks.qmd         # Books listing page\n├── cv.qmd                # Resume/CV landing page (embeds PDFs)\n│\n├── blog/                 # Blog posts\n│   ├── index.qmd         # Blog listing (auto-generated)\n│   └── YYYY-MM-DD-slug/  # Each post in its own directory\n│       └── index.qmd\n│\n├── talks/                # RevealJS presentations\n│   └── _template/        # Copy this to create a new talk\n│\n├── books/                # Textbooks (Quarto book projects)\n│   └── _template/        # Copy this to create a new book\n│\n├── cv/                   # CV and resume (Typst → PDF, compiled by pre-render hook)\n│   ├── cv.typ\n│   └── resume.typ\n│\n├── images/               # Shared images\n├── videos/               # Video files\n└── docs/                 # Generated output (GitHub Pages serves this)"
   },
   {
     "objectID": "template.html#quick-start",
     "href": "template.html#quick-start",
     "title": "Build Your Own",
     "section": "Quick Start",
-    "text": "Quick Start\n# 1. Fork and clone\ngit clone https://github.com/YOUR-USERNAME/YOUR-USERNAME.github.io\ncd YOUR-USERNAME.github.io\n\n# 2. Build CV/resume PDFs (needed before full render)\nquarto render cv/resume.qmd\nquarto render cv/cv.qmd\n\n# 3. Preview locally (hot reload at http://localhost:4000)\nquarto preview\n\n# 4. Build the full site\nquarto render"
+    "text": "Quick Start\n# 1. Fork and clone\ngit clone https://github.com/YOUR-USERNAME/YOUR-USERNAME.github.io\ncd YOUR-USERNAME.github.io\n\n# 2. Preview locally (hot reload at http://localhost:4000)\nquarto preview\n\n# 3. Build the full site (CV/resume PDFs are compiled by the pre-render hook)\nquarto render"
   },
   {
     "objectID": "template.html#adding-content",
@@ -263,7 +235,7 @@
     "href": "template.html#deployment",
     "title": "Build Your Own",
     "section": "Deployment",
-    "text": "Deployment\nThis site uses GitHub Pages serving from the docs/ folder on main.\n\nWorkflow\n# 1. Edit source files (.qmd, .typ, etc.)\n# 2. Render everything (compiles CV/resume PDFs automatically)\nquarto render\n\n# 3. Commit and push\ngit add .\ngit commit -m \"Update site\"\ngit push\n\n\nGitHub Pages Setup\nIn your repo’s Settings → Pages:\n\nSource: Deploy from a branch\nBranch: main\nFolder: /docs\n\n\n\nOptional: GitHub Actions\nYou can automate builds so you only commit source files. Create .github/workflows/publish.yml:\nname: Build and Deploy\non:\n  push:\n    branches: [main]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: quarto-dev/quarto-actions/setup@v2\n      - name: Install Typst\n        run: |\n          curl -fsSL https://typst.community/typst-install/install.sh | sh\n          echo \"$HOME/.local/bin\" &gt;&gt; $GITHUB_PATH\n      - name: Build PDFs\n        run: |\n          quarto render cv/resume.qmd\n          quarto render cv/cv.qmd\n      - name: Render Site\n        run: quarto render\n      - name: Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          publish_dir: ./docs"
+    "text": "Deployment\nThis site uses GitHub Pages serving from the docs/ folder on main.\n\nWorkflow\n# 1. Edit source files (.qmd, .typ, etc.)\n# 2. Render everything (compiles CV/resume PDFs automatically)\nquarto render\n\n# 3. Commit and push\ngit add .\ngit commit -m \"Update site\"\ngit push\n\n\nGitHub Pages Setup\nIn your repo’s Settings → Pages:\n\nSource: Deploy from a branch\nBranch: main\nFolder: /docs\n\n\n\nOptional: GitHub Actions\nYou can automate builds so you only commit source files. Create .github/workflows/publish.yml:\nname: Build and Deploy\non:\n  push:\n    branches: [main]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: quarto-dev/quarto-actions/setup@v2\n      - name: Install Typst\n        run: |\n          curl -fsSL https://typst.community/typst-install/install.sh | sh\n          echo \"$HOME/.local/bin\" &gt;&gt; $GITHUB_PATH\n      - name: Render Site\n        run: quarto render\n      - name: Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          publish_dir: ./docs"
   },
   {
     "objectID": "template.html#customization",
@@ -282,35 +254,35 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "About",
+    "title": "Kshitij Duraphe",
     "section": "",
-    "text": "I’m Kshitij. I used to work on human-computer interaction, reinforcement learning, foundation models, and all that jazz. Before that, I worked on everything to do with AI understanding and the user experience for security professionals at Absentia Technologies. I previously worked on recommendation systems at Nevara.ai and also developed environmental foundation models at Spatialise. I’m a May 2024 graduate from Boston University’s Master of Electrical and Computer Engineering program.\nAs a student, I worked in Boston University’s Space Physics Lab from October 2022 to May 2024, advised by Joshua Semeter. I also worked at the Hariri Center for NASA’s Life on Mars initiative, developing signal processing and machine learning techniques to analyze the Martian ionosphere and simulate GPS propagation through it. Previously, I was at COEP from 2018-2022.\nI was also a TA/mentor for CRANE 2025’s winter session, instructing students in computational plasma physics. I work on mechanistic interpretability in astrophysics at UniverseTBD.\nI am also at MIT as a SIPB member where I do DevOps + documentation for ArkOS.\nResume | Academic CV | LinkedIn | GitHub"
+    "text": "I used to work on human-computer interaction, reinforcement learning, foundation models, and all that jazz. Before that, I worked on everything to do with AI understanding and the user experience for security professionals at Absentia Technologies. I previously worked on recommendation systems at Nevara.ai and also developed environmental foundation models at Spatialise. I’m a May 2024 graduate from Boston University’s Master of Electrical and Computer Engineering program.\nAs a student, I worked in Boston University’s Space Physics Lab from October 2022 to May 2024, advised by Joshua Semeter. I also worked at the Hariri Center for NASA’s Life on Mars initiative, developing signal processing and machine learning techniques to analyze the Martian ionosphere and simulate GPS propagation through it. Previously, I was at COEP from 2018-2022.\nI was also a TA/mentor for CRANE 2025’s winter session, instructing students in computational plasma physics. I work on mechanistic interpretability in astrophysics at UniverseTBD. I am also at MIT as a SIPB member where I do DevOps + documentation for ArkOS."
   },
   {
     "objectID": "index.html#research-interests",
     "href": "index.html#research-interests",
-    "title": "About",
+    "title": "Kshitij Duraphe",
     "section": "Research Interests",
     "text": "Research Interests\nOn the theory side, I’m broadly interested in astrophysics and the application of inverse methods to astrophysical phenomena. I hope to branch out into more applied SciML and develop faster and more reliable methods to bound predictions for these phenomena.\nOn the practical side, I’m interested in developing fast, efficient, and scalable multimodal signal and image processing systems to solve engineering problems in unstructured, noisy, and sparse scenarios.\n\nUpcoming\nI think crossmatching data is cool and is definitely a worthwhile use of my time. Also I am on the lookout for spectral foundation models, if you know of any please send them over to me! Really, any spectral foundation model is fine, I just need like 2.\nUpdate: https://huggingface.co/kshitijd/omnisky"
   },
   {
     "objectID": "index.html#selected-work",
     "href": "index.html#selected-work",
-    "title": "About",
+    "title": "Kshitij Duraphe",
     "section": "Selected Work",
-    "text": "Selected Work\n\n(UniverseTBD, 2026): Some extensions on the Platonic Universe work. We submitted to NeurIPS 2026 and ICML Mech Interp 2026.\n(University of Zielona Gora, 2025): Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of that work has been accepted to ApJ. The second part of that work is now being done with Andrzej A. Zdziarski and has been submitted to ApJ.\n(UniverseTBD, 2025): Mechanistic interpretability in astronomy. In particular, we showed that the Platonic Representation Hypothesis holds for astronomy in this paper, and published at the 2025 edition of NeurIPS’ ML4PS workshop. Update: This is now a spotlight paper (top 1%). I gave a small talk at NeurIPS 2025 and a longer AstroAI talk at Harvard in January 2026.\n(BU, 2022-2024): A variety of investigations into the STEVE phenomenon - fluid electrodynamic simulations, citizen science + scientific data-driven reconstruction, deep learning methods for automated detection systems. I defended a Master’s thesis in April 2024 (Committee: Joshua Semeter, Yukitoshi Nishimura, Michael Hirsch) on the latter two topics.\n(BU, 2023): I worked on the NASA Life on Mars initiative at Hariri. I simulated EM propagation through Mars’ ionosphere and developed models for detecting features on GNSS maps.\n(BU, 2024): During the April 8 full solar eclipse, the Semeter Lab members went around New England and into Canada to record GNSS data from consumer cell phones. I helped take observations at MIT and Ogunquit, ME. A poster was presented by Nina Servan-Schreiber at the 2024 CEDAR Workshop. The work is now a paper.\n(GaTech, 2024): A VLM-LLM integrated end-to-end system that generates insurance recommendation reports using a combination of tenant complaints and photos taken by an insurance agent for Hacklytics 2024.\n(MIT, 2024): Developed custom optimizers for linear quantum photonic GANs at iQuHack-24.\n(MIT, 2023): A QCBM-based music generator that won second place in the IBM x Covalent challenge at iQuHack-23.\n(COEP, 2022): Building a neutral hydrogen radio telescope from scratch, advised by Archana Thosar.\n(IIT Bombay, 2021, BU, 2022): Analysis of the binary star system QX Cas with PHOEBE.\n(COEP, 2021): Some linear models for solar power, advised by Suhas Kakade and Rohan Kulkarni."
+    "text": "Selected Work\n\n(UniverseTBD, 2026): Some extensions on the Platonic Universe work. We submitted to NeurIPS 2026 and ICML Mech Interp 2026.\n(University of Zielona Gora, 2025): Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of that work has been accepted to ApJ. The second part is being done with Andrzej A. Zdziarski and has been submitted to ApJ.\n(UniverseTBD, 2025): Mechanistic interpretability in astronomy. We showed that the Platonic Representation Hypothesis holds for astronomy in this paper, published at the 2025 edition of NeurIPS’ ML4PS workshop. Update: This is now a spotlight paper (top 1%). I gave a small talk at NeurIPS 2025 and a longer AstroAI talk at Harvard in January 2026.\n(BU, 2022-2024): A variety of investigations into the STEVE phenomenon — fluid electrodynamic simulations, citizen science + scientific data-driven reconstruction, deep learning methods for automated detection systems. I defended a Master’s thesis in April 2024 (Committee: Joshua Semeter, Yukitoshi Nishimura, Michael Hirsch) on the latter two topics.\n(BU, 2023): I worked on the NASA Life on Mars initiative at Hariri. I simulated EM propagation through Mars’ ionosphere and developed models for detecting features on GNSS maps.\n(BU, 2024): During the April 8 full solar eclipse, the Semeter Lab members went around New England and into Canada to record GNSS data from consumer cell phones. I helped take observations at MIT and Ogunquit, ME. A poster was presented by Nina Servan-Schreiber at the 2024 CEDAR Workshop. The work is now a paper.\n(GaTech, 2024): A VLM-LLM integrated end-to-end system that generates insurance recommendation reports using a combination of tenant complaints and photos taken by an insurance agent for Hacklytics 2024.\n(MIT, 2024): Developed custom optimizers for linear quantum photonic GANs at iQuHack-24.\n(MIT, 2023): A QCBM-based music generator that won second place in the IBM x Covalent challenge at iQuHack-23.\n(COEP, 2022): Building a neutral hydrogen radio telescope from scratch, advised by Archana Thosar.\n(IIT Bombay, 2021, BU, 2022): Analysis of the binary star system QX Cas with PHOEBE.\n(COEP, 2021): Some linear models for solar power, advised by Suhas Kakade and Rohan Kulkarni."
   },
   {
     "objectID": "index.html#contact",
     "href": "index.html#contact",
-    "title": "About",
+    "title": "Kshitij Duraphe",
     "section": "Contact",
     "text": "Contact\nI can be emailed at kshitijd [at] bu.edu or at kshitijduraphe5 [at] gmail.com or at kshitij.ark [at] mit.edu.\nInspired by Piotr Teterwak I am available for “office hours” (offline or through video conferencing) each week to talk about anything you like. I have gone through Masters admissions and the post-COVID US STEM job hunt, and also defended a thesis, so I have some perspective on that as well as graduate student life. Email me with the subject line “OFFICE HOURS” and give me a brief overview of what you want to talk about. Ideally you should be an undergraduate or new (US) Masters student in some field relevant to EECS, but I am happy to talk with new grads and high schoolers as well."
   },
   {
     "objectID": "index.html#miscellaneous",
     "href": "index.html#miscellaneous",
-    "title": "About",
+    "title": "Kshitij Duraphe",
     "section": "Miscellaneous",
     "text": "Miscellaneous\n\nI keep a list of courses I took at BU along with my thoughts on them.\nCheck out some of my writings.\n\nWebsites I find interesting:\n\nscivision.dev: Michael Hirsch singlehandedly carries the GNSS community on his back with Georinex and his website is full of useful tips and tricks for wrangling with C Compilers.\nDan Luu’s website. Commentary on programming and tech-society.\nThe UCR Matrix Profile Page: The best time-series page on the internet.\nAlwinfy’s Garden: D is a legitimate programming language (and I should start learning Zig)."
   }

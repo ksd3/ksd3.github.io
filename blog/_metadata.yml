@@ -1,0 +1,6 @@
+# Shared front-matter for every blog post — Quarto merges this with each post's own YAML.
+author: "Kshitij Duraphe"
+format:
+  html:
+    toc: true
+    toc-depth: 3

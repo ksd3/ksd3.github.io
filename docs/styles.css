@@ -860,3 +860,11 @@ i.bi,
   fill: #ddd !important;
   -webkit-text-fill-color: #ddd !important;
 }
+
+/* PDF embed frame (used on cv.qmd) */
+.pdf-frame {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-top: 1rem;
+}

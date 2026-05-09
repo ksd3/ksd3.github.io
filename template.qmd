@@ -42,9 +42,9 @@ your-site/
 ├── books/                # Textbooks (Quarto book projects)
 │   └── _template/        # Copy this to create a new book
 │
-├── cv/                   # CV and resume (Typst → PDF)
-│   ├── cv.qmd
-│   └── resume.qmd
+├── cv/                   # CV and resume (Typst → PDF, compiled by pre-render hook)
+│   ├── cv.typ
+│   └── resume.typ
 │
 ├── images/               # Shared images
 ├── videos/               # Video files
@@ -58,14 +58,10 @@ your-site/
 git clone https://github.com/YOUR-USERNAME/YOUR-USERNAME.github.io
 cd YOUR-USERNAME.github.io
 
-# 2. Build CV/resume PDFs (needed before full render)
-quarto render cv/resume.qmd
-quarto render cv/cv.qmd
-
-# 3. Preview locally (hot reload at http://localhost:4000)
+# 2. Preview locally (hot reload at http://localhost:4000)
 quarto preview
 
-# 4. Build the full site
+# 3. Build the full site (CV/resume PDFs are compiled by the pre-render hook)
 quarto render
 ```
 
@@ -161,10 +157,6 @@ jobs:
         run: |
           curl -fsSL https://typst.community/typst-install/install.sh | sh
           echo "$HOME/.local/bin" >> $GITHUB_PATH
-      - name: Build PDFs
-        run: |
-          quarto render cv/resume.qmd
-          quarto render cv/cv.qmd
       - name: Render Site
         run: quarto render
       - name: Deploy

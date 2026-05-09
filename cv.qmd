@@ -1,27 +1,18 @@
 ---
 title: "Resume & CV"
+toc: false
 ---
 
 ## Resume
 
-My Resume
+[Download Resume (PDF)](cv/resume.pdf){.btn .btn-primary download="resume.pdf"}
 
-<a href="cv/resume.pdf" class="btn btn-primary" download>Download Resume (PDF)</a>
-
-<iframe src="cv/resume.pdf" width="100%" height="600px" style="border: 1px solid var(--border-color); border-radius: 6px; margin-top: 1rem;"></iframe>
-
----
+<iframe src="cv/resume.pdf" class="pdf-frame" style="height:600px"></iframe>
 
 ## Curriculum Vitae
 
-My CV
+[Download CV (PDF)](cv/cv.pdf){.btn .btn-primary download="cv.pdf"}
 
-<a href="cv/cv.pdf" class="btn btn-primary" download>Download CV (PDF)</a>
+<iframe src="cv/cv.pdf" class="pdf-frame" style="height:800px"></iframe>
 
-<iframe src="cv/cv.pdf" width="100%" height="800px" style="border: 1px solid var(--border-color); border-radius: 6px; margin-top: 1rem;"></iframe>
-
-<!--
-To rebuild PDFs after editing:
-quarto render cv/resume.qmd
-quarto render cv/cv.qmd
--->
+<!-- PDFs are rebuilt automatically by `quarto render` via the pre-render hook in _quarto.yml. -->

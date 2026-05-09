@@ -13,6 +13,7 @@
 <lastBuildDate>Sun, 16 Feb 2025 05:00:00 GMT</lastBuildDate>
 <item>
   <title>PINOs in space physics</title>
+  <dc:creator>Kshitij Duraphe</dc:creator>
   <link>https://ksd3.github.io/blog/2025-02-16-pino/</link>
   <description><![CDATA[ 
 
@@ -52,9 +53,7 @@
 <section id="steve-mhd" class="level2">
 <h2 class="anchored" data-anchor-id="steve-mhd">STEVE MHD</h2>
 <p>A full STEVE-like simulation can be done with <a href="https://gemini3d.github.io/gemini3d/">Gemini3D</a>. I modeled the basic underlying phenomena and simulated them over lower resolutions and larger timescales. You can still see the underlying structure in the video.</p>
-<video controls="" width="100%">
-<source src="../../videos/mhd_pino.mp4" type="video/mp4">
-</video>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="../../videos/mhd_pino.mp4"></video></div>
 <p>For this, I used 2D spectral convolutions. The PINO didn’t quite reconstruct the phenomenon because of the diffuse boundaries of ionospheric phenomena, which is what SIREN activations are designed for. I eventually ended up going with classical algorithms that helped me do a 3D reconstruction of STEVE.</p>
 <p>Here’s a single frame (frame 39) from that video. I only used 16% of the simulation as training data, and it still reconstructed everything further on pretty well!</p>
 <div class="quarto-figure quarto-figure-center">
@@ -76,6 +75,7 @@
 </item>
 <item>
   <title>How to get into AI research as an outsider</title>
+  <dc:creator>Kshitij Duraphe</dc:creator>
   <link>https://ksd3.github.io/blog/2025-02-10-ml-research/</link>
   <description><![CDATA[ 
 
@@ -144,6 +144,7 @@
 </item>
 <item>
   <title>Transformers from scratch in numpy</title>
+  <dc:creator>Kshitij Duraphe</dc:creator>
   <link>https://ksd3.github.io/blog/2024-12-07-transformers/</link>
   <description><![CDATA[ 
 
@@ -7669,6 +7670,7 @@ Predicted: banane coniglio banane banane coniglio piacciono &lt;end&gt;</code></
 </item>
 <item>
   <title>Papers explained: Partitioning the Universe’s baryons (Connor et al 2024)</title>
+  <dc:creator>Kshitij Duraphe</dc:creator>
   <link>https://ksd3.github.io/blog/2024-12-01-partitioning/</link>
   <description><![CDATA[ 
 

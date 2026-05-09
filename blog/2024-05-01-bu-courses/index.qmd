@@ -1,6 +1,5 @@
 ---
 title: "Courses I Took at BU"
-author: "Kshitij Duraphe"
 date: "2024-05-01"
 categories: [education, BU, graduate school]
 description: "A review of the courses I took during my Master's at Boston University (2022-2024)."

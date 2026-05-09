@@ -1,5 +1,7 @@
 ---
 title: "Research Overview"
+number-sections: true
+number-depth: 4
 ---
 
 An overview of my work at the Semeter Lab at Boston University.
@@ -8,7 +10,7 @@ An overview of my work at the Semeter Lab at Boston University.
 
 ### Data Processing
 
-#### 1. Ionospheric Assumption Validation
+#### Ionospheric Assumption Validation
 
 For speed of computation, we use **fast 2d and 3d natural neighbors interpolation** (thick large-scale structures) and **VISTA** (thick medium-scale structures) (Video Imputation with SoftImpute, Temporal smoothing and Auxiliary data) to validate the ionospheric assumption.
 
@@ -16,7 +18,7 @@ For speed of computation, we use **fast 2d and 3d natural neighbors interpolatio
 
 The assumption is (somewhat) invalid during solar storms, geophysical storms, magnetic reconnection with solar winds, coronal mass ejections, and so on.
 
-#### 2. RINEX conversion
+#### RINEX conversion
 
 Developed an internal Python package named `rinexpy` - looking to merge with `georinex`:
 
@@ -32,7 +34,7 @@ Developed an internal Python package named `rinexpy` - looking to merge with `ge
 
 5. **Interactive RINEX File Viewer**: Includes an interactive, web-based viewer for RINEX files.
 
-#### 3. Analysis
+#### Analysis
 
 **Cycle slip correction**: We design machine learning models for cycle slip correction. These are better than the heuristic 'stiching' process that may remove important TEC jumps that could identify an ionospheric phenomenon.
 
@@ -53,9 +55,7 @@ We also account for **multipath noise**, **temperature noise** (Rideout and Cost
 
 **Time-series classification**: How does TEC change during an auroral event?
 
-<video controls width="600">
-  <source src="images/timeseriesanalysis/tecexample.mp4" type="video/mp4">
-</video>
+{{< video images/timeseriesanalysis/tecexample.mp4 width="600" >}}
 
 Given a dataset of time-series TEC curves at some frequencies, we want to classify them to make an **early-warning system** for auroral events (so citizen scientists can go out and take photographs!)
 

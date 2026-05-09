@@ -1,5 +1,13 @@
 [
   {
+    "listing": "/talks.html",
+    "items": []
+  },
+  {
+    "listing": "/textbooks.html",
+    "items": []
+  },
+  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/2025-02-16-pino/index.html",

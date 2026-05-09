@@ -1,9 +1,0 @@
----
-title: "Curriculum Vitae"
----
-
-```{=html}
-<iframe src="cv.pdf" width="100%" height="800px" style="border: none;"></iframe>
-```
-
-Download: [cv.pdf](cv.pdf)
