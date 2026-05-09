@@ -8,7 +8,13 @@
 **/*.quarto_ipynb
 
 # Job-tailored CVs (keep local, don't publish)
+# Keep only cv.typ and resume.typ; ignore everything else
 cv/cv_*.typ
+cv/simonsfoundation.typ
+cv/anthropic.typ
+cv/cmt.typ
+cv/cmt-ml.typ
+cv/harvard-cfa.typ
 
 # Source PDFs (only docs/cv/ copies are needed for the site)
 cv/*.pdf
