@@ -39,7 +39,7 @@ On the practical side, I'm interested in developing fast, efficient, and scalabl
 
 I think crossmatching data is cool and is definitely a worthwhile use of my time. Also I am on the lookout for spectral foundation models, if you know of any please send them over to me! Really, any spectral foundation model is fine, I just need like 2.
 
-Update: <https://huggingface.co/kshitijd/omnisky>
+Update: <https://huggingface.co/datasets/kshitijd/omnisky>
 
 ## Selected Work
 
