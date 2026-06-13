@@ -23,7 +23,7 @@ about:
       href: mailto:kshitijd@bu.edu
 ---
 
-I used to work on human-computer interaction, reinforcement learning, foundation models, and all that jazz. Before that, I worked on everything to do with AI understanding and the user experience for security professionals at [Absentia Technologies](https://www.absentiatech.com). I previously worked on recommendation systems at [Nevara.ai](https://www.nevara.ai) and also developed environmental foundation models at [Spatialise](https://spatiali.se/). I'm a May 2024 graduate from [Boston University's](https://bu.edu) Master of Electrical and Computer Engineering program.
+I work on indoor localization. I used to work on human-computer interaction, reinforcement learning, foundation models, and all that jazz. Before that, I worked on everything to do with AI understanding and the user experience for security professionals at [Absentia Technologies](https://www.absentiatech.com). I previously worked on recommendation systems at [Nevara.ai](https://www.nevara.ai) and also developed environmental foundation models at [Spatialise](https://spatiali.se/). I'm a May 2024 graduate from [Boston University's](https://bu.edu) Master of Electrical and Computer Engineering program.
 
 As a student, I [worked](research.qmd) in Boston University's [Space Physics Lab](https://heaviside.bu.edu) from October 2022 to May 2024, advised by [Joshua Semeter](https://www.bu.edu/eng/profile/joshua-semeter/). I also worked at the [Hariri Center](https://www.bu.edu/hic/) for NASA's Life on Mars initiative, developing signal processing and machine learning techniques to analyze the Martian ionosphere and simulate GPS propagation through it. Previously, I was at [COEP](https://www.coeptech.ac.in) from 2018-2022.
 
@@ -37,14 +37,13 @@ On the practical side, I'm interested in developing fast, efficient, and scalabl
 
 ### Upcoming
 
-I think crossmatching data is cool and is definitely a worthwhile use of my time. Also I am on the lookout for spectral foundation models, if you know of any please send them over to me! Really, any spectral foundation model is fine, I just need like 2.
-
-Update: <https://huggingface.co/datasets/kshitijd/omnisky>
+Crossmatching is now possible with [HATS](https://docs.lsdb.io/en/latest/data-access/hats.html).
 
 ## Selected Work
 
-1. **(UniverseTBD, 2026)**: Some extensions on the Platonic Universe work. We submitted to NeurIPS 2026 and ICML Mech Interp 2026.
-1. **(University of Zielona Gora, 2025)**: Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of [that work](https://arxiv.org/pdf/2510.10746) has been accepted to ApJ. The second part is being done with [Andrzej A. Zdziarski](https://www.camk.edu.pl/en/staff/aaz/) and has been submitted to ApJ.
+1. **(BU, 2023-)**: [rinexpy](https://github.com/ksd3/rinexpy). This is a library that enables fast and efficient RINEX reading, access, and so on. It is a superset of georinex. 
+1. **(UniverseTBD, 2026)**: Some extensions on the Platonic Universe work. We submitted to NeurIPS 2026 and ICML Mech Interp 2026. Update: Accepted to ICML Mech Interp 2026. 
+1. **(University of Zielona Gora, 2025)**: Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of [that work](https://arxiv.org/pdf/2510.10746) has been accepted to ApJ. The second part is being done with [Andrzej A. Zdziarski](https://www.camk.edu.pl/en/staff/aaz/). Update: We are fixing all our our initial mistakes after significant feedback; the preprint is therefore unavailable for a period of time. 
 1. **(UniverseTBD, 2025)**: Mechanistic interpretability in astronomy. We showed that the [Platonic Representation Hypothesis](https://arxiv.org/abs/2405.07987) holds for astronomy in [this](https://arxiv.org/abs/2509.19453) paper, published at the 2025 edition of NeurIPS' [ML4PS](https://ml4physicalsciences.github.io/2025/) workshop. *Update*: This is now a **spotlight** paper (top 1%). I [gave a small talk](https://neurips.cc/virtual/2025/loc/san-diego/workshop/109577) at NeurIPS 2025 and a longer [AstroAI talk](https://www.youtube.com/watch?v=NIf-QQikukE) at Harvard in January 2026.
 1. **(BU, 2022-2024):** A variety of investigations into the [STEVE](https://en.wikipedia.org/wiki/STEVE) phenomenon — fluid electrodynamic simulations, citizen science + scientific data-driven reconstruction, deep learning methods for automated detection systems. I defended a [Master's thesis](https://open.bu.edu/handle/2144/48878) in April 2024 (Committee: [Joshua Semeter](https://www.bu.edu/eng/profile/joshua-semeter/), [Yukitoshi Nishimura](https://www.bu.edu/eng/profile/toshi-nishimura/), [Michael Hirsch](https://www.bu.edu/eng/profile/michael-hirsch/)) on the latter two topics.
 1. **(BU, 2023):** I worked on the NASA Life on Mars initiative at Hariri. I simulated EM propagation through Mars' ionosphere and developed models for detecting features on GNSS maps.
@@ -72,4 +71,4 @@ Inspired by [Piotr Teterwak](https://cs-people.bu.edu/piotrt/) I am available fo
 - [scivision.dev](https://scivision.dev): [Michael Hirsch](https://www.bu.edu/eng/profile/michael-hirsch/) singlehandedly carries the GNSS community on his back with [Georinex](https://github.com/geospace-code/georinex/) and his website is full of useful tips and tricks for wrangling with C Compilers.
 - [Dan Luu](https://danluu.com)'s website. Commentary on programming and tech-society.
 - [The UCR Matrix Profile Page](https://www.cs.ucr.edu/%7Eeamonn/MatrixProfile.html): The best time-series page on the internet.
-- [Alwinfy's Garden](https://chireiden.alwinfy.net/furnace/): D is a legitimate programming language (and I should start learning Zig).
+- [Alwinfy's Garden](https://chireiden.alwinfy.net/furnace/): D is a legitimate programming language (and I should start learning Zig). Update: I do not think I should learn Zig anymore.
