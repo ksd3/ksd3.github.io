@@ -41,6 +41,7 @@ Crossmatching is now possible with [HATS](https://docs.lsdb.io/en/latest/data-ac
 
 ## Selected Work
 
+1. **(UniverseTBD, 2026)**: Platonic Universe is now accepted at ICML Mech Interp 2026. I am also an **oustanding reviewer** there.
 1. **(BU, 2023-)**: [rinexpy](https://github.com/ksd3/rinexpy). This is a library that enables fast and efficient RINEX reading, access, and so on. It is a superset of georinex. 
 1. **(UniverseTBD, 2026)**: Some extensions on the Platonic Universe work. We submitted to NeurIPS 2026 and ICML Mech Interp 2026. Update: Accepted to ICML Mech Interp 2026. 
 1. **(University of Zielona Gora, 2025)**: Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of [that work](https://arxiv.org/pdf/2510.10746) has been accepted to ApJ. The second part is being done with [Andrzej A. Zdziarski](https://www.camk.edu.pl/en/staff/aaz/). Update: We are fixing all our our initial mistakes after significant feedback; the preprint is therefore unavailable for a period of time. 

@@ -4,10 +4,6 @@
     "items": []
   },
   {
-    "listing": "/textbooks.html",
-    "items": []
-  },
-  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/2025-02-16-pino/index.html",
@@ -16,5 +12,9 @@
       "/blog/2024-12-01-partitioning/index.html",
       "/blog/2024-05-01-bu-courses/index.html"
     ]
+  },
+  {
+    "listing": "/textbooks.html",
+    "items": []
   }
 ]
