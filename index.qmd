@@ -37,11 +37,11 @@ On the practical side, I'm interested in developing fast, efficient, and scalabl
 
 ### Upcoming
 
-Crossmatching is now possible with [HATS](https://docs.lsdb.io/en/latest/data-access/hats.html).
+Omnimodal models
 
 ## Selected Work
 
-1. **(UniverseTBD, 2026)**: **What AstroPT knows about galaxies, and what that can teach us about LLMs** (link coming soon) is accepted with a Poster to COLM 2026 at the [Sci-FM](https://science-ai-2026.github.io/) workshop. 
+1. **(UniverseTBD, 2026)**: **What AstroPT knows about galaxies, and what that can teach us about LLMs** [link](https://arxiv.org/abs/2608.22614) is accepted with a Poster to COLM 2026 at the [Sci-FM](https://science-ai-2026.github.io/) workshop. 
 1. **(BU, 2023-)**: [rinexpy](https://github.com/ksd3/rinexpy). This is a library that enables fast and efficient RINEX reading, access, and so on. It is a superset of georinex. 
 1. **(UniverseTBD, 2026)**: Some extensions on the Platonic Universe work. We submitted to NeurIPS 2026 and ICML Mech Interp 2026. Update: Accepted to ICML Mech Interp 2026, where I am an **oustanding reviewer**.  
 1. **(University of Zielona Gora, 2025)**: Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of [that work](https://arxiv.org/pdf/2510.10746) has been accepted to ApJ. Update: We are fixing all our our initial mistakes after significant feedback; the preprint is therefore unavailable for a period of time. 
