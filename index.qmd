@@ -37,14 +37,15 @@ On the practical side, I'm interested in developing fast, efficient, and scalabl
 
 ### Upcoming
 
-Omnimodal models
+Omnimodal models. Some mech interp. Foundation model training. 
 
 ## Selected Work
 
+1. **(UniverseTBD, 2026)**: **Shared Geometry Is Not Shared Physics: A Layerwise Test of the Platonic Representation Hypothesis in Astronomy** [link](https://openreview.net/forum?id=Xw72C0uPBw&noteId=i1OgmXMjDM) is accepted with a Poster to NeurIPS 2026 at the [Interpretablity for Discovery](https://interpretability4discovery.github.io/) workshop.
 1. **(UniverseTBD, 2026)**: **What AstroPT knows about galaxies, and what that can teach us about LLMs** [link](https://arxiv.org/abs/2608.22614) is accepted with a Poster to COLM 2026 at the [Sci-FM](https://science-ai-2026.github.io/) workshop. 
 1. **(BU, 2023-)**: [rinexpy](https://github.com/ksd3/rinexpy). This is a library that enables fast and efficient RINEX reading, access, and so on. It is a superset of georinex. 
 1. **(UniverseTBD, 2026)**: Some extensions on the Platonic Universe work. We submitted to NeurIPS 2026 and ICML Mech Interp 2026. Update: Accepted to ICML Mech Interp 2026, where I am an **oustanding reviewer**.  
-1. **(University of Zielona Gora, 2025)**: Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of [that work](https://arxiv.org/pdf/2510.10746) has been accepted to ApJ. Update: We are fixing all our our initial mistakes after significant feedback; the preprint is therefore unavailable for a period of time. 
+1. **(University of Zielona Gora, 2025)**: Timing and spectral analysis of Cygnus X-1 with a decade of NuSTAR observations. The first part of [that work](https://arxiv.org/pdf/2510.10746) has been accepted to ApJ. The second part of [that work](https://arxiv.org/abs/2608.15902) is under review at ApJ. 
 1. **(UniverseTBD, 2025)**: Mechanistic interpretability in astronomy. We showed that the [Platonic Representation Hypothesis](https://arxiv.org/abs/2405.07987) holds for astronomy in [this](https://arxiv.org/abs/2509.19453) paper, published at the 2025 edition of NeurIPS' [ML4PS](https://ml4physicalsciences.github.io/2025/) workshop. *Update*: This is now a **spotlight** paper (top 1%). I [gave a small talk](https://neurips.cc/virtual/2025/loc/san-diego/workshop/109577) at NeurIPS 2025 and a longer [AstroAI talk](https://www.youtube.com/watch?v=NIf-QQikukE) at Harvard in January 2026.
 1. **(BU, 2022-2024):** A variety of investigations into the [STEVE](https://en.wikipedia.org/wiki/STEVE) phenomenon — fluid electrodynamic simulations, citizen science + scientific data-driven reconstruction, deep learning methods for automated detection systems. I defended a [Master's thesis](https://open.bu.edu/handle/2144/48878) in April 2024 (Committee: [Joshua Semeter](https://www.bu.edu/eng/profile/joshua-semeter/), [Yukitoshi Nishimura](https://www.bu.edu/eng/profile/toshi-nishimura/), [Michael Hirsch](https://www.bu.edu/eng/profile/michael-hirsch/)) on the latter two topics.
 1. **(BU, 2023):** I worked on the NASA Life on Mars initiative at the BU CDS. I simulated EM propagation through Mars' ionosphere and developed models for detecting features on GNSS maps.
@@ -73,3 +74,5 @@ Inspired by [Piotr Teterwak](https://cs-people.bu.edu/piotrt/) I am available fo
 - [Dan Luu](https://danluu.com)'s website. Commentary on programming and tech-society.
 - [The UCR Matrix Profile Page](https://www.cs.ucr.edu/%7Eeamonn/MatrixProfile.html): The best time-series page on the internet.
 - [Alwinfy's Garden](https://chireiden.alwinfy.net/furnace/): D is a legitimate programming language (and I should start learning Zig). Update: I do not think I should learn Zig anymore.
+- [John F. Wu](https://github.com/jwuphysics) on GitHub. 
+- [Josh Speagle](https://github.com/joshspeagle) on GitHub.
