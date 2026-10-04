@@ -86,18 +86,40 @@
 #line(length: 100%, stroke: 0.5pt)
 #v(-5pt)
 
+// --- SUMMARY ---
+#set text(size: 9pt)
+Machine learning engineer working across the full model stack — custom *CUDA kernels* and GPU optimization,
+*distributed training*, *RL post-training*, and edge inference — with a parallel research record in
+*mechanistic interpretability* and *foundation-model evaluation*. First author on three 2026 interpretability
+papers; co-first author on a #underline[NeurIPS ML4PS 2025 Spotlight] (top 1%); first author in
+#emph[The Astrophysical Journal]. M.S. Boston University.
+#set text(size: 10pt)
+
 // --- PROFESSIONAL EXPERIENCE ---
 
 #cvsection("Professional Experience")
 
-// Thespian Labs
-#entry_header("Thespian Labs", "Somerville, MA")
-#emph("AI Engineer") #h(1fr) Nov 2025 -- Feb 2026
+// Position Imaging
+#entry_header("Position Imaging", "Stratham, NH")
+#emph("Machine Learning Engineer") #h(1fr) May 2026 -- Present
 
 #resume_list[
-  - Managed the lifecycle of custom *Text2Motion* deep learning models from development, deployment, and monitoring, ensuring optimal performance and stability on *GCP*. Published an open-source library for MLOps: #link("https://github.com/ksd3/jobber")[Link].
-  - Developed and maintained batch processing ETL pipelines for data processing of *5000+* hours of human performance data.
-  - Collaborated with *cross-functional teams* to build a SOTA *foundation model* for *controllable digital human performance generation* on the frontier of *human-computer interaction*.
+  - Developed and productionized *graph neural networks* for RFID localization in multipath-dominated environments, owning the end-to-end stack: architecture, training, GPU optimization, edge deployment, and production monitoring.
+  - Wrote custom *CUDA kernels* and GPU-level optimizations for performance-critical paths in GNN training and inference.
+  - Built the team's internal *ML experimentation platform* (ClearML, Azure, Datadog) for reproducible training and evaluation, sustaining *30+ experiments/day*.
+  - Designed training systems using *reinforcement learning* and *neural surrogate models* to cut the cost of computationally expensive GNN workloads, making large sweeps over architectures and training strategies affordable.
+  - Built edge inference pipelines end to end — model compilation, graph/operator optimization, hardware-specific acceleration, and integration with custom inference runtimes.
+  - Developed production *ML observability* infrastructure for model behaviour, inference performance, and system health, giving product and support teams tooling to diagnose deployed models.
+]
+
+// Thespian Labs
+#entry_header("Thespian Labs", "Somerville, MA")
+#emph[AI Engineer — Foundation Models and RL Post-Training] #h(1fr) Nov 2025 -- Feb 2026
+
+#resume_list[
+  - Trained *Text2Motion* foundation models with *VQ-VAE* tokenization; ran multimodal pre-training over 5000+ hours of human-performance time-series on GCP.
+  - Implemented DARTControl-style *reinforcement-learning post-training* for controllable motion synthesis, including reward modeling and rollout infrastructure.
+  - Released the open-source MLOps library #link("https://github.com/ksd3/jobber")[jobber] for programmatic research-job submission to cloud GPU platforms.
 ]
 
 // Absentia Technologies
@@ -105,74 +127,86 @@
 #emph("Founding Machine Learning Engineer") #h(1fr) Jan 2025 -- Nov 2025
 
 #resume_list[
-  - Architected and deployed a production-ready SaaS video analysis platform from the ground up on AWS, establishing core AI service infrastructure and a full CI/CD pipeline with Terraform and Docker, reducing deployment cycles from days to *\<2 hours*.
-  - Built the core infrastructure and APIs enabling a fleet of autonomous *AI agents* to *read* video streams, *understand* complex events through a reasoning engine, and *act* by flagging anomalies in real-time using Python, PyTorch, and Kafka on Kubernetes (K8S).
-  - Designed and implemented a “ChatGPT for videos” pipeline using frame-level SVM classification to route frames to offline ViM/SwinV2 enhancement, with precomputed AI agent answers delivering \<1s p99 latency for common queries and ~30s for novel questions, enabling efficient interactive video Q&A at scale
-  - Established a rigorous, automated *evaluation pipeline* to benchmark agent performance and API latency, reducing model regressions by 40%; improved system stability to *99.9%* by resolving a critical memory leak during on-call duties.
-  - Developed a multimodal Video Question-Answering (VideoQA) system for complex temporal reasoning, improving answer accuracy by *25%*, and built a synthetic data pipeline with diffusion models to reduce false positives by *15%*.
+  - Implemented *distributed training* with PyTorch *FSDP* (multi-GPU, mixed precision, sharding, checkpointing, fault recovery) to train vision-language models beyond single-device memory.
+  - Established an automated *evaluation pipeline* benchmarking model accuracy and API latency; reduced regressions *40%* and raised production stability to *99.9%*, including diagnosing a production memory leak on call.
+  - Architected the production platform on AWS from scratch with Terraform and Docker CI/CD, cutting deployment cycles from days to *\<2 hours*; built a diffusion-based synthetic-data pipeline that reduced false positives *15%*.
 ]
 
-// KeelWorks
-#entry_header("The KeelWorks Foundation", "Oak Harbor, WA")
-#emph("Software Engineer (Machine Learning Applications)") #h(1fr) July 2024 -- Jan 2025
+// KeelWorks + Halo AI, compressed
+#entry_header("The KeelWorks Foundation", "Oak Harbor, WA (Remote)")
+#emph("Software Engineer, ML Applications") #h(1fr) Jul 2024 -- Jan 2025
 
 #resume_list[
-  - Engineered a production-scale *retrieval and reasoning system* using a RAG pipeline in TypeScript/Python with LangChain, delivering a search API with *\<5s p95* latency and *92% context relevance (MRR)* across 2,500+ documents on a PostgreSQL backend.
-  - Executed an aggressive model optimization strategy for production deployment, reducing model size by *50%* and increasing inference speed by *80%* using *8-bit GPTQ quantization* and knowledge distillation while maintaining >90% task accuracy.
-  - Pioneered a synthetic data generation workflow by fine-tuning *Mistral-7B*, expanding the training dataset for downstream tasks by *30%* and significantly improving model robustness; deployed all services via a Dockerized GitLab CI/CD workflow.
+  - Reduced model size *50%* and improved inference speed *80%* via *8-bit GPTQ quantization* and knowledge distillation while holding *>90%* task accuracy; fine-tuned *Mistral-7B* for synthetic-data generation.
 ]
 
-// Space Physics Lab
+#entry_header("Halo AI (Columbia-incubated stealth)", "New York, NY (Remote)")
+#emph("Founding AI Engineer") #h(1fr) Dec 2023 -- Aug 2024
+
+#resume_list[
+  - Researched on-device *federated* and *ensemble* LLMs under tight compute and memory budgets; systematic study of pruning, distillation, and post-training quantization trade-offs across latency, footprint, and accuracy.
+]
+
+// --- RESEARCH ---
+
+#cvsection("Research")
+
+#entry_header("UniverseTBD Collaboration", "Remote")
+#emph[Researcher — Interpretability and Foundation-Model Evaluation] #h(1fr) Jul 2024 -- Present
+
+#resume_list[
+  - #underline[Co-first author] on #emph[The Platonic Universe] (#underline[*Spotlight*, top 1%] at NeurIPS ML4PS 2025; expanded version submitted to ICLR 2027). Designed the representational-alignment *evaluation framework* over eleven model families from 10M to 10B parameters across JWST, HSC, Legacy Survey imaging and DESI spectroscopy; showed physics performance tracks *local* embedding geometry (mutual #emph[k]-NN) but not *global* similarity (CKA).
+  - #underline[First author] on two further interpretability papers (Sci-FM @ COLM 2026; NeurIPS Interpretability for Discovery 2026), establishing that model capabilities emerge in a fixed order tracking their physical difficulty, and separating layerwise where representations agree geometrically from where they agree physically.
+  - Creator and maintainer of #link("https://github.com/UniverseTBD/platonic-universe")[platonic-universe]: survey-aware loaders, reproducible eval harness, configs, CI. Run on a *6,000 GPU-hour* NCSA DeltaAI allocation (PHY250286).
+  - #underline[Outstanding Reviewer], ICML 2026 Mechanistic Interpretability Workshop. Invited talks at Harvard CfA (AstroAI, Jan 2026) and NeurIPS ML4PS (oral, Dec 2025).
+]
+
 #entry_header("Space Physics Lab, Boston University", "Boston, MA")
-#emph("Graduate Research Assistant (ML Applications)") #h(1fr) Oct 2022 -- May 2024
+#emph("Graduate Research Assistant") #h(1fr) Oct 2022 -- May 2024
 
 #resume_list[
-  - Led R&D of a multimodal system to parse and reason over noisy, unstructured sensor data; Architected a high-throughput, distributed data ingestion system using Kafka, Dask, and AWS S3, slashing processing time for 3TB+ datasets from >24 hours to *\<3 hours*.
-  - Developed a low-latency forecasting system achieving *\<80ms p90* latency at *25 predictions/sec* by implementing async processing and request batching, which cut initial latency by 40%.
-  - Implemented *generative inpainting* and *SwinIR super-resolution* pipelines to reconstruct corrupted sensor data, improving data quality and signal-to-noise ratio for downstream predictive models by over 60%.
+  - Reconstructed corrupted sensor data with *generative inpainting* and *SwinIR super-resolution*, improving signal-to-noise for downstream models by over *60%*; M.S. thesis on deep learning over noisy all-sky imagery.
+  - Architected distributed ingestion (Kafka, Dask, S3) cutting processing of 3 TB+ datasets from *>24 h* to *\<3 h*; built a forecasting service at *\<80 ms p90* and 25 predictions/sec via async batching.
 ]
 
-// --- PROJECTS ---
+// --- PUBLICATIONS ---
 
+#cvsection("Selected Publications")
+#set text(size: 9pt)
+#set enum(spacing: 0.4em)
 
-#cvsection("Projects")
++ #strong[#emph[K. Duraphe]], et al. #emph[Shared Geometry Is Not Shared Physics: A Layerwise Test of the Platonic Representation Hypothesis in Astronomy.] #link("https://openreview.net/forum?id=Xw72C0uPBw")[NeurIPS Interpretability for Discovery Workshop], 2026.
 
-// ArkOS
-#entry_header("ArkOS (MIT)", "Jun 2025 -- Present")
-#resume_list[
-  - DevOps, documentation *(Mintlify)* and general development (frontend/backend) for ArkOS, an open source interface for a local LLM agent building utilizing long term memory for personalized requests
++ #strong[#emph[K. Duraphe]], A. Kumar, S. Sourav, M. J. Smith. #emph[What AstroPT knows about galaxies, and what that can teach us about LLMs.] #link("https://arxiv.org/abs/2608.22614")[Sci-FM Workshop, COLM], 2026.
 
-]
++ #strong[#emph[K. Duraphe]], M. J. Smith, J. F. Wu, S. Sourav #emph[(co-first)]. #emph[The Platonic Universe: Do Foundation Models See the Same Sky?] #link("https://arxiv.org/abs/2509.19453")[NeurIPS ML4PS Workshop], 2025 --- #underline[*Spotlight (top 1%)*]. Expanded version submitted to ICLR 2027.
 
-// Halo AI
-#entry_header("Halo AI (Stealth startup incubated at Columbia University)", "Dec 2023 -- Aug 2024")
-#resume_list[
-  - Developed and deployed a federated learning pipeline and ensemble of LLMs for on-device *agentic conversational assistants*, cutting inference latency by *27%* to *\<1.5s*.
-  - Architected a scalable MLOps pipeline on AWS (*EC2/S3/Lambda, SageMaker*), automating CI/CD for federated learning models and reducing data preparation time by *70%*.
-  - Implemented an *evaluation pipeline* to monitor model performance, utilizing knowledge distillation and 8-bit quantization to improve inference speed by *80%* while preserving *90%* accuracy.
-]
++ #strong[#emph[K. Duraphe]], G. Bhatta, et al. #emph[State-Dependent X-ray Variability in Cygnus X-1: A 12-Year NuSTAR Timing Study.] #link("https://arxiv.org/abs/2510.10746")[The Astrophysical Journal], 2026.
 
+#set text(size: 10pt)
 
-// BeatQraft
-#entry_header("BeatQraft (MIT iQuHACK 2023 Hackathon)", "Jan 2023")
-#resume_list[
-  - Built a *distributed quantum generative AI* service at the MIT iQuHACK-23 hackathon, placing *2nd* out of 1000+ teams. #link("https://github.com/ksd3/beatqraft/")[Link]
-]
+// --- OPEN SOURCE ---
+
+#cvsection("Open Source")
+#set text(size: 9pt)
+#skill_entry([#link("https://github.com/UniverseTBD/platonic-universe")[platonic-universe]], [Foundation-model representational-alignment evaluation framework for astronomy.])
+#skill_entry([#link("https://github.com/ksd3/rinexpy")[rinexpy]], [Fast RINEX/GNSS reading and correction library; superset of `georinex`.])
+#skill_entry([#link("https://github.com/ksd3/jobber")[jobber]], [Declarative job submission to cloud GPU providers.])
+#skill_entry([#link("https://github.com/SGIARK/")[ArkOS] (MIT SIPB)], [DevOps and documentation for an open-source local-LLM agent platform.])
+#set text(size: 10pt)
 
 // --- TECHNICAL SKILLS ---
 
 #cvsection("Technical Skills")
 
 #set grid(row-gutter: 0.5em)
-// Set text size for skills to 9pt to match resumeItem
 #set text(size: 9pt)
 
-#skill_entry("Programming & Databases:", [Python, C++, TypeScript, SQL (Postgres), MongoDB, Redis])
-#skill_entry("MLOps & Cloud Platforms:", [Docker, AWS, GCP, Kafka, Dask, Terraform, Kubernetes, Modal, MLflow])
-#skill_entry("Machine Learning & Tools:", [PyTorch, GenAI, RAG, LLMs, Computer Vision, Retrieval Systems, Distributed Systems, AI Code Assistants])
-#skill_entry("Core Concepts:", [Software Architecture, Product Intuition, High-Performance Computing, Scalability, Agile])
+#skill_entry("Languages:", [Python (primary), C, C++, CUDA, TypeScript, SQL (Postgres)])
+#skill_entry("ML systems:", [PyTorch, FSDP, distributed training, custom CUDA kernels, GPU profiling, quantization (GPTQ, 8-bit), distillation, edge inference and model compilation, RL post-training, VQ-VAE, GNNs, VLMs])
+#skill_entry("Infrastructure:", [ClearML, MLflow, Slurm, Kubernetes, Docker, Terraform, Azure, AWS, GCP, Kafka, Dask, Datadog, GitHub Actions])
+#skill_entry("Methods:", [Evaluation design and measurement, representational analysis (CKA, mutual #emph[k]-NN), Bayesian inference (MCMC), uncertainty quantification, time-series and spectral analysis, inverse problems])
 
-// Reset text size back to 10pt for headers/Education
 #set text(size: 10pt)
 
 // --- EDUCATION ---
@@ -180,21 +214,7 @@
 #cvsection("Education")
 
 #entry_header("Boston University", "Boston, MA")
-Master of Science with Thesis in Electrical and Computer Engineering #h(1fr) Sep 2022 -- May 2024 \
-GPA: 3.8/4
+Master of Science with Thesis in Electrical and Computer Engineering #h(1fr) Sep 2022 -- May 2024 #sym.dot.c GPA: 3.8/4
 
 #entry_header("College of Engineering Pune", "Pune, India")
-Bachelor of Technology in Electrical Engineering, Minor in CS #h(1fr) Aug 2018 -- June 2022 \
-GPA: 3.83/4
-
-// --- PUBLICATIONS ---
-
-#cvsection("Publications")
-#set text(size: 9pt) // Match resumeItem size
-#set enum(spacing: 0.4em)
-
-+ *Optimizing Solar Panel Tilt using Machine Learning Techniques*, #link("https://ieeexplore.ieee.org/document/9587892/")[GPECOM 2021]. \
-  Proposes an XGBoost-based approach to maximize energy generation from solar plants.
-
-+ *The Platonic Universe: Do Foundation Models See the Same Sky?*, #link("https://ml4physicalsciences.github.io/2025/")[NeurIPS ML4PS 2025 - Spotlight Paper]. \
-  Investigates if different foundation models see the same underlying astrophysical phenomena and develops custom foundation models to better learn underlying astrophysics.
+Bachelor of Technology in Electrical Engineering, Minor in CS #h(1fr) Aug 2018 -- June 2022 #sym.dot.c GPA: 3.83/4

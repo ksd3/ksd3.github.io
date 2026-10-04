@@ -106,26 +106,31 @@ High-Energy Astrophysics; Foundation Models; Mechanistic Interpretability; Space
 
 #set enum(spacing: 1em)
 
++ *Shared Geometry Is Not Shared Physics: A Layerwise Test of the Platonic Representation Hypothesis in Astronomy* \
+  #strong[#emph[K. Duraphe]], A. Kannappan, D. L. Chan, O. Famutimi, Y. Ejjagiri, M. J. Smith, J. F. Wu \
+  #link("https://openreview.net/forum?id=Xw72C0uPBw&noteId=i1OgmXMjDM")[NeurIPS Interp4Discovery Workshop, 2026]
+
 
 + *State-Dependent X-ray Variability in Cygnus X-1: A 12-Year NuSTAR Timing Study of Accretion Flow Geometry* \
   #strong[#emph[K. Duraphe]], G. Bhatta, K. Mandar, C. Khanal, et al. \
   #link("https://arxiv.org/abs/2510.10746")[The Astrophysical Journal], 2026
 
-+ *Multi-Epoch NuSTAR Spectral Analysis of Cygnus X-1: Coronal and Reflection Properties Across Spectral States* \
-  #strong[#emph[K. Duraphe]], G. Bhatta, A. A. Zdziarski, et al. \
++ *A NuSTAR Reflection-Spectroscopy Survey of Cygnus X-1 * \
+  #strong[#emph[K. Duraphe]], G. Bhatta, et al. \
   Submitted to The Astrophysical Journal, 2026
  
-+ *Cross-Modal Attention is Overparameterized: The Sufficiency of Modality-Level Alignment* \
-  #strong[#emph[K. Duraphe]], K. Mohamed, N. Morgan \
-  Submitted to NeurIPS Main Track, 2026
++ *What AstroPT knows about galaxies, and what that can teach us about LLMs* \
+  #strong[#emph[K. Duraphe]], A. Kumar, S. Sourav, M. J. Smith \
+  #link("https://arxiv.org/abs/2608.22614")[COLM Sci-FM Workshop, 2026]
 
 + *Smartphone Carrier Phase TEC: A Study Across Ionospheric Spatio-Temporal Scales* \
   N. Servan-Schreiber, J. Semeter, #strong[#emph[K. Duraphe]], et al. \
   #link("https://essopenarchive.org/users/1006611/articles/1370630-smartphone-carrier-phase-tec-a-study-across-ionospheric-spatio-temporal-scales")[Space Weather], 2026
 
 + *The Platonic Universe: Do Foundation Models See the Same Sky?* \
-  #strong[#emph[K. Duraphe]], M. J. Smith, J. F. Wu, S. Sourav #emph[(co-first author)] \
-  #link("https://arxiv.org/abs/2509.19453")[NeurIPS ML4PS Workshop, 2025] — #underline[Spotlight (top 1%)]; expanded follow-up submitted to NeurIPS 2026 main track
+  #strong[v1:] #strong[#emph[K. Duraphe]], M. J. Smith, J. F. Wu, S. Sourav #emph[(co-first author)] \
+  #link("https://arxiv.org/abs/2509.19453v1")[NeurIPS ML4PS Workshop, 2025] — #underline[Spotlight (top 1%)]\
+  #strong[v2:] T. Borrell, S. Dillmann, #strong[#emph[K. Duraphe]], F. Eris, K. Iyer, A. Khederlarian, A. Kumar, G. Marraffini, M. J. Smith, S. Sourav, R. Di Tella, J. F. Wu  (submitted to ICLR 2027 main track)
 
 + *Optimizing Solar Panel Tilt using Machine Learning Techniques* \
   #strong[#emph[K. Duraphe]], S. Kakade, et al. \
@@ -152,7 +157,7 @@ Advisor: Prof. #link("https://inspirehep.net/authors/1722470")[Gopal Bhatta]
 - #underline[First-authored] a 12-year NuSTAR archival timing study of Cygnus X-1 (#emph[The Astrophysical Journal], 2026), mapping accretion-flow geometry across spectral states via hard X-ray spectral-timing analysis.
 - Identified a previously unrecognized failed state transition and characterized state-dependent variability (power spectra, rms-flux relations, lag-frequency spectra), placing direct constraints on the corona–disk geometry near the black hole.
 - Reduced and analyzed the complete public NuSTAR Cyg X-1 archive with HEASoft / NuSTARDAS / Stingray / AstroPy; led manuscript writing and referee response.
-- Currently leading a follow-up multi-epoch *spectral* study of Cyg X-1 with #link("https://www.camk.edu.pl/en/staff/aaz/")[Andrzej A. Zdziarski] (NCAC Warsaw), submitted to #emph[The Astrophysical Journal], characterizing coronal and reflection properties across spectral states and investigating the potential failed state transition.
+- Currently leading a follow-up multi-epoch *spectral* study of Cyg X-1 with submitted to #emph[The Astrophysical Journal] (#link("https://arxiv.org/pdf/2608.15902")[link]), characterizing coronal and reflection properties across spectral states and investigating the potential failed state transition.
 
 #v(2mm)
 
@@ -160,7 +165,10 @@ Advisor: Prof. #link("https://inspirehep.net/authors/1722470")[Gopal Bhatta]
 #emph("Researcher") #h(1fr) Jul 2024 -- Present \
 Collaborators: Dr. #link("https://mjjsmith.com")[Michael J. Smith], Dr. #link("https://jwuphysics.github.io/")[John F. Wu]
 
-- #underline[Co-first author] on #emph[The Platonic Universe] (NeurIPS ML4PS 2025 #underline[*Spotlight*, top 1%]; expanded follow-up submitted to NeurIPS 2026 main track with M. J. Smith and J. F. Wu). Designed the evaluation framework comparing foundation-model representations across SDSS, DESI, JWST, and other surveys under model and data scaling.
+- #underline[First author] on #emph[The Platonic Universe] (#underline[*Spotlight*, top 1%] at NeurIPS ML4PS 2025; expanded 12-author version submitted to ICLR 2027 main track). Designed the evaluation framework comparing foundation-model representations across eleven model families from 10M to 10B parameters on JWST, HSC, and Legacy Survey imaging and DESI spectroscopy under model and data scaling; showed that physics performance tracks #emph[local] embedding geometry (mutual #emph[k]-NN) but not #emph[global] similarity (CKA), motivating an #emph[Aristotelian] rather than Platonic Representation Hypothesis.
+- #underline[First author] on #emph[What AstroPT knows about galaxies, and what that can teach us about LLMs] (Sci-FM Workshop, COLM 2026). Probed frozen AstroPT representations across checkpoints, depths, model sizes, and training objectives; found that galaxy properties emerge in a fixed order tracking their known physical difficulty — pixel-measurable properties early and shallow, inferred properties later and deeper — with the ordering stable across objectives and scales.
+- #underline[First author] on #emph[Shared Geometry Is Not Shared Physics: A Layerwise Test of the Platonic Representation Hypothesis in Astronomy] (NeurIPS Interpretability for Discovery Workshop, 2026), separating layerwise where representations agree geometrically from where they agree physically. *Mentored 4 junior researchers* as part of #link("https://eleuther.ai")[EleutherAI]'s SOAR 2026 program.
+- Earlier extension of the Platonic Universe work accepted to the ICML 2026 Mechanistic Interpretability Workshop, where I served as an #underline[Outstanding Reviewer].
 - Creator of the open-source #link("https://github.com/UniverseTBD/platonic-universe")[platonic-universe] package (Python / PyTorch): data loaders, evaluation harness, reproducible configs, test infrastructure.
 - Invited #link("https://www.youtube.com/watch?v=NIf-QQikukE")[AstroAI talk at the Harvard Center for Astrophysics] (Jan 2026) and #link("https://neurips.cc/virtual/2025/loc/san-diego/135877")[NeurIPS ML4PS oral presentation] (Dec 2025). Spotlight award (top 1% paper) NeurIPS ML4PS 2025.
 - Used NCSA DeltaAI compute allocation *PHY250286* — _The Platonic Universe: Do Foundation Models See the Same Sky?_ — 6,000 GPU-hours (PI: M. J. Smith; Sep 2025 -- Sep 2026); actively running training and evaluation experiments under the allocation.
@@ -259,6 +267,13 @@ Instructor: Prof. #link("https://www.bu.edu/eng/profile/janusz-konrad/")[Janusz 
 
 #v(2mm)
 
+#entry_header([#link("https://github.com/ksd3/rinexpy")[rinexpy] — GNSS/RINEX processing library], "Boston, MA")
+#emph("Author and Maintainer") #h(1fr) 2023 -- Present
+
+- Python library for fast RINEX reading and access, written for high-cadence GNSS carrier-phase work and released as a superset of #link("https://github.com/geospace-code/georinex")[georinex]: merging and header/observation-type editing, automatic clock-jump detection and correction, higher-order ionospheric corrections, BINEX and RTCM conversion, and an interactive web-based file viewer.
+
+#v(2mm)
+
 #entry_header("COEP Astronomy Club", "Pune, India")
 #emph("Head of Projects") #h(1fr) 2018 -- 2022
 
@@ -282,6 +297,16 @@ Instructor: Prof. #link("https://www.bu.edu/eng/profile/janusz-konrad/")[Janusz 
 
 // --- INDUSTRY RESEARCH EXPERIENCE ---
 #cvsection("Industry Research Experience")
+
+#entry_header("Position Imaging", "Stratham, NH")
+#emph("Machine Learning Engineer") #h(1fr) May 2026 -- Present
+
+- Developed and productionized *graph neural networks* for RFID localization in multipath-dominated environments, owning the full stack from model architecture and training through GPU optimization, edge deployment, and production monitoring.
+- Designed training systems using *reinforcement learning* and *neural surrogate models* to optimize computationally expensive GNN workloads and make large sweeps over architectures and training strategies affordable.
+- Wrote custom *CUDA kernels* and GPU-level optimizations for performance-critical components of GNN training and inference; built edge inference pipelines covering model compilation, graph/operator optimization, hardware-specific acceleration, and integration with custom inference runtimes.
+- Built the group's internal *ML experimentation platform* (ClearML, Azure, Datadog) for reproducible training, model evaluation, and rapid iteration, sustaining *30+ experiments/day*; added production observability for model behaviour, inference performance, and system health.
+
+#v(2mm)
 
 #entry_header("Thespian Labs", "Somerville, MA")
 #emph("AI Engineer") #h(1fr) Nov 2025 -- Feb 2026
