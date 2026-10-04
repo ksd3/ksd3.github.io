@@ -11,6 +11,7 @@
 # Allowlist: only cv.typ and resume.typ are part of the site build.
 cv/*
 !cv/cv.typ
+!cv/resume.typ
 
 # Scratch notes / application material in the repo root
 /vals.md

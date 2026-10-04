@@ -6,7 +6,7 @@ project:
   pre-render:
     - mkdir -p docs/cv
     - quarto typst compile cv/cv.typ docs/cv/cv.pdf
-    - quarto typst compile --input mode=resume cv/cv.typ docs/cv/resume.pdf
+    - quarto typst compile cv/resume.typ docs/cv/resume.pdf
   resources:
     - "talks/**/*.pptx"
     - "talks/**/*.pdf"
