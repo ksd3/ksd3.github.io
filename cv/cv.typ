@@ -307,7 +307,7 @@ Instructor: Prof. #link("https://www.bu.edu/eng/profile/janusz-konrad/")[Janusz 
 - Built *neural surrogate models* that collapse the cost of the expensive forward simulations behind this program, making previously infeasible architecture and training sweeps routine.
 - Own the *multimodal sensing and reasoning stack* deployed across logistics, aviation, and heavy-industrial sites: fuses camera, RFID, and Wi-Fi evidence to localize assets in metal-rich, strongly reflective spaces whose geometry differs at every installation.
 - Shipped *LLM agents for scene understanding* that attack the dominant failure mode: in the *~80% of retrievals where the asset is occluded from every camera*, the agents recover its location in *43%* of cases to within *0.9 m*, reasoning jointly over the surviving RF evidence and scene structure instead of degrading to manual search. Running in production.
-- Built *LLM agents for fleet reliability* across these deployments, where operating conditions are non-stationary — intermittent connectivity, failing hardware, physically rearranged spaces — correlating device, model, and network telemetry to separate site-local faults from systemic ones. *63% top-1 fault localization* over *218 incidents* across *30 sites* in four months, at a mean *13 minutes* to localize.
+- Built *LLM agents for fleet reliability* across these deployments, where operating conditions are non-stationary — intermittent connectivity, failing hardware, physically rearranged spaces — correlating device, model, and network telemetry to separate site-local faults from systemic ones. Replaced a manual diagnosis process that took *days to weeks* with *63% top-1 localization at a mean 13 minutes*, over *218 incidents* across *30 sites* in four months.
 - Wrote custom *CUDA kernels* and GPU-level optimizations for performance-critical training and inference paths; built the edge inference stack — model compilation, graph/operator optimization, and hardware-specific acceleration.
 - Built the company's internal *ML experimentation platform* (ClearML, Azure, Datadog), sustaining *30+ experiments/day*, plus production *ML observability* for diagnosing deployed models.
 
@@ -359,4 +359,7 @@ Instructor: Prof. #link("https://www.bu.edu/eng/profile/janusz-konrad/")[Janusz 
 #cvsection("Review Experience")
 
 - ICML Mechanistic Interpretability Workshop — #underline[*Outstanding Reviewer*] #h(1fr) 2026
-- United States Research Software Engineer Conference (US-RSE) #h(1fr) 2025, 2026
+- NeurIPS Workshop on Interpretability for Discovery (Interp4Discovery) #h(1fr) 2026
+- NeurIPS Workshop on Neural Artifacts #h(1fr) 2026
+- NeurIPS Workshop on Machine Learning and the Physical Sciences (ML4PS) #h(1fr) 2026
+- United States Research Software Engineer Conference (US-RSE) #h(1fr) 2025
