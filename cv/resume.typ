@@ -86,15 +86,6 @@
 #line(length: 100%, stroke: 0.5pt)
 #v(-5pt)
 
-// --- SUMMARY ---
-#set text(size: 9pt)
-Machine learning engineer working across the full model stack — custom *CUDA kernels* and GPU optimization,
-*distributed training*, *RL post-training*, and edge inference — with a parallel research record in
-*mechanistic interpretability* and *foundation-model evaluation*. First author on three 2026 interpretability
-papers; co-first author on a #underline[NeurIPS ML4PS 2025 Spotlight] (top 1%); first author in
-#emph[The Astrophysical Journal]. M.S. Boston University.
-#set text(size: 10pt)
-
 // --- PROFESSIONAL EXPERIENCE ---
 
 #cvsection("Professional Experience")
@@ -104,12 +95,12 @@ papers; co-first author on a #underline[NeurIPS ML4PS 2025 Spotlight] (top 1%); 
 #emph("Machine Learning Engineer") #h(1fr) May 2026 -- Present
 
 #resume_list[
-  - Developed and productionized *graph neural networks* for RFID localization in multipath-dominated environments, owning the end-to-end stack: architecture, training, GPU optimization, edge deployment, and production monitoring.
-  - Wrote custom *CUDA kernels* and GPU-level optimizations for performance-critical paths in GNN training and inference.
-  - Built the team's internal *ML experimentation platform* (ClearML, Azure, Datadog) for reproducible training and evaluation, sustaining *30+ experiments/day*.
-  - Designed training systems using *reinforcement learning* and *neural surrogate models* to cut the cost of computationally expensive GNN workloads, making large sweeps over architectures and training strategies affordable.
-  - Built edge inference pipelines end to end — model compilation, graph/operator optimization, hardware-specific acceleration, and integration with custom inference runtimes.
-  - Developed production *ML observability* infrastructure for model behaviour, inference performance, and system health, giving product and support teams tooling to diagnose deployed models.
+  - Lead the company's flagship effort: *general-purpose RFID localization models that transfer to arbitrary, previously unseen environments*, superseding the per-site GNN models that preceded them — a hard inverse problem, recovering position from sparse, multipath-corrupted RF observations whose forward model is deployment-specific.
+  - Cast localization as *amortized neural Bayesian inverse inference*, training neural posterior estimators that replace per-environment optimization with a single forward pass and yield *calibrated uncertainty* over position where the likelihood is intractable.
+  - Formulated *active sensing* as a *POMDP* and trained *reinforcement-learning* policies to decide what to measure next under partial observability; built *neural surrogates* that collapse the cost of the expensive forward simulations behind the program.
+  - Architected *LLM agent systems for scene understanding and sensor fusion*, reasoning jointly over heterogeneous sensor streams to infer spatial state where no single modality suffices; and *LLM agents for site reliability engineering* that correlate model health, inference performance, and telemetry to localize production faults.
+  - Wrote custom *CUDA kernels* and GPU-level optimizations for performance-critical training and inference paths; built the edge inference stack end to end — model compilation, graph/operator optimization, hardware-specific acceleration, custom inference runtimes.
+  - Built the team's internal *ML experimentation platform* (ClearML, Azure, Datadog) for reproducible training and evaluation, sustaining *30+ experiments/day*, plus production *ML observability* giving product and support teams tooling to diagnose deployed models.
 ]
 
 // Thespian Labs
@@ -132,20 +123,20 @@ papers; co-first author on a #underline[NeurIPS ML4PS 2025 Spotlight] (top 1%); 
   - Architected the production platform on AWS from scratch with Terraform and Docker CI/CD, cutting deployment cycles from days to *\<2 hours*; built a diffusion-based synthetic-data pipeline that reduced false positives *15%*.
 ]
 
-// KeelWorks + Halo AI, compressed
-#entry_header("The KeelWorks Foundation", "Oak Harbor, WA (Remote)")
-#emph("Software Engineer, ML Applications") #h(1fr) Jul 2024 -- Jan 2025
+// // KeelWorks + Halo AI, compressed
+// #entry_header("The KeelWorks Foundation", "Oak Harbor, WA (Remote)")
+// #emph("Software Engineer, ML Applications") #h(1fr) Jul 2024 -- Jan 2025
 
-#resume_list[
-  - Reduced model size *50%* and improved inference speed *80%* via *8-bit GPTQ quantization* and knowledge distillation while holding *>90%* task accuracy; fine-tuned *Mistral-7B* for synthetic-data generation.
-]
+// #resume_list[
+//   - Reduced model size *50%* and improved inference speed *80%* via *8-bit GPTQ quantization* and knowledge distillation while holding *>90%* task accuracy; fine-tuned *Mistral-7B* for synthetic-data generation.
+// ]
 
-#entry_header("Halo AI (Columbia-incubated stealth)", "New York, NY (Remote)")
-#emph("Founding AI Engineer") #h(1fr) Dec 2023 -- Aug 2024
+// #entry_header("Halo AI (Columbia-incubated stealth)", "New York, NY (Remote)")
+// #emph("Founding AI Engineer") #h(1fr) Dec 2023 -- Aug 2024
 
-#resume_list[
-  - Researched on-device *federated* and *ensemble* LLMs under tight compute and memory budgets; systematic study of pruning, distillation, and post-training quantization trade-offs across latency, footprint, and accuracy.
-]
+// #resume_list[
+//   - Researched on-device *federated* and *ensemble* LLMs under tight compute and memory budgets; systematic study of pruning, distillation, and post-training quantization trade-offs across latency, footprint, and accuracy.
+// ]
 
 // --- RESEARCH ---
 
@@ -155,10 +146,11 @@ papers; co-first author on a #underline[NeurIPS ML4PS 2025 Spotlight] (top 1%); 
 #emph[Researcher — Interpretability and Foundation-Model Evaluation] #h(1fr) Jul 2024 -- Present
 
 #resume_list[
-  - #underline[Co-first author] on #emph[The Platonic Universe] (#underline[*Spotlight*, top 1%] at NeurIPS ML4PS 2025; expanded version submitted to ICLR 2027). Designed the representational-alignment *evaluation framework* over eleven model families from 10M to 10B parameters across JWST, HSC, Legacy Survey imaging and DESI spectroscopy; showed physics performance tracks *local* embedding geometry (mutual #emph[k]-NN) but not *global* similarity (CKA).
+  - #underline[First author] on #emph[The Platonic Universe] (#underline[*Spotlight*, top 1%] at NeurIPS ML4PS 2025; expanded version submitted to ICLR 2027). Designed the representational-alignment *evaluation framework* over eleven model families from 10M to 10B parameters across JWST, HSC, Legacy Survey imaging and DESI spectroscopy; showed physics performance tracks *local* embedding geometry (mutual #emph[k]-NN) but not *global* similarity (CKA).
   - #underline[First author] on two further interpretability papers (Sci-FM @ COLM 2026; NeurIPS Interpretability for Discovery 2026), establishing that model capabilities emerge in a fixed order tracking their physical difficulty, and separating layerwise where representations agree geometrically from where they agree physically.
   - Creator and maintainer of #link("https://github.com/UniverseTBD/platonic-universe")[platonic-universe]: survey-aware loaders, reproducible eval harness, configs, CI. Run on a *6,000 GPU-hour* NCSA DeltaAI allocation (PHY250286).
   - #underline[Outstanding Reviewer], ICML 2026 Mechanistic Interpretability Workshop. Invited talks at Harvard CfA (AstroAI, Jan 2026) and NeurIPS ML4PS (oral, Dec 2025).
+  - Primary engineer behind model architecture design, data pipelines, evals, and pretraining strategies for astronomical foundation models trained on the #link("https://huggingface.co/MultimodalUniverse")[Multimodal Universe] dataset.
 ]
 
 #entry_header("Space Physics Lab, Boston University", "Boston, MA")
@@ -175,13 +167,13 @@ papers; co-first author on a #underline[NeurIPS ML4PS 2025 Spotlight] (top 1%); 
 #set text(size: 9pt)
 #set enum(spacing: 0.4em)
 
-+ #strong[#emph[K. Duraphe]], et al. #emph[Shared Geometry Is Not Shared Physics: A Layerwise Test of the Platonic Representation Hypothesis in Astronomy.] #link("https://openreview.net/forum?id=Xw72C0uPBw")[NeurIPS Interpretability for Discovery Workshop], 2026.
++ #strong[#emph[K. Duraphe]], et al. #emph[Shared Geometry Is Not Shared Physics: A Layerwise Test of the Platonic Representation Hypothesis in Astronomy.] #link("https://arxiv.org/abs/2610.04130")[NeurIPS Interpretability for Discovery Workshop], 2026 (arXiv:2610.04130).
 
-+ #strong[#emph[K. Duraphe]], A. Kumar, S. Sourav, M. J. Smith. #emph[What AstroPT knows about galaxies, and what that can teach us about LLMs.] #link("https://arxiv.org/abs/2608.22614")[Sci-FM Workshop, COLM], 2026.
++ #strong[#emph[K. Duraphe]], A. Kumar, S. Sourav, M. J. Smith. #emph[What AstroPT knows about galaxies, and what that can teach us about LLMs.] #link("https://arxiv.org/abs/2608.22614")[Sci-FM Workshop, COLM], 2026 (arXiv:2608.22614).
 
-+ #strong[#emph[K. Duraphe]], M. J. Smith, J. F. Wu, S. Sourav #emph[(co-first)]. #emph[The Platonic Universe: Do Foundation Models See the Same Sky?] #link("https://arxiv.org/abs/2509.19453")[NeurIPS ML4PS Workshop], 2025 --- #underline[*Spotlight (top 1%)*]. Expanded version submitted to ICLR 2027.
++ #strong[#emph[K. Duraphe]], M. J. Smith, J. F. Wu, S. Sourav #emph[(co-first)]. #emph[The Platonic Universe: Do Foundation Models See the Same Sky?] #link("https://arxiv.org/abs/2509.19453")[NeurIPS ML4PS Workshop], 2025 --- #underline[*Spotlight (top 1%)*]. Expanded version submitted to ICLR 2027 (#link("https://arxiv.org/abs/2509.19453")[arXiv:2509.19453]).
 
-+ #strong[#emph[K. Duraphe]], G. Bhatta, et al. #emph[State-Dependent X-ray Variability in Cygnus X-1: A 12-Year NuSTAR Timing Study.] #link("https://arxiv.org/abs/2510.10746")[The Astrophysical Journal], 2026.
++ #strong[#emph[K. Duraphe]], G. Bhatta, et al. #emph[State-Dependent X-ray Variability in Cygnus X-1: A 12-Year NuSTAR Timing Study.] #link("https://arxiv.org/abs/2510.10746")[The Astrophysical Journal], 2026 (arXiv:2510.10746).
 
 #set text(size: 10pt)
 
