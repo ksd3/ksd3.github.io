@@ -95,11 +95,11 @@
 #emph("Machine Learning Engineer") #h(1fr) May 2026 -- Present
 
 #resume_list[
-  - Lead the company's flagship effort: *general-purpose RFID localization models that transfer to arbitrary, previously unseen environments*, superseding the per-site GNN models that preceded them — a hard inverse problem, recovering position from sparse, multipath-corrupted RF observations whose forward model is deployment-specific.
-  - Formulated *active sensing* as a *POMDP* and trained *reinforcement-learning* policies to decide what to measure next under partial observability; built *neural surrogates* that collapse the cost of the expensive forward simulations behind the program.
-  - Architected *LLM agent systems for scene understanding and sensor fusion*, reasoning jointly over heterogeneous sensor streams to infer spatial state where no single modality suffices; and *LLM agents for site reliability engineering* that correlate model health, inference performance, and telemetry to localize production faults.
-  - Wrote custom *CUDA kernels* and GPU-level optimizations for performance-critical training and inference paths; built the edge inference stack end to end — model compilation, graph/operator optimization, hardware-specific acceleration, custom inference runtimes.
-  - Built the team's internal *ML experimentation platform* (ClearML, Azure, Datadog) for reproducible training and evaluation, sustaining *30+ experiments/day*, plus production *ML observability* giving product and support teams tooling to diagnose deployed models.
+  - Lead the company's flagship effort: *general-purpose RFID localization models that transfer to arbitrary, previously unseen environments* — an ill-posed inverse problem over sparse, multipath-corrupted RF observations with a deployment-specific forward model.
+  - Formulated *active sensing* as a *POMDP* with *reinforcement-learning* policies for what to measure next under partial observability; built *neural surrogates* that collapse the cost of the forward simulations behind the program.
+  - Architected *LLM agent systems* for *scene understanding and sensor fusion* over heterogeneous sensor streams, and for *site reliability engineering*, correlating model health, inference performance, and telemetry to localize production faults.
+  - Wrote custom *CUDA kernels* and GPU-level optimizations for performance-critical training and inference paths; built the edge inference stack — model compilation, graph/operator optimization, hardware-specific acceleration.
+  - Built the team's internal *ML experimentation platform* (ClearML, Azure, Datadog), sustaining *30+ experiments/day*, plus production *ML observability* for diagnosing deployed models.
 ]
 
 // Thespian Labs

@@ -302,14 +302,13 @@ Instructor: Prof. #link("https://www.bu.edu/eng/profile/janusz-konrad/")[Janusz 
 #entry_header("Position Imaging", "Stratham, NH")
 #emph("Machine Learning Engineer") #h(1fr) May 2026 -- Present
 
-- Lead the company's flagship research effort: *general-purpose RFID localization models that transfer to arbitrary, previously unseen environments*, superseding the per-site graph-neural-network models that preceded them. The physics is a hard inverse problem — recovering position from sparse, multipath-corrupted RF observations whose forward model depends on the geometry and materials of each deployment.
-- Formulated *active sensing* as a *POMDP* and trained *reinforcement-learning* policies to choose what to measure next under partial observability, so the system spends its sensing budget where it most reduces localization uncertainty.
-- Built *neural surrogate models* that collapse the cost of the expensive forward simulations and training workloads behind this program, turning architecture and training-strategy sweeps that were previously infeasible into routine experiments.
-- Sole owner of the production ML stack through the preceding *graph-neural-network* generation, end to end: model architecture, training, custom GPU kernels, edge deployment, and production monitoring.
-- Architected *LLM agent systems for scene understanding and sensor fusion*, reasoning jointly over heterogeneous sensor streams to infer spatial state in environments where no single modality is sufficient.
-- Built *LLM agents for site reliability engineering* that trim production incidents, correlating model health, inference performance, and system telemetry to localize faults and surface diagnoses to on-call engineers.
-- Wrote custom *CUDA kernels* and GPU-level optimizations for the performance-critical training and inference paths; built the edge inference stack end to end — model compilation, graph/operator optimization, hardware-specific acceleration, and integration with custom inference runtimes.
-- Built the company's internal *ML experimentation platform* (ClearML, Azure, Datadog) for reproducible training, evaluation, and rapid iteration, taking the team to a sustained *30+ experiments/day*; added production observability for model behaviour, inference performance, and system health, giving product and support teams first-class tooling to diagnose deployed models.
+- Lead the company's flagship research effort: *general-purpose RFID localization models that transfer to arbitrary, previously unseen environments* — an ill-posed inverse problem over sparse, multipath-corrupted RF observations with a deployment-specific forward model.
+- Formulated *active sensing* as a *POMDP*, training *reinforcement-learning* policies to choose what to measure next under partial observability.
+- Built *neural surrogate models* that collapse the cost of the expensive forward simulations behind this program, making previously infeasible architecture and training sweeps routine.
+- Architected *LLM agent systems for scene understanding and sensor fusion*, reasoning jointly over heterogeneous sensor streams to infer spatial state where no single modality suffices.
+- Built *LLM agents for site reliability engineering*, correlating model health, inference performance, and system telemetry to localize production faults.
+- Wrote custom *CUDA kernels* and GPU-level optimizations for performance-critical training and inference paths; built the edge inference stack — model compilation, graph/operator optimization, and hardware-specific acceleration.
+- Built the company's internal *ML experimentation platform* (ClearML, Azure, Datadog), sustaining *30+ experiments/day*, plus production *ML observability* for diagnosing deployed models.
 
 #v(2mm)
 
