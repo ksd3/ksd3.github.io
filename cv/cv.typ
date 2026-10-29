@@ -79,23 +79,6 @@
 #line(length: 100%, stroke: 0.5pt)
 #v(10pt)
 
-// --- EDUCATION ---
-#cvsection("Education")
-
-#entry_header("Boston University", "Boston, MA")
-_M.S., Electrical and Computer Engineering (with Thesis)_ #h(1fr) Sep 2022 -- May 2024 \
-Advisor: Prof. #link("https://www.bu.edu/eng/profile/joshua-semeter/")[Joshua Semeter] \
-Degree GPA: 3.8/4.0 \
-#text(size: 9.5pt)[#emph[Selected coursework:] Cosmic Plasma Physics #sym.dot.c Fourier Optics #sym.dot.c Quantum Mechanics and Semiconductor Physics #sym.dot.c Quantum Computing #sym.dot.c Signal Processing #sym.dot.c Machine Learning #sym.dot.c Advanced Algorithms #sym.dot.c Advanced Discrete Mathematics]
-
-#v(2mm)
-
-#entry_header("College of Engineering Pune", "Pune, India")
-_B.Tech., Electrical Engineering (Minor: Computer Science)_ #h(1fr) Aug 2018 -- June 2022 \
-Advisors: Prof. Archana Thosar, Prof. Suhas Kakade \
-GPA: 9.11/10.0 (#underline[Department Bronze Medalist]) \
-#text(size: 9.5pt)[#emph[Selected coursework:] Probability Theory and Statistical Inference #sym.dot.c Optics and Modern Physics #sym.dot.c Electromagnetism #sym.dot.c Numerical Methods #sym.dot.c Vector Calculus #sym.dot.c Partial Differential Equations #sym.dot.c Ordinary Differential Equations #sym.dot.c Complex Analysis]
-
 // --- RESEARCH INTERESTS ---
 #cvsection("Research Interests")
 
@@ -135,17 +118,6 @@ Multimodal Scientific Foundation Models; Distributed Training at Scale; Mechanis
 + *Optimizing Solar Panel Tilt using Machine Learning Techniques* \
   #strong[#emph[K. Duraphe]], S. Kakade, et al. \
   #link("https://ieeexplore.ieee.org/document/9587892/")[GPECOM], 2021
-
-// --- THESES ---
-#cvsection("Theses")
-
-+ *Data-Driven Techniques to Advance Our Understanding of the STEVE Phenomenon* \
-  #strong[#emph[Kshitij Duraphe]], Joshua Semeter \
-  M.S. Thesis, Department of Electrical and Computer Engineering, Boston University, 2024
-
-+ *Design of an Automated Radio Telescope for Observing the 21 cm Hydrogen Line* \
-  #strong[#emph[Kshitij Duraphe]], Archana Thosar \
-  B.Tech. Thesis, Department of Electrical Engineering, College of Engineering Pune, 2022
 
 // --- RESEARCH EXPERIENCE ---
 #cvsection("Research Experience")
@@ -227,75 +199,6 @@ Advisors: Prof. Archana Thosar, Prof. Suhas Kakade
 
 - Derived the equations of stellar structure incorporating hydrostatic equilibrium and relativistic electron-degeneracy pressure; numerically solved the coupled ODEs with a 4#super[th]-order Runge-Kutta scheme in Python to compute the white-dwarf mass-radius relation and determine the Chandrasekhar limit.
 
-// --- TALKS ---
-#cvsection("Selected Talks and Posters")
-
-- _The Platonic Universe: Do Foundation Models See the Same Sky?_ (invited, long version) #h(1fr) #link("https://www.youtube.com/watch?v=NIf-QQikukE")[AstroAI, Harvard CfA, Jan 2026]
-- _The Platonic Universe: Do Foundation Models See the Same Sky?_ (oral) #h(1fr) #link("https://neurips.cc/virtual/2025/loc/san-diego/135877")[NeurIPS ML4PS, Dec 2025]
-- _Using high-rate dual-frequency cellphones to study the April 8#super[th] solar eclipse_ #h(1fr) #link("https://cedarscience.org/sites/default/files/2024-posters/IRRI-8-Nina-ServanSchreiber.pdf")[CEDAR Workshop, Jun 2024]
-- _Optimizing Solar Panel Tilt using Machine Learning Techniques_ #h(1fr) GPECOM, Dec 2021
-
-// --- AWARDS ---
-#cvsection("Awards and Honors")
-
-- NeurIPS ML4PS 2025 — #underline[*Spotlight Paper* (top 1%)] #h(1fr) 2025
-- MS Ambassador, Boston University ECE Department #h(1fr) 2024
-- 2#super[nd] / 100+ international teams, MIT iQuHack 2023 (IBM x Covalent Challenge) #h(1fr) 2023
-- Bronze Medalist, Electrical Engineering Department, College of Engineering Pune #h(1fr) 2022
-
-// --- TEACHING AND COMMUNITY ---
-#cvsection("Teaching, Mentoring, and Open-Source Community")
-
-#entry_header(link("https://www.cranephysics.org/")[Computational Research Access NEtwork (CRANE) Physics], "Winter 2024, 2025")
-#emph("TA / Mentor")
-
-- Topics: signal processing, Python, numerical methods, machine learning, PIC simulations. Wrote tutorial materials and supported students during hands-on sessions across both cohorts.
-
-#v(2mm)
-
-#entry_header("ENG EC520 Image Processing (Graduate Course), Boston University", "Spring 2023")
-#emph("Grader") \
-Instructor: Prof. #link("https://www.bu.edu/eng/profile/janusz-konrad/")[Janusz Konrad]
-
-- Graded problem sets and projects on filtering, compression, reconstruction, and computer-vision algorithms for a graduate-level image-processing course.
-
-#v(2mm)
-
-#entry_header([#link("https://github.com/SGIARK/")[ArkOS] — MIT Student Information Processing Board (SIPB)], "Cambridge, MA")
-#emph("Contributor — DevOps and Documentation") #h(1fr) 2025 -- Present
-
-- Lead DevOps and documentation for an open-source local-LLM agent platform; maintain GitHub Actions CI/CD, contributor onboarding, and developer-facing documentation.
-
-#v(2mm)
-
-#entry_header([#link("https://github.com/ksd3/rinexpy")[rinexpy] — GNSS/RINEX processing library], "Boston, MA")
-#emph("Author and Maintainer") #h(1fr) 2023 -- Present
-
-- Python library for fast RINEX reading and access, written for high-cadence GNSS carrier-phase work and released as a superset of #link("https://github.com/geospace-code/georinex")[georinex]: merging and header/observation-type editing, automatic clock-jump detection and correction, higher-order ionospheric corrections, BINEX and RTCM conversion, and an interactive web-based file viewer.
-
-#v(2mm)
-
-#entry_header("COEP Astronomy Club", "Pune, India")
-#emph("Head of Projects") #h(1fr) 2018 -- 2022
-
-- Mentored 30 undergraduates on processing astronomical data, operating telescopes, and building reflector optics.
-- Ran outreach sessions at schools for autistic children on identifying constellations in the night sky.
-
-// --- KEY SKILLS ---
-#cvsection("Key Skills")
-
-*Astronomy tooling:* AstroPy, HEASoft, NuSTARDAS, Stingray, PHOEBE, GEMINI3D, FITS / HDF5 I/O
-
-*Scientific Python ecosystem:* NumPy, SciPy, Matplotlib, pandas, PyTorch, scikit-learn
-
-*Languages:* Python (primary), C, C++, SQL, MATLAB
-
-*Statistical and numerical methods:* Bayesian inference (MCMC), spectral-timing analysis, time-series analysis, ODE/PDE numerical solvers, Runge–Kutta
-
-*Software engineering:* Git / GitHub, GitHub Actions CI/CD, pytest, Sphinx-style documentation, open-source contribution and code review
-
-*Instrumentation:* Ansys HFSS, radio receiver chains (RTL-SDR + LNA), antenna design
-
 // --- INDUSTRY RESEARCH EXPERIENCE ---
 #cvsection("Industry Research Experience")
 
@@ -349,11 +252,64 @@ Instructor: Prof. #link("https://www.bu.edu/eng/profile/janusz-konrad/")[Janusz 
 
 - Synthetic-data generation research via *Mistral-7B* fine-tuning (back-translation, sequential style representation); agentic LLM systems with RAG pipelines for large-scale document retrieval and question answering.
 
-// --- ASTRONOMY SCHOOLS AND WORKSHOPS ---
-#cvsection("Astronomy Schools and Workshops")
+// --- KEY SKILLS ---
+#cvsection("Key Skills")
 
-#entry_header("Inter-University Center for Astronomy and Astrophysics (IUCAA)", "Pune, India")
-#emph("Introductory Summer School in Astronomy and Astrophysics") #h(1fr) May -- Jun 2020
+*Astronomy tooling:* AstroPy, HEASoft, NuSTARDAS, Stingray, PHOEBE, GEMINI3D, FITS / HDF5 I/O
+
+*Scientific Python ecosystem:* NumPy, SciPy, Matplotlib, pandas, PyTorch, scikit-learn
+
+*Languages:* Python (primary), C, C++, SQL, MATLAB
+
+*Statistical and numerical methods:* Bayesian inference (MCMC), spectral-timing analysis, time-series analysis, ODE/PDE numerical solvers, Runge–Kutta
+
+*Software engineering:* Git / GitHub, GitHub Actions CI/CD, pytest, Sphinx-style documentation, open-source contribution and code review
+
+*Instrumentation:* Ansys HFSS, radio receiver chains (RTL-SDR + LNA), antenna design
+
+// --- EDUCATION ---
+#cvsection("Education")
+
+#entry_header("Boston University", "Boston, MA")
+_M.S., Electrical and Computer Engineering (with Thesis)_ #h(1fr) Sep 2022 -- May 2024 \
+Advisor: Prof. #link("https://www.bu.edu/eng/profile/joshua-semeter/")[Joshua Semeter] \
+Degree GPA: 3.8/4.0 \
+#text(size: 9.5pt)[#emph[Selected coursework:] Cosmic Plasma Physics #sym.dot.c Fourier Optics #sym.dot.c Quantum Mechanics and Semiconductor Physics #sym.dot.c Quantum Computing #sym.dot.c Signal Processing #sym.dot.c Machine Learning #sym.dot.c Advanced Algorithms #sym.dot.c Advanced Discrete Mathematics]
+
+#v(2mm)
+
+#entry_header("College of Engineering Pune", "Pune, India")
+_B.Tech., Electrical Engineering (Minor: Computer Science)_ #h(1fr) Aug 2018 -- June 2022 \
+Advisors: Prof. Archana Thosar, Prof. Suhas Kakade \
+GPA: 9.11/10.0 (#underline[Department Bronze Medalist]) \
+#text(size: 9.5pt)[#emph[Selected coursework:] Probability Theory and Statistical Inference #sym.dot.c Optics and Modern Physics #sym.dot.c Electromagnetism #sym.dot.c Numerical Methods #sym.dot.c Vector Calculus #sym.dot.c Partial Differential Equations #sym.dot.c Ordinary Differential Equations #sym.dot.c Complex Analysis]
+
+// --- THESES ---
+#cvsection("Theses")
+
++ *Data-Driven Techniques to Advance Our Understanding of the STEVE Phenomenon* \
+  #strong[#emph[Kshitij Duraphe]], Joshua Semeter \
+  M.S. Thesis, Department of Electrical and Computer Engineering, Boston University, 2024
+
++ *Design of an Automated Radio Telescope for Observing the 21 cm Hydrogen Line* \
+  #strong[#emph[Kshitij Duraphe]], Archana Thosar \
+  B.Tech. Thesis, Department of Electrical Engineering, College of Engineering Pune, 2022
+
+// --- TALKS ---
+#cvsection("Selected Talks and Posters")
+
+- _The Platonic Universe: Do Foundation Models See the Same Sky?_ (invited, long version) #h(1fr) #link("https://www.youtube.com/watch?v=NIf-QQikukE")[AstroAI, Harvard CfA, Jan 2026]
+- _The Platonic Universe: Do Foundation Models See the Same Sky?_ (oral) #h(1fr) #link("https://neurips.cc/virtual/2025/loc/san-diego/135877")[NeurIPS ML4PS, Dec 2025]
+- _Using high-rate dual-frequency cellphones to study the April 8#super[th] solar eclipse_ #h(1fr) #link("https://cedarscience.org/sites/default/files/2024-posters/IRRI-8-Nina-ServanSchreiber.pdf")[CEDAR Workshop, Jun 2024]
+- _Optimizing Solar Panel Tilt using Machine Learning Techniques_ #h(1fr) GPECOM, Dec 2021
+
+// --- AWARDS ---
+#cvsection("Awards and Honors")
+
+- NeurIPS ML4PS 2025 — #underline[*Spotlight Paper* (top 1%)] #h(1fr) 2025
+- MS Ambassador, Boston University ECE Department #h(1fr) 2024
+- 2#super[nd] / 100+ international teams, MIT iQuHack 2023 (IBM x Covalent Challenge) #h(1fr) 2023
+- Bronze Medalist, Electrical Engineering Department, College of Engineering Pune #h(1fr) 2022
 
 // --- REVIEW EXPERIENCE ---
 #cvsection("Review Experience")
@@ -363,3 +319,47 @@ Instructor: Prof. #link("https://www.bu.edu/eng/profile/janusz-konrad/")[Janusz 
 - NeurIPS Workshop on Neural Artifacts #h(1fr) 2026
 - NeurIPS Workshop on Machine Learning and the Physical Sciences (ML4PS) #h(1fr) 2026
 - United States Research Software Engineer Conference (US-RSE) #h(1fr) 2025
+
+// --- TEACHING AND COMMUNITY ---
+#cvsection("Teaching, Mentoring, and Open-Source Community")
+
+#entry_header(link("https://www.cranephysics.org/")[Computational Research Access NEtwork (CRANE) Physics], "Winter 2024, 2025")
+#emph("TA / Mentor")
+
+- Topics: signal processing, Python, numerical methods, machine learning, PIC simulations. Wrote tutorial materials and supported students during hands-on sessions across both cohorts.
+
+#v(2mm)
+
+#entry_header("ENG EC520 Image Processing (Graduate Course), Boston University", "Spring 2023")
+#emph("Grader") \
+Instructor: Prof. #link("https://www.bu.edu/eng/profile/janusz-konrad/")[Janusz Konrad]
+
+- Graded problem sets and projects on filtering, compression, reconstruction, and computer-vision algorithms for a graduate-level image-processing course.
+
+#v(2mm)
+
+#entry_header([#link("https://github.com/SGIARK/")[ArkOS] — MIT Student Information Processing Board (SIPB)], "Cambridge, MA")
+#emph("Contributor — DevOps and Documentation") #h(1fr) 2025 -- Present
+
+- Lead DevOps and documentation for an open-source local-LLM agent platform; maintain GitHub Actions CI/CD, contributor onboarding, and developer-facing documentation.
+
+#v(2mm)
+
+#entry_header([#link("https://github.com/ksd3/rinexpy")[rinexpy] — GNSS/RINEX processing library], "Boston, MA")
+#emph("Author and Maintainer") #h(1fr) 2023 -- Present
+
+- Python library for fast RINEX reading and access, written for high-cadence GNSS carrier-phase work and released as a superset of #link("https://github.com/geospace-code/georinex")[georinex]: merging and header/observation-type editing, automatic clock-jump detection and correction, higher-order ionospheric corrections, BINEX and RTCM conversion, and an interactive web-based file viewer.
+
+#v(2mm)
+
+#entry_header("COEP Astronomy Club", "Pune, India")
+#emph("Head of Projects") #h(1fr) 2018 -- 2022
+
+- Mentored 30 undergraduates on processing astronomical data, operating telescopes, and building reflector optics.
+- Ran outreach sessions at schools for autistic children on identifying constellations in the night sky.
+
+// --- ASTRONOMY SCHOOLS AND WORKSHOPS ---
+#cvsection("Astronomy Schools and Workshops")
+
+#entry_header("Inter-University Center for Astronomy and Astrophysics (IUCAA)", "Pune, India")
+#emph("Introductory Summer School in Astronomy and Astrophysics") #h(1fr) May -- Jun 2020
