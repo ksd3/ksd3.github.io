@@ -96,7 +96,6 @@
 
 #resume_list[
   - Lead the company's flagship effort: *general-purpose RFID localization models that transfer to arbitrary, previously unseen environments*, superseding the per-site GNN models that preceded them — a hard inverse problem, recovering position from sparse, multipath-corrupted RF observations whose forward model is deployment-specific.
-  - Cast localization as *amortized neural Bayesian inverse inference*, training neural posterior estimators that replace per-environment optimization with a single forward pass and yield *calibrated uncertainty* over position where the likelihood is intractable.
   - Formulated *active sensing* as a *POMDP* and trained *reinforcement-learning* policies to decide what to measure next under partial observability; built *neural surrogates* that collapse the cost of the expensive forward simulations behind the program.
   - Architected *LLM agent systems for scene understanding and sensor fusion*, reasoning jointly over heterogeneous sensor streams to infer spatial state where no single modality suffices; and *LLM agents for site reliability engineering* that correlate model health, inference performance, and telemetry to localize production faults.
   - Wrote custom *CUDA kernels* and GPU-level optimizations for performance-critical training and inference paths; built the edge inference stack end to end — model compilation, graph/operator optimization, hardware-specific acceleration, custom inference runtimes.
