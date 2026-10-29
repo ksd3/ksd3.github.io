@@ -95,7 +95,7 @@
 #emph("Machine Learning Engineer") #h(1fr) May 2026 -- Present
 
 #resume_list[
-  - Lead the company's flagship effort: *general-purpose RFID localization models that transfer to arbitrary, previously unseen environments* — an ill-posed inverse problem over sparse, multipath-corrupted RF observations with a deployment-specific forward model.
+  - Lead the company's flagship effort: *general-purpose RFID localization models that transfer to arbitrary, previously unseen environments* — an ill-posed inverse problem over sparse, multipath-corrupted RF observations with a deployment-specific forward model. *98.7%* of localizations meet the *0.9 m (3 ft)* industrial spec #underline[out of domain], across *12* unseen sites.
   - Formulated *active sensing* as a *POMDP* with *reinforcement-learning* policies for what to measure next under partial observability; built *neural surrogates* that collapse the cost of the forward simulations behind the program.
   - Own the *multimodal sensing and reasoning stack* deployed across logistics, aviation, and heavy-industrial sites, fusing camera, RFID, and Wi-Fi evidence to localize assets in metal-rich, strongly reflective spaces whose geometry differs at every installation.
   - Shipped *LLM agents for scene understanding* for the dominant failure mode: in the *~80%* of retrievals where the asset is occluded from every camera, they recover its location in *43%* of cases to within *0.9 m*, reasoning over surviving RF evidence and scene structure rather than degrading to manual search.
