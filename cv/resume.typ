@@ -97,7 +97,9 @@
 #resume_list[
   - Lead the company's flagship effort: *general-purpose RFID localization models that transfer to arbitrary, previously unseen environments* — an ill-posed inverse problem over sparse, multipath-corrupted RF observations with a deployment-specific forward model.
   - Formulated *active sensing* as a *POMDP* with *reinforcement-learning* policies for what to measure next under partial observability; built *neural surrogates* that collapse the cost of the forward simulations behind the program.
-  - Architected *LLM agent systems* for *scene understanding and sensor fusion* over heterogeneous sensor streams, and for *site reliability engineering*, correlating model health, inference performance, and telemetry to localize production faults.
+  - Own the *multimodal sensing and reasoning stack* deployed across logistics, aviation, and heavy-industrial sites, fusing camera, RFID, and Wi-Fi evidence to localize assets in metal-rich, strongly reflective spaces whose geometry differs at every installation.
+  - Shipped *LLM agents for scene understanding* that recover asset location when it is occluded from every camera, reasoning over surviving RF evidence and scene structure rather than degrading to manual search; in production today.
+  - Built *LLM agents for fleet reliability* across these deployments, correlating device, model, and network telemetry to separate site-local faults — intermittent connectivity, failing hardware, rearranged spaces — from systemic ones, and drive repair.
   - Wrote custom *CUDA kernels* and GPU-level optimizations for performance-critical training and inference paths; built the edge inference stack — model compilation, graph/operator optimization, hardware-specific acceleration.
   - Built the team's internal *ML experimentation platform* (ClearML, Azure, Datadog), sustaining *30+ experiments/day*, plus production *ML observability* for diagnosing deployed models.
 ]
